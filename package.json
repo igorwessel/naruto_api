@@ -1,0 +1,13 @@
+{
+  "name": "naruto_api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon"
+  },
+  "dependencies": {
+    "nodemon": "^2.0.4",
+    "puppeteer": "^3.1.0"
+  }
+}
