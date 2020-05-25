@@ -83,7 +83,7 @@ async function getInfo(page) {
     'Unknown',
     'Databook 2 Stats|Data',
   ];
-  const personal_attr = data
+  const personal_data_keys = data
     .map((s) => s.match(/^(\w*:|\w*\s\w*:)/gm))
     .filter((s) => s !== null)
     .map((s) => {
@@ -91,7 +91,8 @@ async function getInfo(page) {
       s[0] = s[0].replace(' ', '_');
       s[0] = s[0].replace(':', '');
       return s[0];
-    });
+    })
+    .flat();
   const personal_anime = data
     .map((s) => s.match(/\w*\s(Manga|Anime)\s\w*/gm))
     .filter((s) => s !== null)
@@ -99,18 +100,31 @@ async function getInfo(page) {
       s[0] = s[0].toLowerCase();
       s[0] = s[0].replace(/\s+/gm, '_');
       return s[0];
-    });
+    })
+    .flat();
 
-  const personal_info = data
+  personal_data_keys.splice(5, 0, personal_anime[0]);
+  personal_data_keys.splice(6, 0, personal_anime[1]);
+
+  const personal_data_values = data
     .map((s) => s.match(/:.*/gm))
     .filter((s) => s !== null)
     .map((s) => {
       s[0] = s[0].replace(':', '');
       s[0] = s[0].trim();
       return s;
-    });
+    })
+    .flat();
 
-  console.log(personal_info);
+  let info = personal_data_keys.reduce(
+    (acc, current, i) => ({ ...acc, [current]: personal_data_values[i] }),
+    {}
+  );
+
+  console.log(info);
+  // console.log(personal_attr);
+  // console.log(personal_anime);
+  // console.log(personal_data_values);
 }
 
 getInfo();
