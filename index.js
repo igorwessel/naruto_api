@@ -44,90 +44,151 @@ async function getNames(page) {
 }
 
 async function getInfo(page) {
-  //   const test = await page.evaluate(() =>
-  //     [
-  //       ...document.querySelectorAll(
-  //         'body > table:nth-child(2) > tbody > tr > td:nth-child(3) > table:nth-child(2) > tbody > tr:nth-child(3n)'
-  //       ),
-  //     ].map((e) =>
-  //       e.textContent
-  //         .trim()
-  //         .split('\n')
-  //         .map((t) => t.trim())
-  //         .filter((t) => t !== '')
-  //     )
-  //   );
-
-  const data = [
-    'Personal Data',
-    'Registration ID: 005480',
-    'Birthday: September 7th',
-    'Blood Type: A',
-    'Height: 181.3 cm',
-    'Weight: 68.9 kg',
-    'First Manga Appearance: Chapter 137',
-    'First Anime Appearance: Naruto Episode 79',
-    'Name Meaning: Aburame="Oil Woman" | Shibi=A type of tile, also a location',
-    'Hidden Village: Leaf Village',
-    'Rank: Jounin',
-    'Age: 39',
-    'See also: Aburame Clan, Aburame Shino',
-    'Personal Stats',
-    'Latent Potential',
-    'Unknown',
-    'Luck',
-    'Unknown',
-    'Elemental Affinity',
-    'Unknown',
-    'Yin | Yang',
-    'Unknown',
-    'Databook 2 Stats|Data',
-  ];
-  const personal_data_keys = data
-    .map((s) => s.match(/^(\w*:|\w*\s\w*:)/gm))
-    .filter((s) => s !== null)
+  const pageResults = await page.evaluate(() =>
+    [
+      ...document.querySelectorAll(
+        'body > table:nth-child(2) > tbody > tr > td:nth-child(3) > table:nth-child(2) > tbody > tr:nth-child(3n)'
+      ),
+    ].map((e) =>
+      e.textContent
+        .trim()
+        .split('\n')
+        .map((t) => t.trim())
+        .filter((t) => t !== '')
+    )
+  );
+  const personal_data_keys = pageResults
+    .map((s) => s.map((t) => t.match(/^(\w*:|\w*\s\w*:)/gm)))
+    .map((s) => s.filter((t) => t !== null))
     .map((s) => {
-      s[0] = s[0].toLowerCase();
-      s[0] = s[0].replace(' ', '_');
-      s[0] = s[0].replace(':', '');
-      return s[0];
-    })
-    .flat();
-  const personal_anime = data
-    .map((s) => s.match(/\w*\s(Manga|Anime)\s\w*/gm))
-    .filter((s) => s !== null)
-    .map((s) => {
-      s[0] = s[0].toLowerCase();
-      s[0] = s[0].replace(/\s+/gm, '_');
-      return s[0];
-    })
-    .flat();
-
-  personal_data_keys.splice(5, 0, personal_anime[0]);
-  personal_data_keys.splice(6, 0, personal_anime[1]);
-
-  const personal_data_values = data
-    .map((s) => s.match(/:.*/gm))
-    .filter((s) => s !== null)
-    .map((s) => {
-      s[0] = s[0].replace(':', '');
-      s[0] = s[0].trim();
+      s.map((t) => {
+        t[0] = t[0].toLowerCase();
+        t[0] = t[0].replace(' ', '_');
+        t[0] = t[0].replace(':', '');
+        return t[0];
+      });
       return s;
     })
-    .flat();
+    .map((s) => s.flat());
+  const personal_anime = pageResults
+    .map((s) => s.map((t) => t.match(/\w*\s(Manga|Anime)\s\w*/gm)))
+    .map((s) => s.filter((t) => t !== null))
+    .map((s) => {
+      s.map((t) => {
+        t[0] = t[0].toLowerCase();
+        t[0] = t[0].replace(/\s+/gm, '_');
+        return t[0];
+      });
+      return s;
+    })
+    .map((s) => s.flat());
 
-  let info = personal_data_keys.reduce(
-    (acc, current, i) => ({ ...acc, [current]: personal_data_values[i] }),
-    {}
+  personal_data_keys.forEach((t) => {
+    t.splice(5, 0, ...personal_anime.splice(0, 1).flat());
+  });
+
+  const personal_data_values = pageResults
+    .map((s) => s.map((t) => t.match(/:.*/gm)))
+    .map((s) => s.filter((t) => t !== null))
+    .map((s) => {
+      return s.map((t) => {
+        t[0] = t[0].replace(':', '');
+        t[0] = t[0].trim();
+        return t[0];
+      });
+    });
+
+  const personal_stats_keys = pageResults
+    .map((s) =>
+      s.map((t) =>
+        t.match(/(Latent Potential|Luck|Elemental Affinity|Yin \| Yang)/gm)
+      )
+    )
+    .map((s) => s.filter((t) => t !== null))
+    .map((s) => {
+      return s.map((t) => {
+        t[0] = t[0].trim();
+        t[0] = t[0].replace(/\s/gm, '_');
+        t[0] = t[0].replace(/(_\|)/, '');
+        t[0] = t[0].toLowerCase();
+        return t[0];
+      });
+    });
+
+  const personal_stats_values = await page.evaluate(() =>
+    [
+      ...document.querySelectorAll(
+        'body > table:nth-child(2) > tbody > tr > td:nth-child(3) > table:nth-child(2) > tbody > tr:nth-child(3n) > td:nth-child(2) > table:nth-child(4) > tbody:nth-child(1) > tr'
+      ),
+    ].map((e) =>
+      e.textContent
+        .trim()
+        .split('\n')
+        .map((t) => t.trim())
+        .filter((t) => t !== '')
+    )
   );
 
-  console.log(info);
-  // console.log(personal_attr);
-  // console.log(personal_anime);
-  // console.log(personal_data_values);
+  // const personal_stats = personal_stats_keys.reduce(
+  //   (acc, current, i) =>
+  //     ({ ...acc, [current]: personal_stats_values[i] }),
+  //   []
+  // );
+
+  let personal_info = personal_data_keys.map((v, i) =>
+    v.reduce(
+      (acc, key, keyIndex) => ({
+        ...acc,
+        [key]: personal_data_values[i][keyIndex][0],
+      }),
+      {}
+    )
+  );
+
+  const object = [];
+
+  // object.push({
+  //   personal_info,
+  //   personal_stats,
+  // });
+
+  return object;
 }
 
-getInfo();
+async function getPersonalInfo(page) {
+  const elements = await page.$x(
+    '//*[text()="First Manga Appearance:"]//parent::font'
+  );
+  const personal_info = await page.evaluate(
+    (...elements) => elements.map((e) => e.textContent),
+    ...elements
+  );
+
+  const description_elements = await page.$x(
+    '//*[text()="Click For Quick-Spoilers:"]//parent::font'
+  );
+
+  return personal_info;
+}
+
+async function getInfoStats(page) {
+  const elements = await page.$x(
+    '//*[text()="Personal Stats"]//parent::font//parent::td//parent::tr//parent::tbody//child::tr'
+  );
+  const stats = await page.evaluate(
+    (...elements) =>
+      elements.map((e) =>
+        e.textContent
+          .trim()
+          .split('\n')
+          .map((t) => t.trim())
+      ),
+    ...elements
+  );
+
+  console.log(stats);
+  return stats;
+}
 
 async function getLinksFullBiography(page) {
   const links = await page.evaluate(() =>
@@ -146,8 +207,7 @@ async function start() {
 
   //   const names = await getNames(page);
   const description = await getInfo(page);
-
-  console.log(description);
+  const stats = await getInfoStats(page);
 }
 
-// start();
+start();
