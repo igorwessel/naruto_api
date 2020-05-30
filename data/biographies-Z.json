@@ -9,19 +9,22 @@
       "weight": "49 kg"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 35",
-      "first_anime_appearance": "Naruto Episode 21",
-      "name_meaning": "Zaku=Sound of cutting, Abumi=Stirrup",
-      "hidden_village": "Sound Village",
-      "rank": "Genin",
-      "age": "14",
-      "notable_quotes": "You can leave if you want... fatty.",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
+      "notable_quotes": "unknown",
       "see_also": "Kin Tsuchi, Dosu Kinuta",
       "description": "Zaku Abumi was one of the three sound Genin who entered into the Chuunin Exam."
     },
     "advancement_data": {
-      "academy_grad_age": "-",
-      "chuunin_exam_age": "-"
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
     },
     "missions_completed": {
       "d_rank": "23",
@@ -41,12 +44,20 @@
       "weight": "unknown"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 320",
-      "first_anime_appearance": "Shippuuden Episode 76",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
+      "notable_quotes": "unknown",
+      "see_also": "unknown",
+      "description": "Akatsuki member Zetsu engages in reconnaissance. He is divided into two halves, each with their own personas. A \"Black\" half and a \"White\" half which can split into two separate entities.",
       "profession": "Bounty Master",
-      "age": "36",
-      "location": "Fire Country",
-      "description": "Akatsuki member Zetsu engages in reconnaissance. He is divided into two halves, each with their own personas. A \"Black\" half and a \"White\" half which can split into two separate entities."
+      "location": "Fire Country"
     },
     "registration_id": "?",
     "birthday": "?",
@@ -57,6 +68,11 @@
   {
     "personal_data": {
       "name": "Zetsu",
+      "registration_id": "unknown",
+      "birthday": "unknown",
+      "blood_type": "unknown",
+      "height": "unknown",
+      "weight": "unknown",
       "advancement_data": null,
       "missions_completed": null,
       "academy_grad_age": "?",
@@ -68,11 +84,17 @@
       "s_rank": "?"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 234",
-      "first_anime_appearance": "Naruto Episode 134",
-      "name_meaning": "Tongue or Reed (A form of tall hollow grass or tongue attachment to a hollow woodwind instrument)",
-      "hidden_village": "-",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
       "notable_features": "Strange fly-trap-like extensions which cover his upper body, His main torso is split into light and dark halves",
+      "notable_quotes": "unknown",
+      "see_also": "unknown",
       "description": "Personal hired mercenary to Gat�."
     },
     "birthday": "December 1st",
@@ -85,12 +107,19 @@
       "name": "Zouri"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 18",
-      "first_anime_appearance": "Naruto Episode 10",
-      "name_meaning": "Sandals",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "Carries samurai sword.",
+      "notable_quotes": "unknown",
+      "see_also": "unknown",
       "location": "Wave Country",
-      "profession": "Hired mercenary",
-      "notable_features": "Carries samurai sword."
+      "profession": "Hired mercenary"
     }
   }
 ]

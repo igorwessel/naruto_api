@@ -9,14 +9,17 @@
       "weight": "53.3 kg"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 281",
-      "first_anime_appearance": "Shippuuden Episode 1",
-      "name_meaning": "As kanji can mean",
-      "hidden_village": "Leaf Village",
-      "rank": "- (ANBU, At Least Chuunin)",
-      "age": "17",
-      "notable_features": "Pale in appearance, insults others, has trouble with his emotions, can bring his paintings alive",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
       "notable_quotes": "Your power... it is weak. Do you even have a penis?",
+      "see_also": "unknown",
       "description": "A young mysterious ninja, Sai became one of Naruto's teammates after the two and a half year time-skip. \"Sai\" is not actually the ninja's name either, being given that name by ANBU Root leader Danzou."
     },
     "advancement_data": {
@@ -24,11 +27,11 @@
       "chuunin_exam_age": "10"
     },
     "missions_completed": {
-      "d_rank": "?",
-      "c_rank": "?",
-      "b_rank": "?",
-      "a_rank": "?",
-      "s_rank": "?"
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
     }
   },
   {
@@ -41,20 +44,22 @@
       "weight": "45 kg"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 115",
-      "first_anime_appearance": "Naruto Episode 68",
-      "name_meaning": "Sa=Left [A 'sakon' was a right-hand man position in the shogunate]",
-      "hidden_village": "Sound Village",
-      "rank": "Unknown (Potential Chuunin)",
-      "age": "14",
-      "notable_features": "One of the Four Sounds, Personal warrior of Orochimaru",
-      "notable_quotes": "God Dammit! This is no ordinary piss!",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
+      "notable_quotes": "unknown",
       "see_also": "Ukon, Kidoumaru, Tayuya, Jiroubou",
       "description": "One of the Four Sounds, who specialize in the formation of barriers."
     },
     "advancement_data": {
-      "academy_grad_age": "-",
-      "chuunin_exam_age": "-"
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
     },
     "missions_completed": {
       "d_rank": "20",
@@ -74,11 +79,16 @@
       "weight": "unknown"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 417",
-      "first_anime_appearance": "Shippuuden Episode 156",
-      "name_meaning": "Cold weather",
-      "hidden_village": "Cloud Village",
-      "rank": "Unknown (Probable Jounin)",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
+      "notable_quotes": "unknown",
       "see_also": "Karui, Omoi",
       "description": "Samui is a kunoichi from Cloud Village. She and her team were dispatched to Konoha to inform them they were going to hunt for Uchiha Sasuke."
     },
@@ -104,14 +114,22 @@
       "weight": "unknown"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 317",
-      "first_anime_appearance": "Shippuuden Episode 92",
-      "hidden_village": "Formerly Mist",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
+      "notable_quotes": "unknown",
+      "see_also": "unknown",
+      "description": "Sanbi is one of the \"bijuu\", a tailed beast of the ancient world. Seeking a way to create a ninja with a large amount of chakra that would be an unstoppable machine, the demons were placed inside shinobi. At some point in the past, it was housed within a ninja from Hidden Mist.",
       "class": "Demon",
       "tail_number": "Sanbi (Three)",
       "type": "Turtle",
-      "imbued_within": "-",
-      "description": "Sanbi is one of the \"bijuu\", a tailed beast of the ancient world. Seeking a way to create a ninja with a large amount of chakra that would be an unstoppable machine, the demons were placed inside shinobi. At some point in the past, it was housed within a ninja from Hidden Mist."
+      "imbued_within": "-"
     },
     "advancement_data": {
       "academy_grad_age": "unknown",
@@ -135,14 +153,16 @@
       "weight": "81.6 kg"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 34",
-      "first_anime_appearance": "Naruto Episode 20",
-      "name_meaning": "Sarutobi=Flying Monkey [Also a legendary ninja]; Asuma=A name",
-      "hidden_village": "Leaf Village",
-      "rank": "Jounin",
-      "age": "31",
-      "notable_features": "Always seen smoking a cigarette",
-      "notable_quotes": "I guess we were bound to meet in the future. Now I have the task of taking you on!",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
+      "notable_quotes": "unknown",
       "see_also": "Nara Shikamaru, Yamanaka Ino, Akimichi Chouji",
       "description": "A Jounin master, he is the leader of Team 10 (Nara Shikamaru, Yamaka Ino, Akimichi Chouji). Although normally seen smoking, Asuma can quickly dispatch his foes with his knives when the situation warrants."
     },
@@ -168,10 +188,16 @@
       "weight": "unknown"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 500",
-      "first_anime_appearance": "NA",
-      "name_meaning": "Biwako=A name",
-      "hidden_village": "Leaf Village",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
+      "notable_quotes": "unknown",
       "see_also": "Sarutobi Hiruzen",
       "description": "Sarutobi Biwako was the wife of Sarutobi Hiruzen and the mother of Sarutobi Asuma."
     },
@@ -197,13 +223,16 @@
       "weight": "36.9 kg"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 2",
-      "first_anime_appearance": "Naruto Episode 2",
-      "name_meaning": "Konoha=Tree leaves maru=Boys name",
-      "hidden_village": "Leaf Village",
-      "rank": "Genin",
-      "age": "12",
-      "notable_features": "Leader of Konohamaru Corps",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
+      "notable_quotes": "unknown",
       "see_also": "Uzumaki Naruto, Third Hokage, Ebisu, Moegi, Udon",
       "description": "Sarutobi Konohamaru is the grandson of the Third Hokage Sarutobi Hiruzen. The status of Konohamaru's parents is currently unknown. While living in the village, Konohamaru was friends with Moegi and Udon. This relationship as comrades would continue throughout their ninja career."
     },
@@ -229,14 +258,16 @@
       "weight": "47.3 kg"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 247",
-      "first_anime_appearance": "Shippuuden Episode 2",
-      "name_meaning": "Scorpion",
-      "hidden_village": "Sand Village",
-      "rank": "Unknown (Probably Jounin)",
-      "age": "35",
-      "notable_features": "Puppet Master, Also known as Akasuna no Sasori (Sasori of the Red Sand)",
-      "notable_quotes": "You insist on calling those fireworks of yours art? True art endures the ages... beauty everlasting.",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
+      "notable_quotes": "unknown",
       "see_also": "Deidara",
       "description": "Sasori is a missing-nin from Hidden Sand Village who serves as a member of the Akatsuki Organization. He is very large in size, appearing to squat low to the ground when he slides across it."
     },
@@ -262,14 +293,22 @@
       "weight": "unknown"
     },
     "personal_info": {
-      "first_manga_appearance": "Second Artbook",
-      "first_anime_appearance": "Shippuuden Episode 165",
-      "hidden_village": "Waterfall Village",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
+      "notable_quotes": "unknown",
+      "see_also": "unknown",
+      "description": "Shichibi is one of the \"bijuu\", a tailed beast of the ancient world. The Shichibi was housed inside a Hidden Waterfall ninja named Fuu. The demon takes the form of a beetle with six wings and one cerci acting as its tails.",
       "class": "Demon",
       "tail_number": "Shichibi (Seven)",
       "type": "Rhino Beetle",
-      "imbued_within": "Fuu",
-      "description": "Shichibi is one of the \"bijuu\", a tailed beast of the ancient world. The Shichibi was housed inside a Hidden Waterfall ninja named Fuu. The demon takes the form of a beetle with six wings and one cerci acting as its tails."
+      "imbued_within": "Fuu"
     },
     "advancement_data": {
       "academy_grad_age": "unknown",
@@ -293,11 +332,17 @@
       "weight": "unknown"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 454",
-      "first_anime_appearance": "Shippuuden Episode 199",
-      "name_meaning": "Possibly C",
-      "hidden_village": "Cloud Village",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
       "rank": "Unknown (Probably Jounin)",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
+      "notable_quotes": "unknown",
+      "see_also": "unknown",
       "description": "Shima was the wife of the \"Pa\" toad sage, Fukasaku. Together they acted as assistants to the Elder toad sage."
     },
     "advancement_data": {
@@ -322,14 +367,20 @@
       "weight": "unknown"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 376",
-      "first_anime_appearance": "Shippuuden Episode 127",
-      "hidden_village": "Leaf Village",
-      "name_meaning": "Stripe, island",
-      "class": "Summon",
-      "type": "Toad",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
+      "notable_quotes": "unknown",
       "see_also": "Jiraiya",
-      "description": "An elder ninja of Konoha, Shimura Danzou was a war hawk who operated in opposition to Sandaime Hokage. Within the ANBU corps, he created and led the training division known as \"Ne\" or Root, which was detached from the main ANBU. The Root group was disbanded and he lost his position. He still is a power player though, with his own influence within the village."
+      "description": "An elder ninja of Konoha, Shimura Danzou was a war hawk who operated in opposition to Sandaime Hokage. Within the ANBU corps, he created and led the training division known as \"Ne\" or Root, which was detached from the main ANBU. The Root group was disbanded and he lost his position. He still is a power player though, with his own influence within the village.",
+      "class": "Summon",
+      "type": "Toad"
     },
     "advancement_data": {
       "academy_grad_age": "unknown",
@@ -353,26 +404,29 @@
       "weight": "52.7 kg"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 281",
-      "first_anime_appearance": "Shippuuden Episode 32",
-      "name_meaning": "Shi=Intention, plan, resolve mura=village; Dan=Group, steps zou=Storehouse, hide, possess",
-      "hidden_village": "Leaf Village",
-      "rank": "Unknown (Probable Jounin)",
-      "age": "72",
-      "notable_features": "Bandages over his right eye",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
+      "notable_quotes": "unknown",
       "see_also": "Sai",
       "description": "A Jounin from the villaga of Konoha, Genma is the examiner for the third Chunin exam test."
     },
     "advancement_data": {
-      "academy_grad_age": "?",
-      "chuunin_exam_age": "?"
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
     },
     "missions_completed": {
-      "d_rank": "?",
-      "c_rank": "?",
-      "b_rank": "?",
-      "a_rank": "?",
-      "s_rank": "?"
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
     }
   },
   {
@@ -385,14 +439,17 @@
       "weight": "71 kg"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 34",
-      "first_anime_appearance": "Naruto Episode 55",
-      "name_meaning": "Shiranui=Lights on the Sea; Genma=Magical Illusion",
-      "hidden_village": "Leaf Village",
-      "rank": "Special Jounin",
-      "age": "34",
-      "notable_features": "Almost always chewing on long toothpick.",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
       "notable_quotes": "The power to believe in yourself, that will become the power to change fate.",
+      "see_also": "unknown",
       "description": "Shizune is the apprentice to the Leaf Sannin Tsunade. She is trained in many medical jutsu and carries the pig familiar Ton-Ton."
     },
     "advancement_data": {
@@ -417,12 +474,16 @@
       "weight": "49.2 kg"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 148",
-      "first_anime_appearance": "Naruto Episode 85",
-      "name_meaning": "A name",
-      "hidden_village": "Leaf Village",
-      "rank": "Jounin",
-      "age": "31",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
+      "notable_quotes": "unknown",
       "see_also": "Tsunade",
       "description": "Shukaku is one of the \"bijuu\", a tailed beast of the ancient world. Seeking a way to create a ninja with a large amount of chakra that would be an unstoppable machine, the Kazekage had Shukaku imbued within his unborn son."
     },
@@ -448,15 +509,22 @@
       "weight": "unknown"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 134",
-      "first_anime_appearance": "Naruto Episode 78",
-      "hidden_village": "Sand Village",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
+      "notable_quotes": "unknown",
+      "see_also": "Gaara, Kazekage, Karura, Akatsuki",
+      "description": "A Genin from Hidden Rain, Shigure participates in the Chuunin Exam.",
       "class": "Demon",
       "tail_number": "Ichi (One)",
       "type": "Tanuki (Raccoon Dog)",
-      "imbued_within": "Gaara",
-      "see_also": "Gaara, Kazekage, Karura, Akatsuki",
-      "description": "A Genin from Hidden Rain, Shigure participates in the Chuunin Exam."
+      "imbued_within": "Gaara"
     },
     "advancement_data": {
       "academy_grad_age": "unknown",
@@ -480,13 +548,16 @@
       "weight": "80 kg"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 58",
-      "first_anime_appearance": "Naruto Episode 21",
-      "name_meaning": "A type of shower in early winter",
-      "hidden_village": "Rain Village",
-      "rank": "Genin",
-      "age": "19",
-      "notable_features": "Two long scars running the length of his right cheek and over his right eye",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
+      "notable_quotes": "unknown",
       "see_also": "Gaara of the Sand",
       "description": "As a young orphan Shin was taken in by the ANBU Root organization. Trained in secret, he served the wishes of Danzou. In Root he grew close to another young orphan known as Sai. Though they were not blood brothers, Sai considered him the closest thing to a real brother he could ever have."
     },
@@ -512,12 +583,19 @@
       "weight": "55.4 kg"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 310",
-      "first_anime_appearance": "Shippuuden Episode 50",
-      "hidden_village": "Leaf Village",
-      "rank": "Unknown (Potential Chuunin)",
-      "current_status": "Deceased",
-      "description": "A head ninja from Cloud Village, this man came to Konoha to sign a peace treaty between the two nations 9 years previously."
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
+      "notable_quotes": "unknown",
+      "see_also": "unknown",
+      "description": "A head ninja from Cloud Village, this man came to Konoha to sign a peace treaty between the two nations 9 years previously.",
+      "current_status": "Deceased"
     },
     "advancement_data": {
       "academy_grad_age": "unknown",
@@ -541,13 +619,19 @@
       "weight": "70 kg"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 102",
-      "first_anime_appearance": "Naruto Episode 61",
-      "hidden_village": "Cloud Village",
-      "rank": "Jounin",
-      "age": "42",
-      "current_status": "Deceased",
-      "description": "Suikazan Fuguki was a former member of the Mist Seven Swordsmen and wielder of Samehada. For a Secret Intel Squad mission, he directed his subordinate Hoshigaki Kisame to protect the information they gathered at all costs, even if it meant killing them."
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
+      "notable_quotes": "unknown",
+      "see_also": "unknown",
+      "description": "Suikazan Fuguki was a former member of the Mist Seven Swordsmen and wielder of Samehada. For a Secret Intel Squad mission, he directed his subordinate Hoshigaki Kisame to protect the information they gathered at all costs, even if it meant killing them.",
+      "current_status": "Deceased"
     },
     "advancement_data": {
       "academy_grad_age": "unknown",
@@ -571,12 +655,16 @@
       "weight": "unknown"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 507",
-      "first_anime_appearance": "NA",
-      "name_meaning": "Suika=Watermelon zan=Mountain | Fugu=Puffer fish ki=Demon, ghost",
-      "hidden_village": "Mist Village",
-      "rank": "Unknown (Probably Jounin)",
-      "notable_features": "Wields Nuibari",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
+      "notable_quotes": "unknown",
       "see_also": "Akebino Jinin, Hoshigaki Kisame, Kuriarare Kushimaru, Momochi Zabuza, Munashi Jinpachi, Ringo Ameyuri, Hoozuki Mangetsu"
     },
     "advancement_data": {
@@ -601,12 +689,17 @@
       "weight": "45.5 kg"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 71",
-      "first_anime_appearance": "Naruto Episode 41",
-      "name_meaning": "Suzume=Sparrow; Namida=Tears, sympathy",
-      "hidden_village": "Leaf Village",
-      "rank": "Chuunin",
-      "age": "31"
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "31",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
+      "notable_quotes": "unknown",
+      "see_also": "unknown"
     },
     "advancement_data": {
       "academy_grad_age": "unknown",

@@ -9,13 +9,20 @@
       "weight": "unknown"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 376",
-      "first_anime_appearance": "Shippuuden Episode 127",
-      "hidden_village": "Leaf Village",
-      "class": "Summon",
-      "type": "Toad",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
+      "notable_quotes": "unknown",
       "see_also": "Jiraiya",
-      "description": "Fukasaku was the husband of the \"Ma\" toad sage. Together they acted as assistants to the Elder toad sage."
+      "description": "Fukasaku was the husband of the \"Ma\" toad sage. Together they acted as assistants to the Elder toad sage.",
+      "class": "Summon",
+      "type": "Toad"
     },
     "personal_stats": {
       "latent_potential": "unknown",
@@ -45,10 +52,16 @@
       "weight": "unknown"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 420",
-      "first_anime_appearance": "NA",
-      "hidden_village": "Waterfall Village",
-      "rank": "-",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
+      "notable_quotes": "unknown",
       "see_also": "Shichibi",
       "description": "Fuu was the host of the seven-tailed demon beetle."
     },

@@ -2,19 +2,26 @@
   {
     "personal_data": {
       "name": "Inari",
+      "registration_id": "unknown",
       "birthday": "December 25th",
       "blood_type": "A",
       "height": "128.5 cm",
       "weight": "27.6 kg"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 16",
-      "first_anime_appearance": "Naruto Episode 10",
-      "name_meaning": "A fox deity, also a flavored boiled rice",
-      "location": "Wave Country",
-      "age": "8",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
+      "notable_quotes": "unknown",
       "see_also": "Tsunami, Kaiza, Tazuna, Gat�, Waraji, Zouri",
-      "description": "Inari is the grandson of the bridge builder Tazuna."
+      "description": "Inari is the grandson of the bridge builder Tazuna.",
+      "location": "Wave Country"
     },
     "registration_id": "012368",
     "birthday": "April 13th",
@@ -25,6 +32,11 @@
   {
     "personal_data": {
       "name": "Inuzuka Hana",
+      "registration_id": "unknown",
+      "birthday": "unknown",
+      "blood_type": "unknown",
+      "height": "unknown",
+      "weight": "unknown",
       "advancement_data": {
         "academy_grad_age": "unknown",
         "chuunin_exam_age": "unknown"
@@ -38,13 +50,16 @@
       }
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 137",
-      "first_anime_appearance": "Naruto Episode 79",
-      "name_meaning": "Inu=Dog zuka=A small hill, Hana=Flower, nose or end",
-      "hidden_village": "Leaf Village",
-      "rank": "Chuunin",
-      "age": "18",
-      "notable_features": "Veterinarian",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
+      "notable_quotes": "unknown",
       "see_also": "Inuzuka Clan, Kuromaru, Inuzuka Kiba, Inuzuka Tsume",
       "description": "Inuzuka Hana is the sister of Inuzuka Kiba. She serves as a vet, taking care of Konoha's animals at the hospital."
     },
@@ -57,6 +72,11 @@
   {
     "personal_data": {
       "name": "Inuzuka Kiba",
+      "registration_id": "unknown",
+      "birthday": "unknown",
+      "blood_type": "unknown",
+      "height": "unknown",
+      "weight": "unknown",
       "advancement_data": null,
       "missions_completed": null,
       "academy_grad_age": "12",
@@ -68,15 +88,16 @@
       "s_rank": "0"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 34",
-      "first_anime_appearance": "Naruto Episode 1",
-      "name_meaning": "Inu=Dog zuka=A small hill, Kiba=Fang",
-      "hidden_village": "Leaf Village",
-      "rank": "Chuunin - Team 8",
-      "age": "16",
-      "jounin_master": "Yuuhi Kurenai",
-      "signature_abilities": "Shikyaku no Jutsu, Juujin Bunshin, Gatsuuga",
-      "notable_features": "Animal familiar named Akamaru, Keen sense of smell.",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
+      "notable_quotes": "unknown",
       "see_also": "Inuzuka Clan, Akamaru, Hyuuga Hinata, Yuuhi Kurenai, Inuzuka Tsume, Inuzuka Hana",
       "description": "A Genin from the village of Konoha, Inuzuka Kiba hails from the Inuzuka Clan, known for their canine familiars and canine like senses."
     },
@@ -89,6 +110,11 @@
   {
     "personal_data": {
       "name": "Inuzuka Tsume",
+      "registration_id": "unknown",
+      "birthday": "unknown",
+      "blood_type": "unknown",
+      "height": "unknown",
+      "weight": "unknown",
       "advancement_data": {
         "academy_grad_age": "unknown",
         "chuunin_exam_age": "unknown"
@@ -102,11 +128,16 @@
       }
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 137",
-      "first_anime_appearance": "Naruto Episode 79",
-      "name_meaning": "Inu=Dog zuka=A small hill, Tsume=Claw or Talon, also a name",
-      "hidden_village": "Leaf Village",
-      "rank": "Special Jounin",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
+      "notable_quotes": "unknown",
       "see_also": "Inuzuka Clan, Kuromaru, Inuzuka Kiba, Inuzuka Hana",
       "description": "Inuzuka Tsume is the mother of Inuzuka Kiba."
     }

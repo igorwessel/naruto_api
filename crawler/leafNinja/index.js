@@ -7,8 +7,8 @@ const {
   getNames,
   getPersonalData,
   getPersonalInfo,
-} = require('./helpers');
-const { websites } = require('./sites');
+} = require('.');
+const { websites } = require('../sites');
 
 (async () => {
   const browser = await puppeteer.launch({ headless: true });

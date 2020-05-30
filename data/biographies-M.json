@@ -9,10 +9,17 @@
       "weight": "unknown"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 416",
-      "first_anime_appearance": "Shippuuden Episode 152",
-      "hidden_village": "Cloud Village",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
       "rank": "Unknown (Probable Chuunin)",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
+      "notable_quotes": "unknown",
+      "see_also": "unknown",
       "description": "Mabui is a the personal attendant of the Raikage. She sees to his needs and helps the arrangements for his orders."
     },
     "advancement_data": {
@@ -30,18 +37,26 @@
   {
     "personal_data": {
       "name": "Madame Shijimi",
+      "registration_id": "unknown",
       "birthday": "December 24th",
       "blood_type": "O",
       "height": "146 cm",
       "weight": "59 kg"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 9",
-      "first_anime_appearance": "Naruto Episode 6",
-      "location": "Fire Country",
-      "age": "41",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
       "notable_features": "Wife of Fire Country Daimyo.",
-      "description": "Approximately 13 years before the start of the Naruto series, Mahiru served as a ninja for Hidden Rock."
+      "notable_quotes": "unknown",
+      "see_also": "unknown",
+      "description": "Approximately 13 years before the start of the Naruto series, Mahiru served as a ninja for Hidden Rock.",
+      "location": "Fire Country"
     },
     "reg._id": "I W06531",
     "birthday": "June 18th",
@@ -52,6 +67,11 @@
   {
     "personal_data": {
       "name": "Mahiru",
+      "registration_id": "unknown",
+      "birthday": "unknown",
+      "blood_type": "unknown",
+      "height": "unknown",
+      "weight": "unknown",
       "advancement_data": {
         "academy_grad_age": "unknown",
         "chuunin_exam_age": "unknown"
@@ -65,11 +85,16 @@
       }
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 239",
-      "first_anime_appearance": "Shippuuden Episode 119",
-      "name_meaning": "Broad daylight",
-      "hidden_village": "Rock Village",
-      "rank": "Jounin",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
+      "notable_quotes": "unknown",
       "see_also": "Fourth Hokage",
       "description": "A snake trained in the ninja arts, Manda is the highest of the snake summons."
     },
@@ -95,14 +120,20 @@
       "weight": "unknown"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 169",
-      "first_anime_appearance": "Naruto Episode 95",
-      "hidden_village": "Sound Village",
-      "class": "Summon",
-      "type": "Snake",
-      "notable_features": "Highest of snake summons, Very irritable",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
+      "notable_quotes": "unknown",
       "see_also": "Orochimaru",
-      "description": "Matsuri is a kunoichi in Suna. Before joining the Suna ninja academy she watched her parents murdered. Ever since that incident she held a fear of weapons. When the Sand Siblings conducted a weapons exercise for new ninja students, she was the only student to come to Gaara. She quickly developed a bond with Gaara which was soon exploited by the Shiitenshounin group. After being kidnapped Gaara rushed to her aid to free her."
+      "description": "Matsuri is a kunoichi in Suna. Before joining the Suna ninja academy she watched her parents murdered. Ever since that incident she held a fear of weapons. When the Sand Siblings conducted a weapons exercise for new ninja students, she was the only student to come to Gaara. She quickly developed a bond with Gaara which was soon exploited by the Shiitenshounin group. After being kidnapped Gaara rushed to her aid to free her.",
+      "class": "Summon",
+      "type": "Snake"
     },
     "advancement_data": {
       "academy_grad_age": "unknown",
@@ -126,12 +157,17 @@
       "weight": "unknown"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 280",
-      "first_anime_appearance": "Naruto Episode 216",
-      "name_meaning": "Tangle",
-      "hidden_village": "Sand Village",
-      "rank": "Genin",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
       "age": "17",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
+      "notable_quotes": "unknown",
+      "see_also": "unknown",
       "description": "This missing-nin fled Hidden Mist with the missing-nin Momochi Zabuza. He is the younger of the twin Demon Brothers, and wears his poisoned claws on his left right arm."
     },
     "registration_id": "-",
@@ -143,6 +179,11 @@
   {
     "personal_data": {
       "name": "Meizu",
+      "registration_id": "unknown",
+      "birthday": "unknown",
+      "blood_type": "unknown",
+      "height": "unknown",
+      "weight": "unknown",
       "advancement_data": null,
       "missions_completed": null,
       "academy_grad_age": "12",
@@ -154,13 +195,16 @@
       "s_rank": "0"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 9",
-      "first_anime_appearance": "Naruto Episode 6",
-      "name_meaning": "Mei=Dark zu=Head",
-      "hidden_village": "Mist Village",
-      "rank": "Chuunin (Missing-Nin)",
-      "age": "25",
-      "notable_features": "Wears breath mask and large metal claw on his hand, half of Oni (Demon) Brothers team",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
+      "notable_quotes": "unknown",
       "see_also": "Momochi Zabuza, Gouzu",
       "description": "A Genin from Hidden Rain, Midari participates in the Chuunin Exam."
     },
@@ -173,6 +217,11 @@
   {
     "personal_data": {
       "name": "Midari",
+      "registration_id": "unknown",
+      "birthday": "unknown",
+      "blood_type": "unknown",
+      "height": "unknown",
+      "weight": "unknown",
       "advancement_data": {
         "academy_grad_age": "unknown",
         "chuunin_exam_age": "unknown"
@@ -186,12 +235,16 @@
       }
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 58",
-      "first_anime_appearance": "Naruto Episode 21",
-      "name_meaning": "Early summer rain storm",
-      "hidden_village": "Rain Village",
-      "rank": "Genin",
-      "age": "19",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
+      "notable_quotes": "unknown",
       "see_also": "Gaara of the Sand",
       "description": "A Jounin master, he is the leader of Hyuuga Neji, Rock Lee and TenTen. Guy considers himself to be the eternal rival of fellow Jounin master Hatake Kakashi. Guy possess a strong fighting spirit and is prone to challenging Kakashi, though Kakashi often is aloof to Guy's boastful rantings."
     },
@@ -204,6 +257,11 @@
   {
     "personal_data": {
       "name": "Might • Guy",
+      "registration_id": "unknown",
+      "birthday": "unknown",
+      "blood_type": "unknown",
+      "height": "unknown",
+      "weight": "unknown",
       "advancement_data": null,
       "missions_completed": null,
       "academy_grad_age": "7",
@@ -215,14 +273,16 @@
       "s_rank": "23"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 38",
-      "first_anime_appearance": "Naruto Episode 22",
-      "name_meaning": "Might Guy",
-      "hidden_village": "Leaf Village",
-      "rank": "Jounin",
-      "age": "30",
-      "notable_features": "Bowl haircut, Has large bushy eyebrows",
-      "notable_quotes": "Believe in yourself and run forward. Become a strong man I can look at and smile.",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
+      "notable_quotes": "unknown",
       "see_also": "Hyuuga Neji, Rock Lee, TenTen, Hatake Kakashi",
       "description": "Mifune is the head leader of the Iron Country."
     },
@@ -248,12 +308,20 @@
       "weight": "45.8 kg"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 456",
-      "first_anime_appearance": "Shippuuden Episode 199",
-      "name_meaning": "Toshiro Mifune was a famous Japanese actor known for samurai roles",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
+      "notable_quotes": "unknown",
+      "see_also": "unknown",
+      "description": "This Chuunin Exam examiner presided over the second test.",
       "location": "Iron Country",
-      "profession": "Leader",
-      "description": "This Chuunin Exam examiner presided over the second test."
+      "profession": "Leader"
     },
     "advancement_data": {
       "academy_grad_age": "10",
@@ -277,15 +345,17 @@
       "weight": "55.2 kg"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 44",
-      "first_anime_appearance": "Naruto Episode 25",
-      "name_meaning": "Mitarashi=A type of sweet rice cake; Anko=Red bean paste",
-      "hidden_village": "Leaf Village",
-      "rank": "Special Jounin",
-      "age": "24",
-      "notable_features": "Has tendency for Naruto-like doofish actions.",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
+      "notable_quotes": "unknown",
       "see_also": "Orochimaru",
-      "character_appreciation": "Click here to Discuss Anko",
       "description": "Homura serves on the village council, along with Koharu and the village Kage. This council helps administer the village."
     },
     "advancement_data": {
@@ -310,12 +380,16 @@
       "weight": "unknown"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 93",
-      "first_anime_appearance": "Naruto Episode 55",
-      "name_meaning": "Mito Gate Flame",
-      "hidden_village": "Leaf Village",
-      "rank": "Jounin",
-      "age": "72",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
+      "notable_quotes": "unknown",
       "see_also": "Second Hokage, Third Hokage, Koharu",
       "description": "The Second Mizukage was the head ninja of Hidden Mist Village. He had a long standing rivalry with Muu the Nidaime Tsuchikage. Both men eventually met in battle and killed each other in the process."
     },
@@ -341,11 +415,17 @@
       "weight": "unknown"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 525",
-      "first_anime_appearance": "NA",
-      "name_meaning": "Water Shadow",
-      "hidden_village": "Mist Village",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
       "rank": "Kage",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
+      "notable_quotes": "unknown",
+      "see_also": "unknown",
       "description": "The Fourth Mizukage, born Yagura, was the head ninja of Hidden Mist Village and the host of the Sanbi Bijuu. Under Yondaime's reign, bloody civil strife was rampant leading to the village earning the name \"Blood Mist\" Village. Mist ninja Momochi Zabuza attempted to assassinate the Mizukage, it is unclear if it was Yagura or the Fifth Mizukage. The Kage escaped harm, and Zabuza was forced to flee the country."
     },
     "advancement_data": {
@@ -370,14 +450,19 @@
       "weight": "unknown"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 420",
-      "first_anime_appearance": "NA",
-      "name_meaning": "Water Shadow",
-      "hidden_village": "Mist Village",
-      "real_name": "Yagura (As kanji can mean watchtower, turret or a type of historical cave tomb)",
-      "rank": "Kage",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
+      "notable_quotes": "unknown",
       "see_also": "Sanbi",
-      "description": "The Fifth Mizukage, born Terumii Mei, is the head ninja of Hidden Mist Village. She is a young woman prone to misplaced anger concerning her relationship status. She possesses two bloodline abilities, Futton and Youton."
+      "description": "The Fifth Mizukage, born Terumii Mei, is the head ninja of Hidden Mist Village. She is a young woman prone to misplaced anger concerning her relationship status. She possesses two bloodline abilities, Futton and Youton.",
+      "real_name": "Yagura (As kanji can mean watchtower, turret or a type of historical cave tomb)"
     },
     "advancement_data": {
       "academy_grad_age": "unknown",
@@ -401,13 +486,19 @@
       "weight": "22 kg"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 454",
-      "first_anime_appearance": "Shippuuden Episode 199",
-      "name_meaning": "Water Shadow",
-      "hidden_village": "Mist Village",
-      "real_name": "Terumii Mei (Teru=Illuminated, bashful mii=Beauty; Mei=May, as kanji can mean brightness, command, clarity, destiny)",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
       "rank": "Kage",
-      "description": "Moegi is Konohamaru's classmate at the Ninja Academy and a member of his Konohamaru Corps.Click For Quick-Spoilers:Moegi and her friends Udon and Konohamaru became Genin during the two and half year timeskip in the series. They served as a team under the leadership of Jounin sensei Ebisu."
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
+      "notable_quotes": "unknown",
+      "see_also": "unknown",
+      "description": "Moegi is Konohamaru's classmate at the Ninja Academy and a member of his Konohamaru Corps.Click For Quick-Spoilers:Moegi and her friends Udon and Konohamaru became Genin during the two and half year timeskip in the series. They served as a team under the leadership of Jounin sensei Ebisu.",
+      "real_name": "Terumii Mei (Teru=Illuminated, bashful mii=Beauty; Mei=May, as kanji can mean brightness, command, clarity, destiny)"
     },
     "advancement_data": {
       "academy_grad_age": "unknown",
@@ -431,18 +522,22 @@
       "weight": "72 kg"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 34",
-      "first_anime_appearance": "Naruto Episode 20",
-      "name_meaning": "Sprouts",
-      "hidden_village": "Leaf Village",
-      "rank": "Genin",
-      "age": "12",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
+      "notable_quotes": "unknown",
       "see_also": "Konohamaru, Udon",
       "description": "A missing-nin from the Mist Country, Zabuza fled his country after he attempted to assassinate the Mizukage and take over the country. After arriving in the Wave Country, Zabuza reluctantly started working for a man named Gat� in order to make fast money and help his enterprises. Gat� wanted Zabuza to stop the construction of a bridge which posed a danger to his business."
     },
     "advancement_data": {
       "academy_grad_age": "9",
-      "chuunin_exam_age": "-"
+      "chuunin_exam_age": "unknown"
     },
     "missions_completed": {
       "d_rank": "4",
@@ -462,13 +557,16 @@
       "weight": "88 kg"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 12",
-      "first_anime_appearance": "Naruto Episode 7",
-      "hidden_village": "Mist Village",
-      "rank": "Jounin",
-      "age": "26",
-      "notable_features": "Carries huge head cleaving sword, Missing-Nin.",
-      "notable_quotes": "Even the unremarkable Devil of the Hidden Mist can die and become a real devil in Hell!",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
+      "notable_quotes": "unknown",
       "see_also": "Gat�, Haku, Hatake Kakashi, Mist Seven",
       "description": "This Chuunin Exam examiner presided over the first test."
     },
@@ -494,13 +592,17 @@
       "weight": "51 kg"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 40",
-      "first_anime_appearance": "Naruto Episode 23",
-      "name_meaning": "Forest Snoring",
-      "hidden_village": "Leaf Village",
-      "rank": "Special Jounin",
-      "age": "31",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
       "notable_features": "Has many facial scars",
+      "notable_quotes": "unknown",
+      "see_also": "unknown",
       "description": "A Genin from Hidden Rain, Mubi participates in the Chuunin Exam."
     },
     "advancement_data": {
@@ -525,12 +627,16 @@
       "weight": "unknown"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 60",
-      "first_anime_appearance": "Naruto Episode 36",
-      "name_meaning": "Mu=Dream bi=Fire",
-      "hidden_village": "Rain Village",
-      "rank": "Genin",
-      "age": "17",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
+      "notable_quotes": "unknown",
       "see_also": "Kagari, Oboro",
       "description": "Munashi Jinpachi was a former member of the Mist Seven Swordsmen. Jinpachi wielded the Shibuki (Splash), which could cut through and explode using a built in explosive tag scroll. At some point in the past Jinpachi died and the Shibuki was left for the next generation of swordsmen."
     },
@@ -551,12 +657,16 @@
       "name": "Munashi Jinpachi"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 522",
-      "first_anime_appearance": "NA",
-      "name_meaning": "Mu=Lacking, speechless nashi=Japanese pear tree | Jin=Great pachi=Eight",
-      "hidden_village": "Mist Village",
-      "rank": "Unknown (Probably Jounin)",
-      "notable_features": "Wields Nuibari",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
+      "notable_quotes": "unknown",
       "see_also": "Akebino Jinin, Kuriarare Kushimaru, Momochi Zabuza, Ringo Ameyuri, Suikazan Fuguki, Hoozuki Mangetsu"
     }
   }

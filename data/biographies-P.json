@@ -9,15 +9,20 @@
       "weight": "unknown"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 29",
-      "first_anime_appearance": "Naruto Episode 17",
-      "hidden_village": "Leaf Village",
-      "class": "Summon",
-      "type": "Canine",
-      "notable_features": "Keen sense of smell, Member of Kakashi's Nin-Dog pack.",
-      "notable_quotes": "Hey missy, don't call me a cute little doggy!",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
+      "notable_quotes": "unknown",
       "see_also": "Hatake Kakashi",
-      "description": "A pug dog trained in the ninja arts, Pakkun is a personal summon."
+      "description": "A pug dog trained in the ninja arts, Pakkun is a personal summon.",
+      "class": "Summon",
+      "type": "Canine"
     },
     "advancement_data": {
       "academy_grad_age": "unknown",
@@ -41,10 +46,17 @@
       "weight": "unknown"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 515",
-      "first_anime_appearance": "NA",
-      "hidden_village": "Sand Village",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
       "rank": "Unknown (Probable Jounin)",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
+      "notable_quotes": "unknown",
+      "see_also": "unknown",
       "description": "Pakura was a kunoichi from Hidden Sand and a member of the Shakuton using clan. At some point in the past, Pakura died."
     },
     "advancement_data": {
@@ -69,25 +81,30 @@
       "weight": "57.2 kg"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 363",
-      "first_anime_appearance": "Shippuuden Episode 114",
-      "hidden_village": "Rain",
-      "rank": "Unknown (Kage Level Skill)",
-      "notable_features": "Wears multiple piercings",
-      "character_appreciation": "Click here to Discuss",
-      "pain": "unknown",
-      "description": "Pain acts as the leader of Akatsuki. He has been seen to direct the actions of other members."
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
+      "notable_quotes": "unknown",
+      "see_also": "unknown",
+      "description": "Pain acts as the leader of Akatsuki. He has been seen to direct the actions of other members.",
+      "pain": "unknown"
     },
     "advancement_data": {
-      "academy_grad_age": "?",
-      "chuunin_exam_age": "?"
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
     },
     "missions_completed": {
-      "d_rank": "?",
-      "c_rank": "?",
-      "b_rank": "?",
-      "a_rank": "?",
-      "s_rank": "?"
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
     }
   }
 ]

@@ -2,18 +2,24 @@
   {
     "personal_data": {
       "name": "Taiseki",
-      "reg._id": "I W06225",
+      "registration_id": "unknown",
       "birthday": "March 10th",
       "blood_type": "O",
       "height": "189.2 cm",
-      "weight": "87.1 kg"
+      "weight": "87.1 kg",
+      "reg._id": "I W06225"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 241",
-      "first_anime_appearance": "Shippuuden Episode 119",
-      "name_meaning": "Deposit, Accumlate, Capacity",
-      "hidden_village": "Rock Village",
-      "rank": "Jounin",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
+      "notable_quotes": "unknown",
       "see_also": "Uchiha Obito, Rin, Hatake Kakashi, Kakkou",
       "description": "Approximately 13 years before the start of the Naruto series, Taiseki served as a ninja for Hidden Rock."
     },
@@ -39,13 +45,17 @@
       "weight": "61.5 kg"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 57",
-      "first_anime_appearance": "Naruto Episode 34",
-      "name_meaning": "Tatami=A type of straw floor mat; Iwashi=Sardine",
-      "hidden_village": "Leaf Village",
-      "rank": "Chuunin",
-      "age": "27",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
       "notable_features": "Chuunin Examiner",
+      "notable_quotes": "unknown",
+      "see_also": "unknown",
       "description": "Iwashi helped preside over the Chuunin Exam. He and the other general examiners were elite Chuunin."
     },
     "advancement_data": {
@@ -70,19 +80,22 @@
       "weight": "38.2 kg"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 115",
-      "first_anime_appearance": "Naruto Episode 68",
-      "name_meaning": "A name, Ta=A reason, Yu=Frequent, Ya=To be classical",
-      "hidden_village": "Sound Village",
-      "rank": "Unknown (Potential Chuunin)",
-      "age": "14",
-      "notable_features": "One of the Four Sounds, Personal warrior of Orochimaru, Tendency to use filthy language",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
+      "notable_quotes": "unknown",
       "see_also": "Ukon, Sakon, Kidoumaru, Jiroubou, Kimimaro",
       "description": "One of the Four Sounds, who specialize in the formation of barriers."
     },
     "advancement_data": {
-      "academy_grad_age": "-",
-      "chuunin_exam_age": "-"
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
     },
     "missions_completed": {
       "d_rank": "20",
@@ -95,21 +108,27 @@
   {
     "personal_data": {
       "name": "Tazuna",
+      "registration_id": "unknown",
       "birthday": "April 5th",
       "blood_type": "A",
       "height": "179 cm",
       "weight": "79 kg"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 9",
-      "first_anime_appearance": "Naruto Episode 6",
-      "name_meaning": "A name",
-      "location": "Wave Country",
-      "profession": "Bridge Builder",
-      "age": "59",
-      "notable_features": "Tendency to use super adjective when describing things.",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
+      "notable_quotes": "unknown",
       "see_also": "Inari, Kaiza, Tsunami, Gat�",
-      "description": "Tazuna hired Team 7 to protect him on his trip home to the Wave Country."
+      "description": "Tazuna hired Team 7 to protect him on his trip home to the Wave Country.",
+      "location": "Wave Country",
+      "profession": "Bridge Builder"
     },
     "registration_id": "53-004",
     "birthday": "August 23rd",
@@ -120,6 +139,11 @@
   {
     "personal_data": {
       "name": "Temari",
+      "registration_id": "unknown",
+      "birthday": "unknown",
+      "blood_type": "unknown",
+      "height": "unknown",
+      "weight": "unknown",
       "advancement_data": null,
       "missions_completed": null,
       "academy_grad_age": "12",
@@ -131,14 +155,16 @@
       "s_rank": "1"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 35",
-      "first_anime_appearance": "Naruto Episode 20",
-      "name_meaning": "A traditional Japanese handball game, A name",
-      "hidden_village": "Sand Village",
-      "rank": "Jounin",
-      "age": "19",
-      "jounin_master": "Baki",
-      "notable_features": "Carries large fan",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
+      "notable_quotes": "unknown",
       "see_also": "Gaara, Kankurou, Baki, Kazekage",
       "description": "A Genin from the village of Sand, Temari is the older sister of Gaara and Kankurou. All three siblings participate in the Chuunin Exam."
     },
@@ -151,6 +177,11 @@
   {
     "personal_data": {
       "name": "TenTen",
+      "registration_id": "unknown",
+      "birthday": "unknown",
+      "blood_type": "unknown",
+      "height": "unknown",
+      "weight": "unknown",
       "advancement_data": null,
       "missions_completed": null,
       "academy_grad_age": "12",
@@ -162,14 +193,16 @@
       "s_rank": "1"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 36",
-      "first_anime_appearance": "Naruto Episode 21",
-      "name_meaning": "Moving about, spot",
-      "hidden_village": "Leaf Village",
-      "rank": "Chuunin",
-      "age": "17",
-      "jounin_master": "Might Guy",
-      "notable_features": "Idolizes the Sannin Tsunade, Deadly accurate when throwing edged weapons.",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
+      "notable_quotes": "unknown",
       "see_also": "Hyuuga Neji, Rock Lee, Might Guy",
       "description": "A Genin from the village of Konoha, Tenten has deadly accuracy with her kunai and shuriken."
     },
@@ -188,26 +221,31 @@
       "weight": "55.9 kg"
     },
     "personal_info": {
-      "first_manga_appearance": "Fan Book Special",
-      "first_anime_appearance": "Naruto Episode 52",
-      "name_meaning": "Reconciliation, killing with bare hands or making noodles by hand",
-      "location": "Leaf Village",
-      "profession": "Cook",
-      "age": "47",
-      "notable_features": "Owner of Ichiraku Ramen.",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
+      "notable_quotes": "unknown",
       "see_also": "Ichiraku Ramen, Ayame",
-      "description": "Teuchi is the owner of Ichiraku Ramen, Naruto's favorite place to get a bite to eat."
+      "description": "Teuchi is the owner of Ichiraku Ramen, Naruto's favorite place to get a bite to eat.",
+      "location": "Leaf Village",
+      "profession": "Cook"
     },
     "advancement_data": {
-      "academy_grad_age": "?",
-      "chuunin_exam_age": "?"
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
     },
     "missions_completed": {
-      "d_rank": "?",
-      "c_rank": "?",
-      "b_rank": "?",
-      "a_rank": "?",
-      "s_rank": "?"
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
     }
   },
   {
@@ -220,11 +258,17 @@
       "weight": "55 kg"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 280",
-      "first_anime_appearance": "Shippuuden Episode 32",
-      "name_meaning": "A name, construction worker, a type of bird",
-      "hidden_village": "Unknown",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
       "notable_features": "Covered head to toe except for his hair, Swirl pattern on face terminating at right eye socket.",
+      "notable_quotes": "unknown",
+      "see_also": "unknown",
       "description": "A mysterious individual, Tobi is an associate of Zetsu. Tobi appears clumsy and is very polite in his speech."
     },
     "advancement_data": {
@@ -249,13 +293,17 @@
       "weight": "69.4 kg"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 40",
-      "first_anime_appearance": "Naruto Episode 23",
-      "name_meaning": "Tobitake=A name and location, Tonbo=Dragonfly, center mark",
-      "hidden_village": "Leaf Village",
-      "rank": "Chuunin",
-      "age": "31",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
       "notable_features": "Chuunin Examiner, Upper portion of head is completely wrapped in bandage",
+      "notable_quotes": "unknown",
+      "see_also": "unknown",
       "description": "A Chuunin from the villaga of Konoha, Touji Mizuki teaches in the villages ninja academy.Click For Quick-Spoilers:Mizuki held his own evil ambition. Ever since he was a young boy, Mizuki had always despised the weak. Seeking to remove any such hinderances, he would even go so far as to secretly kill an injured comrade on a mission, just so they would not have to worry about finding him medical attention. Shortly before the start of the series, Mizuki was on a mission when he was met by Orochimaru. Orochimaru placed a formula onto Mizuki's skin in the form of a skull tattoo. The formula was one of Orochimaru's many experiements he had worked on while in Konoha. As a result, Mizuki sought to gain favor with Orochimaru for the \"gift\"."
     },
     "advancement_data": {
@@ -280,11 +328,16 @@
       "weight": "unknown"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 1",
-      "first_anime_appearance": "Naruto Episode 1",
-      "hidden_village": "Konoha Village",
-      "rank": "Chuunin",
-      "age": "29",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
+      "notable_quotes": "unknown",
       "see_also": "Uzumaki Naruto, Umino Iruka",
       "description": "Nidaime Tsuchikage, real name Muu, was the head ninja of Hidden Rock Village. He was a legendary ninja known as Mujin (The Nothing Man), due to his ability to turn invisible and completely hide his chakra presence. He had a long standing rivalry with Nidaime Mizukage. Both men eventually met in battle and killed each other in the process."
     },
@@ -310,13 +363,19 @@
       "weight": "unknown"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 515",
-      "first_anime_appearance": "NA",
-      "name_meaning": "Earth Shadow",
-      "hidden_village": "Rock Village",
-      "real_name": "Muu (Muu=Nothingness)",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
       "rank": "Kage",
-      "description": "Sandaime Tsuchikage, known as Ryoutenbin no Oonoki (Two Alternatives Oonoki), is the head ninja of Hidden Rock Village. He is a short man who complains about his old, ailing body."
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
+      "notable_quotes": "unknown",
+      "see_also": "unknown",
+      "description": "Sandaime Tsuchikage, known as Ryoutenbin no Oonoki (Two Alternatives Oonoki), is the head ninja of Hidden Rock Village. He is a short man who complains about his old, ailing body.",
+      "real_name": "Muu (Muu=Nothingness)"
     },
     "advancement_data": {
       "academy_grad_age": "unknown",
@@ -340,17 +399,23 @@
       "weight": "48.9 kg"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 454",
-      "first_anime_appearance": "Shippuuden Episode 199",
-      "name_meaning": "Earth Shadow",
-      "hidden_village": "Rock Village",
-      "real_name": "Oonoki",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
       "rank": "Kage",
-      "description": "One of the Legendary Sannin, Tsunade left Leaf Village to devote her time to her gambling addiction. She has a blood contract with slugs and calls upon them as needed."
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
+      "notable_quotes": "unknown",
+      "see_also": "unknown",
+      "description": "One of the Legendary Sannin, Tsunade left Leaf Village to devote her time to her gambling addiction. She has a blood contract with slugs and calls upon them as needed.",
+      "real_name": "Oonoki"
     },
     "advancement_data": {
       "academy_grad_age": "6",
-      "chuunin_exam_age": "?"
+      "chuunin_exam_age": "unknown"
     },
     "missions_completed": {
       "d_rank": "40",
@@ -363,22 +428,24 @@
   {
     "personal_data": {
       "name": "Tsunade",
+      "registration_id": "unknown",
       "birthday": "May 4th",
       "blood_type": "A",
       "height": "158 cm",
       "weight": "45.3 kg"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 149",
-      "first_anime_appearance": "Naruto Episode 85",
-      "name_meaning": "A mooring rope, Wife of Jiraiya in mythical tale",
-      "hidden_village": "Leaf Village",
-      "rank": "Hokage",
-      "age": "54",
-      "notable_features": "Legendary Sannin, Summons slugs, Bad gambler",
-      "notable_quotes": "From now on, I too shall bet my life!",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
+      "notable_quotes": "unknown",
       "see_also": "Jiraiya, Orochimaru, Third Hokage, Shizune",
-      "character_appreciation": "Click here to Discuss Tsunade",
       "description": "Tsunami is the daughter of Tazuna and the mother of Inari. In the past she was married to the fisherman Kaiza."
     },
     "registration_id": "011981",
@@ -390,6 +457,11 @@
   {
     "personal_data": {
       "name": "Tsunami",
+      "registration_id": "unknown",
+      "birthday": "unknown",
+      "blood_type": "unknown",
+      "height": "unknown",
+      "weight": "unknown",
       "advancement_data": {
         "academy_grad_age": "unknown",
         "chuunin_exam_age": "unknown"
@@ -403,14 +475,20 @@
       }
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 16",
-      "first_anime_appearance": "Naruto Episode 10",
-      "name_meaning": "A tidal wave",
-      "location": "Wave Country",
-      "profession": "Mother",
-      "age": "29",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
+      "notable_quotes": "unknown",
       "see_also": "Inari, Kaiza, Tazunza, Gat�, Waraji, Zouri",
-      "description": "A Genin from the village of Konoha, Misumi is entered into the Chuunin Exam."
+      "description": "A Genin from the village of Konoha, Misumi is entered into the Chuunin Exam.",
+      "location": "Wave Country",
+      "profession": "Mother"
     }
   },
   {
@@ -418,14 +496,16 @@
       "name": "Tsurugi Misumi"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 45",
-      "first_anime_appearance": "Naruto Episode 36",
-      "name_meaning": "Tsurugi=Sword; Misumi=A name",
-      "hidden_village": "Leaf Village",
-      "rank": "Genin",
-      "age": "24",
-      "jounin_master": "Unnamed Jounin Master",
-      "notable_features": "Wears dark rimmed glasses, Also has covering over his lower face.",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
+      "notable_features": "unknown",
+      "notable_quotes": "unknown",
       "see_also": "Yakushi Kabuto, Akadou Yoroi"
     }
   }

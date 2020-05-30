@@ -98,7 +98,6 @@ async function getPersonalData(page) {
           weight: 'unknown',
         };
       }
-
       return t;
     });
 
@@ -134,15 +133,15 @@ async function getPersonalData(page) {
 
         return {
           advancement_data: {
-            academy_grad_age,
-            chuunin_exam_age,
+            academy_grad_age: academy_grad_age.replace(/[?-]/gm, 'unknown'),
+            chuunin_exam_age: chuunin_exam_age.replace(/[?-]/gm, 'unknown'),
           },
           missions_completed: {
-            d_rank,
-            c_rank,
-            b_rank,
-            a_rank,
-            s_rank,
+            d_rank: d_rank.replace(/[?-]/gm, 'unknown'),
+            c_rank: c_rank.replace(/[?-]/gm, 'unknown'),
+            b_rank: b_rank.replace(/[?-]/gm, 'unknown'),
+            a_rank: a_rank.replace(/[?-]/gm, 'unknown'),
+            s_rank: s_rank.replace(/[?-]/gm, 'unknown'),
           },
         };
       }
@@ -172,17 +171,39 @@ async function getPersonalInfo(page) {
       .map((t) => t.split(':'))
       .reduce((obj, info) => {
         const key = info[0].toLowerCase().replace(/\s+/gm, '_');
+        const defaultValues = {
+          first_manga_appearance: 'unknown',
+          first_anime_appearance: 'unknown',
+          name_meaning: 'unknown',
+          hidden_village: 'unknown',
+          rank: 'unknown',
+          age: 'unknown',
+          jounin_master: 'unknown',
+          signature_abilities: 'unknown',
+          notable_features: 'unknown',
+          notable_quotes: 'unknown',
+          see_also: 'unknown',
+          description: 'unknown',
+        };
         let value = 'unknown';
+
+        if (key === 'character_appreciation') {
+          return obj;
+        }
 
         if (info[1]) {
           value = info[1].trim().replace(/\"*/gm, '');
+        }
+
+        if (info[1] === 'unknown') {
+          value = info[1].toLowerCase();
         }
 
         if (info[0] === 'age') {
           value = parseInt(info[1]);
         }
 
-        return { ...obj, [key]: value };
+        return { ...obj, ...defaultValues, [key]: value };
       }, {});
 
     return [...arr, info];
@@ -192,9 +213,11 @@ async function getPersonalInfo(page) {
 }
 
 async function getDescription(page) {
-  const description_elements = await page.$x(
-    '//*[text()="Click For Quick-Spoilers:"]//parent::font'
-  );
+  // const description_elements = await page.$x(
+  //   '//*[text()="Click For Quick-Spoilers:"]//parent::font'
+  // );
+
+  const description_elements = await page.$x('//td[@bgcolor="eee5de"]');
 
   const pageResults = await page.evaluate(
     (...description_elements) =>

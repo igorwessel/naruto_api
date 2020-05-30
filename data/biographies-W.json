@@ -2,19 +2,27 @@
   {
     "personal_data": {
       "name": "Waraji",
+      "registration_id": "unknown",
       "birthday": "April 6th",
       "blood_type": "O",
       "height": "181.4 cm",
       "weight": "71.1 kg"
     },
     "personal_info": {
-      "first_manga_appearance": "Chapter 18",
-      "first_anime_appearance": "Naruto Episode 10",
-      "name_meaning": "Straw sandals",
-      "location": "Wave Country",
-      "profession": "Hired mercenary",
+      "first_manga_appearance": "unknown",
+      "first_anime_appearance": "unknown",
+      "name_meaning": "unknown",
+      "hidden_village": "unknown",
+      "rank": "unknown",
+      "age": "unknown",
+      "jounin_master": "unknown",
+      "signature_abilities": "unknown",
       "notable_features": "Carries samurai sword.",
-      "description": "Personal hired mercenary to Gat�."
+      "notable_quotes": "unknown",
+      "see_also": "unknown",
+      "description": "Personal hired mercenary to Gat�.",
+      "location": "Wave Country",
+      "profession": "Hired mercenary"
     }
   }
 ]
