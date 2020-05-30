@@ -1,0 +1,697 @@
+[
+  {
+    "personal_data": {
+      "name": "Uchiha Fugaku",
+      "registration_id": "004086",
+      "birthday": "August 16th",
+      "blood_type": "AB",
+      "height": "175.3 cm",
+      "weight": "63.1 kg"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 145",
+      "first_anime_appearance": "Naruto Episode 84",
+      "name_meaning": "Uchiha=wa/ha character switch to make fan; Fugaku=Unlearned",
+      "hidden_village": "Leaf Village",
+      "rank": "Jounin",
+      "age": "40",
+      "notable_features": "Father of Itachi and Sasuke, Konoha Military Policeman",
+      "current_status": "Deceased",
+      "see_also": "Uchiha Sasuke, Uchiha Itachi, Uchiha Mikoto",
+      "description": "Several years previously, Uchiha Sasuke's mother and father lived in Leaf Village. Sasuke's father Fugaku had a hard time understanding the actions and motivations of his son Itachi. Fugaku was never able to come to an understanding with Itachi unfortunately, as one evening Itachi wiped out everyone in his clan, including his parents."
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Uchiha Inabi",
+      "registration_id": "unknown",
+      "birthday": "unknown",
+      "blood_type": "unknown",
+      "height": "unknown",
+      "weight": "unknown"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 221",
+      "first_anime_appearance": "Naruto Episode 129",
+      "name_meaning": "Uchiha=wa/ha character switch to make fan; Inabi=Possibly short for Inabikari or flash of lightning",
+      "hidden_village": "Leaf Village",
+      "age": "25",
+      "notable_features": "Police Officer, Sharingan User",
+      "current_status": "Presumed Deceased",
+      "see_also": "Uchiha Itachi, Uchiha Shisui",
+      "description": "A powerful Leaf ninja from the Uchiha clan, Uchiha Itachi wiped out everyone in his clan except for his little brother Sasuke."
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Uchiha Itachi",
+      "registration_id": "012110",
+      "birthday": "June 9th",
+      "blood_type": "AB",
+      "height": "178 cm",
+      "weight": "58 kg"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 139",
+      "first_anime_appearance": "Naruto Episode 80",
+      "name_meaning": "Uchiha=wa/ha character switch to make fan; Itachi=Weasel",
+      "hidden_village": "Leaf Village",
+      "rank": "At least Chuunin, but high Jounin level in skill (Missing-Nin)",
+      "age": "21",
+      "signature_abilities": "Amaterasu, Tsukuyomi",
+      "notable_features": "Sasuke's Older Brother, Wiped out his clan, S-Ranked Criminal.",
+      "see_also": "Hoshigaki Kisame, Uchiha Sasuke",
+      "character_appreciation": "Click here to Discuss Itachi",
+      "description": "Izuna was the younger brother of Uchiha Madara. He helped lead the Uchiha clan alongside his brother around 70 years before the series start."
+    },
+    "advancement_data": {
+      "academy_grad_age": "7",
+      "chuunin_exam_age": "10"
+    },
+    "missions_completed": {
+      "d_rank": "53",
+      "c_rank": "152",
+      "b_rank": "134",
+      "a_rank": "0",
+      "s_rank": "1"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Uchiha Izuna",
+      "registration_id": "-",
+      "birthday": "February 10th",
+      "blood_type": "O",
+      "height": "174.8 cm",
+      "weight": "55.9 kg"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 386",
+      "first_anime_appearance": "Shippuuden Episode 136",
+      "name_meaning": "Uchiha=wa/ha character switch to make fan; Izuna=Name of a sacred mountain",
+      "hidden_village": "Leaf Village",
+      "current_status": "Deceased",
+      "description": "Uchiha Madara was a highly skilled ninja who lived years previously. He helped lead the Uchiha clan and was one of the founders of Konoha."
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Uchiha Madara",
+      "registration_id": "-",
+      "birthday": "December 24th",
+      "blood_type": "?",
+      "height": "? cm",
+      "weight": "? kg"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 370",
+      "first_anime_appearance": "Shippuuden Episode 130",
+      "name_meaning": "Uchiha=wa/ha character switch to make fan; Madara=Spot, blemish, speck, patches",
+      "hidden_village": "Leaf Village",
+      "current_status": "Unknown",
+      "description": "Several years previously, Uchiha Sasuke's mother and father lived in Leaf Village. One evening Uchiha Itachi wiped out everyone in his clan, including his parents."
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Uchiha Mikoto",
+      "registration_id": "005348",
+      "birthday": "June 1st",
+      "blood_type": "A",
+      "height": "162.6 cm",
+      "weight": "48.9 kg"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 145",
+      "first_anime_appearance": "Naruto Episode 84",
+      "name_meaning": "Uchiha=wa/ha character switch to make fan; Mikoto= Words of a ruler, lord, also a name",
+      "hidden_village": "Leaf Village",
+      "rank": "Jounin",
+      "age": "35",
+      "notable_features": "Mother of Itachi and Sasuke",
+      "current_status": "Deceased",
+      "see_also": "Uchiha Sasuke, Uchiha Itachi, Uchiha Fugaku",
+      "description": "In the past Uchiha Obito and Kakashi were teammates under the Fourth Hokage. During a mission in the war against Hidden Rock, Obito was killed. His name was later added to the marker honoring Leaf's fallen heroes."
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Uchiha Obito",
+      "registration_id": "010886",
+      "birthday": "February 10th",
+      "blood_type": "O",
+      "height": "154.2 cm",
+      "weight": "44.5 kg"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 239",
+      "first_anime_appearance": "Shippuuden Episode 119",
+      "name_meaning": "Uchiha=wa/ha character switch to make fan; Obito= Neck, also a name",
+      "hidden_village": "Leaf Village",
+      "rank": "Chuunin",
+      "age": "13",
+      "notable_quote": "Those in the ninja world who break the rules and regulations are called trash... But... Those who don't care about their companions are worse than trash!",
+      "current_status": "Deceased",
+      "see_also": "Hatate Kakashi, Rin, Fourth Hokage",
+      "description": "A Genin from the village of Konoha, Uchiha Sasuke is one of the last surviving members of the Uchiha clan. This clan is known for the genetic ability to use the Sharigan eye. This eye allows its users to copy any jutsu technique their opponent uses. Sasuke's clan was killed by his older brother Itachi, because of that he has devoted his life to killing his brother."
+    },
+    "advancement_data": {
+      "academy_grad_age": "9",
+      "chuunin_exam_age": "11"
+    },
+    "missions_completed": {
+      "d_rank": "86",
+      "c_rank": "24",
+      "b_rank": "24",
+      "a_rank": "1",
+      "s_rank": "0"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Uchiha Sasuke",
+      "registration_id": "012606",
+      "birthday": "July 23rd",
+      "blood_type": "AB",
+      "height": "168 cm",
+      "weight": "52.2 kg"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 3",
+      "first_anime_appearance": "Naruto Episode 1",
+      "name_meaning": "Uchiha=wa/ha character switch to make fan; Sasuke= Name of legendary ninja",
+      "hidden_village": "Leaf Village",
+      "rank": "Genin - Team 7",
+      "age": "16",
+      "jounin_master": "Hatake Kakashi",
+      "signature_abilities": "Shishi Rendan, Chidori",
+      "notable_features": "Number one rookie of his graduating academy class, Finds Sakura's constant affection annoying, Considered very handsome by every girl near his age",
+      "notable_quotes": "I will kill that man.",
+      "see_also": "Uzumaki Naruto, Haruno Sakura, Uchiha Itachi, Hatake Kakashi, Orochimaru",
+      "character_appreciation": "Click here to Discuss Sasuke",
+      "description": "Uchiha Shisui was said to be the most skilled of the Uchiha clan. Several years previously he apparently committed suicide by drowning in the Nakano River. He and Uchiha Itachi were close comrades."
+    },
+    "advancement_data": {
+      "academy_grad_age": "12",
+      "chuunin_exam_age": "-"
+    },
+    "missions_completed": {
+      "d_rank": "7",
+      "c_rank": "1",
+      "b_rank": "2",
+      "a_rank": "6",
+      "s_rank": "0"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Uchiha Shisui",
+      "registration_id": "unknown",
+      "birthday": "unknown",
+      "blood_type": "unknown",
+      "height": "unknown",
+      "weight": "unknown"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 459",
+      "first_anime_appearance": "NA",
+      "name_meaning": "Uchiha=wa/ha character switch to make fan; Shisui=Stagnant or still water, also a test drilling",
+      "hidden_village": "Leaf Village",
+      "notable_features": "Nicknamed Shunshin no Shisui (Body-Flicker Shisui), Said to be the most skilled Uchiha clan member",
+      "current_status": "Deceased",
+      "see_also": "Uchiha Itachi",
+      "description": "Udon is Konohamaru's classmate at the Ninja Academy and a member of his Konohamaru Corps.Click For Quick-Spoilers:Udon and his friends Konohamaru and Moegi became Genin during the two and half year timeskip in the series. They served as a team under the leadership of Jounin sensei Ebisu."
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Uchiha Tekka",
+      "registration_id": "unknown",
+      "birthday": "unknown",
+      "blood_type": "unknown",
+      "height": "unknown",
+      "weight": "unknown"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 221",
+      "first_anime_appearance": "Naruto Episode 129",
+      "name_meaning": "Uchiha=wa/ha character switch to make fan; Tekka=A red-hot iron, gunfire, gambling or a violent temper",
+      "hidden_village": "Leaf Village",
+      "age": "21",
+      "notable_features": "Police Officer, Sharingan User",
+      "current_status": "Presumed Deceased",
+      "see_also": "Uchiha Itachi, Uchiha Shisui",
+      "description": "Ukon is the brother of Sound ninja Sakon."
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Uchiha Teyaki",
+      "registration_id": "unknown",
+      "birthday": "unknown",
+      "blood_type": "unknown",
+      "height": "unknown",
+      "weight": "unknown"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 225",
+      "first_anime_appearance": "Naruto Episode 84",
+      "name_meaning": "Uchiha=wa/ha character switch to make fan; Teyaki=Homemade",
+      "hidden_village": "Leaf Village",
+      "age": "46",
+      "notable_features": "Uncle of Itachi and Sasuke",
+      "current_status": "Deceased",
+      "see_also": "Uchiha Sasuke, Uchiha Itachi, Uchiha Uruki",
+      "description": "A Chuunin from the villaga of Konoha, Iruka teachs in the villages ninja academy. Iruka sees himself when he looks at Naruto, as he also grew up without any parents and goofed off to attract attention. Iruka acts as an older brother figure to Naruto and often worries about him as Naruto journeys to become a better ninja."
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Uchiha Uruchi",
+      "registration_id": "unknown",
+      "birthday": "unknown",
+      "blood_type": "unknown",
+      "height": "unknown",
+      "weight": "unknown"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 225",
+      "first_anime_appearance": "Naruto Episode 84",
+      "name_meaning": "Uchiha=wa/ha character switch to make fan, Uruchi=A nonglutinous rice",
+      "hidden_village": "Leaf Village",
+      "age": "46",
+      "notable_features": "Aunt of Itachi and Sasuke",
+      "current_status": "Deceased",
+      "see_also": "Uchiha Sasuke, Uchiha Itachi, Uchiha Teyaki",
+      "description": "Utakata was the host of the six-tailed demon gastropod. He used bubble-based jutsu."
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Uchiha Yashiro",
+      "registration_id": "unknown",
+      "birthday": "unknown",
+      "blood_type": "unknown",
+      "height": "unknown",
+      "weight": "unknown"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 221",
+      "first_anime_appearance": "Naruto Episode 129",
+      "name_meaning": "Uchiha=wa/ha character switch to make fan; Yashiro=A Shinto shrine, and a name",
+      "hidden_village": "Leaf Village",
+      "age": "45",
+      "notable_features": "Police Officer, Sharingan User",
+      "current_status": "Presumed Deceased",
+      "see_also": "Uchiha Itachi, Uchiha Shisui",
+      "description": "Koharu serves on the village council, along with Homura and the village Kage. This council helps administer the village."
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Udon",
+      "registration_id": "-",
+      "birthday": "April 3rd",
+      "blood_type": "O",
+      "height": "127.5 cm",
+      "weight": "26.5 kg"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 34",
+      "first_anime_appearance": "Naruto Episode 20",
+      "name_meaning": "Japanese noodles",
+      "hidden_village": "Leaf Village",
+      "rank": "Genin",
+      "age": "12",
+      "see_also": "Konohamaru, Moegi",
+      "description": "Yuugao serves as a member of the Leaf Village ANBU."
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Ukon",
+      "registration_id": "-",
+      "birthday": "June 20th",
+      "blood_type": "AB",
+      "height": "155.1 cm",
+      "weight": "45 kg"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 202",
+      "first_anime_appearance": "Naruto Episode 120",
+      "name_meaning": "U=Right Kon=Near, Ukon=Akin to Sakon aka right hand man",
+      "hidden_village": "Sound Village",
+      "rank": "Unknown (Potential Chuunin)",
+      "age": "14",
+      "notable_features": "Personal warrior of Orochimaru",
+      "see_also": "Sakon, Kidoumaru, Tayuya, Jiroubou",
+      "description": "Uzumaki Kushina was a kunoichi from Hidden Whirling Tides in the Whirlpool Country."
+    },
+    "advancement_data": {
+      "academy_grad_age": "-",
+      "chuunin_exam_age": "-"
+    },
+    "missions_completed": {
+      "d_rank": "20",
+      "c_rank": "15",
+      "b_rank": "8",
+      "a_rank": "2",
+      "s_rank": "1"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Umino Iruka",
+      "registration_id": "011450",
+      "birthday": "May 26th",
+      "blood_type": "O",
+      "height": "178 cm",
+      "weight": "66.2 kg"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 1",
+      "first_anime_appearance": "Naruto Episode 1",
+      "name_meaning": "Umino=Ocean; Iruka=Dolphin",
+      "hidden_village": "Konoha Village",
+      "rank": "Chuunin",
+      "age": "26",
+      "notable_features": "Horizontal nose scar, Academy teacher.",
+      "notable_quotes": "You dumbass! Don't practice stupid skills!",
+      "see_also": "Uzumaki Naruto",
+      "description": "Uzumaki Mito was a kunoichi highly skilled in Fuuinjutsu. She originally hailed from Hidden Whirling Tides in the Whirlpool Country."
+    },
+    "advancement_data": {
+      "academy_grad_age": "11",
+      "chuunin_exam_age": "16"
+    },
+    "missions_completed": {
+      "d_rank": "288",
+      "c_rank": "183",
+      "b_rank": "90",
+      "a_rank": "12",
+      "s_rank": "0"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Utakata",
+      "registration_id": "unknown",
+      "birthday": "unknown",
+      "blood_type": "unknown",
+      "height": "unknown",
+      "weight": "unknown"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 420",
+      "first_anime_appearance": "Shippuuden Episode 144",
+      "name_meaning": "Ephemeral",
+      "hidden_village": "Mist",
+      "rank": "-",
+      "see_also": "Rokubi",
+      "description": "A Genin from the village of Konoha, Uzumaki Naruto is the container for the Kyuubi Demon Fox. Shortly after he was born, the Kyuubi attacked the village. To stop the demon the Fourth Hokage was forced to imprison it into the body of the young baby Naruto. As Naruto grew up the adults in Leaf Village saw Naruto as the demon fox itself. This feeling was passed on to their children who also looked down on Naruto. Growing up Naruto did not have anyone who really cared him. Because of this Naruto has grown up seeking to have everyone recognize him as being a skilled ninja. To that end his goal is to surpass the Hokage."
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Utatane Koharu",
+      "registration_id": "000256",
+      "birthday": "September 1st",
+      "blood_type": "A",
+      "height": "153 cm",
+      "weight": "46.3 kg"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 93",
+      "first_anime_appearance": "Naruto Episode 55",
+      "name_meaning": "Utatane=Dozing or napping, Koharu= Early fall, also a name",
+      "hidden_village": "Leaf Village",
+      "rank": "Jounin",
+      "age": "72",
+      "see_also": "Second Hokage, Third Hokage, Homura"
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Uzuki Yuugao",
+      "registration_id": "0012161",
+      "birthday": "November 3rd",
+      "blood_type": "AB",
+      "height": "169.2 cm",
+      "weight": "50.5 kg"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 137",
+      "first_anime_appearance": "Naruto Episode 54",
+      "name_meaning": "Uzuki=Fourth lunar calendar month, Yuugao=Bottle gourd or a moonflower",
+      "hidden_village": "Leaf Village",
+      "rank": "- (ANBU, Probably Chuunin)",
+      "age": "25"
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Uzumaki Kushina",
+      "registration_id": "?",
+      "birthday": "July 10th",
+      "blood_type": "B",
+      "height": "165 cm",
+      "weight": "47 kg"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 382",
+      "first_anime_appearance": "Shippuuden Episode 128",
+      "name_meaning": "Uzumaki=Whirlpool, Kushina=A name",
+      "hidden_village": "Leaf Village",
+      "rank": "Unknown (Probably Jounin)",
+      "notable_features": "Known as the Red Hot-Blooded Habanero"
+    },
+    "advancement_data": {
+      "academy_grad_age": "?",
+      "chuunin_exam_age": "?"
+    },
+    "missions_completed": {
+      "d_rank": "?",
+      "c_rank": "?",
+      "b_rank": "?",
+      "a_rank": "?",
+      "s_rank": "?"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Uzumaki Mito",
+      "registration_id": "unknown",
+      "birthday": "unknown",
+      "blood_type": "unknown",
+      "height": "unknown",
+      "weight": "unknown"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 500",
+      "first_anime_appearance": "NA",
+      "name_meaning": "Uzumaki=Whirlpool, Mito=A name",
+      "hidden_village": "Leaf Village",
+      "rank": "Unknown (Probably Jounin)"
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Uzumaki Naruto",
+      "registration_id": "012607",
+      "birthday": "October 10th",
+      "blood_type": "B",
+      "height": "166.0 cm",
+      "weight": "50.9 kg"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 1",
+      "first_anime_appearance": "Naruto Episode 1",
+      "name_meaning": "Uzumaki=Whirlpool, Naruto=A steamed fish-paste cake, also a maelstrom",
+      "hidden_village": "Leaf Village",
+      "rank": "Genin - Team 7",
+      "age": "16",
+      "jounin_master": "Hatake Kakashi",
+      "signature_abilities": "Kage Bunshin no Jutsu, Oiroke no Jutsu",
+      "notable_features": "Has crush on Haruno Sakura, Loves ramen, Container for the Kyuubi demon",
+      "notable_quotes": "Until I become Hokage, I refuse to die!",
+      "see_also": "Haruno Sakura, Uchiha Sasuke, Hatake Kakashi, Jiraiya, Fourth Hokage",
+      "character_appreciation": "Click here to Discuss Naruto"
+    },
+    "advancement_data": {
+      "academy_grad_age": "12",
+      "chuunin_exam_age": "-"
+    },
+    "missions_completed": {
+      "d_rank": "7",
+      "c_rank": "1",
+      "b_rank": "2",
+      "a_rank": "6",
+      "s_rank": "0"
+    }
+  }
+]

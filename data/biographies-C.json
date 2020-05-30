@@ -1,0 +1,147 @@
+[
+  {
+    "personal_data": {
+      "name": "Chiriku",
+      "registration_id": "-",
+      "birthday": "July 1st",
+      "blood_type": "A",
+      "height": "179 cm",
+      "weight": "59.1 kg"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 314",
+      "first_anime_appearance": "Shippuuden Episode 57",
+      "name_meaning": "Chi=Earth; riku=land",
+      "age": "31",
+      "notable_features": "Monk",
+      "description": "Chiriku is the head monk at the Fire Temple. This elite monastery is home to monks with special abilties. Chiriku was one of the elite 12 Guards ordered with protecting the Fire Country Daimyou. They are identified by the \"Fire\" character on their loincloths."
+    },
+    "personal_stats": {
+      "latent_potential": "unknown",
+      "luck": "unknown",
+      "elemental_affinity": "unknown",
+      "yin_yang": "unknown"
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Chiyo",
+      "registration_id": "01-002",
+      "birthday": "October 15th",
+      "blood_type": "B",
+      "height": "149.1 cm",
+      "weight": "39.1 kg"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 252",
+      "first_anime_appearance": "Shippuuden Episode 9",
+      "name_meaning": "Thousand Years or Forever",
+      "hidden_village": "Sand Village",
+      "rank": "Unknown (Potential Jounin)",
+      "age": "73",
+      "notable_features": "Grandmother of Sasori, Retired at her old age but still spry, Former poison expert",
+      "notable_quotes": "I have been wanting to give my cute little grandson some love for quite some time now anyway...",
+      "see_also": "Sasori, Ebizou",
+      "description": "\"Chiyo-baasama\" as she is affectionately known, is a retired Hidden Sand ninja. She and her brother Ebizou served as the legendary \"sibling\" ninjas of their village. In one of the previous Great Ninja wars, Chiyo used her poison skills to affect many enemy ninjas. When her grandson Sasori left the village twenty years previously, she longed to see him again."
+    },
+    "personal_stats": {
+      "latent_potential": "unknown",
+      "luck": "unknown",
+      "elemental_affinity": "unknown",
+      "yin_yang": "unknown"
+    },
+    "advancement_data": {
+      "academy_grad_age": "?",
+      "chuunin_exam_age": "?"
+    },
+    "missions_completed": {
+      "d_rank": "?",
+      "c_rank": "?",
+      "b_rank": "?",
+      "a_rank": "?",
+      "s_rank": "?"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Choujuurou",
+      "registration_id": "unknown",
+      "birthday": "unknown",
+      "blood_type": "unknown",
+      "height": "unknown",
+      "weight": "unknown"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 454",
+      "first_anime_appearance": "Shippuuden Episode 199",
+      "name_meaning": "A type of pear",
+      "hidden_village": "Mist Village",
+      "rank": "Unknown",
+      "notable_features": "Carries dual swords.",
+      "description": "Choujuurou was a ninja from Hidden Mist who became a Mist Seven Swordsman member. He attended the Five Kage summit with the Mizukage. He was chosen due to his strength. Though he was skilled, he lacked confidence in his abilities."
+    },
+    "personal_stats": {
+      "latent_potential": "unknown",
+      "luck": "unknown",
+      "elemental_affinity": "unknown",
+      "yin_yang": "unknown"
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Chuukichi",
+      "registration_id": "unknown",
+      "birthday": "unknown",
+      "blood_type": "unknown",
+      "height": "unknown",
+      "weight": "unknown"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 516",
+      "first_anime_appearance": "NA",
+      "name_meaning": "A name",
+      "hidden_village": "Mist Village",
+      "rank": "Unknown (Probable Jounin)",
+      "description": "Chuukichi was highly regarded sensor ninja in Hidden Mist. At some point in the past, Chuukichi died."
+    },
+    "personal_stats": {
+      "latent_potential": "unknown",
+      "luck": "unknown",
+      "elemental_affinity": "unknown",
+      "yin_yang": "unknown"
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  }
+]

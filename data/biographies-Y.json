@@ -1,0 +1,351 @@
+[
+  {
+    "personal_data": {
+      "name": "Yahiko",
+      "registration_id": "-",
+      "birthday": "February 20th",
+      "blood_type": "O",
+      "height": "? cm",
+      "weight": "? kg"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 372",
+      "first_anime_appearance": "Shippuuden Episode 128",
+      "name_meaning": "A name, Ya=Increasingly hiko=boy",
+      "hidden_village": "Rain Village",
+      "rank": "Unknown",
+      "current_status": "Deceased",
+      "see_also": "Konan, Nagato",
+      "description": "Yahiko was a young Rain country boy orphaned after a war between Leaf, Rain and other shinobi nations."
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Yakushi Kabuto",
+      "registration_id": "012140",
+      "birthday": "February 29th",
+      "blood_type": "AB",
+      "height": "177 cm",
+      "weight": "65 kg"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 39",
+      "first_anime_appearance": "Naruto Episode 23",
+      "name_meaning": "Yakushi=Short for Buddhist Healing God, Kabuto=Helmet",
+      "hidden_village": "Leaf Village",
+      "rank": "Genin",
+      "age": "23",
+      "jounin_master": "Unnamed Jounin Master",
+      "notable_features": "Keeps Nin-Info cards on the ninja of the world",
+      "see_also": "Akadou Yoroi, Tsurugi Misumi",
+      "description": "A Genin from the village of Konoha, Kabuto participates in the Chuunin Exam. His last Chuunin Exam was his seventh. It would end up being his last as a Konoha ninja."
+    },
+    "advancement_data": {
+      "academy_grad_age": "10",
+      "chuunin_exam_age": "-"
+    },
+    "missions_completed": {
+      "d_rank": "163",
+      "c_rank": "28",
+      "b_rank": "0",
+      "a_rank": "0",
+      "s_rank": "0"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Yamanaka \"Fuu\"",
+      "registration_id": "unknown",
+      "birthday": "unknown",
+      "blood_type": "unknown",
+      "height": "unknown",
+      "weight": "unknown"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 454",
+      "first_anime_appearance": "Shippuuden Episode 198",
+      "hidden_village": "Leaf Village",
+      "rank": "- (ANBU)",
+      "see_also": "Torune",
+      "description": "Yamanaka \"Fuu\" is an ANBU Root member in Hidden Leaf Village. He attended the five Kage summit with Danzou. Because masks were not allowed at the summit, Fuu had to go in his normal clothing. He and Torune are regarded as the most skilled Root members."
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Yamanaka Ino",
+      "registration_id": "012604",
+      "birthday": "September 23rd",
+      "blood_type": "B",
+      "height": "162.2 cm",
+      "weight": "46.0 kg"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 34",
+      "first_anime_appearance": "Naruto Episode 1",
+      "name_meaning": "Yamanaka=Among the Mountains, Ino= Boar or a Sign of the Zodiac",
+      "hidden_village": "Leaf Village",
+      "rank": "Chuunin - Team 10",
+      "age": "16",
+      "jounin_master": "Sarutobi Asuma",
+      "signature_abilites": "Shintenshin no jutsu",
+      "notable_features": "Sasuke-Idiot, Sakura's rival",
+      "notable_quotes": "I won't let you be the only one who gets to look good in front of Sasuke-kun!",
+      "see_also": "Akimichi Chouji, Nara Shikamaru, Sarutobi Asuma, Yamanaka Inoichi",
+      "description": "A Genin from Leaf Village, Yamanaka Ino considers herself the only one worthy of Uchiha Sasuke's love. Because she is not the only one who shares that view, she is the rival of Haruno Sakura."
+    },
+    "advancement_data": {
+      "academy_grad_age": "12",
+      "chuunin_exam_age": "14"
+    },
+    "missions_completed": {
+      "d_rank": "23",
+      "c_rank": "9",
+      "b_rank": "6",
+      "a_rank": "2",
+      "s_rank": "0"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Yamanaka Inoichi",
+      "registration_id": "005492",
+      "birthday": "January 24th",
+      "blood_type": "AB",
+      "height": "180.4 cm",
+      "weight": "69.1 kg"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 137",
+      "first_anime_appearance": "Naruto Episode 59",
+      "name_meaning": "Yamanaka=Among the Mountains, Ino= Boar or a Sign of the Zodiac, Inoichi=A name",
+      "hidden_village": "Leaf Village",
+      "rank": "Jounin",
+      "age": "38",
+      "signature_abilites": "Shinranshin no jutsu",
+      "see_also": "Yamanaka Ino, Nara Shikaku, Akimichi Chouza",
+      "description": "A Jounin from Leaf Village, Inoichi is the father of Yamanaka Ino. His family also operates the Yamanaka Flower Shop in Leaf."
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Yamashiro Aoba",
+      "registration_id": "009744",
+      "birthday": "September 3rd",
+      "blood_type": "O",
+      "height": "178 cm",
+      "weight": "66 kg"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 93",
+      "first_anime_appearance": "Naruto Episode 67",
+      "name_meaning": "Yamashiro= A mountain castle, Aoba= fresh leaves",
+      "hidden_village": "Leaf Village",
+      "rank": "Special Jounin",
+      "age": "34",
+      "description": "Aoba served as a Jounin ninja in Hidden Leaf Village."
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Yamato",
+      "registration_id": "010992",
+      "birthday": "August 10th",
+      "blood_type": "A",
+      "height": "178 cm",
+      "weight": "58.4 kg"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 284",
+      "first_anime_appearance": "Shippuuden Episode 34",
+      "name_meaning": "Ancient name for Japan",
+      "hidden_village": "Leaf Village",
+      "rank": "- (ANBU, Probable Jounin)",
+      "age": "26",
+      "notable_features": "Wears Nidaime Hokage-esque forehead protector",
+      "notable_quotes": "While I do prefer to interact with people in a gentle manner... I'm also not at all opposed to establishing my dominance in a reign of terror.",
+      "character_appreciation": "Click here to Discuss Yamato",
+      "description": "\"Yamato\" as he was dubbed by Tsunade, was an elite ANBU who led Team Kakashi when Kakashi was fatigued from battle. Yamato led the team of Sai, Naruto and Sakura to the Grass Country. They were to meet Sasori's spy who was spying on Orochimaru."
+    },
+    "advancement_data": {
+      "academy_grad_age": "6",
+      "chuunin_exam_age": "6"
+    },
+    "missions_completed": {
+      "d_rank": "80",
+      "c_rank": "176",
+      "b_rank": "400",
+      "a_rank": "305",
+      "s_rank": "35"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Yashamaru",
+      "registration_id": "32-049",
+      "birthday": "May 23rd",
+      "blood_type": "AB",
+      "height": "170.1 cm",
+      "weight": "50.1 kg"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 129",
+      "first_anime_appearance": "Naruto Episode 75",
+      "name_meaning": "Yasha=A female demon, Maru=Boys name",
+      "hidden_village": "Sand Village",
+      "rank": "Chuunin",
+      "age": "27",
+      "current_status": "Deceased",
+      "see_also": "Gaara of the Sand, Kankurou, Temari, Kazekage, Karura",
+      "description": "As Gaara grew up, Yashamaru was directed by the Kazekage to watch over him as caretaker."
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Yonbi (Four-Tailed Demon)",
+      "registration_id": "unknown",
+      "birthday": "unknown",
+      "blood_type": "unknown",
+      "height": "unknown",
+      "weight": "unknown"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Second Artbook",
+      "first_anime_appearance": "Shippuuden Episode 165",
+      "hidden_village": "Rock Village",
+      "class": "Demon",
+      "tail_number": "Yonbi (Four)",
+      "type": "Ape",
+      "imbued_within": "Roushi",
+      "description": "Yonbi is one of the \"bijuu\", a tailed beast of the ancient world. The Yonbi was housed inside Roushi, a wandering ninja originally from Hidden Rock. The Yonbi was a gorilla capable of breathing lava. Roushi used the Yonbi to create Youton, the Lava Element, a fusion of Earth and Fire Elements."
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Yuuhi Kurenai",
+      "registration_id": "010881",
+      "birthday": "June 11th",
+      "blood_type": "AB",
+      "height": "169.1 cm",
+      "weight": "54.4 kg"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 34",
+      "first_anime_appearance": "Naruto Episode 20",
+      "name_meaning": "Yuuhi=Setting sun, Kurenai=Crimson",
+      "hidden_village": "Leaf Village",
+      "rank": "Jounin",
+      "age": "31",
+      "notable_features": "Crimson colored eyes",
+      "see_also": "Hyuuga Hinata, Aburame Shino, Inuzuka Kiba",
+      "description": "A Jounin master, Kurenai is the leader of Team 8 (Hyuuga Hinata, Aburame Shino, Inuzuka Kiba). Near the series start, Kurenai attained the rank of Jounin. She is highly trained in Genjutsu illusion techniques."
+    },
+    "advancement_data": {
+      "academy_grad_age": "9",
+      "chuunin_exam_age": "13"
+    },
+    "missions_completed": {
+      "d_rank": "152",
+      "c_rank": "158",
+      "b_rank": "235",
+      "a_rank": "138",
+      "s_rank": "14"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Yuura",
+      "registration_id": "44-005",
+      "birthday": "October 31st",
+      "blood_type": "AB",
+      "height": "173 cm",
+      "weight": "53.4 kg"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 247",
+      "first_anime_appearance": "Shippuuden Episode 2",
+      "name_meaning": "A name",
+      "hidden_village": "Sand Village",
+      "rank": "Jounin",
+      "age": "28",
+      "see_also": "Sasori",
+      "description": "Yuura has served as a trusted member of the Kazekage advisory council for four years."
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  }
+]

@@ -1,0 +1,777 @@
+[
+  {
+    "personal_data": {
+      "name": "Kagari",
+      "registration_id": "R1-126",
+      "birthday": "November 16th",
+      "blood_type": "O",
+      "height": "168.8 cm",
+      "weight": "54 kg"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 60",
+      "first_anime_appearance": "Naruto Episode 36",
+      "name_meaning": "Probably short for Kagaribi (a bonfire)",
+      "hidden_village": "Rain Village",
+      "rank": "Genin",
+      "age": "17",
+      "see_also": "Mubi, Oboro",
+      "description": "A Genin from Hidden Rain, Kagari participates in the Chuunin Exam."
+    },
+    "personal_stats": {
+      "latent_potential": "unknown",
+      "luck": "unknown",
+      "elemental_affinity": "unknown",
+      "yin_yang": "unknown"
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "(Kaguya) Kimimaro",
+      "registration_id": "-",
+      "birthday": "June 15th",
+      "blood_type": "A",
+      "height": "166.1 cm",
+      "weight": "49.8 kg"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 199",
+      "first_anime_appearance": "Naruto Episode 118",
+      "name_meaning": "Kaguya=Furniture Store, A name; Kimi=you, governing person maro=You, one with thin eyebrows, ma=Hemp, ro=Spine",
+      "hidden_village": "Sound Village",
+      "rank": "Unknown (Potential Jounin)",
+      "age": "15",
+      "notable_features": "Has cursed seal mark on his chest.",
+      "see_also": "Ukon, Sakon, Tayuya, Jiroubou, Kidoumaru, Orochimaru",
+      "description": "Kimimaro is a Sound ninja who has fully devoted himself to Orochimaru."
+    },
+    "advancement_data": {
+      "academy_grad_age": "-",
+      "chuunin_exam_age": "-"
+    },
+    "missions_completed": {
+      "d_rank": "0",
+      "c_rank": "0",
+      "b_rank": "15",
+      "a_rank": "5",
+      "s_rank": "2"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Kaiza",
+      "birthday": "August 21st",
+      "blood_type": "A",
+      "height": "183 cm",
+      "weight": "75 kg"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 20",
+      "first_anime_appearance": "Naruto Episode 11",
+      "name_meaning": "Kai=Sea or ocean",
+      "location": "Wave Country",
+      "age": "30",
+      "profession": "Fisherman",
+      "current_status": "Deceased",
+      "notable_quotes": "For something that is precious to you, no matter how tough, no matter how sad, you must try and try... and even if you lose your life protect it with these two arms.",
+      "see_also": "Tsunami, Tazuna, Gat�, Inari",
+      "description": "Kaiza was a fisherman who came to the Wave Country seeking better opportunities"
+    },
+    "reg._id": "I W06219",
+    "birthday": "July 5th",
+    "blood_type": "B",
+    "height": "180.3 cm",
+    "weight": "68.3 kg"
+  },
+  {
+    "personal_data": {
+      "name": "Kakkou",
+      "advancement_data": {
+        "academy_grad_age": "unknown",
+        "chuunin_exam_age": "unknown"
+      },
+      "missions_completed": {
+        "d_rank": "unknown",
+        "c_rank": "unknown",
+        "b_rank": "unknown",
+        "a_rank": "unknown",
+        "s_rank": "unknown"
+      }
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 241",
+      "first_anime_appearance": "Shippuuden Episode 119",
+      "name_meaning": "Form, appearance and a bishop in shogi",
+      "hidden_village": "Rock Village",
+      "rank": "Jounin",
+      "see_also": "Uchiha Obito, Rin, Hatake Kakashi, Taiseki",
+      "description": "Approximately 13 years before the start of the Naruto series, Kakkou served as a ninja for Hidden Rock."
+    },
+    "reg._id": "-",
+    "birthday": "August 15th",
+    "blood_type": "A",
+    "height": "185 cm",
+    "weight": "63.2 kg"
+  },
+  {
+    "personal_data": {
+      "name": "Kakuzu",
+      "advancement_data": null,
+      "missions_completed": null,
+      "academy_grad_age": "?",
+      "chuunin_exam_age": "?",
+      "d_rank": "?",
+      "c_rank": "?",
+      "b_rank": "?",
+      "a_rank": "?",
+      "s_rank": "?"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 312",
+      "first_anime_appearance": "Shippuuden Episode 71",
+      "name_meaning": "Kaku=Angle or Shogi bishop zu=Metropolis or capital",
+      "hidden_village": "Waterfall Village",
+      "rank": "Unknown (High Jounin Level)",
+      "age": "91",
+      "notable_features": "Body contains mysterious black tendrils.",
+      "description": "Akatsuki member Kakuzu partners with Hidan. Kakuzu is very focused on money, using bounty hunting to help ensure his desires are met. His bounty hunting side-trips always delay he and his partner's missions, much to Hidan's annoyance."
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Kamatari",
+      "registration_id": "unknown",
+      "birthday": "unknown",
+      "blood_type": "unknown",
+      "height": "unknown",
+      "weight": "unknown"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 214",
+      "first_anime_appearance": "Naruto Episode 125",
+      "name_meaning": "Kama=Sickle, scythe tari=Leg or foot",
+      "hidden_village": "Sand Village",
+      "see_also": "Temari",
+      "description": "Izumo helped preside over the Chuunin Exam. He and the other general examiners were elite Chuunin."
+    },
+    "registration_id": "012049",
+    "birthday": "November 25th",
+    "blood_type": "A",
+    "height": "169 cm",
+    "weight": "58 kg"
+  },
+  {
+    "personal_data": {
+      "name": "Kamizuki Izumo",
+      "advancement_data": {
+        "academy_grad_age": "unknown",
+        "chuunin_exam_age": "unknown"
+      },
+      "missions_completed": {
+        "d_rank": "unknown",
+        "c_rank": "unknown",
+        "b_rank": "unknown",
+        "a_rank": "unknown",
+        "s_rank": "unknown"
+      }
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 36",
+      "first_anime_appearance": "Naruto Episode 21",
+      "name_meaning": "Kami=God or soul zuki=Month or moon; Izumo=A name zumo=Can mean cloud",
+      "hidden_village": "Leaf Village",
+      "rank": "Chuunin",
+      "age": "28",
+      "notable_features": "Chuunin Examiner",
+      "see_also": "Hagane Kotetsu",
+      "description": "A Genin from the village of Sand, Kankurou is the brother of Gaara and Temari. All three siblings participate in the Chuunin Exam."
+    },
+    "registration_id": "51-002",
+    "birthday": "May 15th",
+    "blood_type": "B",
+    "height": "175 cm",
+    "weight": "61.2 kg"
+  },
+  {
+    "personal_data": {
+      "name": "Kankurou",
+      "advancement_data": null,
+      "missions_completed": null,
+      "academy_grad_age": "12",
+      "chuunin_exam_age": "16",
+      "d_rank": "0",
+      "c_rank": "9",
+      "b_rank": "10",
+      "a_rank": "23",
+      "s_rank": "1"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 35",
+      "first_anime_appearance": "Naruto Episode 20",
+      "name_meaning": "A famous kabuki player, kurou=crow",
+      "hidden_village": "Sand Village",
+      "rank": "Jounin",
+      "age": "18",
+      "jounin_master": "Baki",
+      "notable_features": "Carries mysterious large package on his back",
+      "see_also": "Gaara, Temari, Baki, Kazekage, Karasu",
+      "description": "Karin was a kunoichi charged with running Orochimaru's southern base."
+    },
+    "registration_id": "-",
+    "birthday": "June 20th",
+    "blood_type": "AB",
+    "height": "162.6 cm",
+    "weight": "45.8 kg"
+  },
+  {
+    "personal_data": {
+      "name": "Karin",
+      "advancement_data": null,
+      "missions_completed": null,
+      "academy_grad_age": "-",
+      "chuunin_exam_age": "-",
+      "d_rank": "25",
+      "c_rank": "16",
+      "b_rank": "7",
+      "a_rank": "2",
+      "s_rank": "0"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 347",
+      "first_anime_appearance": "Shippuuden Episode 115",
+      "name_meaning": "Ka=incense, smell, perfume rin=phosphorus",
+      "hidden_village": "Sound Village",
+      "rank": "Unknown",
+      "age": "16",
+      "see_also": "Suigetsu, Uchiha Sasuke, Juugo",
+      "description": "Karui is a kunoichi from Cloud Village. She constantly deals with the teasing of her teammate Omoi, and tends to take it out on him when it goes too far. She and her team are trusted ninja under the Raikage, being sent on many varied kinds of missions. Both she and Omoi were trained under Killer Bee, one of the Cloud Jinchuuriki."
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Karui",
+      "registration_id": "unknown",
+      "birthday": "unknown",
+      "blood_type": "unknown",
+      "height": "unknown",
+      "weight": "unknown"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 417",
+      "first_anime_appearance": "Shippuuden Episode 156",
+      "name_meaning": "Light, agile, unimportant, small, soft",
+      "hidden_village": "Cloud Village",
+      "rank": "Unknown (Probable Jounin)",
+      "see_also": "Omoi, Samui",
+      "description": "Though Gaara's mother died shortly after he was born, her influence on Gaara had a large affect on the world."
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Karura",
+      "registration_id": "unknown",
+      "birthday": "unknown",
+      "blood_type": "unknown",
+      "height": "unknown",
+      "weight": "unknown"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 129",
+      "first_anime_appearance": "Naruto Episode 58",
+      "name_meaning": "A man-bird deity in Hindu-Buddhist myth",
+      "hidden_village": "Sand Village",
+      "current_status": "Deceased",
+      "see_also": "Gaara of the Sand, Kankurou, Temari",
+      "description": "Katou Dan served as a Leaf Village Ninja in the past."
+    },
+    "registration_id": "002973",
+    "birthday": "December 4th",
+    "blood_type": "A",
+    "height": "180.2 cm",
+    "weight": "67.1 kg"
+  },
+  {
+    "personal_data": {
+      "name": "Katou Dan",
+      "advancement_data": null,
+      "missions_completed": null,
+      "academy_grad_age": "10",
+      "chuunin_exam_age": "?",
+      "d_rank": "72",
+      "c_rank": "84",
+      "b_rank": "223",
+      "a_rank": "168",
+      "s_rank": "22"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 160",
+      "first_anime_appearance": "Naruto Episode 91",
+      "name_meaning": "A name, failure, group, steps, platform",
+      "hidden_village": "Leaf Village",
+      "rank": "Jounin",
+      "age": "27",
+      "current_status": "Deceased",
+      "description": "A slug trained in the ninja arts, Katsuyu is the highest of the slug summons."
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Katsuyu",
+      "registration_id": "unknown",
+      "birthday": "unknown",
+      "blood_type": "unknown",
+      "height": "unknown",
+      "weight": "unknown"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 169",
+      "first_anime_appearance": "Naruto Episode 95",
+      "name_meaning": "A slippery oil",
+      "hidden_village": "Leaf Village",
+      "class": "Summon",
+      "type": "Slug",
+      "notable_features": "Highest of slug summons, Polite demeanor",
+      "see_also": "Tsunade",
+      "description": "Sandaime Kazekage was said to be the most gifted Kage in Hidden Sand's history. He disappeared under mysterious circumstances right before war broke out. He had the ability to change his body's chakra into magnetic fields. Seeing a previous Shukaku host manipulate sand, Kazekage surmised he could do something similar with tiny pieces of iron. He used this ability to develop \"Satetsu\" or Iron Sand. He could control this sand in any fashion he wished through the magnetic field. This allowed him to form weapons whenever he needed. This jutsu came to be known as Suna's deadliest, and granted him the honor of being called the greatest Kazekage.Click For Quick-Spoilers:Years later it was revealed that Akatsuki member Sasori of the Red Sands, the legendary demented puppet master of Hidden Sand had killed Sandaime Kazekage and then turned him into a puppet. Sasori kept Sandaime as his favorite and best puppet, using him against his grandmother Chiyo and Sakura when they came to rescue Gaara from Akatsuki. Sandaime had been made into a puppet using Sasori's \"Hitokugutsu\" method. This allowed Sasori to use all of Sandaime's jutsu, including his manipulation of the magnetic fields."
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Shodai Kazekage (First WindShadow)",
+      "registration_id": "unknown",
+      "birthday": "unknown",
+      "blood_type": "unknown",
+      "height": "unknown",
+      "weight": "unknown"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 266",
+      "first_anime_appearance": "Shippuuden Episode 2",
+      "name_meaning": "First Wind Shadow",
+      "hidden_village": "Sand Village",
+      "rank": "Kage",
+      "description": "Yondaime Kazekage served as the head of Hidden Sand Village."
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Nidaime Kazekage (Second WindShadow)",
+      "registration_id": "unknown",
+      "birthday": "unknown",
+      "blood_type": "unknown",
+      "height": "unknown",
+      "weight": "unknown"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 266",
+      "first_anime_appearance": "Shippuuden Episode 2",
+      "name_meaning": "Second Wind Shadow",
+      "hidden_village": "Sand Village",
+      "rank": "Kage",
+      "description": "Kidoumaru is one of the Four Sounds, who specialize in the formation of barriers."
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Sandaime Kazekage (Third WindShadow)",
+      "registration_id": "unknown",
+      "birthday": "unknown",
+      "blood_type": "unknown",
+      "height": "unknown",
+      "weight": "unknown"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 266",
+      "first_anime_appearance": "Shippuuden Episode 2",
+      "name_meaning": "Third Wind Shadow",
+      "hidden_village": "Sand Village",
+      "rank": "Kage",
+      "see_also": "Sasori",
+      "description": "Killer Bee is a Jinchuuriki from Hidden Cloud. He's the brother of the Raikage and contains the eight-tailed ox-cephalopod demon. Bee is in perfect harmory with his Bijuu, allowing him to fully control the Bijuu power. While he fights he raps and thinks up new lyrics for his rhymes."
+    },
+    "registration_id": "28-115",
+    "birthday": "March 29th",
+    "blood_type": "A",
+    "height": "176.5 cm",
+    "weight": "64.1 kg"
+  },
+  {
+    "personal_data": {
+      "name": "Yondaime Kazekage (Fourth WindShadow)",
+      "advancement_data": {
+        "academy_grad_age": "unknown",
+        "chuunin_exam_age": "unknown"
+      },
+      "missions_completed": {
+        "d_rank": "unknown",
+        "c_rank": "unknown",
+        "b_rank": "unknown",
+        "a_rank": "unknown",
+        "s_rank": "unknown"
+      }
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 98",
+      "first_anime_appearance": "Naruto Episode 59",
+      "name_meaning": "Fourth Wind Shadow",
+      "hidden_village": "Sand Village",
+      "rank": "Kage",
+      "age": "40",
+      "see_also": "Gaara, Kankurou, Temari, Yashamaru, Karura",
+      "description": "Kin Tsuchi was one of the three Sound Genin who entered into the Chuunin Exam."
+    },
+    "registration_id": "-",
+    "birthday": "December 16th",
+    "blood_type": "A",
+    "height": "159.2 cm",
+    "weight": "56.2 kg"
+  },
+  {
+    "personal_data": {
+      "name": "Kidoumaru",
+      "advancement_data": null,
+      "missions_completed": null,
+      "academy_grad_age": "-",
+      "chuunin_exam_age": "-",
+      "d_rank": "20",
+      "c_rank": "15",
+      "b_rank": "8",
+      "a_rank": "2",
+      "s_rank": "1"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 115",
+      "first_anime_appearance": "Naruto Episode 68",
+      "name_meaning": "Kidou=A name; ki=Ghost or devil dou=Child maru=Boys name",
+      "hidden_village": "Sound Village",
+      "rank": "Unknown (Chuunin Level)",
+      "age": "14",
+      "notable_features": "One of the Four Sounds, Personal warrior of Orochimaru, Has six arms",
+      "see_also": "Ukon, Sakon, Tayuya, Jiroubou, Kimimaro",
+      "description": "Kinkaku was a legendary shinobi in Hidden Cloud, partnered with his brother Ginkaku the duo formed Kingin Kyoudai, the Gold and Silver Brothers. The two brothers wielded four of the five Hougu (Treasured Tools) which once belonged to the Rikudou Sennin, which were said to kill any normal humans who attempted to use them."
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Killer Bee (Kiraa Bii)",
+      "registration_id": "unknown",
+      "birthday": "unknown",
+      "blood_type": "unknown",
+      "height": "unknown",
+      "weight": "unknown"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 408",
+      "first_anime_appearance": "Shippuuden Episode 142",
+      "hidden_village": "Cloud Village",
+      "rank": "Unknown",
+      "see_also": "Hachibi",
+      "description": "Kitsuchi is a ninja in Hidden Rock village and the father of Kurotsuchi."
+    },
+    "registration_id": "-",
+    "birthday": "July 6th",
+    "blood_type": "O",
+    "height": "150 cm",
+    "weight": "39 kg"
+  },
+  {
+    "personal_data": {
+      "name": "Kin • Tsuchi",
+      "advancement_data": {
+        "academy_grad_age": "unknown",
+        "chuunin_exam_age": "unknown"
+      },
+      "missions_completed": {
+        "d_rank": "unknown",
+        "c_rank": "unknown",
+        "b_rank": "unknown",
+        "a_rank": "unknown",
+        "s_rank": "unknown"
+      }
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 35",
+      "first_anime_appearance": "Naruto Episode 21",
+      "name_meaning": "Kin=As kanji can mean Koto (A musical instrument); Tsuchi=Soil or hammer",
+      "hidden_village": "Sound Village",
+      "rank": "Genin",
+      "age": "14",
+      "notable_quotes": "I won't fall for such a stupid jutsu.",
+      "see_also": "Zaku Abumi, Dosu Kinuta",
+      "description": "Konan is the lone female member of Akatsuki. She wears a paper flower hair-clip and works alongside Pain."
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Kinkaku",
+      "registration_id": "unknown",
+      "birthday": "unknown",
+      "blood_type": "unknown",
+      "height": "unknown",
+      "weight": "unknown"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 525",
+      "first_anime_appearance": "NA",
+      "name_meaning": "Kin=Gold kaku=horn",
+      "hidden_village": "Cloud Village",
+      "rank": "Unknown (Probable Jounin)",
+      "notable_features": "Kin (Gold) tattooed on his left shoulder",
+      "description": "Kuriarare Kushimaru was a former member of the Mist Seven Swordsmen. Kushimaru wielded the Nuibari (Sewing Needle), which could cut through and stitch together anyone he cut down. At some point in the past Kushimaru died and the Nuibari was left for the next generation of swordsmen."
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Kitsuchi",
+      "registration_id": "unknown",
+      "birthday": "unknown",
+      "blood_type": "unknown",
+      "height": "unknown",
+      "weight": "unknown"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 515",
+      "first_anime_appearance": "NA",
+      "name_meaning": "Ki=Yellow tsuchi=Can mean clay or earth",
+      "hidden_village": "Rock Village",
+      "rank": "Unknown (Probably Jounin)",
+      "description": "Kyuubi is one of the tailed demons of the ancient world. With each swipe of its tail forests could be leveled. When Kyuubi attacked Konoha, Yondaime Hokage gave his life so it could be stopped and imprisoned within the young baby Uzumaki Naruto."
+    },
+    "registration_id": "-",
+    "birthday": "February 20th",
+    "blood_type": "O",
+    "height": "169.4 cm",
+    "weight": "45.3 kg"
+  },
+  {
+    "personal_data": {
+      "name": "Konan",
+      "advancement_data": null,
+      "missions_completed": null,
+      "academy_grad_age": "-",
+      "chuunin_exam_age": "-",
+      "d_rank": "0",
+      "c_rank": "65",
+      "b_rank": "161",
+      "a_rank": "85",
+      "s_rank": "30"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 363",
+      "first_anime_appearance": "Naruto Episode 135",
+      "name_meaning": "Ko=Little nan=South",
+      "hidden_village": "Rain Village",
+      "rank": "Unknown (High Jounin Level)"
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Kuriarare Kushimaru",
+      "registration_id": "unknown",
+      "birthday": "unknown",
+      "blood_type": "unknown",
+      "height": "unknown",
+      "weight": "unknown"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 522",
+      "first_anime_appearance": "NA",
+      "name_meaning": "Kuri=Japanese chestnut arare=hail | Kushi=Skewer maru=Boys name",
+      "hidden_village": "Mist Village",
+      "rank": "Unknown (Probably Jounin)",
+      "notable_features": "Wields Nuibari",
+      "see_also": "Akebino Jinin, Momochi Zabuza, Munashi Jinpachi, Ringo Ameyuri, Suikazan Fuguki, Hoozuki Mangetsu"
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Kurotsuchi",
+      "registration_id": "unknown",
+      "birthday": "unknown",
+      "blood_type": "unknown",
+      "height": "unknown",
+      "weight": "unknown"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 454",
+      "first_anime_appearance": "Shippuuden Episode 199",
+      "name_meaning": "Kuro=Black tsuchi=Can mean clay or earth",
+      "hidden_village": "Rock Village",
+      "rank": "Unknown (Probably Jounin)"
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Kyuubi no Youko (Nine-Tailed Demon Fox)",
+      "registration_id": "unknown",
+      "birthday": "unknown",
+      "blood_type": "unknown",
+      "height": "unknown",
+      "weight": "unknown"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 1",
+      "first_anime_appearance": "Naruto Episode 1",
+      "name_meaning": "Kyuubi=Nine Tail; Youko=A bewitching fox",
+      "hidden_village": "Leaf Village",
+      "class": "Demon",
+      "type": "Fox",
+      "imbued_within": "Uzumaki Naruto",
+      "see_also": "Uzumaki Naruto, Yondaime Hokage, Akatsuki"
+    }
+  }
+]

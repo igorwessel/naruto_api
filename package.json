@@ -4,7 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon"
+    "start": "nodemon",
+    "start:crawler": "node crawler/index.js"
   },
   "dependencies": {
     "nodemon": "^2.0.4",

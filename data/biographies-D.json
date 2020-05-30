@@ -1,0 +1,302 @@
+[
+  {
+    "personal_data": {
+      "name": "Daimyou (Earth Country)",
+      "registration_id": "unknown",
+      "birthday": "unknown",
+      "blood_type": "unknown",
+      "height": "unknown",
+      "weight": "unknown"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 488",
+      "first_anime_appearance": "NA",
+      "location": "Earth Country",
+      "profession": "Feudal Lord",
+      "description": "This Feudal Lord served as the ruler of the Earth Country."
+    },
+    "personal_stats": {
+      "latent_potential": "unknown",
+      "luck": "unknown",
+      "elemental_affinity": "unknown",
+      "yin_yang": "unknown"
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Daimyou (Fire Country)",
+      "registration_id": "unknown",
+      "birthday": "unknown",
+      "blood_type": "unknown",
+      "height": "unknown",
+      "weight": "unknown"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 450",
+      "first_anime_appearance": "NA",
+      "location": "Fire Country",
+      "profession": "Feudal Lord",
+      "see_also": "Madame Shijimi",
+      "description": "This Feudal Lord served as the ruler of the Fire Country. The Daimyou is charged with selecting the ninja who will become Hokage. After the Daimyou has made his selection, a council of Leaf Jounin will vote on the choice."
+    },
+    "personal_stats": {
+      "latent_potential": "unknown",
+      "luck": "unknown",
+      "elemental_affinity": "unknown",
+      "yin_yang": "unknown"
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Daimyou (Lightning Country)",
+      "birthday": "November 5th",
+      "blood_type": "B",
+      "height": "168 cm",
+      "weight": "68 kg"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 488",
+      "first_anime_appearance": "NA",
+      "location": "Lightning Country",
+      "profession": "Feudal Lord",
+      "description": "This Feudal Lord served as the ruler of the Lightning Country."
+    },
+    "personal_stats": {
+      "latent_potential": "unknown",
+      "luck": "unknown",
+      "elemental_affinity": "unknown",
+      "yin_yang": "unknown"
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Daimyou (Water Country)",
+      "registration_id": "unknown",
+      "birthday": "unknown",
+      "blood_type": "unknown",
+      "height": "unknown",
+      "weight": "unknown"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 488",
+      "first_anime_appearance": "NA",
+      "location": "Water Country",
+      "profession": "Feudal Lord",
+      "description": "This Feudal Lord served as the ruler of the Water Country."
+    },
+    "personal_stats": {
+      "latent_potential": "unknown",
+      "luck": "unknown",
+      "elemental_affinity": "unknown",
+      "yin_yang": "unknown"
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Daimyou (Wind Country)",
+      "registration_id": "IW-08721",
+      "birthday": "May 5th",
+      "blood_type": "AB",
+      "height": "166 cm",
+      "weight": "50.8 kg"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 95",
+      "first_anime_appearance": "Naruto Episode 57",
+      "location": "Wind Country",
+      "profession": "Feudal Lord",
+      "see_also": "Baki, Kazekage",
+      "description": "This Feudal Lord served as the ruler of the Wind Country."
+    },
+    "personal_stats": {
+      "latent_potential": "unknown",
+      "luck": "unknown",
+      "elemental_affinity": "unknown",
+      "yin_yang": "unknown"
+    },
+    "advancement_data": {
+      "academy_grad_age": "?",
+      "chuunin_exam_age": "?"
+    },
+    "missions_completed": {
+      "d_rank": "4",
+      "c_rank": "27",
+      "b_rank": "35",
+      "a_rank": "13",
+      "s_rank": "3"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Daimyou (Wind Country)",
+      "registration_id": "unknown",
+      "birthday": "unknown",
+      "blood_type": "unknown",
+      "height": "unknown",
+      "weight": "unknown"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 488",
+      "first_anime_appearance": "NA",
+      "location": "Wind Country",
+      "profession": "Feudal Lord",
+      "description": "This Feudal Lord served as the ruler of the Wind Country."
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Darui",
+      "registration_id": "unknown",
+      "birthday": "unknown",
+      "blood_type": "unknown",
+      "height": "unknown",
+      "weight": "unknown"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 454",
+      "first_anime_appearance": "Shippuuden Episode 199",
+      "name_meaning": "Sluggish, languid",
+      "hidden_village": "Cloud Village",
+      "rank": "Unknown (Probably Jounin)",
+      "description": "Deidara was a prodigy from Hidden Rock Village who fled the village and now serves as a member of the Akatsuki Organization."
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Deidara",
+      "registration_id": "-",
+      "birthday": "June 12th",
+      "blood_type": "A",
+      "height": "156 cm",
+      "weight": "49 kg"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 247",
+      "first_anime_appearance": "Shippuuden Episode 2",
+      "name_meaning": "Potentially based on Japanese myth, Dei=Mud",
+      "hidden_village": "Rock Village",
+      "rank": "Unknown (Probably Jounin)",
+      "age": "19",
+      "notable_features": "Has a mouth on the palm of each hand, An artist at heart",
+      "notable_quotes": "Art is a bang!",
+      "see_also": "Sasori",
+      "description": "Dosu Kinuta was one of the three Sound Genin who entered into the Chuunin Exam."
+    },
+    "advancement_data": {
+      "academy_grad_age": "-",
+      "chuunin_exam_age": "-"
+    },
+    "missions_completed": {
+      "d_rank": "23",
+      "c_rank": "12",
+      "b_rank": "0",
+      "a_rank": "0",
+      "s_rank": "0"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Denka"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 354",
+      "first_anime_appearance": "Shippuuden Episode 121",
+      "type": "Feline",
+      "see_also": "Hina"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Dodai"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 541",
+      "first_anime_appearance": "Shippuuden Episode 282",
+      "name_meaning": "As kanji can mean document draft or foundation",
+      "hidden_village": "Cloud Village",
+      "rank": "Unknown (Probably Jounin)"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Dosu • Kinuta"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 35",
+      "first_anime_appearance": "Naruto Episode 21",
+      "name_meaning": "Dosu=Yakuza sword; Kinuta=A wooden block for beating cloth, also a location",
+      "hidden_village": "Sound Village",
+      "rank": "Genin",
+      "age": "14",
+      "notable_features": "Head totally bandaged except for left eye",
+      "notable_quotes": "I was thinking of defeating you... right here, right now.",
+      "see_also": "Zaku Abumi, Kin Tsuchi"
+    }
+  }
+]

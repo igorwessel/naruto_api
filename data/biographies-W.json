@@ -1,0 +1,20 @@
+[
+  {
+    "personal_data": {
+      "name": "Waraji",
+      "birthday": "April 6th",
+      "blood_type": "O",
+      "height": "181.4 cm",
+      "weight": "71.1 kg"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 18",
+      "first_anime_appearance": "Naruto Episode 10",
+      "name_meaning": "Straw sandals",
+      "location": "Wave Country",
+      "profession": "Hired mercenary",
+      "notable_features": "Carries samurai sword.",
+      "description": "Personal hired mercenary to Gat�."
+    }
+  }
+]

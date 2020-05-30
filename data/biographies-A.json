@@ -1,0 +1,363 @@
+[
+  {
+    "personal_data": {
+      "name": "Aburame Shibi",
+      "registration_id": "005480",
+      "birthday": "September 7th",
+      "blood_type": "A",
+      "height": "181.3 cm",
+      "weight": "68.9 kg"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 137",
+      "first_anime_appearance": "Naruto Episode 79",
+      "name_meaning": "Aburame=Oil Woman | Shibi=A type of tile, also a location",
+      "hidden_village": "Leaf Village",
+      "rank": "Jounin",
+      "age": "39",
+      "see_also": "Aburame Clan, Aburame Shino",
+      "description": "Aburame Shibi is the father of Aburame Shino. Like his son, his body is also inhabited by the destruction bugs."
+    },
+    "personal_stats": {
+      "latent_potential": "unknown",
+      "luck": "unknown",
+      "elemental_affinity": "unknown",
+      "yin_yang": "unknown"
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Aburame Shino",
+      "registration_id": "012618",
+      "birthday": "January 23rd",
+      "blood_type": "AB",
+      "height": "175.1 cm",
+      "weight": "56.6 kg"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 34",
+      "first_anime_appearance": "Naruto Episode 1",
+      "name_meaning": "Aburame=Oil Woman | Shino=Potentially meant to be same kanji as in shinobi",
+      "hidden_village": "Leaf Village",
+      "rank": "Chuunin - Team 8",
+      "age": "16",
+      "jounin_master": "Yuuhi Kurenai",
+      "signature_abilities": "Kikaichuu no Jutsu",
+      "notable_features": "Quiet demeanor, Always respecting of insect life.",
+      "notable_quotes": "Even if our enemy is a small bug, we will not underestimate it.",
+      "see_also": "Hyuuga Hinata, Inuzuka Kiba, Yuuhi Kurenai, Aburame Clan, Aburame Shibi",
+      "description": "A Genin from the village of Konoha, Shino hails from the Aburame clan know for their ability to control insects. These insects are introduced into the body of the Aburame clan at birth. The clan member and the insects then form a partnership. The insects will feed on the chakra of the ninja, in exchange for following the commands of the clan member when so desired."
+    },
+    "personal_stats": {
+      "latent_potential": "unknown",
+      "luck": "unknown",
+      "elemental_affinity": "unknown",
+      "yin_yang": "unknown"
+    },
+    "advancement_data": {
+      "academy_grad_age": "12",
+      "chuunin_exam_age": "14"
+    },
+    "missions_completed": {
+      "d_rank": "17",
+      "c_rank": "17",
+      "b_rank": "9",
+      "a_rank": "1",
+      "s_rank": "0"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Aburame \"Torune\"",
+      "registration_id": "unknown",
+      "birthday": "unknown",
+      "blood_type": "unknown",
+      "height": "unknown",
+      "weight": "unknown"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 454",
+      "first_anime_appearance": "Shippuuden Episode 198",
+      "hidden_village": "Leaf Village",
+      "rank": "- (ANBU)",
+      "see_also": "Fuu",
+      "description": "Aburame \"Torune\" is an ANBU Root member in Hidden Leaf Village. He attended the five Kage summit with Danzou. Because masks were not allowed at the summit, Torune had to go in his normal clothing. He and Fuu are regarded as the most skilled Root members."
+    },
+    "personal_stats": {
+      "latent_potential": "unknown",
+      "luck": "unknown",
+      "elemental_affinity": "unknown",
+      "yin_yang": "unknown"
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Akadou Yoroi",
+      "registration_id": "011930",
+      "birthday": "February 2nd",
+      "blood_type": "O",
+      "height": "180 cm",
+      "weight": "70 kg"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 45",
+      "first_anime_appearance": "Naruto Episode 36",
+      "name_meaning": "Akadou=Red Body| Yoroi=Armor",
+      "hidden_village": "Leaf Village",
+      "rank": "Genin",
+      "age": "23",
+      "jounin_master": "Unnamed Jounin Master",
+      "notable_features": "Wears ocular lenses over his eyes, Also has covering over his lower face.",
+      "see_also": "Yakushi Kabuto, Tsurugi Misumi",
+      "description": "A Genin from the village of Konoha, Yoroi is entered into the Chuunin Exam."
+    },
+    "personal_stats": {
+      "latent_potential": "unknown",
+      "luck": "unknown",
+      "elemental_affinity": "unknown",
+      "yin_yang": "unknown"
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Akatsuchi",
+      "registration_id": "unknown",
+      "birthday": "unknown",
+      "blood_type": "unknown",
+      "height": "unknown",
+      "weight": "unknown"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 454",
+      "first_anime_appearance": "Shippuuden Episode 199",
+      "name_meaning": "Aka=Red tsuchi=Can mean clay or earth",
+      "hidden_village": "Rock Village",
+      "rank": "Unknown (Probably Jounin)",
+      "description": "Akebino Jinin was a former member of the Mist Seven Swordsmen. Jinin wielded the Kabutowari (Helmsplitter), which could pierce and hammer through any defense. At some point in the past Jinin died and the Kabutowari were left for the next generation of swordsmen."
+    },
+    "personal_stats": {
+      "latent_potential": "unknown",
+      "luck": "unknown",
+      "elemental_affinity": "unknown",
+      "yin_yang": "unknown"
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Akebino Jinin",
+      "registration_id": "unknown",
+      "birthday": "unknown",
+      "blood_type": "unknown",
+      "height": "unknown",
+      "weight": "unknown"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 522",
+      "first_anime_appearance": "NA",
+      "name_meaning": "Akebi=Chocolate vine no=field | Ji=bait nin=man",
+      "hidden_village": "Mist Village",
+      "rank": "Unknown (Probably Jounin)",
+      "notable_features": "Wields Kabutowari",
+      "see_also": "Kuriarare Kushimaru, Momochi Zabuza, Munashi Jinpachi, Ringo Ameyuri, Suikazan Fuguki, Hoozuki Mangetsu",
+      "description": "A Genin from the village of Konoha, Chouji hails from the Akimichi clan know for their ability to control the size of their body."
+    },
+    "personal_stats": {
+      "latent_potential": "unknown",
+      "luck": "unknown",
+      "elemental_affinity": "unknown",
+      "yin_yang": "unknown"
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Akimichi Chouji",
+      "registration_id": "012625",
+      "birthday": "May 1st",
+      "blood_type": "B",
+      "height": "172.3 cm",
+      "weight": "87.5 kg"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 34",
+      "first_anime_appearance": "Naruto Episode 1",
+      "name_meaning": "Akimichi=Autumn Road | Chou=Butterfly ji=can mean child or love",
+      "hidden_village": "Leaf Village",
+      "rank": "Chuunin - Team 10",
+      "age": "16",
+      "jounin_master": "Sarutobi Asuma",
+      "signature_abilities": "Baika no Jutsu, Choudan Bakugeki, Nikudan Sensha",
+      "notable_features": "Big boned, Often seen eating or hungry, Best-friend of Nara Shikamaru",
+      "notable_quotes": "Akamaru sure looks tasty.",
+      "see_also": "Nara Shikamaru, Yamanaka Ino, Sarutobi Asuma",
+      "description": "A Jounin from Leaf Village, Chouza hails from the Akimichi Clan, known for their ability to manipulate their size. Akimichi Chouza is the father of Akimichi Chouji."
+    },
+    "personal_stats": {
+      "latent_potential": "unknown",
+      "luck": "unknown",
+      "elemental_affinity": "unknown",
+      "yin_yang": "unknown"
+    },
+    "advancement_data": {
+      "academy_grad_age": "12",
+      "chuunin_exam_age": "14"
+    },
+    "missions_completed": {
+      "d_rank": "17",
+      "c_rank": "13",
+      "b_rank": "6",
+      "a_rank": "3",
+      "s_rank": "0"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Akimichi Chouza",
+      "registration_id": "005490",
+      "birthday": "April 22nd",
+      "blood_type": "B",
+      "height": "183 cm",
+      "weight": "120.1 kg"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 137",
+      "first_anime_appearance": "Naruto Episode 59",
+      "name_meaning": "Akimichi=Autumn Road | Chou=Butterfly za=can mean sitting down or seat",
+      "hidden_village": "Leaf Village",
+      "rank": "Jounin",
+      "age": "38",
+      "signature_abilities": "Multi-Size no Jutsu",
+      "notable_features": "Member of Jounin group Ino Shika Cho, Chouji's Father, Good-natured",
+      "notable_quotes": "Chouji, you've got a kinder heart than anyone I know. There will be someone who will see that in you and become your friend. If you meet him, treat him as your best friend, and become comrades who will trust in each other more than anything else.",
+      "see_also": "Nara Shikaku, Yamanaka Inoichi, Akimichi Chouji",
+      "description": "Ao is a ninja in Hidden Mist village. He attended the five Kage summit with the Mizukage."
+    },
+    "personal_stats": {
+      "latent_potential": "unknown",
+      "luck": "unknown",
+      "elemental_affinity": "unknown",
+      "yin_yang": "unknown"
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Ao",
+      "registration_id": "unknown",
+      "birthday": "unknown",
+      "blood_type": "unknown",
+      "height": "unknown",
+      "weight": "unknown"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 454",
+      "first_anime_appearance": "Shippuuden Episode 199",
+      "name_meaning": "Blue",
+      "hidden_village": "Mist Village",
+      "rank": "Unknown (Probably Jounin)",
+      "notable_features": "Has eye patch over right eye.",
+      "description": "Ayame is the waitress at Ichiraku Ramen, Naruto's favorite place to get a bite to eat."
+    },
+    "personal_stats": {
+      "latent_potential": "unknown",
+      "luck": "unknown",
+      "elemental_affinity": "unknown",
+      "yin_yang": "unknown"
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Ayame",
+      "registration_id": "unknown",
+      "birthday": "unknown",
+      "blood_type": "unknown",
+      "height": "unknown",
+      "weight": "unknown"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Fan Book Special",
+      "first_anime_appearance": "Naruto Episode 52",
+      "name_meaning": "Ayame=An iris flower, a pattern and a name",
+      "location": "Leaf Village",
+      "profession": "Waitress",
+      "age": "21",
+      "notable_features": "Waitress at Ichiraku Ramen.",
+      "see_also": "Ichiraku Ramen, Teuchi"
+    }
+  }
+]

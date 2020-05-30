@@ -1,0 +1,158 @@
+[
+  {
+    "personal_data": {
+      "name": "Jay (Jei)",
+      "registration_id": "unknown",
+      "birthday": "unknown",
+      "blood_type": "unknown",
+      "height": "unknown",
+      "weight": "unknown"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 414",
+      "first_anime_appearance": "Shippuuden Episode 143",
+      "hidden_village": "Cloud Village",
+      "rank": "Unknown (Probable Chuunin)",
+      "description": "Jay is a ninja from Cloud Village. While Jay and his comrade were out in the country, they heard a nearby disturbance. Rushing to the scene they saw Killer Bee, the Hachibi Jinchuuriki, engaged in combat with Akatsuki."
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Jiraiya",
+      "registration_id": "002301",
+      "birthday": "November 11th",
+      "blood_type": "B",
+      "height": "191.2 cm",
+      "weight": "87.5 kg"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 90",
+      "first_anime_appearance": "Naruto Episode 52",
+      "name_meaning": "Young thunder, A lead character in Japanese folk tale, married to Tsunade",
+      "hidden_village": "Leaf Village",
+      "rank": "Potential Jounin (Kage Level Skill)",
+      "age": "54",
+      "notable_features": "Legendary Sannin, Summons toads, Huge pervert.",
+      "notable_quotes": "I'm not just a pervert, I'm a super pervert!",
+      "see_also": "Uzumaki Naruto, Fourth Hokage",
+      "character_appreciation": "Click here to Discuss Jiraiya",
+      "description": "One of the Legendary Sannin, Jiraiya left Konoha to devote his time to doing research for his line of adult books. He has a blood contract with toads and calls upon them as needed."
+    },
+    "advancement_data": {
+      "academy_grad_age": "6",
+      "chuunin_exam_age": "?"
+    },
+    "missions_completed": {
+      "d_rank": "58",
+      "c_rank": "345",
+      "b_rank": "684",
+      "a_rank": "614",
+      "s_rank": "138"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Jiroubou",
+      "registration_id": "-",
+      "birthday": "June 26th",
+      "blood_type": "B",
+      "height": "181.3 cm",
+      "weight": "97.3 kg"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 115",
+      "first_anime_appearance": "Naruto Episode 68",
+      "name_meaning": "Next or second son, bou=can mean priest",
+      "hidden_village": "Sound Village",
+      "rank": "Unknown (Potential Chuunin)",
+      "age": "14",
+      "notable_features": "One of the Four Sounds, Personal warrior of Orochimaru, Chastises Tayuya when she uses filthy language",
+      "see_also": "Ukon, Sakon, Tayuya, Kidoumaru, Kimimaro",
+      "description": "One of the Four Sounds, who specialize in the formation of barriers."
+    },
+    "advancement_data": {
+      "academy_grad_age": "-",
+      "chuunin_exam_age": "-"
+    },
+    "missions_completed": {
+      "d_rank": "20",
+      "c_rank": "15",
+      "b_rank": "8",
+      "a_rank": "2",
+      "s_rank": "1"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Juubi (Ten-Tailed Demon)",
+      "registration_id": "unknown",
+      "birthday": "unknown",
+      "blood_type": "unknown",
+      "height": "unknown",
+      "weight": "unknown"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 467",
+      "first_anime_appearance": "NA",
+      "name_meaning": "Juubi=Ten Tail",
+      "hidden_village": "-",
+      "class": "Demon",
+      "type": "-",
+      "imbued_within": "Rikudou Sennin",
+      "description": "The Juubi was a being of incredible power. Seeking to stop its destruction, the Rikudou Sennin sealed the beast's power within his own body."
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Juugo",
+      "registration_id": "-",
+      "birthday": "October 1st",
+      "blood_type": "AB",
+      "height": "202.1 cm",
+      "weight": "75.8 kg"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 348",
+      "first_anime_appearance": "Shippuuden Episode 116",
+      "name_meaning": "A name, Juu=Heavy, pile up go=I, my, our",
+      "hidden_village": "Sound Village",
+      "rank": "Unknown",
+      "age": "18",
+      "see_also": "Karin, Sasuke, Suigetsu",
+      "description": "Juugo sought out Orochimaru in the past. Orochimaru imprisoned Juugo and performed experimentation on him."
+    },
+    "advancement_data": {
+      "academy_grad_age": "-",
+      "chuunin_exam_age": "-"
+    },
+    "missions_completed": {
+      "d_rank": "0",
+      "c_rank": "0",
+      "b_rank": "0",
+      "a_rank": "0",
+      "s_rank": "0"
+    }
+  }
+]

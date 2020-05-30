@@ -1,0 +1,507 @@
+[
+  {
+    "personal_data": {
+      "name": "Gaara",
+      "registration_id": "56-001",
+      "birthday": "January 19th",
+      "blood_type": "AB",
+      "height": "166.1 cm",
+      "weight": "50.9 kg"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 35",
+      "first_anime_appearance": "Naruto Episode 20",
+      "name_meaning": "Self-Loving ra=Kanji used in demons of myth",
+      "hidden_village": "Sand Village",
+      "rank": "Kazekage",
+      "age": "16",
+      "jounin_master": "Baki",
+      "signature_abilities": "Sabaku Kyuu, Sabaku Sousou",
+      "notable_features": "Kanji tattoo on forehead saying Love, Carries large gourd on his back",
+      "notable_quotes": "Love only yourself, and fight only for yourself.",
+      "see_also": "Temari, Kankurou, Baki, Kazekage",
+      "character_appreciation": "Click here to Discuss Gaara",
+      "description": "A Genin from the village of Sand, Gaara is brooding boy whose serious and dark demeanor frightens those around him."
+    },
+    "personal_stats": {
+      "latent_potential": "unknown",
+      "luck": "unknown",
+      "elemental_affinity": "unknown",
+      "yin_yang": "unknown"
+    },
+    "advancement_data": {
+      "academy_grad_age": "12",
+      "chuunin_exam_age": "14"
+    },
+    "missions_completed": {
+      "d_rank": "0",
+      "c_rank": "9",
+      "b_rank": "8",
+      "a_rank": "14",
+      "s_rank": "3"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Gamabunta",
+      "registration_id": "unknown",
+      "birthday": "unknown",
+      "blood_type": "unknown",
+      "height": "unknown",
+      "weight": "unknown"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 1",
+      "first_anime_appearance": "Naruto Episode 1",
+      "name_meaning": "Gama=Toad, bunta=Actor name famous for Yakuza boss roles",
+      "hidden_village": "Leaf Village",
+      "class": "Summon",
+      "type": "Toad",
+      "notable_quotes": "Tell you what kid, I'll recognize you as my underling and show you about the way of the family!",
+      "notable_features": "Highest of toad summonings, Title of Toad Boss, Has the persona of a Yakuza lord.",
+      "see_also": "Jiraiya, Fourth Hokage, Uzumaki Naruto",
+      "description": "A toad trained in the ninja arts, Gamabunta is a personal summon."
+    },
+    "personal_stats": {
+      "latent_potential": "unknown",
+      "luck": "unknown",
+      "elemental_affinity": "unknown",
+      "yin_yang": "unknown"
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Gamaken",
+      "registration_id": "unknown",
+      "birthday": "unknown",
+      "blood_type": "unknown",
+      "height": "unknown",
+      "weight": "unknown"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 374",
+      "first_anime_appearance": "Shippuuden Episode 130",
+      "hidden_village": "Leaf Village",
+      "class": "Summon",
+      "type": "Toad",
+      "notable_features": "Wields large fork and shield.",
+      "see_also": "Jiraiya",
+      "description": "A toad trained in the ninja arts, Gamaken is a personal summon."
+    },
+    "personal_stats": {
+      "latent_potential": "unknown",
+      "luck": "unknown",
+      "elemental_affinity": "unknown",
+      "yin_yang": "unknown"
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Gamakichi",
+      "registration_id": "unknown",
+      "birthday": "unknown",
+      "blood_type": "unknown",
+      "height": "unknown",
+      "weight": "unknown"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 131",
+      "first_anime_appearance": "Naruto Episode 77",
+      "name_meaning": "Gama=Toad; kichi=Perception or tact",
+      "hidden_village": "Leaf Village",
+      "class": "Summon",
+      "type": "Toad",
+      "notable_quotes": "If you want to do something, give me a snack. Otherwise, I don't want to play with you.",
+      "notable_features": "Son of Gamabunta.",
+      "see_also": "Uzumaki Naruto, Jiraiya",
+      "description": "A toad trained in the ninja arts, Gamakichi is a personal summon and the son of Gamabunta."
+    },
+    "personal_stats": {
+      "latent_potential": "unknown",
+      "luck": "unknown",
+      "elemental_affinity": "unknown",
+      "yin_yang": "unknown"
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Gamatatsu",
+      "registration_id": "unknown",
+      "birthday": "unknown",
+      "blood_type": "unknown",
+      "height": "unknown",
+      "weight": "unknown"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 166",
+      "first_anime_appearance": "Naruto Episode 94",
+      "name_meaning": "Gama=Toad; tatsu=Dragon or a promoted rook in Shougi",
+      "hidden_village": "Leaf Village",
+      "class": "Summon",
+      "type": "Toad",
+      "notable_quotes": "What, I can have a snack!? Yay, yay!",
+      "notable_features": "Son of Gamabunta, Not much battle experience, Very naive.",
+      "see_also": "Uzumaki Naruto",
+      "description": "A toad trained in the ninja arts, Gamatatsu is a personal summon and the son of Gamabunta."
+    },
+    "personal_stats": {
+      "latent_potential": "unknown",
+      "luck": "unknown",
+      "elemental_affinity": "unknown",
+      "yin_yang": "unknown"
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Gari",
+      "registration_id": "unknown",
+      "birthday": "unknown",
+      "blood_type": "unknown",
+      "height": "unknown",
+      "weight": "unknown"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 515",
+      "first_anime_appearance": "NA",
+      "name_meaning": "Pickled ginger, gully",
+      "hidden_village": "Rock Village",
+      "rank": "Unknown (Probable Jounin)",
+      "description": "Gari was a member of the Iwagakure Blast Corps, which was manned by members of the Bakuton using clan which also included Deidara. At some point in the past, Gari died."
+    },
+    "personal_stats": {
+      "latent_potential": "unknown",
+      "luck": "unknown",
+      "elemental_affinity": "unknown",
+      "yin_yang": "unknown"
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Gantetsu",
+      "registration_id": "unknown",
+      "birthday": "unknown",
+      "blood_type": "unknown",
+      "height": "unknown",
+      "weight": "unknown"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 150",
+      "first_anime_appearance": "Naruto Episode 86",
+      "name_meaning": "Containing iron",
+      "hidden_village": "Rock Village",
+      "rank": "Chuunin (Missing-Nin)",
+      "notable_quotes": "I'll show you what pain really is!!",
+      "see_also": "Uzumaki Naruto, Jiraiya",
+      "description": "A former Chuunin from Hidden Rock, Gantetsu came to the Fire Country to seek a more luxurious life."
+    },
+    "personal_stats": {
+      "latent_potential": "unknown",
+      "luck": "unknown",
+      "elemental_affinity": "unknown",
+      "yin_yang": "unknown"
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Gat�",
+      "birthday": "April 30th",
+      "blood_type": "A",
+      "height": "162.5 cm",
+      "weight": "69 kg"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 11",
+      "first_anime_appearance": "Naruto Episode 7",
+      "name_meaning": "French for cake",
+      "location": "Wave Country",
+      "profession": "Shipping Magnate",
+      "age": "48",
+      "notable_features": "A short man, he has two personal samurai bodyguards.",
+      "notable_quotes": "Heh, you're just a cute little baby devil.",
+      "description": "This man ran a shipping company in the Wave Country. He sought to control the shipping and commerce lanes through force and violence."
+    },
+    "personal_stats": {
+      "latent_potential": "unknown",
+      "luck": "unknown",
+      "elemental_affinity": "unknown",
+      "yin_yang": "unknown"
+    },
+    "registration_id": "011671",
+    "birthday": "November 2nd",
+    "blood_type": "AB",
+    "height": "175 cm",
+    "weight": "58 kg"
+  },
+  {
+    "personal_data": {
+      "name": "Gekkou Hayate",
+      "advancement_data": null,
+      "missions_completed": null,
+      "academy_grad_age": "12",
+      "chuunin_exam_age": "13",
+      "d_rank": "66",
+      "c_rank": "83",
+      "b_rank": "407",
+      "a_rank": "96",
+      "s_rank": "0"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 65",
+      "first_anime_appearance": "Naruto Episode 37",
+      "name_meaning": "Gekkou=Moonlight; Hayate=As kanji means squall or gale",
+      "hidden_village": "Leaf Village",
+      "rank": "Special Jounin",
+      "age": "23",
+      "notable_features": "Constantly seen coughing.",
+      "description": "This Chuunin Exam examiner presided over the third round preliminary matches."
+    },
+    "personal_stats": {
+      "latent_potential": "unknown",
+      "luck": "unknown",
+      "elemental_affinity": "unknown",
+      "yin_yang": "unknown"
+    },
+    "registration_id": "-",
+    "birthday": "July 27th",
+    "blood_type": "B",
+    "height": "172 cm",
+    "weight": "57.3 kg"
+  },
+  {
+    "personal_data": {
+      "name": "Genyuumaru",
+      "advancement_data": {
+        "academy_grad_age": "unknown",
+        "chuunin_exam_age": "unknown"
+      },
+      "missions_completed": {
+        "d_rank": "unknown",
+        "c_rank": "unknown",
+        "b_rank": "unknown",
+        "a_rank": "unknown",
+        "s_rank": "unknown"
+      }
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 199",
+      "first_anime_appearance": "Naruto Episode 118",
+      "hidden_village": "Sound Village",
+      "rank": "Unknown",
+      "age": "17",
+      "see_also": "Orochimaru",
+      "description": "Genyuumaru served under the command of Orochimaru."
+    },
+    "personal_stats": {
+      "latent_potential": "unknown",
+      "luck": "unknown",
+      "elemental_affinity": "unknown",
+      "yin_yang": "unknown"
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Gerotora",
+      "registration_id": "unknown",
+      "birthday": "unknown",
+      "blood_type": "unknown",
+      "height": "unknown",
+      "weight": "unknown"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 370",
+      "first_anime_appearance": "Shippuuden Episode 130",
+      "name_meaning": "Gero=Sound of a toad; tora=Sign of the tiger",
+      "hidden_village": "Leaf Village",
+      "class": "Summon",
+      "type": "Toad",
+      "notable_features": "Maintains the key scroll for Naruto's Kyuubi seal.",
+      "see_also": "Jiraiya, Fourth Hokage, Uzumaki Naruto",
+      "description": "Gerotora maintains the scroll key to the Hakke Fuuin seal on Naruto's stomach."
+    },
+    "personal_stats": {
+      "latent_potential": "unknown",
+      "luck": "unknown",
+      "elemental_affinity": "unknown",
+      "yin_yang": "unknown"
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Ginkaku",
+      "registration_id": "unknown",
+      "birthday": "unknown",
+      "blood_type": "unknown",
+      "height": "unknown",
+      "weight": "unknown"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 525",
+      "first_anime_appearance": "NA",
+      "name_meaning": "Gin=Silver kaku=horn",
+      "hidden_village": "Cloud Village",
+      "rank": "Unknown (Probable Jounin)",
+      "description": "Ginkaku was a legendary shinobi in Hidden Cloud, partnered with his brother Kinkaku the duo formed Kingin Kyoudai, the Gold and Silver Brothers. The two brothers wielded four of the five Hougu (Treasured Tools) which once belonged to the Rikudou Sennin, which were said to kill any normal humans who attempted to use them."
+    },
+    "personal_stats": {
+      "latent_potential": "unknown",
+      "luck": "unknown",
+      "elemental_affinity": "unknown",
+      "yin_yang": "unknown"
+    },
+    "advancement_data": {
+      "academy_grad_age": "unknown",
+      "chuunin_exam_age": "unknown"
+    },
+    "missions_completed": {
+      "d_rank": "unknown",
+      "c_rank": "unknown",
+      "b_rank": "unknown",
+      "a_rank": "unknown",
+      "s_rank": "unknown"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Gobi (Five-Tailed Demon)",
+      "registration_id": "unknown",
+      "birthday": "unknown",
+      "blood_type": "unknown",
+      "height": "unknown",
+      "weight": "unknown"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Second Artbook",
+      "first_anime_appearance": "Shippuuden Episode 165",
+      "hidden_village": "Rock Village",
+      "class": "Demon",
+      "tail_number": "Gobi (Five)",
+      "type": "Whale-Horse",
+      "imbued_within": "Han",
+      "description": "Gobi is one of the \"bijuu\", a tailed beast of the ancient world. The Gobi was housed inside a Rock Village ninja named Han."
+    },
+    "personal_stats": {
+      "latent_potential": "unknown",
+      "luck": "unknown",
+      "elemental_affinity": "unknown",
+      "yin_yang": "unknown"
+    },
+    "registration_id": "-",
+    "birthday": "June 6th",
+    "blood_type": "B",
+    "height": "178 cm",
+    "weight": "73.6 kg"
+  },
+  {
+    "personal_data": {
+      "name": "Gouzu",
+      "advancement_data": null,
+      "missions_completed": null,
+      "academy_grad_age": "12",
+      "chuunin_exam_age": "18",
+      "d_rank": "68",
+      "c_rank": "167",
+      "b_rank": "43",
+      "a_rank": "0",
+      "s_rank": "0"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 9",
+      "first_anime_appearance": "Naruto Episode 6",
+      "half_of_\"gozumezu\"_a_demon_of_buddhist_hell_with_a_human_body_and_the_head_of_a_bull_or_horse": "unknown",
+      "hidden_village": "Mist Village",
+      "rank": "Chuunin (Missing-Nin)",
+      "age": "25",
+      "notable_features": "Wears breath mask and large metal claw on his hand, half of Oni (Demon) Brothers team",
+      "see_also": "Momochi Zabuza, Meizu",
+      "description": "This missing-nin fled Hidden Mist with the missing-nin Momochi Zabuza. He is the elder of the twin Demon Brothers, and wears his poisoned claws on his right arm."
+    }
+  }
+]

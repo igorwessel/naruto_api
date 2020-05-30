@@ -1,0 +1,305 @@
+Personal Data,
+Registration ID: 005480,
+Birthday: September 7th,
+Blood Type: A,
+Height: 181.3 cm,
+Weight: 68.9 kg,
+First Manga Appearance: Chapter 137,
+First Anime Appearance: Naruto Episode 79,
+Name Meaning: Aburame="Oil Woman" | Shibi=A type of tile, also a location,
+Hidden Village: Leaf Village,
+Rank: Jounin,
+Age: 39,
+See also: Aburame Clan, Aburame Shino,
+Personal Stats,
+Latent Potential,
+Unknown,
+Luck,
+Unknown,
+Elemental Affinity,
+Unknown,
+Yin | Yang,
+Unknown,
+Databook 2 Stats|Data,
+
+[
+  [ 'Personal Stats' ],
+  [ 'Latent Potential', 'Unknown' ],
+  [ 'Luck', 'Unknown' ],
+  [ 'Elemental Affinity', 'Unknown' ],
+  [ 'Yin | Yang', 'Unknown' ],
+  [ 'Personal Stats' ],
+  [ 'Latent Potential' ],
+  [ 'Luck' ],
+  [ 'Elemental Affinity' ],
+  [ 'Yin | Yang' ],
+  [ 'Personal Stats' ],
+  [ 'Latent Potential', 'Unknown' ],
+  [ 'Luck', 'Unknown' ],
+  [ 'Elemental Affinity', 'Unknown' ],
+  [ 'Yin | Yang', 'Unknown' ],
+  [ 'Personal Stats' ],
+  [ 'Latent Potential', 'Unknown' ],
+  [ 'Luck', 'Unknown' ],
+  [ 'Elemental Affinity' ],
+  [ 'Yin | Yang', 'Unknown' ],
+  [ 'Personal Stats' ],
+  [ 'Latent Potential', 'Unknown' ],
+  [ 'Luck', 'Unknown' ],
+  [ 'Elemental Affinity' ],
+  [ 'Yin | Yang', 'Unknown' ],
+  [ 'Personal Stats' ],
+  [ 'Latent Potential', 'Unknown' ],
+  [ 'Luck', 'Unknown' ],
+  [ 'Elemental Affinity', 'Unknown' ],
+  [ 'Yin | Yang', 'Unknown' ],
+  [ 'Personal Stats' ],
+  [ 'Latent Potential' ],
+  [ 'Luck' ],
+  [ 'Elemental Affinity' ],
+  [ 'Yin | Yang' ],
+  [ 'Personal Stats' ],
+  [ 'Latent Potential', 'Unknown' ],
+  [ 'Luck', 'Unknown' ],
+  [ 'Elemental Affinity', 'Unknown' ],
+  [ 'Yin | Yang' ],
+  [ 'Personal Stats' ],
+  [ 'Latent Potential', 'Unknown' ],
+  [ 'Luck', 'Unknown' ],
+  [ 'Elemental Affinity', 'Unknown' ],
+  [ 'Yin | Yang', 'Unknown' ]
+]
+
+[
+  [
+    'Aburame Shibi is the father of Aburame Shino. Like his son, his body is also inhabited by the destruction bugs.',
+    "Click For Quick-Spoilers:Towards the end of the invasion of Leaf by Sound and Sand, Shibi helped his son's body counter the effects of the poison that Kankurou had used to affect him."
+  ],
+  [
+    'A Genin from the village of Konoha, Shino hails from the Aburame clan know for their ability to control insects. These insects are introduced into the body of the Aburame clan at birth. The clan member and the insects then form a partnership. The insects will feed on the chakra of the ninja, in exchange for following the commands of the clan member when so desired.',
+    'Click For Quick-Spoilers:Shino participated in the Chuunin Exam taking place in Konoha Village. By passing he would attain the Ninja rank of Chuunin. He and his team passed the first and second tests. Shino then fights in the preliminaries for the third exam test and defeats Zaku from Hidden Sound, advancing him to the third and final round.',
+    '',
+    "In the third and final round Shino was matched against Kankurou from Hidden Sand, when it came time for their match Kankurou gave up before the match could begin. Kankurou and his siblings were on a mission to help capture Uchiha Sasuke and his being missing for his own match forced Kankurou to panic and throw his match. This surprised Shino and caused him to tail Kankurou when the invasion formally began. Catching up to Uchiha Sasuke who had earlier fled in pursuit of the siblings, Shino told Sasuke to continue on after Gaara and Temari while he himself would take on Kankurou. Kankurou used his puppet to poison Shino, but not before Shino managed to send his bugs along the chakra puppet strings to attack the hidden Kankurou and defeat him. The poison knocked Shino out, but his father Shibi later found his son and used his own insects to remove the poison from Shino's body.",
+    '',
+    'Shino would later go on a mission with his father and miss an opportunity to go on the mission to retrieve Sasuke. When his teammate Kiba later returned from this mission, he demanded that Kiba tell him everything that happened because he wanted to know all the details. Kiba surmised Shino was annoyed he missed out on such a dangerous mission.'
+  ],
+  [
+    'Aburame "Torune" is an ANBU Root member in Hidden Leaf Village. He attended the five Kage summit with Danzou. Because masks were not allowed at the summit, Torune had to go in his normal clothing. He and Fuu are regarded as the most skilled Root members.',
+    "Click For Quick-Spoilers:When Danzou fled the summit, Fuu remained behind to help recover a Byakugan eye which had been stolen and implanted in the past in Mist ninja Ao. Fuu used his Yamanaka clan jutsu to take over Ao's body, which forced Torune to carry his comrade's lifeless form. When Fuu failed in his mission, he returned to his body. When the trio were confronted by Uchiha Madara in the guise of Tobi, the Root members moved to attack. Torune removed his clothing and attempted to infect Madara with his microscopic poisonous bugs, a jutsu style he learned from his father Shikuro. Madara managed to avoid most of the attacks, but Torune managed to infect Madara as the elder Uchiha swirled him out of existence."
+  ],
+  [
+    'A Genin from the village of Konoha, Yoroi is entered into the Chuunin Exam.',
+    'Click For Quick-Spoilers:Akadou Yoroi has the ability to leach the chakra out of an opponent by placing his hand near their body. When Yoroi and his team make it to the third round preliminaries, it is revealed he and his team are actually Hidden Sound spies acting under the direction of Orochimaru. Yoroi is matched against Sasuke and manages to surprise Sasuke with his unique powers. However Sasuke is able to make a come back and defeat Yoroi with his new Lion Combo. He was then taken away by the medical team.',
+    '',
+    "Shortly afterwards both Yoroi and his teammate Misumi left the Fire Country behind and headed south for the Sea Country to assist Orochimaru's former scientist Amachi. There the two former Sound spies began attacking gold boats destined for the Water Country. In the guise of a dangerous sea monster, the two ninja were able to steal the gold. When ninja from Konoha were sent to investigate, Yoroi and Misumi did battle with them. Yoroi squared off against Shino several times, with the bug user finally defeating Yoroi in the end. The two did battle on the ocean and Shino's bugs sucked out Yoroi's chakra. Yoroi then sunk into the depths below."
+  ],
+  [
+    'Akebino Jinin was a former member of the Mist Seven Swordsmen. Jinin wielded the Kabutowari (Helmsplitter), which could pierce and hammer through any defense. At some point in the past Jinin died and the Kabutowari were left for the next generation of swordsmen.',
+    "Click For Quick-Spoilers:After Kabuto joined forces with Akatsuki, he resurrected many dead ninja to fight at their side using Edo Tensei. This included the previous generation of the Mist Seven Swordsmen and Jinin. When the Edo Tensei ninja Gari and Pakura met the Third Division of the Joint Shinobi Army in battle, they summoned the other six members of the group to fight along Momochi Zabuza. Jinin was among the ninja who still had access to their original weapon. When Zabuza used his Kirigakure jutsu to shroud the battlefield in mist, Jinin and the other ninja used their sword's abilities against their living foes."
+  ],
+  [
+    'A Genin from the village of Konoha, Chouji hails from the Akimichi clan know for their ability to control the size of their body.',
+    'Click For Quick-Spoilers:Chouji participated in the Chuunin Exam taking place in Konoha Village. By passing he would attain the Ninja rank of Chuunin. He and his team were able to pass the first and second tests. Chouji then fought in the preliminaries for the third exam test, but he ends up losing to Kinata Dosu from Hidden Sound.',
+    '',
+    "Chouji spends the following weeks cheering for his friend Shikamaru during his match in the third test of the Exam. During this period Chouji was neglecting training as hard as he could, preferring to spend most of his time eating. When Chouji was asked by Shikamaru to help retrieve Sasuke he joined along. During their tracking of the Sound Four, they were trapped by Sound ninja Jiroubou. Chouji took Jiroubou's insults to his weight and to his friend Shikamaru's leadership abilities to heart. He demanded his friends continue on while he fought Jiroubou alone. Chouji managed to force Jiroubou into his level two cursed seal form. On his last legs, Chouji ingest the third and final of the secret Akimichi soldier ration pill. The pill boosted the ingester's chakra immensely but put a huge price on the person's life. The power gave Chouji the ability to defeat Jiroubou, but he passed out afterwards from all the pain.",
+    '',
+    "Leaf medical ninja were able to find Chouji's body shortly afterwards and rush him back to Konoha for treatment. It was only the high medical training of the Hokage Tsunade that countered the affects of the pill and saved Chouji's life. Afterwards Chouji felt he had wasted his time before in not training properly. So he demanded his Jounin sensei Asuma train him to make up for lost time.",
+    '',
+    'Chouji later served on a brief mission to apprehend the Stupid Brothers, Fuujin and Raijin, escapees from a ninja correctional facility. His training had now given him the ability to use Bubun Baika no Jutsu (Partial Multi-Size) without the use of his pills.'
+  ],
+  [
+    'A Jounin from Leaf Village, Chouza hails from the Akimichi Clan, known for their ability to manipulate their size. Akimichi Chouza is the father of Akimichi Chouji.',
+    'Click For Quick-Spoilers:Chouza and the Ino Shika Cho group get back together to help Hidden Leaf turn back the Sound and Sand invasion.'
+  ],
+  [
+    'Ao is a ninja in Hidden Mist village. He attended the five Kage summit with the Mizukage.',
+    "Click For Quick-Spoilers:At some point in the past, Ao fought in battle against a ninja from the Hyuuga Clan. As a result of this battle, Ao was able to take the right Byakugan eye from the fallen ninja and have it implanted into his head. Though he was not Hyuuga, he could still make some use of the eye. It allowed him to see the internal chakra circulatory system of other ninja and help identify the chakra color unique to a particular ninja. While fighting the highly skilled Uchiha Shisui, he used this ability and made note of Shisui's chakra color.",
+    '',
+    "Some time later, Ao used his Byakugan to also pierce the mind control affecting the Fourth Mizukage Yagura. He would use the eye again when he attended the Kage Summit. After being ill at ease for the strange turn the summit was taking, he activated his eye and realized that Sixth Hokage candidate Danzou had implanted the eye and arm of the deceased Shisui into his body. Knowing Shisui's ability to control the thoughts of others, he revealed Danzou's secret to the others attendees."
+  ],
+  [
+    "Ayame is the waitress at Ichiraku Ramen, Naruto's favorite place to get a bite to eat.",
+    "Click For Quick-Spoilers:The night before Naruto is to participate in the third round, he goes to Ichiraku Ramen to buy some dinner. He is about to order when Ayame presents him with a big expensive meal. Naruto is surprised at first, but Teuchi says it's on the house, a reward for one of their favorite customers."
+  ]
+]
+
+[
+  [
+    'First Manga Appearance: Chapter 137',
+    'First Anime Appearance: Naruto Episode 79',
+    'Name Meaning: Aburame="Oil Woman" | Shibi=A type of tile, also a location',
+    'Hidden Village: Leaf Village',
+    'Rank: Jounin',
+    'Age: 39',
+    'See also: Aburame Clan, Aburame Shino'
+  ],
+  [
+    'First Manga Appearance: Chapter 34',
+    'First Anime Appearance: Naruto Episode 1',
+    'Name Meaning: Aburame="Oil Woman" | Shino=Potentially meant to be same kanji as in "shinobi"',
+    'Hidden Village: Leaf Village',
+    'Rank: Chuunin - Team 8',
+    'Age: 16',
+    'Jounin Master: Yuuhi Kurenai',
+    'Signature Abilities: Kikaichuu no Jutsu',
+    'Notable Features: Quiet demeanor, Always respecting of insect life.',
+    'Notable Quotes: "Even if our enemy is a small bug, we will not underestimate it."',
+    'See also: Hyuuga Hinata, Inuzuka Kiba, Yuuhi Kurenai, Aburame Clan, Aburame Shibi'
+  ],
+  [
+    'First Manga Appearance: Chapter 454',
+    'First Anime Appearance: Shippuuden Episode 198',
+    'Hidden Village: Leaf Village',
+    'Rank: - (ANBU)',
+    'See also: Fuu'
+  ],
+  [
+    'First Manga Appearance: Chapter 45',
+    'First Anime Appearance: Naruto Episode 36',
+    'Name Meaning: Akadou="Red Body"| Yoroi="Armor"',
+    'Hidden Village: Leaf Village',
+    'Rank: Genin',
+    'Age: 23',
+    'Jounin Master: Unnamed Jounin Master',
+    'Notable Features: Wears ocular lenses over his eyes, Also has covering over his lower face.',
+    'See also: Yakushi Kabuto, Tsurugi Misumi'
+  ],
+  [
+    'First Manga Appearance: Chapter 454',
+    'First Anime Appearance: Shippuuden Episode 199',
+    'Name Meaning: Aka="Red" tsuchi=Can mean clay or earth',
+    'Hidden Village: Rock Village',
+    'Rank: Unknown (Probably Jounin)'
+  ],
+  [
+    'First Manga Appearance: Chapter 522',
+    'First Anime Appearance: NA',
+    'Name Meaning: Akebi=Chocolate vine no=field | Ji=bait nin=man',
+    'Hidden Village: Mist Village',
+    'Rank: Unknown (Probably Jounin)',
+    'Notable Features: Wields Kabutowari',
+    'See also: Kuriarare Kushimaru, Momochi Zabuza, Munashi Jinpachi, Ringo Ameyuri, Suikazan Fuguki, Hoozuki Mangetsu'
+  ],
+  [
+    'First Manga Appearance: Chapter 34',
+    'First Anime Appearance: Naruto Episode 1',
+    'Name Meaning: Akimichi="Autumn Road" | Chou="Butterfly" ji=can mean child or love',
+    'Hidden Village: Leaf Village',
+    'Rank: Chuunin - Team 10',
+    'Age: 16',
+    'Jounin Master: Sarutobi Asuma',
+    'Signature Abilities: Baika no Jutsu, Choudan Bakugeki, Nikudan Sensha',
+    'Notable Features: Big boned, Often seen eating or hungry, Best-friend of Nara Shikamaru',
+    'Notable Quotes: "Akamaru sure looks tasty."',
+    'See also: Nara Shikamaru, Yamanaka Ino, Sarutobi Asuma'
+  ],
+  [
+    'First Manga Appearance: Chapter 137',
+    'First Anime Appearance: Naruto Episode 59',
+    'Name Meaning: Akimichi="Autumn Road" | Chou=Butterfly za=can mean sitting down or seat',
+    'Hidden Village: Leaf Village',
+    'Rank: Jounin',
+    'Age: 38',
+    'Signature Abilities: Multi-Size no Jutsu',
+    "Notable Features: Member of Jounin group Ino Shika Cho, Chouji's Father, Good-natured",
+    `Notable Quotes: "Chouji, you've got a kinder heart than anyone I know. There will be someone who will see that in you and become your friend. If you meet him, treat him as your best friend, and become comrades who will trust in each other more than anything else."`,
+    'See also: Nara Shikaku, Yamanaka Inoichi, Akimichi Chouji'
+  ],
+  [
+    'First Manga Appearance: Chapter 454',
+    'First Anime Appearance: Shippuuden Episode 199',
+    'Name Meaning: Blue',
+    'Hidden Village: Mist Village',
+    'Rank: Unknown (Probably Jounin)',
+    'Notable Features: Has eye patch over right eye.'
+  ],
+  [
+    'First Manga Appearance: Fan Book Special',
+    'First Anime Appearance: Naruto Episode 52',
+    'Name Meaning: Ayame=An iris flower, a pattern and a name',
+    'Location: Leaf Village',
+    'Profession: Waitress',
+    'Age: 21',
+    'Notable Features: Waitress at Ichiraku Ramen.',
+    'See also: Ichiraku Ramen, Teuchi'
+  ]
+]
+
+[
+  [
+    'Personal Data',
+    'Registration ID: 005480',
+    'Birthday: September 7th',
+    'Blood Type: A',
+    'Height: 181.3 cm',
+    'Weight: 68.9 kg'
+  ],
+  [ 'Databook 2 Stats|Data' ],
+  [
+    'Personal Data',
+    'Registration ID: 012618',
+    'Birthday: January 23rd',
+    'Blood Type: AB',
+    'Height: 175.1 cm',
+    'Weight: 56.6 kg'
+  ],
+  [
+    'Databook 3 Stats|Data',
+    'Advancement Data',
+    'Academy Grad Age: 12',
+    'Chuunin Exam Age: 14',
+    'Missions Completed',
+    'D-Rank: 17',
+    'C-Rank: 17',
+    'B-Rank: 9',
+    'A-Rank: 1',
+    'S-Rank: 0'
+  ],
+  [ '' ],
+  [ '' ],
+  [
+    'Personal Data',
+    'Registration ID: 011930',
+    'Birthday: February 2nd',
+    'Blood Type: O',
+    'Height: 180 cm',
+    'Weight: 70 kg'
+  ],
+  [ 'Databook 1 Stats|Data' ],
+  [ '' ],
+  [ '' ],
+  [ '' ],
+  [ '' ],
+  [
+    'Personal Data',
+    'Registration ID: 012625',
+    'Birthday: May 1st',
+    'Blood Type: B',
+    'Height: 172.3 cm',
+    'Weight: 87.5 kg'
+  ],
+  [
+    'Databook 3 Stats|Data',
+    'Advancement Data',
+    'Academy Grad Age: 12',
+    'Chuunin Exam Age: 14',
+    'Missions Completed',
+    'D-Rank: 17',
+    'C-Rank: 13',
+    'B-Rank: 6',
+    'A-Rank: 3',
+    'S-Rank: 0'
+  ],
+  [
+    'Personal Data',
+    'Registration ID: 005490',
+    'Birthday: April 22nd',
+    'Blood Type: B',
+    'Height: 183 cm',
+    'Weight: 120.1 kg'
+  ],
+  [ 'Databook 1 Stats|Data' ],
+  [ '' ],
+  [ '' ],
+  [ '' ]
+]

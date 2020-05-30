@@ -1,0 +1,96 @@
+[
+  {
+    "personal_data": {
+      "name": "Zaku • Abumi",
+      "registration_id": "-",
+      "birthday": "September 14th",
+      "blood_type": "AB",
+      "height": "157.3 cm",
+      "weight": "49 kg"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 35",
+      "first_anime_appearance": "Naruto Episode 21",
+      "name_meaning": "Zaku=Sound of cutting, Abumi=Stirrup",
+      "hidden_village": "Sound Village",
+      "rank": "Genin",
+      "age": "14",
+      "notable_quotes": "You can leave if you want... fatty.",
+      "see_also": "Kin Tsuchi, Dosu Kinuta",
+      "description": "Zaku Abumi was one of the three sound Genin who entered into the Chuunin Exam."
+    },
+    "advancement_data": {
+      "academy_grad_age": "-",
+      "chuunin_exam_age": "-"
+    },
+    "missions_completed": {
+      "d_rank": "23",
+      "c_rank": "12",
+      "b_rank": "0",
+      "a_rank": "0",
+      "s_rank": "0"
+    }
+  },
+  {
+    "personal_data": {
+      "name": "Zangei",
+      "registration_id": "unknown",
+      "birthday": "unknown",
+      "blood_type": "unknown",
+      "height": "unknown",
+      "weight": "unknown"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 320",
+      "first_anime_appearance": "Shippuuden Episode 76",
+      "profession": "Bounty Master",
+      "age": "36",
+      "location": "Fire Country",
+      "description": "Akatsuki member Zetsu engages in reconnaissance. He is divided into two halves, each with their own personas. A \"Black\" half and a \"White\" half which can split into two separate entities."
+    },
+    "registration_id": "?",
+    "birthday": "?",
+    "blood_type": "B",
+    "height": "177 cm",
+    "weight": "? kg"
+  },
+  {
+    "personal_data": {
+      "name": "Zetsu",
+      "advancement_data": null,
+      "missions_completed": null,
+      "academy_grad_age": "?",
+      "chuunin_exam_age": "?",
+      "d_rank": "?",
+      "c_rank": "?",
+      "b_rank": "?",
+      "a_rank": "?",
+      "s_rank": "?"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 234",
+      "first_anime_appearance": "Naruto Episode 134",
+      "name_meaning": "Tongue or Reed (A form of tall hollow grass or tongue attachment to a hollow woodwind instrument)",
+      "hidden_village": "-",
+      "notable_features": "Strange fly-trap-like extensions which cover his upper body, His main torso is split into light and dark halves",
+      "description": "Personal hired mercenary to Gat�."
+    },
+    "birthday": "December 1st",
+    "blood_type": "A",
+    "height": "172 cm",
+    "weight": "63 kg"
+  },
+  {
+    "personal_data": {
+      "name": "Zouri"
+    },
+    "personal_info": {
+      "first_manga_appearance": "Chapter 18",
+      "first_anime_appearance": "Naruto Episode 10",
+      "name_meaning": "Sandals",
+      "location": "Wave Country",
+      "profession": "Hired mercenary",
+      "notable_features": "Carries samurai sword."
+    }
+  }
+]
