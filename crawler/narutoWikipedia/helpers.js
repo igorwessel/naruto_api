@@ -3,7 +3,12 @@ async function getPersonalInfo(page) {
 
   const tableElement = await page.$x(xpath);
   const info = await page.evaluate(
-    (e) => Array.from(document.querySelectorAll('tr')).map((e) => e.innerText),
+    (e) =>
+      Array.from(document.querySelectorAll('tr'))
+        .map((e) =>
+          e.innerText.split('\n').map((t) => t.replace('\t', '').trim())
+        )
+        .filter((t) => t.length !== 0),
     ...tableElement
   );
 
@@ -11,23 +16,25 @@ async function getPersonalInfo(page) {
     () => document.querySelector('.page-header__title').innerText
   );
 
-  const personal_info = test.reduce((obj, item) => {
+  const personal_info = info.reduce((obj, item) => {
     let key;
     let value = item[1];
     if (item.length === 2) {
       key = item[0].toLowerCase().replace(/\s/gm, '_');
     }
 
-    if (key === 'height' || key === 'weight') {
-      value = value.replace(/[A-z:\s]/gm, '');
-    }
     if (value && value.match(/(\D+:\s)/gm)) {
       value = value.replace(/(\D+:\s)/gm, '');
+    }
+
+    if (key === 'height' || key === 'weight') {
+      value = parseFloat(value.replace(/[A-z:\s]/gm, ''));
     }
 
     if (
       key === 'debut' ||
       key === 'manga' ||
+      key === 'english' ||
       key === 'anime' ||
       key === 'game' ||
       key === 'appears_in' ||
@@ -42,10 +49,12 @@ async function getPersonalInfo(page) {
     } else {
       return {
         ...obj,
-        [key]: item.length > 2 ? item : value,
+        [key]: item.length >= 3 ? item : value,
       };
     }
   }, {});
+
+  console.log(personal_info);
 
   return {
     name,
@@ -122,3 +131,11 @@ async function getTools(page) {
 
   return tools;
 }
+
+module.exports = {
+  getTools,
+  getJutsus,
+  getNatureType,
+  getFamilyInfo,
+  getPersonalInfo,
+};
