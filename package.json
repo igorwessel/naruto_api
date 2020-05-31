@@ -6,7 +6,8 @@
   "scripts": {
     "start": "nodemon",
     "start:crawler": "node crawler",
-    "test:crawler": "nodemon crawler/narutoWikipedia"
+    "test:crawler": "nodemon crawler/narutoWikipedia",
+    "start:crawlerWiki": "node crawler/narutoWikipedia"
   },
   "dependencies": {
     "nodemon": "^2.0.4",

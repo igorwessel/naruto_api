@@ -73,7 +73,7 @@ async function getPersonalInfo(page) {
         value = value.map((t) => t.trim());
       }
 
-      if (value[0].match(/^Part/gm)) {
+      if (value instanceof Array && value[0].match(/^Part/gm)) {
         value = value
           .map((t) => t.split(':').map((t) => t.trim()))
           .reduce((obj, item) => {
@@ -101,7 +101,14 @@ async function getPersonalInfo(page) {
       };
     }, {});
 
-  return info;
+  const name = await page.evaluate(
+    () => document.querySelector('.page-header__title').innerText
+  );
+
+  return {
+    name,
+    ...info,
+  };
 }
 
 async function getAppearsIn(page) {
@@ -236,14 +243,15 @@ async function getAppearsIn(page) {
   const manga = mangaText.filter((t) => t !== null);
   const anime = animeText.filter((t) => t !== null);
   const game = gameText.filter((t) => t !== null);
+  const novel = novelText.filter((t) => t !== null);
   const ova = ovaText.filter((t) => t !== null);
   const movie = movieText.filter((t) => t !== null);
 
-  const appears_in = [manga, anime, game, ova, movie]
+  const appears_in = [manga, anime, game, novel, ova, movie]
     .filter((t) => t.length !== 0)
     .reduce((obj, item) => ({ ...obj, [item[0]]: item.slice(1) }), {});
 
-  return appears_in;
+  return { appears_in };
 }
 
 async function getFamilyInfo(page) {
@@ -267,7 +275,7 @@ async function getFamilyInfo(page) {
     ? familyText.filter((t) => t !== null)
     : familyText.filter((t) => !t.includes('Family'));
 
-  return family;
+  return { family };
 }
 
 async function getNatureType(page) {
@@ -276,13 +284,20 @@ async function getNatureType(page) {
   );
 
   const natureTypeText = await page.evaluate(
-    (e) => (e ? e.textContent.match(/(\w+\s?Release$)/gm) : [null]),
+    (e) =>
+      e
+        ? e.innerText
+            .trim()
+            .split('\n')
+            .map((t) => t.trim())
+            .filter((t) => t !== '')
+            .slice(2)
+        : [null],
     ...natureTypeElement
   );
+  const nature_type = natureTypeText.filter((t) => t !== null);
 
-  const nature = natureTypeText.filter((t) => t !== null);
-
-  return nature;
+  return { nature_type };
 }
 
 async function getUniqueTraits(page) {
@@ -303,7 +318,7 @@ async function getUniqueTraits(page) {
     ...uniqueElement
   );
 
-  return uniqueText.join('\n');
+  return { unique_traits: uniqueText.join('\n') };
 }
 
 async function getJutsus(page) {
@@ -326,7 +341,7 @@ async function getJutsus(page) {
 
   const jutsu = jutsuText.filter((t) => t !== null);
 
-  return jutsu;
+  return { jutsu };
 }
 
 async function getTools(page) {
@@ -349,7 +364,7 @@ async function getTools(page) {
 
   const tools = toolsText.filter((t) => t !== null);
 
-  return tools;
+  return { tools };
 }
 
 module.exports = {
