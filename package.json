@@ -2,12 +2,14 @@
   "name": "naruto_api",
   "version": "1.0.0",
   "main": "index.js",
+  "author": {
+    "email": "igor_wessel@hotmail.com",
+    "name": "Igor Wessel da Silva"
+  },
   "license": "MIT",
   "scripts": {
-    "start": "nodemon",
-    "start:crawler": "node src/crawler",
-    "test:crawler": "nodemon src/crawler/narutoWikipedia",
-    "start:crawlerWiki": "node src/crawler/narutoWikipedia"
+    "start:crawlerWiki": "node src/crawler/narutoWikipedia",
+    "test:crawlerWiki": "nodemon src/crawler/narutoWikipedia"
   },
   "dependencies": {
     "nodemon": "^2.0.4",
