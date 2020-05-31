@@ -5,9 +5,9 @@
   "license": "MIT",
   "scripts": {
     "start": "nodemon",
-    "start:crawler": "node crawler",
-    "test:crawler": "nodemon crawler/narutoWikipedia",
-    "start:crawlerWiki": "node crawler/narutoWikipedia"
+    "start:crawler": "node src/crawler",
+    "test:crawler": "nodemon src/crawler/narutoWikipedia",
+    "start:crawlerWiki": "node src/crawler/narutoWikipedia"
   },
   "dependencies": {
     "nodemon": "^2.0.4",
