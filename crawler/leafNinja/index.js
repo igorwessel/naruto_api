@@ -7,7 +7,7 @@ const {
   getNames,
   getPersonalData,
   getPersonalInfo,
-} = require('.');
+} = require('./helpers');
 const { websites } = require('../sites');
 
 (async () => {

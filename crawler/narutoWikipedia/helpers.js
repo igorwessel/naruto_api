@@ -54,12 +54,152 @@ async function getPersonalInfo(page) {
     }
   }, {});
 
-  console.log(personal_info);
-
   return {
     name,
     ...personal_info,
   };
+}
+
+async function getAppearsIn(page) {
+  const xpathManga = "//th[contains(text(),'Manga')]//parent::tr";
+  const xpathAnime = "//th[contains(text(),'Anime')]//parent::tr";
+  const xpathGame = "//th[contains(text(),'Game')]//parent::tr";
+  const xpathNovel = "//th[contains(text(),'Novel')]//parent::tr";
+  const xpathOVA = "//th[contains(text(),'OVA')]//parent::tr";
+  const xpathMovie = "//th[contains(text(),'Movie')]//parent::tr";
+
+  const mangaElement = await page.$x(xpathManga);
+  const animeElement = await page.$x(xpathAnime);
+  const gameElement = await page.$x(xpathGame);
+  const novelElement = await page.$x(xpathNovel);
+  const ovaElement = await page.$x(xpathOVA);
+  const movieElement = await page.$x(xpathMovie);
+
+  const mangaText = await page.evaluate(
+    (e) =>
+      e
+        ? e.textContent
+            .trim()
+            .split('\n')
+            .filter((t) => t !== '')
+            .map((t, i) => {
+              t = t.trim();
+              if (i === 0) {
+                t = t.toLowerCase();
+              }
+
+              return t;
+            })
+        : [null],
+    ...mangaElement
+  );
+
+  const animeText = await page.evaluate(
+    (e) =>
+      e
+        ? e.textContent
+            .trim()
+            .split('\n')
+            .filter((t) => t !== '')
+            .map((t, i) => {
+              t = t.trim();
+              if (i === 0) {
+                t = t.toLowerCase();
+              }
+
+              return t;
+            })
+        : [null],
+    ...animeElement
+  );
+
+  const gameText = await page.evaluate(
+    (e) =>
+      e
+        ? e.textContent
+            .trim()
+            .split('\n')
+            .filter((t) => t !== '')
+            .map((t, i) => {
+              t = t.trim();
+              if (i === 0) {
+                t = t.toLowerCase();
+              }
+
+              return t;
+            })
+        : [null],
+    ...gameElement
+  );
+
+  const novelText = await page.evaluate(
+    (e) =>
+      e
+        ? e.textContent
+            .trim()
+            .split('\n')
+            .filter((t) => t !== '')
+            .map((t, i) => {
+              t = t.trim();
+              if (i === 0) {
+                t = t.toLowerCase();
+              }
+
+              return t;
+            })
+        : [null],
+    ...novelElement
+  );
+
+  const ovaText = await page.evaluate(
+    (e) =>
+      e
+        ? e.textContent
+            .trim()
+            .split('\n')
+            .filter((t) => t !== '')
+            .map((t, i) => {
+              t = t.trim();
+              if (i === 0) {
+                t = t.toLowerCase();
+              }
+
+              return t;
+            })
+        : [null],
+    ...ovaElement
+  );
+
+  const movieText = await page.evaluate(
+    (e) =>
+      e
+        ? e.textContent
+            .trim()
+            .split('\n')
+            .filter((t) => t !== '')
+            .map((t, i) => {
+              t = t.trim();
+              if (i === 0) {
+                t = t.toLowerCase();
+              }
+
+              return t;
+            })
+        : [null],
+    ...movieElement
+  );
+
+  const manga = mangaText.filter((t) => t !== null);
+  const anime = animeText.filter((t) => t !== null);
+  const game = gameText.filter((t) => t !== null);
+  const ova = ovaText.filter((t) => t !== null);
+  const movie = movieText.filter((t) => t !== null);
+
+  const appears_in = [manga, anime, game, ova, movie]
+    .filter((t) => t.length !== 0)
+    .reduce((obj, item) => ({ ...obj, [item[0]]: item.slice(1) }), {});
+
+  return appears_in;
 }
 
 async function getFamilyInfo(page) {
@@ -69,15 +209,17 @@ async function getFamilyInfo(page) {
 
   const familyText = await page.evaluate(
     (e) =>
-      e.textContent
-        .trim()
-        .replace('\t', '')
-        .split('\n')
-        .filter((t) => t !== ''),
+      e
+        ? e.textContent
+            .trim()
+            .replace('\t', '')
+            .split('\n')
+            .filter((t) => t !== '')
+        : [null],
     ...familyElement
   );
 
-  const family = familyText.filter((t) => !t.includes('Family'));
+  const family = familyText.filter((t) => !t.includes('Family') || t !== null);
 
   return family;
 }
@@ -88,10 +230,13 @@ async function getNatureType(page) {
   );
 
   const natureTypeText = await page.evaluate(
-    (e) => e.textContent.match(/(\w+\s?Release$)/gm),
+    (e) => (e ? e.textContent.match(/(\w+\s?Release$)/gm) : [null]),
     ...natureTypeElement
   );
-  return natureTypeText;
+
+  const nature = natureTypeText.filter((t) => t !== null);
+
+  return nature;
 }
 
 async function getJutsus(page) {
@@ -101,16 +246,20 @@ async function getJutsus(page) {
 
   const jutsuText = await page.evaluate(
     (e) =>
-      e.textContent
-        .trim()
-        .split('\n')
-        .filter((t) => t !== '')
-        .map((t) => t.trim())
-        .slice(1),
+      e
+        ? e.textContent
+            .trim()
+            .split('\n')
+            .filter((t) => t !== '')
+            .map((t) => t.trim())
+            .slice(1)
+        : [null],
     ...jutsuElement
   );
 
-  return jutsuText;
+  const jutsu = jutsuText.filter((t) => t !== null);
+
+  return jutsu;
 }
 
 async function getTools(page) {
@@ -118,16 +267,20 @@ async function getTools(page) {
     '//a[@class="text" and contains(text(), "Tools")]//parent::th//parent::tr//parent::tbody'
   );
 
-  const tools = await page.evaluate(
+  const toolsText = await page.evaluate(
     (e) =>
-      e.textContent
-        .trim()
-        .split('\n')
-        .filter((t) => t !== '')
-        .map((t) => t.trim())
-        .slice(1),
+      e
+        ? e.textContent
+            .trim()
+            .split('\n')
+            .filter((t) => t !== '')
+            .map((t) => t.trim())
+            .slice(1)
+        : [null],
     ...toolsElement
   );
+
+  const tools = toolsText.filter((t) => t !== null);
 
   return tools;
 }
@@ -138,4 +291,5 @@ module.exports = {
   getNatureType,
   getFamilyInfo,
   getPersonalInfo,
+  getAppearsIn,
 };
