@@ -1,63 +1,107 @@
 async function getPersonalInfo(page) {
-  const xpath = '//th[contains(text(),"Manga")]//parent::tr//parent::tbody';
+  const fields = [
+    'Birthdate',
+    'Sex',
+    'Age',
+    'Species',
+    'Status',
+    'Height',
+    'Weight',
+    'Partner',
+    'Blood type',
+    'Kekkei Genkai',
+    'Kekkei Mōra',
+    'Jinchūriki',
+    'Classification',
+    'Tailed Beast',
+    'Occupation',
+    'Affiliation',
+    'Team',
+    'Clan',
+    'Ninja Rank',
+    'Ninja Registration',
+    'Academy Grad. Age',
+    'Chūnin Prom. Age',
+  ];
 
-  const tableElement = await page.$x(xpath);
-  const info = await page.evaluate(
-    (e) =>
-      Array.from(document.querySelectorAll('tr'))
-        .map((e) =>
-          e.innerText.split('\n').map((t) => t.replace('\t', '').trim())
-        )
-        .filter((t) => t.length !== 0),
-    ...tableElement
-  );
+  const elementsText = [];
 
-  const name = await page.evaluate(
-    () => document.querySelector('.page-header__title').innerText
-  );
+  for (let field of fields) {
+    const element = await page.$x(
+      `//th[contains(text(),"${field}")]//parent::tr`
+    );
+    const elementText = await page.evaluate(
+      (e) =>
+        e
+          ? e.innerText
+              .trim()
+              .split('\t')
+              .map((t, i) => {
+                t = t.trim();
+                t = t.replace('ū', 'u');
+                t = t.replace(/(ō|Ō)/gm, 'o');
+                t = t.replace('.', '');
 
-  const personal_info = info.reduce((obj, item) => {
-    let key;
-    let value = item[1];
-    if (item.length === 2) {
-      key = item[0].toLowerCase().replace(/\s/gm, '_');
-    }
+                if (i === 0) {
+                  t = t.toLowerCase().replace(/\s/gm, '_');
+                }
 
-    if (value && value.match(/(\D+:\s)/gm)) {
-      value = value.replace(/(\D+:\s)/gm, '');
-    }
+                if (t.includes('\n')) {
+                  t = t.split('\n');
+                }
 
-    if (key === 'height' || key === 'weight') {
-      value = parseFloat(value.replace(/[A-z:\s]/gm, ''));
-    }
+                if (t.includes(',')) {
+                  t = t.split(',').map((t) => t.trim());
+                }
 
-    if (
-      key === 'debut' ||
-      key === 'manga' ||
-      key === 'english' ||
-      key === 'anime' ||
-      key === 'game' ||
-      key === 'appears_in' ||
-      key === undefined ||
-      key === 'japanese' ||
-      key === '[collapse]' ||
-      key === '[expand]' ||
-      key === 'edit' ||
-      key === 'エー_ē'
-    ) {
-      return obj;
-    } else {
+                return t;
+              })
+          : [null],
+      ...element
+    );
+
+    elementsText.push(elementText);
+  }
+
+  const info = elementsText
+    .filter((t) => t[0] !== null)
+    .reduce((obj, item) => {
+      const key = item[0];
+      let value = item[1];
+
+      if (value instanceof Array) {
+        value = value.map((t) => t.trim());
+      }
+
+      if (value[0].match(/^Part/gm)) {
+        value = value
+          .map((t) => t.split(':').map((t) => t.trim()))
+          .reduce((obj, item) => {
+            const key = item[0].toLowerCase().replace(/\s/gm, '_');
+            let value = item[1].trim();
+
+            if (value.match(/(\d{4}\scm)/gm)) {
+              value = `${value.substr(0, 3)}.${value.substr(3)}`;
+            }
+
+            if (value.match(/(\d{3})\skg/gm)) {
+              value = `${value.substr(0, 2)}.${value.substr(2)}`;
+            }
+
+            return {
+              ...obj,
+              [key]: value,
+            };
+          }, {});
+      }
+
       return {
         ...obj,
-        [key]: item.length >= 3 ? item : value,
+        [key]: value,
       };
-    }
-  }, {});
+    }, {});
 
-  return {
-    name,
-    ...personal_info,
-  };
+  return info;
 }
 
 async function getAppearsIn(page) {
@@ -219,7 +263,9 @@ async function getFamilyInfo(page) {
     ...familyElement
   );
 
-  const family = familyText.filter((t) => !t.includes('Family') || t !== null);
+  const family = familyText.some((t) => t === null)
+    ? familyText.filter((t) => t !== null)
+    : familyText.filter((t) => !t.includes('Family'));
 
   return family;
 }
@@ -237,6 +283,27 @@ async function getNatureType(page) {
   const nature = natureTypeText.filter((t) => t !== null);
 
   return nature;
+}
+
+async function getUniqueTraits(page) {
+  const xpath =
+    "//th[contains(text(),'Unique Traits')]//parent::tr//parent::tbody";
+
+  const uniqueElement = await page.$x(xpath);
+
+  const uniqueText = await page.evaluate(
+    (e) =>
+      e
+        ? e.innerText
+            .trim()
+            .split('\n')
+            .filter((t) => t !== '')
+            .splice(2)
+        : [null],
+    ...uniqueElement
+  );
+
+  return uniqueText.join('\n');
 }
 
 async function getJutsus(page) {
@@ -292,4 +359,5 @@ module.exports = {
   getFamilyInfo,
   getPersonalInfo,
   getAppearsIn,
+  getUniqueTraits,
 };
