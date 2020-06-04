@@ -11,7 +11,7 @@ export const normalizePort = (
 
 export const onError = (server: Server) => {
   return (error: NodeJS.ErrnoException): void => {
-    let port: number | string = server.address().port;
+    let port: number | string;
     if (error.syscall !== 'listen') throw error;
     let bind = typeof port === 'string' ? `pipe ${port}` : `port ${port}`;
     switch (error.code) {
