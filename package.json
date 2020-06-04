@@ -1,18 +1,33 @@
 {
   "name": "naruto_api",
   "version": "1.0.0",
-  "main": "index.js",
   "author": {
     "email": "igor_wessel@hotmail.com",
     "name": "Igor Wessel da Silva"
   },
   "license": "MIT",
+  "main": "index.js",
   "scripts": {
-    "start:crawlerWiki": "node src/crawler/narutoWikipedia",
-    "test:crawlerWiki": "nodemon src/crawler/narutoWikipedia"
+    "dev": "nodemon dist --delay 5",
+    "gulp": "node_modules/.bin/gulp"
   },
   "dependencies": {
+    "express": "^4.17.1",
+    "express-graphql": "^0.9.0",
+    "graphql": "^15.0.0",
+    "graphql-import": "^1.0.2",
+    "graphql-tools": "^6.0.7",
+    "sequelize": "^5.21.11"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.6",
+    "@types/express-graphql": "^0.9.0",
+    "@types/graphql": "^14.5.0",
+    "@types/node": "^14.0.10",
+    "gulp": "^4.0.2",
+    "gulp-clean": "^0.4.0",
+    "gulp-typescript": "^6.0.0-alpha.1",
     "nodemon": "^2.0.4",
-    "puppeteer": "^3.1.0"
+    "typescript": "^3.9.3"
   }
 }
