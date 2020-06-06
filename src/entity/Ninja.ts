@@ -19,7 +19,7 @@ export class Ninja {
 	@PrimaryGeneratedColumn()
 	id: Number;
 
-	@Field()
+	@Field({ nullable: true })
 	@Column('varchar', { length: 128, nullable: false })
 	name: String;
 
@@ -29,6 +29,10 @@ export class Ninja {
 
 	@Field(() => NinjaAttr, { nullable: true })
 	ninja_attributes: NinjaAttr[];
+
+	@Field({ nullable: true })
+	@Column('varchar', { length: 20, nullable: true })
+	status: String;
 
 	@Field({ nullable: true })
 	@Column('enum', { enum: Sex, nullable: true })
@@ -54,6 +58,7 @@ export class Ninja {
 	@Column('text', { nullable: true })
 	unique_traits: String;
 
+	@Field(() => Family, { nullable: true })
 	@OneToMany(type => Family, family => family.parent_from)
 	family: Ninja[];
 

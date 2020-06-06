@@ -6,6 +6,8 @@ import { NinjaAttr } from '../../entity/NinjaAttr';
 import { NinjaRepo } from '../../repos/NinjaRepo';
 import { Tools } from '../../entity/Tools';
 import { ToolsRepo } from '../../repos/ToolsRepo';
+import { Family } from '../../entity/Family';
+import { FamilyRepo } from '../../repos/FamilyRepo';
 
 @Resolver(Ninja)
 export class NinjaResolver {
@@ -14,6 +16,9 @@ export class NinjaResolver {
 
 	@InjectRepository(ToolsRepo)
 	private readonly toolsRepo: ToolsRepo;
+
+	@InjectRepository(FamilyRepo)
+	private readonly familyRepo: FamilyRepo;
 
 	@InjectRepository(NinjaAttrRepo)
 	private readonly ninjaAttrRepo: NinjaAttrRepo;
@@ -32,6 +37,16 @@ export class NinjaResolver {
 			.getMany();
 
 		return tools;
+	}
+
+	@FieldResolver(() => Family)
+	async family(@Root() ninja: Ninja) {
+		const family = await this.familyRepo
+			.createQueryBuilder('family')
+			.innerJoinAndSelect('family.parent_to', 'parent_to')
+			.where('parent_from = :id', { id: ninja.id })
+			.getMany();
+		return family;
 	}
 
 	@FieldResolver(() => NinjaAttr)
