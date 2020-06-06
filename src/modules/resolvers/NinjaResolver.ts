@@ -20,11 +20,11 @@ export class NinjaResolver {
 
 	@FieldResolver(() => NinjaAttr)
 	async ninja_attributes(@Root() ninja_parent: Ninja): Promise<NinjaAttr[]> {
-		const age = await this.ninjaAttrRepo.find({
+		const ninjaAttr = await this.ninjaAttrRepo.find({
 			where: { ninja: ninja_parent.id },
 			relations: ['season']
 		});
 
-		return age;
+		return ninjaAttr;
 	}
 }
