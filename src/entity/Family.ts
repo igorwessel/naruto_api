@@ -1,11 +1,14 @@
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from 'typeorm';
 import { Ninja } from './Ninja';
+import { Field, ObjectType } from 'type-graphql';
 
+@ObjectType()
 @Entity()
 export class Family {
 	@PrimaryGeneratedColumn()
 	id: Number;
 
+	@Field({ nullable: true })
 	@Column('varchar', { length: 25 })
 	relationship: String;
 
