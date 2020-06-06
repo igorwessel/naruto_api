@@ -14,12 +14,12 @@ export class NinjaResolver {
 	private readonly ninjaAttrRepo: NinjaAttrRepo;
 
 	@Query(() => [Ninja])
-	async ninjas() {
+	async ninjas(): Promise<Ninja[]> {
 		return await this.ninjaRepo.find();
 	}
 
 	@FieldResolver(() => NinjaAttr)
-	async ninja_attributes(@Root() ninja_parent: Ninja): Promise<any> {
+	async ninja_attributes(@Root() ninja_parent: Ninja): Promise<NinjaAttr[]> {
 		const age = await this.ninjaAttrRepo.find({
 			where: { ninja: ninja_parent.id },
 			relations: ['season']

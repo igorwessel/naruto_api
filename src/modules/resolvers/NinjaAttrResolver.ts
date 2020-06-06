@@ -1,4 +1,4 @@
-import { FieldResolver, Root, Resolver, Ctx } from 'type-graphql';
+import { Resolver } from 'type-graphql';
 import { NinjaAttr } from '../../entity/NinjaAttr';
 
 @Resolver(NinjaAttr)
