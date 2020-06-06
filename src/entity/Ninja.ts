@@ -1,9 +1,10 @@
-import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany, ManyToMany, JoinTable } from 'typeorm';
 import { Family } from './Family';
 import { NinjaAttr } from './NinjaAttr';
 import { Field, ObjectType } from 'type-graphql';
 import { Tools } from './Tools';
 import { NinjaTools } from './NinjaTools';
+import { Clan } from './Clan';
 
 export enum Sex {
 	Male = 'Male',
@@ -59,6 +60,11 @@ export class Ninja {
 	@Field(() => Tools, { nullable: true })
 	@OneToMany(type => NinjaTools, ninja_tools => ninja_tools.ninja)
 	tools: Tools[];
+
+	@Field(() => Clan, { nullable: true })
+	@ManyToMany(type => Clan)
+	@JoinTable({ name: 'ninja_clan' })
+	clan: Clan[];
 
 	@OneToMany(type => NinjaAttr, ninja_attr => ninja_attr.ninja)
 	ninja_has_attributes: NinjaAttr[];
