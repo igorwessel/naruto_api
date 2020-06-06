@@ -1,18 +1,25 @@
-import * as express from 'express';
-import * as graphqlHTTP from 'express-graphql';
+import 'reflect-metadata';
+import express from 'express';
+import { ApolloServer } from 'apollo-server-express';
+import { buildSchema } from 'type-graphql';
 
-import schema from './graphql/schema';
-class App {
-	public express: express.Application;
+import { NinjaResolver } from './modules/resolvers/NinjaResolver';
+import { NinjaAttrResolver } from './modules/resolvers/NinjaAttrResolver';
 
-	constructor() {
-		this.express = express();
-		this.middleware();
-	}
+async function startServer(Container: any): Promise<express.Application> {
+	const app: express.Application = express();
+	const server = new ApolloServer({
+		schema: await buildSchema({
+			resolvers: [NinjaResolver, NinjaAttrResolver],
+			container: Container
+		}),
 
-	private middleware(): void {
-		this.express.use('/graphql', graphqlHTTP({ schema, graphiql: process.env.NODE_ENV === 'development' }));
-	}
+		context: ({ req, res }) => ({ req, res })
+	});
+
+	server.applyMiddleware({ app, path: '/graphql' });
+
+	return app;
 }
 
-export default new App().express;
+export { startServer };

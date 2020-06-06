@@ -1,10 +1,17 @@
-import * as http from 'http';
-import app from './app';
-import { normalizePort, onError, onListening } from './utils';
+import { startServer } from './app';
+import { connect } from './config/typeorm';
 
-const server = http.createServer(app);
-const port = normalizePort(process.env.port || 4000);
+import express from 'express';
+import Container from 'typedi';
+import { useContainer } from 'typeorm';
 
-server.listen(port);
-server.on('error', onError(server));
-server.on('listening', onListening(server));
+async function main(): Promise<void> {
+	useContainer(Container);
+	connect();
+	const app: express.Application = await startServer(Container);
+
+	app.listen(4000);
+	console.log('Server start on', 4000);
+}
+
+main();
