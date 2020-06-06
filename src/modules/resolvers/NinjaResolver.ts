@@ -24,7 +24,7 @@ export class NinjaResolver {
 	}
 
 	@FieldResolver(() => Tools)
-	async tools(@Root() ninja: Ninja) {
+	async tools(@Root() ninja: Ninja): Promise<Tools[]> {
 		const tools = await this.toolsRepo
 			.createQueryBuilder('tool')
 			.innerJoinAndSelect('tool.ninja_tools', 'ninja_tools')
