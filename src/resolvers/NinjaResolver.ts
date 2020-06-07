@@ -10,6 +10,8 @@ import { Family } from '../entity/Family';
 import { FamilyRepo } from '../repos/FamilyRepo';
 import { NatureType } from '../entity/NatureType';
 import { NatureTypeRepo } from '../repos/NatureTypeRepo';
+import { Team } from '../entity/Team';
+import { TeamRepo } from '../repos/TeamRepo';
 
 @Resolver(Ninja)
 export class NinjaResolver {
@@ -28,6 +30,9 @@ export class NinjaResolver {
 	@InjectRepository(NatureTypeRepo)
 	private readonly natureTypeRepo: NatureTypeRepo;
 
+	@InjectRepository(TeamRepo)
+	private readonly teamRepo: TeamRepo;
+
 	@Query(() => [Ninja])
 	async ninjas(): Promise<Ninja[]> {
 		return await this.ninjaRepo.find({ relations: ['clan', 'occupation', 'affiliation'] });
@@ -45,7 +50,7 @@ export class NinjaResolver {
 	}
 
 	@FieldResolver(() => Family)
-	async family(@Root() ninja: Ninja) {
+	async family(@Root() ninja: Ninja): Promise<Family[]> {
 		const family = await this.familyRepo
 			.createQueryBuilder('family')
 			.innerJoinAndSelect('family.parent_to', 'parent_to')
@@ -55,13 +60,24 @@ export class NinjaResolver {
 	}
 
 	@FieldResolver(() => NatureType)
-	async nature_type(@Root() ninja: Ninja) {
+	async nature_type(@Root() ninja: Ninja): Promise<NatureType[]> {
 		const nature_type = await this.natureTypeRepo
 			.createQueryBuilder('nature_type')
 			.innerJoinAndSelect('nature_type.has_ninja', 'ninja_has_naturetype')
 			.where('ninja_has_naturetype.ninja = :id', { id: ninja.id })
 			.getMany();
 		return nature_type;
+	}
+
+	@FieldResolver(() => Team)
+	async team(@Root() ninja: Ninja) {
+		const team = await this.teamRepo
+			.createQueryBuilder('team')
+			.innerJoinAndSelect('team.has_team', 'ninja_has_team')
+			.where('ninja_has_team.ninja = :id', { id: ninja.id })
+			.getMany();
+
+		return team;
 	}
 
 	@FieldResolver(() => NinjaAttr)

@@ -5,6 +5,8 @@ import { NatureType } from '../entity/NatureType';
 export class NatureTypeResolver {
 	@FieldResolver()
 	async affinity(@Root() natureType: NatureType) {
-		return natureType.has_ninja[0].affinity;
+		const { affinity } = natureType.has_ninja[0];
+
+		return affinity;
 	}
 }
