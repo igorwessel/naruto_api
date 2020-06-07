@@ -8,6 +8,7 @@ import { Tools } from '../entity/Tools';
 import { ToolsRepo } from '../repos/ToolsRepo';
 import { Family } from '../entity/Family';
 import { FamilyRepo } from '../repos/FamilyRepo';
+import { Occupation } from '../entity/Occupation';
 
 @Resolver(Ninja)
 export class NinjaResolver {
@@ -25,7 +26,7 @@ export class NinjaResolver {
 
 	@Query(() => [Ninja])
 	async ninjas(): Promise<Ninja[]> {
-		return await this.ninjaRepo.find({ relations: ['clan'] });
+		return await this.ninjaRepo.find({ relations: ['clan', 'occupation', 'affiliation'] });
 	}
 
 	@FieldResolver(() => Tools)

@@ -6,6 +6,7 @@ import { Tools } from './Tools';
 import { NinjaTools } from './NinjaTools';
 import { Clan } from './Clan';
 import { Occupation } from './Occupation';
+import { Affiliation } from './Affiliation';
 
 export enum Sex {
 	Male = 'Male',
@@ -79,4 +80,9 @@ export class Ninja {
 	@ManyToMany(type => Occupation)
 	@JoinTable({ name: 'ninja_occupation' })
 	occupation: Occupation[];
+
+	@Field(() => Affiliation, { nullable: true })
+	@ManyToMany(type => Affiliation)
+	@JoinTable({ name: 'ninja_affiliation' })
+	affiliation: Affiliation[];
 }
