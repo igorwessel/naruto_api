@@ -10,7 +10,7 @@ export class NinjaJutsu {
 	@Column()
 	only: String;
 
-	@ManyToOne(type => Jutsu, jutsu => jutsu.ninja_jutsu)
+	@ManyToOne(type => Jutsu, jutsu => jutsu.has_ninja)
 	jutsu: Promise<Jutsu>;
 
 	@ManyToOne(type => Ninja, ninja => ninja.has_jutsu)

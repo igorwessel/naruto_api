@@ -19,5 +19,5 @@ export class Jutsu extends BaseContent {
 	hand_seals: String;
 
 	@OneToMany(type => NinjaJutsu, ninja_jutsu => ninja_jutsu.jutsu)
-	ninja_jutsu: NinjaJutsu[];
+	has_ninja: NinjaJutsu[];
 }

@@ -12,6 +12,8 @@ import { NatureType } from '../entity/NatureType';
 import { NatureTypeRepo } from '../repos/NatureTypeRepo';
 import { Team } from '../entity/Team';
 import { TeamRepo } from '../repos/TeamRepo';
+import { Jutsu } from '../entity/Jutsu';
+import { JutsuRepo } from '../repos/JutsuRepo';
 
 @Resolver(Ninja)
 export class NinjaResolver {
@@ -29,6 +31,9 @@ export class NinjaResolver {
 
 	@InjectRepository(NatureTypeRepo)
 	private readonly natureTypeRepo: NatureTypeRepo;
+
+	@InjectRepository(JutsuRepo)
+	private readonly jutsuRepo: JutsuRepo;
 
 	@InjectRepository(TeamRepo)
 	private readonly teamRepo: TeamRepo;
@@ -78,6 +83,17 @@ export class NinjaResolver {
 			.getMany();
 
 		return team;
+	}
+
+	@FieldResolver(() => Jutsu)
+	async jutsus(@Root() ninja: Ninja) {
+		const jutsus = await this.jutsuRepo
+			.createQueryBuilder('jutsu')
+			.innerJoinAndSelect('jutsu.has_ninja', 'ninja_has_jutsu')
+			.where('ninja_has_jutsu.ninja = :id', { id: ninja.id })
+			.getMany();
+
+		return jutsus;
 	}
 
 	@FieldResolver(() => NinjaAttr)

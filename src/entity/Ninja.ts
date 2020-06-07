@@ -12,6 +12,7 @@ import { NatureType } from './NatureType';
 import { NinjaTeam } from './NinjaTeam';
 import { Team } from './Team';
 import { NinjaJutsu } from './NinjaJutsu';
+import { Jutsu } from './Jutsu';
 
 export enum Sex {
 	Male = 'Male',
@@ -99,6 +100,9 @@ export class Ninja {
 
 	@Field(() => Team, { nullable: true })
 	team: Team[];
+
+	@Field(() => Jutsu, { nullable: true })
+	jutsus: Jutsu[];
 
 	@OneToMany(type => NinjaTeam, ninjateam => ninjateam.ninja)
 	has_team: NinjaTeam[];
