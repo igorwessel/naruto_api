@@ -5,8 +5,8 @@ import { Resolver, FieldResolver, Root } from 'type-graphql';
 export class NinjaAttrResolver {
 	@FieldResolver(() => String)
 	async season(@Root() ninjaAttr: NinjaAttr) {
-		const season = (await ninjaAttr.season).name;
+		const season = await ninjaAttr.season;
 
-		return season;
+		return season.name;
 	}
 }
