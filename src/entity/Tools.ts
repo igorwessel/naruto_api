@@ -1,29 +1,11 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
+import { Entity, OneToMany } from 'typeorm';
 import { NinjaTools } from './NinjaTools';
-import { Field, ObjectType } from 'type-graphql';
+import { ObjectType } from 'type-graphql';
+import { BaseContent } from '../shared/BaseContent';
 
 @ObjectType()
 @Entity()
-export class Tools {
-	@PrimaryGeneratedColumn()
-	id: Number;
-
-	@Field({ nullable: true })
-	@Column('varchar', { length: 50, nullable: true })
-	name: String;
-
-	@Field({ nullable: true })
-	@Column('varchar', { length: 50, nullable: true })
-	literal_english_name: String;
-
-	@Field({ nullable: true })
-	@Column('varchar', { length: 50, nullable: true })
-	english_anime_name: String;
-
-	@Field({ nullable: true })
-	@Column('text', { nullable: true })
-	description: String;
-
+export class Tools extends BaseContent {
 	@OneToMany(type => NinjaTools, ninja_tools => ninja_tools.tools)
 	ninja_tools: NinjaTools[];
 }
