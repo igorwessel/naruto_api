@@ -28,7 +28,6 @@ export class NinjaAttr {
 	@ManyToOne(type => Ninja, ninja => ninja.ninja_has_attributes)
 	ninja: Promise<Ninja>;
 
-	@Field(() => Season, { nullable: true })
 	@ManyToOne(type => Season, season => season.ninja_has_attributes)
 	season: Promise<Season>;
 }

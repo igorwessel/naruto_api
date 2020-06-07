@@ -7,12 +7,13 @@ import { NinjaResolver } from './resolvers/NinjaResolver';
 import { FamilyResolver } from './resolvers/FamilyResolver';
 import { NatureTypeResolver } from './resolvers/NatureTypeResolver';
 import { TeamResolver } from './resolvers/TeamResolver';
+import { NinjaAttrResolver } from './resolvers/NinjaAttrResolver';
 
 async function startServer(Container: any): Promise<express.Application> {
 	const app: express.Application = express();
 	const server = new ApolloServer({
 		schema: await buildSchema({
-			resolvers: [NinjaResolver, FamilyResolver, NatureTypeResolver, TeamResolver],
+			resolvers: [NinjaResolver, FamilyResolver, NatureTypeResolver, TeamResolver, NinjaAttrResolver],
 			container: Container
 		}),
 
