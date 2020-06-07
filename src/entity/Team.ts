@@ -11,6 +11,9 @@ export class Team extends BaseManyToMany {
 	@Column('text', { nullable: true })
 	description: String;
 
+	@Field(() => Boolean)
+	leader: Boolean;
+
 	@Field(() => Affiliation, { nullable: true })
 	@ManyToMany(type => Affiliation)
 	@JoinTable({ name: 'team_affiliation' })
