@@ -7,6 +7,8 @@ import { NinjaTools } from './NinjaTools';
 import { Clan } from './Clan';
 import { Occupation } from './Occupation';
 import { Affiliation } from './Affiliation';
+import { NinjaNaturetype } from './NinjaNaturetype';
+import { NatureType } from './NatureType';
 
 export enum Sex {
 	Male = 'Male',
@@ -85,4 +87,10 @@ export class Ninja {
 	@ManyToMany(type => Affiliation)
 	@JoinTable({ name: 'ninja_affiliation' })
 	affiliation: Affiliation[];
+
+	@Field(() => NatureType, { nullable: true })
+	nature_type: NatureType[];
+
+	@OneToMany(type => NinjaNaturetype, ninjanaturetype => ninjanaturetype.ninja)
+	has_nature_type: NinjaNaturetype[];
 }

@@ -6,12 +6,13 @@ import { buildSchema } from 'type-graphql';
 import { NinjaResolver } from './resolvers/NinjaResolver';
 import { NinjaAttrResolver } from './resolvers/NinjaAttrResolver';
 import { FamilyResolver } from './resolvers/FamilyResolver';
+import { NatureTypeResolver } from './resolvers/NatureTypeResolver';
 
 async function startServer(Container: any): Promise<express.Application> {
 	const app: express.Application = express();
 	const server = new ApolloServer({
 		schema: await buildSchema({
-			resolvers: [NinjaResolver, NinjaAttrResolver, FamilyResolver],
+			resolvers: [NinjaResolver, NinjaAttrResolver, FamilyResolver, NatureTypeResolver],
 			container: Container
 		}),
 

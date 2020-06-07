@@ -8,7 +8,8 @@ import { Tools } from '../entity/Tools';
 import { ToolsRepo } from '../repos/ToolsRepo';
 import { Family } from '../entity/Family';
 import { FamilyRepo } from '../repos/FamilyRepo';
-import { Occupation } from '../entity/Occupation';
+import { NatureType } from '../entity/NatureType';
+import { NatureTypeRepo } from '../repos/NatureTypeRepo';
 
 @Resolver(Ninja)
 export class NinjaResolver {
@@ -23,6 +24,9 @@ export class NinjaResolver {
 
 	@InjectRepository(NinjaAttrRepo)
 	private readonly ninjaAttrRepo: NinjaAttrRepo;
+
+	@InjectRepository(NatureTypeRepo)
+	private readonly natureTypeRepo: NatureTypeRepo;
 
 	@Query(() => [Ninja])
 	async ninjas(): Promise<Ninja[]> {
@@ -48,6 +52,16 @@ export class NinjaResolver {
 			.where('parent_from = :id', { id: ninja.id })
 			.getMany();
 		return family;
+	}
+
+	@FieldResolver(() => NatureType)
+	async nature_type(@Root() ninja: Ninja) {
+		const nature_type = await this.natureTypeRepo
+			.createQueryBuilder('nature_type')
+			.innerJoinAndSelect('nature_type.has_ninja', 'ninja_has_naturetype')
+			.where('ninja_has_naturetype.ninja = :id', { id: ninja.id })
+			.getMany();
+		return nature_type;
 	}
 
 	@FieldResolver(() => NinjaAttr)
