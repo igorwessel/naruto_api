@@ -95,7 +95,7 @@ export class Ninja {
 
 	@Field(() => Classification, { nullable: true })
 	@ManyToMany(type => Classification)
-	@JoinTable({ name: 'classification_ninja' })
+	@JoinTable({ name: 'ninja_classification' })
 	classification: Classification[];
 
 	@Field(() => NatureType, { nullable: true })
