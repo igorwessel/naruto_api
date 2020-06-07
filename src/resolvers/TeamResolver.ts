@@ -10,7 +10,7 @@ export class TeamResolver {
 	private readonly teamRepo: TeamRepo;
 
 	@FieldResolver(() => Affiliation)
-	async affiliation(@Root() team: Team) {
+	async affiliation(@Root() team: Team): Promise<Affiliation[]> {
 		const affiliation = await this.teamRepo.find({
 			relations: ['affiliation'],
 			where: { id: team.id }
