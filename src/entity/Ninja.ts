@@ -5,6 +5,7 @@ import { Field, ObjectType } from 'type-graphql';
 import { Tools } from './Tools';
 import { NinjaTools } from './NinjaTools';
 import { Clan } from './Clan';
+import { Occupation } from './Occupation';
 
 export enum Sex {
 	Male = 'Male',
@@ -73,4 +74,9 @@ export class Ninja {
 
 	@OneToMany(type => NinjaAttr, ninja_attr => ninja_attr.ninja)
 	ninja_has_attributes: NinjaAttr[];
+
+	@Field(() => Occupation, { nullable: true })
+	@ManyToMany(type => Occupation)
+	@JoinTable({ name: 'ninja_occupation' })
+	occupation: Occupation[];
 }
