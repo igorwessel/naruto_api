@@ -40,7 +40,7 @@ export class NinjaResolver {
 
 	@Query(() => [Ninja])
 	async ninjas(): Promise<Ninja[]> {
-		return await this.ninjaRepo.find({ relations: ['clan', 'occupation', 'affiliation'] });
+		return await this.ninjaRepo.find({ relations: ['clan', 'occupation', 'affiliation', 'classification'] });
 	}
 
 	@FieldResolver(() => Tools)

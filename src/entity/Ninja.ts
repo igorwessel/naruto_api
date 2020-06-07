@@ -13,6 +13,7 @@ import { NinjaTeam } from './NinjaTeam';
 import { Team } from './Team';
 import { NinjaJutsu } from './NinjaJutsu';
 import { Jutsu } from './Jutsu';
+import { Classification } from './Classification';
 
 export enum Sex {
 	Male = 'Male',
@@ -91,6 +92,11 @@ export class Ninja {
 	@ManyToMany(type => Affiliation)
 	@JoinTable({ name: 'ninja_affiliation' })
 	affiliation: Affiliation[];
+
+	@Field(() => Classification, { nullable: true })
+	@ManyToMany(type => Classification)
+	@JoinTable({ name: 'classification_ninja' })
+	classification: Classification[];
 
 	@Field(() => NatureType, { nullable: true })
 	nature_type: NatureType[];
