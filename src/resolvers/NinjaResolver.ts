@@ -1,13 +1,13 @@
-import { Resolver, Query, FieldResolver, Root, ID } from 'type-graphql';
-import { Ninja } from '../../entity/Ninja';
+import { Resolver, Query, FieldResolver, Root } from 'type-graphql';
+import { Ninja } from '../entity/Ninja';
 import { InjectRepository } from 'typeorm-typedi-extensions';
-import { NinjaAttrRepo } from '../../repos/NinjaAttrRepo';
-import { NinjaAttr } from '../../entity/NinjaAttr';
-import { NinjaRepo } from '../../repos/NinjaRepo';
-import { Tools } from '../../entity/Tools';
-import { ToolsRepo } from '../../repos/ToolsRepo';
-import { Family } from '../../entity/Family';
-import { FamilyRepo } from '../../repos/FamilyRepo';
+import { NinjaAttrRepo } from '../repos/NinjaAttrRepo';
+import { NinjaAttr } from '../entity/NinjaAttr';
+import { NinjaRepo } from '../repos/NinjaRepo';
+import { Tools } from '../entity/Tools';
+import { ToolsRepo } from '../repos/ToolsRepo';
+import { Family } from '../entity/Family';
+import { FamilyRepo } from '../repos/FamilyRepo';
 
 @Resolver(Ninja)
 export class NinjaResolver {

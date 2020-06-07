@@ -3,9 +3,9 @@ import express from 'express';
 import { ApolloServer } from 'apollo-server-express';
 import { buildSchema } from 'type-graphql';
 
-import { NinjaResolver } from './modules/resolvers/NinjaResolver';
-import { NinjaAttrResolver } from './modules/resolvers/NinjaAttrResolver';
-import { FamilyResolver } from './modules/resolvers/FamilyResolver';
+import { NinjaResolver } from './resolvers/NinjaResolver';
+import { NinjaAttrResolver } from './resolvers/NinjaAttrResolver';
+import { FamilyResolver } from './resolvers/FamilyResolver';
 
 async function startServer(Container: any): Promise<express.Application> {
 	const app: express.Application = express();

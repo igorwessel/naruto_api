@@ -1,20 +1,9 @@
-import {
-	Entity,
-	PrimaryGeneratedColumn,
-	Column,
-	ManyToOne,
-	JoinColumn,
-	ManyToMany,
-	Tree,
-	TreeParent,
-	TreeChildren
-} from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from 'typeorm';
 import { Ninja } from './Ninja';
 import { Field, ObjectType } from 'type-graphql';
 
 @ObjectType()
 @Entity()
-@Tree('closure-table')
 export class Family {
 	@PrimaryGeneratedColumn()
 	id: Number;
