@@ -70,7 +70,7 @@ export class NinjaResolver {
 	}
 
 	@FieldResolver(() => Team)
-	async team(@Root() ninja: Ninja) {
+	async team(@Root() ninja: Ninja): Promise<Team[]> {
 		const team = await this.teamRepo
 			.createQueryBuilder('team')
 			.innerJoinAndSelect('team.has_team', 'ninja_has_team')
