@@ -14,20 +14,20 @@ export class JutsuResolver {
 	@InjectRepository(NatureTypeRepo)
 	private readonly natureTypeRepo: NatureTypeRepo;
 
-	@FieldResolver()
-	async nature_type(@Root() jutsu: Jutsu): Promise<String | undefined> {
-		const nature = await this.natureTypeRepo
-			.createQueryBuilder('nature_type')
-			.innerJoinAndSelect('nature_type.jutsu', 'jutsu')
-			.where('jutsu.nature_type = :id', { id: jutsu.id })
+	@FieldResolver(() => NatureType)
+	async nature(@Root() jutsu: Jutsu): Promise<NatureType | undefined> {
+		const nature_type: NatureType | undefined = await this.natureTypeRepo
+			.createQueryBuilder()
+			.innerJoinAndSelect('jutsu', 'jutsu')
+			.where('jutsu.id = :id', { id: jutsu.id })
 			.getOne();
 
-		return nature?.name;
+		return nature_type;
 	}
 
 	@FieldResolver()
 	async classification(@Root() jutsu: Jutsu): Promise<ClassificationJutsu[] | undefined> {
-		const classification = (
+		const classification: ClassificationJutsu[] | undefined = (
 			await this.jutsuRepo.findOne({
 				relations: ['classification'],
 				where: { id: jutsu.id }

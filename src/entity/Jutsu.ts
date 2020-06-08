@@ -20,7 +20,7 @@ export class Jutsu extends BaseContent {
 	@Column({ nullable: true })
 	hand_seals: String;
 
-	@Field(() => String, { nullable: true })
+	@Field(() => NatureType, { name: 'nature', nullable: true })
 	@OneToOne(type => NatureType, nature_type => nature_type.jutsu)
 	@JoinColumn()
 	nature_type: NatureType;
