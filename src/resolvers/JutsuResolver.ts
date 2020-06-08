@@ -35,6 +35,24 @@ export class JutsuResolver {
 	}
 
 	@FieldResolver()
+	async derived_jutsu(@Root() jutsu_parent: Jutsu): Promise<Jutsu[] | undefined> {
+		const jutsu: Jutsu | undefined = await this.jutsuRepo.findOne(jutsu_parent.id, {
+			relations: ['derived_jutsu']
+		});
+
+		return jutsu?.derived_jutsu;
+	}
+
+	@FieldResolver()
+	async parent_jutsu(@Root() jutsu_parent: Jutsu): Promise<Jutsu[] | undefined> {
+		const jutsu: Jutsu | undefined = await this.jutsuRepo.findOne(jutsu_parent.id, {
+			relations: ['parent_jutsu']
+		});
+
+		return jutsu?.parent_jutsu;
+	}
+
+	@FieldResolver()
 	async classification(@Root() jutsu: Jutsu): Promise<ClassificationJutsu[] | undefined> {
 		const classification: ClassificationJutsu[] | undefined = (
 			await this.jutsuRepo.findOne({
