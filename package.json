@@ -10,7 +10,9 @@
 	"scripts": {
 		"dev": "NODE_ENV=development nodemon -w src --ext ts --exec ts-node src/index.ts",
 		"gulp": "node_modules/.bin/gulp",
-		"typeorm": "node --require ts-node/register ./node_modules/typeorm/cli.js"
+		"typeorm": "node --require ts-node/register ./node_modules/typeorm/cli.js",
+		"db:setup": "ts-node ./src/test-utils/setup.ts",
+		"test": "npm run db:setup && jest"
 	},
 	"dependencies": {
 		"apollo-server-express": "^2.14.2",

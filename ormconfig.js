@@ -7,6 +7,7 @@ module.exports = {
 	database: null, //NAME OF YOUR SCHEMA
 	entities: ['src/entity/**/**.ts'],
 	syncronize: process.env.NODE_ENV === 'development' ? true : false,
+	logging: true,
 	migrations: ['src/migrations/**/**.ts'],
 	cli: {
 		migrationsDir: ['src/migrations/']
