@@ -1,6 +1,6 @@
 import { Entity, Column, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 import { Ninja } from './Ninja';
-import { Team } from './Team';
+import { Team } from '../Team';
 
 @Entity()
 export class NinjaTeam {

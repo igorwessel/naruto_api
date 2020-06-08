@@ -1,5 +1,5 @@
 import { Entity, OneToMany } from 'typeorm';
-import { NinjaTools } from './NinjaTools';
+import { NinjaTools } from './Ninja';
 import { ObjectType } from 'type-graphql';
 import { BaseContent } from '../shared/BaseContent';
 

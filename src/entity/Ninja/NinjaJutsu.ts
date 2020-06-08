@@ -1,5 +1,5 @@
 import { Entity, ManyToOne, PrimaryGeneratedColumn, Column } from 'typeorm';
-import { Jutsu } from './Jutsu';
+import { Jutsu } from '../Jutsu';
 import { Ninja } from './Ninja';
 
 @Entity()

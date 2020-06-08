@@ -12,7 +12,7 @@ export class TeamResolver {
 	@FieldResolver()
 	async leader(@Root() team_parent: Team): Promise<Boolean> {
 		//TODO: maybe change this resolver for return the list of all leaders in this team.
-		const { leader } = team_parent.has_team[0];
+		const { leader }: { leader: Boolean } = team_parent.has_team[0];
 
 		return leader;
 	}

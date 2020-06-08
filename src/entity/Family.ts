@@ -1,5 +1,5 @@
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from 'typeorm';
-import { Ninja } from './Ninja';
+import { Ninja } from './Ninja/Ninja';
 import { Field, ObjectType } from 'type-graphql';
 
 @ObjectType()

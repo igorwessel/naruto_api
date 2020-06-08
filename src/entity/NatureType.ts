@@ -1,7 +1,7 @@
 import { BaseManyToMany } from '../shared/BaseManyToMany';
 import { ObjectType, Field } from 'type-graphql';
 import { Entity, OneToMany, OneToOne } from 'typeorm';
-import { NinjaNaturetype } from './NinjaNaturetype';
+import { NinjaNaturetype } from './Ninja';
 import { Jutsu } from './Jutsu';
 
 @ObjectType()

@@ -1,6 +1,6 @@
 import { Entity, PrimaryGeneratedColumn, ManyToOne, Column } from 'typeorm';
 import { Ninja } from './Ninja';
-import { Tools } from './Tools';
+import { Tools } from '../Tools';
 
 @Entity()
 export class NinjaTools {

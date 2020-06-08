@@ -2,7 +2,7 @@ import { Resolver, Query, FieldResolver, Root } from 'type-graphql';
 import { Ninja } from '../entity/Ninja';
 import { InjectRepository } from 'typeorm-typedi-extensions';
 import { NinjaAttrRepo } from '../repos/NinjaAttrRepo';
-import { NinjaAttr } from '../entity/NinjaAttr';
+import { NinjaAttr } from '../entity/Ninja';
 import { NinjaRepo } from '../repos/NinjaRepo';
 import { Tools } from '../entity/Tools';
 import { ToolsRepo } from '../repos/ToolsRepo';

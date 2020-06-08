@@ -1,7 +1,7 @@
 import { BaseManyToMany } from '../shared/BaseManyToMany';
 import { Column, Entity, OneToMany, ManyToMany, JoinTable } from 'typeorm';
 import { ObjectType, Field } from 'type-graphql';
-import { NinjaTeam } from './NinjaTeam';
+import { NinjaTeam } from './Ninja';
 import { Affiliation } from './Affiliation';
 
 @ObjectType()

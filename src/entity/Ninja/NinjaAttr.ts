@@ -1,6 +1,6 @@
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm';
 import { Ninja } from './Ninja';
-import { Season } from './Season';
+import { Season } from '../Season';
 import { Field, ObjectType, ID } from 'type-graphql';
 
 @ObjectType()

@@ -1,4 +1,4 @@
-import { NinjaAttr } from '../entity/NinjaAttr';
+import { NinjaAttr } from '../entity/Ninja';
 import { Resolver, FieldResolver, Root } from 'type-graphql';
 import { Season } from '../entity/Season';
 

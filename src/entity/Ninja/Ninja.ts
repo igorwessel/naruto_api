@@ -1,19 +1,19 @@
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany, ManyToMany, JoinTable } from 'typeorm';
-import { Family } from './Family';
+import { Family } from '../Family';
 import { NinjaAttr } from './NinjaAttr';
 import { Field, ObjectType } from 'type-graphql';
-import { Tools } from './Tools';
+import { Tools } from '../Tools';
 import { NinjaTools } from './NinjaTools';
-import { Clan } from './Clan';
-import { Occupation } from './Occupation';
-import { Affiliation } from './Affiliation';
+import { Clan } from '../Clan';
+import { Occupation } from '../Occupation';
+import { Affiliation } from '../Affiliation';
 import { NinjaNaturetype } from './NinjaNaturetype';
-import { NatureType } from './NatureType';
+import { NatureType } from '../NatureType';
 import { NinjaTeam } from './NinjaTeam';
-import { Team } from './Team';
+import { Team } from '../Team';
 import { NinjaJutsu } from './NinjaJutsu';
-import { Jutsu } from './Jutsu';
-import { Classification } from './Classification';
+import { Jutsu } from '../Jutsu';
+import { Classification } from '../Classification';
 
 export enum Sex {
 	Male = 'Male',

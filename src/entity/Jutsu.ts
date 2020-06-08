@@ -1,7 +1,17 @@
-import { Entity, Column, OneToMany, ManyToMany, JoinTable, OneToOne, JoinColumn } from 'typeorm';
+import {
+	Entity,
+	Column,
+	OneToMany,
+	ManyToMany,
+	JoinTable,
+	OneToOne,
+	JoinColumn,
+	ManyToOne,
+	PrimaryGeneratedColumn
+} from 'typeorm';
 import { BaseContent } from '../shared/BaseContent';
 import { ObjectType, Field } from 'type-graphql';
-import { NinjaJutsu } from './NinjaJutsu';
+import { NinjaJutsu } from './Ninja';
 import { ClassificationJutsu } from './ClassificationJutsu';
 import { NatureType } from './NatureType';
 
@@ -34,4 +44,15 @@ export class Jutsu extends BaseContent {
 	@ManyToMany(type => ClassificationJutsu)
 	@JoinTable({ name: 'jutsu_classification' })
 	classification: ClassificationJutsu[];
+
+	@OneToOne(type => Jutsu, jutsu => jutsu.related_jutsu, {
+		cascade: true,
+		onDelete: 'CASCADE'
+	})
+	@JoinColumn({ name: 'relatedJutsuId' })
+	related_jutsu_children: Jutsu;
+
+	@Field(type => Jutsu, { nullable: true })
+	@OneToOne(type => Jutsu, jutsu => jutsu.related_jutsu_children)
+	related_jutsu: Jutsu;
 }

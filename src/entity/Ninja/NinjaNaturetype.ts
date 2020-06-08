@@ -1,7 +1,7 @@
 import { PrimaryGeneratedColumn, Column, Entity, ManyToOne } from 'typeorm';
 import { Field, ObjectType } from 'type-graphql';
 import { Ninja } from './Ninja';
-import { NatureType } from './NatureType';
+import { NatureType } from '../NatureType';
 
 @ObjectType()
 @Entity()
