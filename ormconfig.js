@@ -6,7 +6,7 @@ module.exports = {
 	password: null, //PASSWORD
 	database: null, //NAME OF YOUR SCHEMA
 	entities: ['src/entity/**/**.ts'],
-	syncronize: true,
+	syncronize: process.env.NODE_ENV === 'development' ? true : false,
 	migrations: ['src/migrations/**/**.ts'],
 	cli: {
 		migrationsDir: ['src/migrations/']
