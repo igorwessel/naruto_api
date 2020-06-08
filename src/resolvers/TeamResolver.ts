@@ -10,20 +10,20 @@ export class TeamResolver {
 	private readonly teamRepo: TeamRepo;
 
 	@FieldResolver()
-	async leader(@Root() team: Team): Promise<Boolean> {
+	async leader(@Root() team_parent: Team): Promise<Boolean> {
 		//TODO: maybe change this resolver for return the list of all leaders in this team.
-		const { leader } = team.has_team[0];
+		const { leader } = team_parent.has_team[0];
 
 		return leader;
 	}
 
 	@FieldResolver(() => Affiliation)
-	async affiliation(@Root() team: Team): Promise<Affiliation[]> {
-		const affiliation = await this.teamRepo.find({
+	async affiliation(@Root() team_parent: Team): Promise<Affiliation[] | undefined> {
+		const team: Team | undefined = await this.teamRepo.findOne({
 			relations: ['affiliation'],
-			where: { id: team.id }
+			where: { id: team_parent.id }
 		});
 
-		return affiliation[0].affiliation;
+		return team?.affiliation;
 	}
 }

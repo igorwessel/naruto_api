@@ -5,7 +5,7 @@ import { NatureType } from '../entity/NatureType';
 export class NatureTypeResolver {
 	@FieldResolver()
 	async affinity(@Root() natureType: NatureType): Promise<Boolean> {
-		const { affinity } = natureType.has_ninja[0];
+		const { affinity }: { affinity: Boolean } = natureType.has_ninja[0];
 
 		return affinity;
 	}
