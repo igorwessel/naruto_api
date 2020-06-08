@@ -26,6 +26,15 @@ export class JutsuResolver {
 	}
 
 	@FieldResolver()
+	async related_jutsu(@Root() jutsu_parent: Jutsu): Promise<Jutsu | undefined> {
+		const jutsu: Jutsu | undefined = await this.jutsuRepo.findOne(jutsu_parent.id, {
+			relations: ['related_jutsu']
+		});
+
+		return jutsu?.related_jutsu;
+	}
+
+	@FieldResolver()
 	async classification(@Root() jutsu: Jutsu): Promise<ClassificationJutsu[] | undefined> {
 		const classification: ClassificationJutsu[] | undefined = (
 			await this.jutsuRepo.findOne({
