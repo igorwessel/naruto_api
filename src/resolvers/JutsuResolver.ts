@@ -14,7 +14,7 @@ export class JutsuResolver {
 	@InjectRepository(NatureTypeRepo)
 	private readonly natureTypeRepo: NatureTypeRepo;
 
-	@FieldResolver(() => NatureType)
+	@FieldResolver()
 	async nature(@Root() jutsu: Jutsu): Promise<NatureType | undefined> {
 		const nature_type: NatureType | undefined = await this.natureTypeRepo
 			.createQueryBuilder()
