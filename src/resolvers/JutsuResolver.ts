@@ -5,6 +5,7 @@ import { JutsuRepo } from '../repos/JutsuRepo';
 import { NatureTypeRepo } from '../repos/NatureTypeRepo';
 import { ClassificationJutsu } from '../entity/ClassificationJutsu';
 import { NatureType } from '../entity/NatureType';
+import { Class } from '../entity/Class';
 
 @Resolver(Jutsu)
 export class JutsuResolver {
@@ -23,6 +24,15 @@ export class JutsuResolver {
 			.getOne();
 
 		return nature_type;
+	}
+
+	@FieldResolver()
+	async class(@Root() jutsu_parent: Jutsu): Promise<Class[] | undefined> {
+		const jutsu: Jutsu | undefined = await this.jutsuRepo.findOne(jutsu_parent.id, {
+			relations: ['class']
+		});
+
+		return jutsu?.class;
 	}
 
 	@FieldResolver()

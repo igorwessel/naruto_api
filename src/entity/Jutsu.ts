@@ -4,7 +4,7 @@ import { ObjectType, Field } from 'type-graphql';
 import { NinjaJutsu } from './Ninja';
 import { ClassificationJutsu } from './ClassificationJutsu';
 import { NatureType } from './NatureType';
-import { type } from 'os';
+import { Class } from './Class';
 
 @ObjectType()
 @Entity()
@@ -56,4 +56,9 @@ export class Jutsu extends BaseContent {
 	@ManyToMany(type => Jutsu)
 	@JoinTable({ name: 'jutsu_parent' })
 	parent_jutsu: Jutsu[];
+
+	@Field(type => Class, { nullable: true })
+	@ManyToMany(type => Class)
+	@JoinTable({ name: 'jutsu_class' })
+	class: Class[];
 }
