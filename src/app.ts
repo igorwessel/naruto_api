@@ -1,5 +1,6 @@
 import 'reflect-metadata';
 import express from 'express';
+import path from 'path';
 import { ApolloServer } from 'apollo-server-express';
 import { buildSchema } from 'type-graphql';
 
@@ -15,7 +16,8 @@ async function startServer(Container: any): Promise<express.Application> {
 	const server = new ApolloServer({
 		schema: await buildSchema({
 			resolvers: [NinjaResolver, FamilyResolver, NatureTypeResolver, TeamResolver, NinjaAttrResolver, JutsuResolver],
-			container: Container
+			container: Container,
+			emitSchemaFile: path.resolve(__dirname, '../__snapshots__/schema/schema.gql')
 		}),
 
 		context: ({ req, res }) => ({ req, res })

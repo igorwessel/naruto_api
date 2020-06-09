@@ -14,12 +14,7 @@ import { Team } from '../Team';
 import { NinjaJutsu } from './NinjaJutsu';
 import { Jutsu } from '../Jutsu';
 import { Classification } from '../Classification';
-
-export enum Sex {
-	Male = 'Male',
-	Female = 'Female',
-	Various = 'Various'
-}
+import { Sex } from '../../shared/BaseTypes';
 
 @ObjectType()
 @Entity()

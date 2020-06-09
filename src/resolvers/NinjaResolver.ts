@@ -1,4 +1,4 @@
-import { Resolver, Query, FieldResolver, Root } from 'type-graphql';
+import { Resolver, Query, FieldResolver, Root, Args } from 'type-graphql';
 import { Ninja } from '../entity/Ninja';
 import { InjectRepository } from 'typeorm-typedi-extensions';
 import { NinjaAttrRepo } from '../repos/NinjaAttrRepo';
@@ -14,6 +14,7 @@ import { Team } from '../entity/Team';
 import { TeamRepo } from '../repos/TeamRepo';
 import { Jutsu } from '../entity/Jutsu';
 import { JutsuRepo } from '../repos/JutsuRepo';
+import { BaseArgs } from '../shared/BaseArgs';
 
 @Resolver(Ninja)
 export class NinjaResolver {
@@ -39,8 +40,15 @@ export class NinjaResolver {
 	private readonly teamRepo: TeamRepo;
 
 	@Query(() => [Ninja])
-	async ninjas(): Promise<Ninja[]> {
-		return await this.ninjaRepo.find({ relations: ['clan', 'occupation', 'affiliation', 'classification'] });
+	async ninjas(@Args() { startIndex, endIndex }: BaseArgs): Promise<Ninja[]> {
+		const ninjas = await this.ninjaRepo.find({
+			relations: ['clan', 'occupation', 'affiliation', 'classification'],
+			skip: startIndex,
+			take: endIndex,
+			cache: true
+		});
+
+		return ninjas;
 	}
 
 	@FieldResolver(() => Tools)
