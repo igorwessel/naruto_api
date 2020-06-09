@@ -92,6 +92,7 @@ type Occupation {
 }
 
 type Query {
+  jutsus(skip: Int = 0, take: Int = 15): [Jutsu!]!
   ninjas(skip: Int = 0, take: Int = 15): [Ninja!]!
 }
 

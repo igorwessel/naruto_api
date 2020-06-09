@@ -1,4 +1,4 @@
-import { Resolver, FieldResolver, Root } from 'type-graphql';
+import { Resolver, FieldResolver, Root, Query, Args } from 'type-graphql';
 import { Jutsu } from '../entity/Jutsu';
 import { InjectRepository } from 'typeorm-typedi-extensions';
 import { JutsuRepo } from '../repos/JutsuRepo';
@@ -6,6 +6,7 @@ import { NatureTypeRepo } from '../repos/NatureTypeRepo';
 import { ClassificationJutsu } from '../entity/ClassificationJutsu';
 import { NatureType } from '../entity/NatureType';
 import { Class } from '../entity/Class';
+import { BaseArgs } from '../shared/BaseArgs';
 
 @Resolver(Jutsu)
 export class JutsuResolver {
@@ -14,6 +15,17 @@ export class JutsuResolver {
 
 	@InjectRepository(NatureTypeRepo)
 	private readonly natureTypeRepo: NatureTypeRepo;
+
+	@Query(() => [Jutsu])
+	async jutsus(@Args() { startIndex, endIndex }: BaseArgs): Promise<Jutsu[]> {
+		const jutsus: Jutsu[] = await this.jutsuRepo.find({
+			skip: startIndex,
+			take: endIndex,
+			cache: true
+		});
+
+		return jutsus;
+	}
 
 	@FieldResolver()
 	async nature(@Root() jutsu: Jutsu): Promise<NatureType | undefined> {
