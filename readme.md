@@ -12,3 +12,52 @@ Criei essa API para exercitar o meu conhecimento referente ao backend e tambem p
 - [] Implementar query para tools
 - [] Implementar query para team
 - [] Implementar query com filtros para o ninja
+
+## Examples
+
+A query ninja (no singular), é como ela mesma já diz ela vai buscar somente 1 Ninja e ela retorna o **Type Ninja** abaixo que tu pode escolher que atributo pegar, caso queira saber mais sobre os outros tipos, acesse a pasta **docs**.
+
+```graphql
+type Ninja {
+	academy_grad_age: String
+	affiliation: [Affiliation!]
+	birthdate: String
+	blood_type: String
+	chunin_prom_age: String
+	clan: [Clan!]
+	classification: [Classification!]
+	family: [Family!]
+	id: Float!
+	jutsus: [Jutsu!]
+	name: String
+	nature_type: [NatureType!]
+	ninja_attributes: [NinjaAttr!]
+	ninja_registration: String
+	occupation: [Occupation!]
+	sex: String
+	status: String
+	team: [Team!]
+	tools: [Tools!]
+	unique_traits: String
+}
+```
+
+```graphql
+{
+	ninja {
+		id
+		name
+	}
+}
+```
+
+Retorno esperado:
+
+```
+    data: {
+        ninja: {
+            id: 1
+            name: "Naruto Uzumaki"
+        }
+    }
+```
