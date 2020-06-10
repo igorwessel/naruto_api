@@ -44,18 +44,18 @@ type Ninja {
 
 Query:
 
-    ```graphql
-    {
-        ninja {
-            id
-            name
-        }
-    }
-    ```
+```graphql
+{
+	ninja {
+		id
+		name
+	}
+}
+```
 
 Retorno esperado:
 
-    ```
+```
     {
         data: {
             ninja: {
@@ -64,4 +64,4 @@ Retorno esperado:
             }
         }
     }
-    ```
+```
