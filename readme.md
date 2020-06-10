@@ -42,22 +42,26 @@ type Ninja {
 }
 ```
 
-```graphql
-{
-	ninja {
-		id
-		name
-	}
-}
-```
+Query:
+
+    ```graphql
+    {
+        ninja {
+            id
+            name
+        }
+    }
+    ```
 
 Retorno esperado:
 
-```
-    data: {
-        ninja: {
-            id: 1
-            name: "Naruto Uzumaki"
+    ```
+    {
+        data: {
+            ninja: {
+                id: 1
+                name: "Naruto Uzumaki"
+            }
         }
     }
-```
+    ```
