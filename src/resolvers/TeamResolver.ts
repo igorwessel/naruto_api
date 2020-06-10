@@ -3,7 +3,7 @@ import { Team } from '../entity/Team';
 import { Affiliation } from '../entity/Affiliation';
 import { InjectRepository } from 'typeorm-typedi-extensions';
 import { TeamRepo } from '../repos/TeamRepo';
-import { BaseArgs } from '../shared/BaseArgs';
+import { PaginationArgs } from '../shared/PaginationArgs';
 
 @Resolver(Team)
 export class TeamResolver {
@@ -11,7 +11,7 @@ export class TeamResolver {
 	private readonly teamRepo: TeamRepo;
 
 	@Query(() => [Team])
-	async teams(@Args() { startIndex, endIndex }: BaseArgs): Promise<Team[]> {
+	async teams(@Args() { startIndex, endIndex }: PaginationArgs): Promise<Team[]> {
 		const teams: Team[] = await this.teamRepo.find({
 			skip: startIndex,
 			take: endIndex,

@@ -1,4 +1,4 @@
-import { Resolver, Query, FieldResolver, Root, Args } from 'type-graphql';
+import { Resolver, Query, FieldResolver, Root, Args, Arg } from 'type-graphql';
 import { Ninja } from '../entity/Ninja';
 import { InjectRepository } from 'typeorm-typedi-extensions';
 import { NinjaAttrRepo } from '../repos/NinjaAttrRepo';
@@ -14,7 +14,8 @@ import { Team } from '../entity/Team';
 import { TeamRepo } from '../repos/TeamRepo';
 import { Jutsu } from '../entity/Jutsu';
 import { JutsuRepo } from '../repos/JutsuRepo';
-import { BaseArgs } from '../shared/BaseArgs';
+import { PaginationArgs } from '../shared/PaginationArgs';
+import { NinjaFilterInput } from '../types/NinjaInput';
 
 @Resolver(Ninja)
 export class NinjaResolver {
@@ -39,8 +40,14 @@ export class NinjaResolver {
 	@InjectRepository(TeamRepo)
 	private readonly teamRepo: TeamRepo;
 
+	@Query(() => Ninja)
+	async ninja(@Arg('filter') { id, name, sex, blood_type }: NinjaFilterInput) {
+		const ninja = this.ninjaRepo.search({ id, name, sex, blood_type });
+		return ninja;
+	}
+
 	@Query(() => [Ninja])
-	async ninjas(@Args() { startIndex, endIndex }: BaseArgs): Promise<Ninja[]> {
+	async ninjas(@Args() { startIndex, endIndex }: PaginationArgs): Promise<Ninja[]> {
 		const ninjas = await this.ninjaRepo.find({
 			relations: ['clan', 'occupation', 'affiliation', 'classification'],
 			skip: startIndex,

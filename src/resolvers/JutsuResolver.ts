@@ -6,7 +6,7 @@ import { NatureTypeRepo } from '../repos/NatureTypeRepo';
 import { ClassificationJutsu } from '../entity/ClassificationJutsu';
 import { NatureType } from '../entity/NatureType';
 import { Class } from '../entity/Class';
-import { BaseArgs } from '../shared/BaseArgs';
+import { PaginationArgs } from '../shared/PaginationArgs';
 
 @Resolver(Jutsu)
 export class JutsuResolver {
@@ -17,7 +17,7 @@ export class JutsuResolver {
 	private readonly natureTypeRepo: NatureTypeRepo;
 
 	@Query(() => [Jutsu])
-	async jutsus(@Args() { startIndex, endIndex }: BaseArgs): Promise<Jutsu[]> {
+	async jutsus(@Args() { startIndex, endIndex }: PaginationArgs): Promise<Jutsu[]> {
 		const jutsus: Jutsu[] = await this.jutsuRepo.find({
 			skip: startIndex,
 			take: endIndex,

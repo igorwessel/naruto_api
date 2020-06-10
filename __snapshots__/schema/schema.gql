@@ -86,6 +86,13 @@ type NinjaAttr {
   weight: String
 }
 
+input NinjaFilterInput {
+  blood_type: String
+  id: Int
+  name: String
+  sex: String
+}
+
 type Occupation {
   id: Float!
   name: String!
@@ -93,7 +100,9 @@ type Occupation {
 
 type Query {
   jutsus(skip: Int = 0, take: Int = 15): [Jutsu!]!
+  ninja(filter: NinjaFilterInput!): Ninja!
   ninjas(skip: Int = 0, take: Int = 15): [Ninja!]!
+  teams(skip: Int = 0, take: Int = 15): [Team!]!
 }
 
 type Team {
