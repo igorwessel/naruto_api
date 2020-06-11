@@ -12,6 +12,7 @@ Criei essa API para exercitar o meu conhecimento referente ao backend e tambem p
 - [] Implementar query para tools
 - [] Implementar query para team
 - [] Implementar query com filtros para o ninja
+- [] Colocar mais opções para o filtro do Ninja <- em especifico filtros que fazem sub-queries para a tabela que está se relacionando.
 
 ## Examples
 
