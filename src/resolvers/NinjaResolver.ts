@@ -47,13 +47,11 @@ export class NinjaResolver {
 	}
 
 	@Query(() => [Ninja])
-	async ninjas(@Args() { startIndex, endIndex }: PaginationArgs): Promise<Ninja[]> {
-		const ninjas = await this.ninjaRepo.find({
-			relations: ['clan', 'occupation', 'affiliation', 'classification'],
-			skip: startIndex,
-			take: endIndex,
-			cache: true
-		});
+	async ninjas(
+		@Arg('filter') { id, name, sex, blood_type }: NinjaFilterInput,
+		@Args() { startIndex, endIndex }: PaginationArgs
+	): Promise<Ninja[]> {
+		const ninjas = await this.ninjaRepo.searchMany({ id, name, sex, blood_type }, startIndex, endIndex);
 
 		return ninjas;
 	}
