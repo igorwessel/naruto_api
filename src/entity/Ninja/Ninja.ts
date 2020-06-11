@@ -1,7 +1,7 @@
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany, ManyToMany, JoinTable } from 'typeorm';
 import { Family } from '../Family';
 import { NinjaAttr } from './NinjaAttr';
-import { Field, ObjectType } from 'type-graphql';
+import { Field, ObjectType, Int } from 'type-graphql';
 import { Tools } from '../Tools';
 import { NinjaTools } from './NinjaTools';
 import { Clan } from '../Clan';
@@ -19,7 +19,7 @@ import { Sex } from '../../shared/BaseTypes';
 @ObjectType()
 @Entity()
 export class Ninja {
-	@Field()
+	@Field(() => Int)
 	@PrimaryGeneratedColumn()
 	id: Number;
 

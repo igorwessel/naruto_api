@@ -1,9 +1,9 @@
 import { Column, PrimaryGeneratedColumn } from 'typeorm';
-import { Field, ObjectType } from 'type-graphql';
+import { Field, ObjectType, Int } from 'type-graphql';
 
 @ObjectType()
 export abstract class BaseManyToMany {
-	@Field()
+	@Field(() => Int)
 	@PrimaryGeneratedColumn()
 	id: Number;
 

@@ -1,11 +1,11 @@
 import { Entity, OneToMany, Column, PrimaryGeneratedColumn } from 'typeorm';
 import { NinjaAttr } from './Ninja';
-import { ObjectType, Field } from 'type-graphql';
+import { ObjectType, Field, Int } from 'type-graphql';
 
 @ObjectType()
 @Entity()
 export class Season {
-	@Field()
+	@Field(() => Int)
 	@PrimaryGeneratedColumn()
 	id: Number;
 

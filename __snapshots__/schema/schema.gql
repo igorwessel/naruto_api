@@ -4,7 +4,7 @@
 # -----------------------------------------------
 
 type Affiliation {
-  id: Float!
+  id: Int!
   name: String!
 }
 
@@ -14,17 +14,17 @@ type Clan {
 }
 
 type Class {
-  id: Float!
+  id: Int!
   name: String!
 }
 
 type Classification {
-  id: Float!
+  id: Int!
   name: String!
 }
 
 type ClassificationJutsu {
-  id: Float!
+  id: Int!
   name: String!
 }
 
@@ -40,6 +40,7 @@ type Jutsu {
   description: String
   english_anime_name: String
   hand_seals: String
+  id: Int!
   literal_english_name: String
   name: String
   nature: NatureType
@@ -51,7 +52,7 @@ type Jutsu {
 
 type NatureType {
   affinity: Boolean!
-  id: Float!
+  id: Int!
   name: String!
 }
 
@@ -64,7 +65,7 @@ type Ninja {
   clan: [Clan!]
   classification: [Classification!]
   family: [Family!]
-  id: Float!
+  id: Int!
   jutsus: [Jutsu!]
   name: String
   nature_type: [NatureType!]
@@ -109,7 +110,7 @@ type Query {
 type Team {
   affiliation: [Affiliation!]
   description: String
-  id: Float!
+  id: Int!
   leader: Boolean!
   name: String!
 }
@@ -117,6 +118,7 @@ type Team {
 type Tools {
   description: String
   english_anime_name: String
+  id: Int!
   literal_english_name: String
   name: String
 }

@@ -1,8 +1,9 @@
 import { PrimaryGeneratedColumn, Column } from 'typeorm';
-import { Field, ObjectType } from 'type-graphql';
+import { Field, ObjectType, Int } from 'type-graphql';
 
 @ObjectType()
 export abstract class BaseContent {
+	@Field(() => Int)
 	@PrimaryGeneratedColumn()
 	id: number;
 
