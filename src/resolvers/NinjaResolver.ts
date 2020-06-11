@@ -41,8 +41,8 @@ export class NinjaResolver {
 	private readonly teamRepo: TeamRepo;
 
 	@Query(() => Ninja)
-	async ninja(@Arg('filter') { id, name, sex, blood_type }: NinjaFilterInput) {
-		const ninja = this.ninjaRepo.searchOne({ id, name, sex, blood_type });
+	async ninja(@Arg('filter') filter: NinjaFilterInput) {
+		const ninja = this.ninjaRepo.searchOne(filter);
 		return ninja;
 	}
 

@@ -92,7 +92,6 @@ input NinjaFilterInput {
   id: Int
   name: String
   sex: String
-  tool: String
 }
 
 type Occupation {
