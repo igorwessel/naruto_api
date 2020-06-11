@@ -3,12 +3,13 @@ import { Ninja } from '../entity/Ninja';
 
 @EntityRepository(Ninja)
 export class NinjaRepo extends Repository<Ninja> {
-	findByName(name: string): Promise<Ninja[]> {
-		console.log(name);
-		return this.find({ name: name.includes('%') ? Like(name) : name });
-	}
-
-	async search(args: any): Promise<Ninja | undefined> {
+	/**
+	 * This function have a responsability to create a queryBuilder to filter independent many filter option we have,
+	 * automatically he identify if user put '%' like operator and modify this column/parameter to use like.
+	 * Only search one ninja
+	 * @param args : Receive one object with all properties of Filter
+	 */
+	async searchOne(args: any): Promise<Ninja | undefined> {
 		const queryBuilder: SelectQueryBuilder<Ninja> = this.createQueryBuilder('ninja');
 
 		args = Object.entries(args).filter(arg => arg[1] !== undefined);

@@ -42,7 +42,7 @@ export class NinjaResolver {
 
 	@Query(() => Ninja)
 	async ninja(@Arg('filter') { id, name, sex, blood_type }: NinjaFilterInput) {
-		const ninja = this.ninjaRepo.search({ id, name, sex, blood_type });
+		const ninja = this.ninjaRepo.searchOne({ id, name, sex, blood_type });
 		return ninja;
 	}
 
