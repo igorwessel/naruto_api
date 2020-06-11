@@ -31,6 +31,10 @@ export class Ninja {
 	@Column('varchar', { length: 50, nullable: true })
 	birthdate: String;
 
+	@Field({ nullable: true })
+	@Column({ nullable: true })
+	specie: String;
+
 	@Field(() => NinjaAttr, { nullable: true })
 	ninja_attributes: NinjaAttr[];
 
