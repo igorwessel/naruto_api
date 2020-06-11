@@ -51,6 +51,10 @@ export class NinjaRepo extends Repository<Ninja> {
 	async searchMany(args: any, skip: number, take: number): Promise<Ninja[]> {
 		const queryBuilder: SelectQueryBuilder<Ninja> = this.createQueryBuilder('ninja');
 
+		if (!args) {
+			return await this.find({ relations: ['occupation', 'affiliation', 'classification', 'clan'], skip, take });
+		}
+
 		args = Object.entries(args).filter(arg => arg[1] !== undefined);
 
 		args.forEach((arg: [string, number | string], index: number): void => {

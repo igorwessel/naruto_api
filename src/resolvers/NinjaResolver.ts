@@ -48,10 +48,10 @@ export class NinjaResolver {
 
 	@Query(() => [Ninja])
 	async ninjas(
-		@Arg('filter') { id, name, sex, blood_type }: NinjaFilterInput,
+		@Arg('filter', { nullable: true }) filter: NinjaFilterInput,
 		@Args() { startIndex, endIndex }: PaginationArgs
 	): Promise<Ninja[]> {
-		const ninjas = await this.ninjaRepo.searchMany({ id, name, sex, blood_type }, startIndex, endIndex);
+		const ninjas = await this.ninjaRepo.searchMany(filter, startIndex, endIndex);
 
 		return ninjas;
 	}

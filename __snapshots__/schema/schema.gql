@@ -102,7 +102,7 @@ type Occupation {
 type Query {
   jutsus(skip: Int = 0, take: Int = 15): [Jutsu!]!
   ninja(filter: NinjaFilterInput!): Ninja!
-  ninjas(filter: NinjaFilterInput!, skip: Int = 0, take: Int = 15): [Ninja!]!
+  ninjas(filter: NinjaFilterInput, skip: Int = 0, take: Int = 15): [Ninja!]!
   teams(skip: Int = 0, take: Int = 15): [Team!]!
 }
 
