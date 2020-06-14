@@ -3,6 +3,8 @@ import express from 'express';
 import path from 'path';
 import { ApolloServer } from 'apollo-server-express';
 import { buildSchema } from 'type-graphql';
+import { RedisCache } from 'apollo-server-cache-redis';
+import responseCachePlugin from 'apollo-server-plugin-response-cache';
 
 import { NinjaResolver } from './resolvers/NinjaResolver';
 import { FamilyResolver } from './resolvers/FamilyResolver';
@@ -19,7 +21,14 @@ async function startServer(Container: any): Promise<express.Application> {
 			container: Container,
 			emitSchemaFile: path.resolve(__dirname, '../__snapshots__/schema/schema.gql')
 		}),
-
+		cacheControl: {
+			defaultMaxAge: 86400
+		},
+		persistedQueries: {
+			cache: new RedisCache()
+		},
+		tracing: true,
+		plugins: [responseCachePlugin()],
 		context: ({ req, res }) => ({ req, res })
 	});
 
