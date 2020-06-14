@@ -7,7 +7,7 @@ export class NinjaJutsu {
 	@PrimaryGeneratedColumn()
 	id: Number;
 
-	@Column()
+	@Column({ nullable: true })
 	only: String;
 
 	@ManyToOne(type => Jutsu, jutsu => jutsu.has_ninja)

@@ -53,6 +53,8 @@ type Jutsu {
 type NatureType {
   affinity: Boolean!
   id: Int!
+  kekkei_genkai: Boolean!
+  kekkei_tota: Boolean!
   name: String!
 }
 
@@ -73,6 +75,7 @@ type Ninja {
   ninja_registration: String
   occupation: [Occupation!]
   sex: String
+  specie: String
   status: String
   team: [Team!]
   tools: [Tools!]

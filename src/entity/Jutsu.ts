@@ -18,13 +18,13 @@ export class Jutsu extends BaseContent {
 	rank: String;
 
 	@Field({ nullable: true })
-	@Column({ nullable: true })
+	@Column('longtext', { nullable: true })
 	hand_seals: String;
 
 	@Field(() => NatureType, { nullable: true })
 	nature: NatureType;
 
-	@OneToOne(type => NatureType, nature_type => nature_type.jutsu)
+	@ManyToOne(type => NatureType, nature_type => nature_type.jutsu)
 	@JoinColumn()
 	nature_type: NatureType;
 
