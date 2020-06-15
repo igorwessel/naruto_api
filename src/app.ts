@@ -3,7 +3,6 @@ import express from 'express';
 import path from 'path';
 import { ApolloServer } from 'apollo-server-express';
 import { buildSchema } from 'type-graphql';
-import { RedisCache } from 'apollo-server-cache-redis';
 import responseCachePlugin from 'apollo-server-plugin-response-cache';
 
 import { NinjaResolver } from './resolvers/NinjaResolver';
@@ -12,7 +11,7 @@ import { NatureTypeResolver } from './resolvers/NatureTypeResolver';
 import { TeamResolver } from './resolvers/TeamResolver';
 import { NinjaAttrResolver } from './resolvers/NinjaAttrResolver';
 import { JutsuResolver } from './resolvers/JutsuResolver';
-import { toolLoader } from './loaders/ToolLoader';
+import { ninjaToolLoader } from './loaders/NinjaToolLoader';
 
 async function startServer(Container: any): Promise<express.Application> {
 	const app: express.Application = express();

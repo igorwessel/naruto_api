@@ -59,7 +59,7 @@ export class NinjaResolver {
 
 	@FieldResolver(() => Tools)
 	async tools(@Root() ninja: Ninja, @Ctx() { loaders: { ninjaToolLoader } }: IGraphQLContext): Promise<Tools[]> {
-		const tools = await ninjaToolLoader.load(ninja.id);
+		const tools: Tools[] = await ninjaToolLoader.load(ninja.id);
 
 		return tools;
 	}

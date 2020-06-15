@@ -1,4 +1,4 @@
-import { ninjaToolLoader } from '../loaders/ToolLoader';
+import { ninjaToolLoader } from '../loaders/NinjaToolLoader';
 
 export interface IGraphQLContext {
 	loaders: {
