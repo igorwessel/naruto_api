@@ -18,6 +18,12 @@ export class NinjaNaturetype {
 	@Column('varchar', { nullable: true })
 	only: string;
 
+	@Column({ nullable: true })
+	ninjaId: number;
+
+	@Column({ nullable: true })
+	natureTypeId: number;
+
 	@ManyToOne(type => Ninja, ninja => ninja.has_nature_type)
 	ninja: Promise<Ninja>;
 

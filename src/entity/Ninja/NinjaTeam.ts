@@ -10,6 +10,12 @@ export class NinjaTeam {
 	@Column('boolean')
 	leader: Boolean;
 
+	@Column({ nullable: true })
+	ninjaId: number;
+
+	@Column({ nullable: true })
+	teamId: number;
+
 	@ManyToOne(type => Ninja, ninja => ninja.has_team)
 	ninja: Promise<Ninja>;
 

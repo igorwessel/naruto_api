@@ -10,6 +10,12 @@ export class NinjaJutsu {
 	@Column({ nullable: true })
 	only: string;
 
+	@Column({ nullable: true })
+	jutsuId: number;
+
+	@Column({ nullable: true })
+	ninjaId: number;
+
 	@ManyToOne(type => Jutsu, jutsu => jutsu.has_ninja)
 	jutsu: Promise<Jutsu>;
 
