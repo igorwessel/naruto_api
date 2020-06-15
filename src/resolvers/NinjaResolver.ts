@@ -84,9 +84,9 @@ export class NinjaResolver {
 	@FieldResolver(() => NinjaAttr)
 	async ninja_attributes(
 		@Root() ninja: Ninja,
-		@Ctx() { loaders: { ninjaNatureAttrLoader } }: IGraphQLContext
+		@Ctx() { loaders: { ninjaAttrLoader } }: IGraphQLContext
 	): Promise<NinjaAttr[]> {
-		const ninjaAttr: NinjaAttr[] = await ninjaNatureAttrLoader.load(ninja.id);
+		const ninjaAttr: NinjaAttr[] = await ninjaAttrLoader.load(ninja.id);
 
 		return ninjaAttr;
 	}

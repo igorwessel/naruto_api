@@ -8,7 +8,7 @@ export interface IGraphQLContext {
 	loaders: {
 		ninjaToolLoader: ReturnType<typeof ninjaToolLoader>;
 		ninjaNatureTypeLoader: ReturnType<typeof ninjaNatureTypeLoader>;
-		ninjaNatureAttrLoader: ReturnType<typeof ninjaAttrLoader>;
+		ninjaAttrLoader: ReturnType<typeof ninjaAttrLoader>;
 		ninjaJutsuLoader: ReturnType<typeof ninjaJutsuLoader>;
 		ninjaTeamLoader: ReturnType<typeof ninjaTeamLoader>;
 	};

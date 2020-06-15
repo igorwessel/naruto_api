@@ -35,7 +35,7 @@ async function startServer(Container: any): Promise<express.Application> {
 			loaders: {
 				ninjaToolLoader: ninjaToolLoader(),
 				ninjaNatureTypeLoader: ninjaNatureTypeLoader(),
-				ninjaNatureAttrLoader: ninjaAttrLoader(),
+				ninjaAttrLoader: ninjaAttrLoader(),
 				ninjaJutsuLoader: ninjaJutsuLoader(),
 				ninjaTeamLoader: ninjaTeamLoader()
 			}
