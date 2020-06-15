@@ -11,7 +11,9 @@ import { NatureTypeResolver } from './resolvers/NatureTypeResolver';
 import { TeamResolver } from './resolvers/TeamResolver';
 import { NinjaAttrResolver } from './resolvers/NinjaAttrResolver';
 import { JutsuResolver } from './resolvers/JutsuResolver';
+
 import { ninjaToolLoader } from './loaders/NinjaToolLoader';
+import { ninjaNatureTypeLoader } from './loaders/NinjaNatureTypeLoader';
 
 async function startServer(Container: any): Promise<express.Application> {
 	const app: express.Application = express();
@@ -28,7 +30,8 @@ async function startServer(Container: any): Promise<express.Application> {
 		plugins: [responseCachePlugin()],
 		context: () => ({
 			loaders: {
-				ninjaToolLoader: ninjaToolLoader()
+				ninjaToolLoader: ninjaToolLoader(),
+				ninjaNatureTypeLoader: ninjaNatureTypeLoader()
 			}
 		})
 	});

@@ -57,7 +57,7 @@ export class NinjaResolver {
 		return ninjas;
 	}
 
-	@FieldResolver(() => Tools)
+	@FieldResolver(() => Tools, { nullable: true })
 	async tools(@Root() ninja: Ninja, @Ctx() { loaders: { ninjaToolLoader } }: IGraphQLContext): Promise<Tools[]> {
 		const tools: Tools[] = await ninjaToolLoader.load(ninja.id);
 
@@ -75,13 +75,12 @@ export class NinjaResolver {
 		return family;
 	}
 
-	@FieldResolver(() => NatureType)
-	async nature_type(@Root() ninja: Ninja): Promise<NatureType[]> {
-		const nature_type: NatureType[] = await this.natureTypeRepo
-			.createQueryBuilder('nature_type')
-			.innerJoinAndSelect('nature_type.has_ninja', 'ninja_has_naturetype')
-			.where('ninja_has_naturetype.ninja = :id', { id: ninja.id })
-			.getMany();
+	@FieldResolver(() => NatureType, { nullable: true })
+	async nature_type(
+		@Root() ninja: Ninja,
+		@Ctx() { loaders: { ninjaNatureTypeLoader } }: IGraphQLContext
+	): Promise<NatureType[]> {
+		const nature_type: NatureType[] = await ninjaNatureTypeLoader.load(ninja.id);
 
 		return nature_type;
 	}
