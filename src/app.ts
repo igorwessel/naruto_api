@@ -12,6 +12,7 @@ import { NatureTypeResolver } from './resolvers/NatureTypeResolver';
 import { TeamResolver } from './resolvers/TeamResolver';
 import { NinjaAttrResolver } from './resolvers/NinjaAttrResolver';
 import { JutsuResolver } from './resolvers/JutsuResolver';
+import { toolLoader } from './loaders/ToolLoader';
 
 async function startServer(Container: any): Promise<express.Application> {
 	const app: express.Application = express();
@@ -24,12 +25,13 @@ async function startServer(Container: any): Promise<express.Application> {
 		cacheControl: {
 			defaultMaxAge: 86400
 		},
-		persistedQueries: {
-			cache: new RedisCache()
-		},
 		tracing: true,
 		plugins: [responseCachePlugin()],
-		context: ({ req, res }) => ({ req, res })
+		context: () => ({
+			loaders: {
+				ninjaToolLoader: ninjaToolLoader()
+			}
+		})
 	});
 
 	server.applyMiddleware({ app, path: '/graphql' });

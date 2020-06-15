@@ -1,4 +1,4 @@
-import { Resolver, Query, FieldResolver, Root, Args, Arg } from 'type-graphql';
+import { Resolver, Query, FieldResolver, Root, Args, Arg, Ctx } from 'type-graphql';
 import { Ninja } from '../entity/Ninja';
 import { InjectRepository } from 'typeorm-typedi-extensions';
 import { NinjaAttrRepo } from '../repos/NinjaAttrRepo';
@@ -16,6 +16,7 @@ import { Jutsu } from '../entity/Jutsu';
 import { JutsuRepo } from '../repos/JutsuRepo';
 import { PaginationArgs } from '../shared/PaginationArgs';
 import { NinjaFilterInput } from '../types/NinjaInput';
+import { IGraphQLContext } from '../types/graphql';
 
 @Resolver(Ninja)
 export class NinjaResolver {
@@ -57,12 +58,8 @@ export class NinjaResolver {
 	}
 
 	@FieldResolver(() => Tools)
-	async tools(@Root() ninja: Ninja): Promise<Tools[]> {
-		const tools: Tools[] = await this.toolsRepo
-			.createQueryBuilder('tool')
-			.innerJoinAndSelect('tool.ninja_tools', 'ninja_tools')
-			.where('ninja_tools.ninja = :id', { id: ninja.id })
-			.getMany();
+	async tools(@Root() ninja: Ninja, @Ctx() { loaders: { ninjaToolLoader } }: IGraphQLContext): Promise<Tools[]> {
+		const tools = await ninjaToolLoader.load(ninja.id);
 
 		return tools;
 	}
