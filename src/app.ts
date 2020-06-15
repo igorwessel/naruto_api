@@ -14,6 +14,9 @@ import { JutsuResolver } from './resolvers/JutsuResolver';
 
 import { ninjaToolLoader } from './loaders/NinjaToolLoader';
 import { ninjaNatureTypeLoader } from './loaders/NinjaNatureTypeLoader';
+import { ninjaAttrLoader } from './loaders/NinjaAttrLoader';
+import { ninjaJutsuLoader } from './loaders/NinjaJutsuLoader';
+import { ninjaTeamLoader } from './loaders/NinjaTeamLoader';
 
 async function startServer(Container: any): Promise<express.Application> {
 	const app: express.Application = express();
@@ -31,7 +34,10 @@ async function startServer(Container: any): Promise<express.Application> {
 		context: () => ({
 			loaders: {
 				ninjaToolLoader: ninjaToolLoader(),
-				ninjaNatureTypeLoader: ninjaNatureTypeLoader()
+				ninjaNatureTypeLoader: ninjaNatureTypeLoader(),
+				ninjaNatureAttrLoader: ninjaAttrLoader(),
+				ninjaJutsuLoader: ninjaJutsuLoader(),
+				ninjaTeamLoader: ninjaTeamLoader()
 			}
 		})
 	});

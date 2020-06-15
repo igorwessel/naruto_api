@@ -1,45 +1,27 @@
 import { Resolver, Query, FieldResolver, Root, Args, Arg, Ctx } from 'type-graphql';
-import { Ninja } from '../entity/Ninja';
 import { InjectRepository } from 'typeorm-typedi-extensions';
-import { NinjaAttrRepo } from '../repos/NinjaAttrRepo';
-import { NinjaAttr } from '../entity/Ninja';
 import { NinjaRepo } from '../repos/NinjaRepo';
-import { Tools } from '../entity/Tools';
-import { ToolsRepo } from '../repos/ToolsRepo';
-import { Family } from '../entity/Family';
 import { FamilyRepo } from '../repos/FamilyRepo';
+
+import { Ninja } from '../entity/Ninja';
+import { NinjaAttr } from '../entity/Ninja';
+import { Tools } from '../entity/Tools';
+import { Family } from '../entity/Family';
 import { NatureType } from '../entity/NatureType';
-import { NatureTypeRepo } from '../repos/NatureTypeRepo';
 import { Team } from '../entity/Team';
-import { TeamRepo } from '../repos/TeamRepo';
 import { Jutsu } from '../entity/Jutsu';
-import { JutsuRepo } from '../repos/JutsuRepo';
-import { PaginationArgs } from '../shared/PaginationArgs';
+
 import { NinjaFilterInput } from '../types/NinjaInput';
 import { IGraphQLContext } from '../types/graphql';
+import { PaginationArgs } from '../shared/PaginationArgs';
 
 @Resolver(Ninja)
 export class NinjaResolver {
 	@InjectRepository(NinjaRepo)
 	private readonly ninjaRepo: NinjaRepo;
 
-	@InjectRepository(ToolsRepo)
-	private readonly toolsRepo: ToolsRepo;
-
 	@InjectRepository(FamilyRepo)
 	private readonly familyRepo: FamilyRepo;
-
-	@InjectRepository(NinjaAttrRepo)
-	private readonly ninjaAttrRepo: NinjaAttrRepo;
-
-	@InjectRepository(NatureTypeRepo)
-	private readonly natureTypeRepo: NatureTypeRepo;
-
-	@InjectRepository(JutsuRepo)
-	private readonly jutsuRepo: JutsuRepo;
-
-	@InjectRepository(TeamRepo)
-	private readonly teamRepo: TeamRepo;
 
 	@Query(() => Ninja)
 	async ninja(@Arg('filter') filter: NinjaFilterInput) {
@@ -86,33 +68,25 @@ export class NinjaResolver {
 	}
 
 	@FieldResolver(() => Team)
-	async team(@Root() ninja: Ninja): Promise<Team[]> {
-		const team: Team[] = await this.teamRepo
-			.createQueryBuilder('team')
-			.innerJoinAndSelect('team.has_team', 'ninja_has_team')
-			.where('ninja_has_team.ninja = :id', { id: ninja.id })
-			.getMany();
+	async team(@Root() ninja: Ninja, @Ctx() { loaders: { ninjaTeamLoader } }: IGraphQLContext): Promise<Team[]> {
+		const team: Team[] = await ninjaTeamLoader.load(ninja.id);
 
 		return team;
 	}
 
 	@FieldResolver(() => Jutsu)
-	async jutsus(@Root() ninja: Ninja): Promise<Jutsu[]> {
-		const jutsus: Jutsu[] = await this.jutsuRepo
-			.createQueryBuilder('jutsu')
-			.innerJoinAndSelect('jutsu.has_ninja', 'ninja_has_jutsu')
-			.where('ninja_has_jutsu.ninja = :id', { id: ninja.id })
-			.getMany();
+	async jutsus(@Root() ninja: Ninja, @Ctx() { loaders: { ninjaJutsuLoader } }: IGraphQLContext): Promise<Jutsu[]> {
+		const jutsus: Jutsu[] = await ninjaJutsuLoader.load(ninja.id);
 
 		return jutsus;
 	}
 
 	@FieldResolver(() => NinjaAttr)
-	async ninja_attributes(@Root() ninja: Ninja): Promise<NinjaAttr[]> {
-		const ninjaAttr: NinjaAttr[] = await this.ninjaAttrRepo.find({
-			where: { ninja: ninja.id },
-			relations: ['season']
-		});
+	async ninja_attributes(
+		@Root() ninja: Ninja,
+		@Ctx() { loaders: { ninjaNatureAttrLoader } }: IGraphQLContext
+	): Promise<NinjaAttr[]> {
+		const ninjaAttr: NinjaAttr[] = await ninjaNatureAttrLoader.load(ninja.id);
 
 		return ninjaAttr;
 	}
