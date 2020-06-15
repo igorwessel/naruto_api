@@ -21,7 +21,7 @@ import { Sex } from '../../shared/BaseTypes';
 export class Ninja {
 	@Field(() => Int)
 	@PrimaryGeneratedColumn()
-	id: Number;
+	id: number;
 
 	@Field({ nullable: true })
 	@Column('varchar', { length: 128, nullable: false })

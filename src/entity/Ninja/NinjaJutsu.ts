@@ -5,10 +5,10 @@ import { Ninja } from './Ninja';
 @Entity()
 export class NinjaJutsu {
 	@PrimaryGeneratedColumn()
-	id: Number;
+	id: number;
 
 	@Column({ nullable: true })
-	only: String;
+	only: string;
 
 	@ManyToOne(type => Jutsu, jutsu => jutsu.has_ninja)
 	jutsu: Promise<Jutsu>;

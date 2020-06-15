@@ -8,7 +8,7 @@ import { NatureType } from '../NatureType';
 export class NinjaNaturetype {
 	@Field()
 	@PrimaryGeneratedColumn()
-	id: Number;
+	id: number;
 
 	@Field()
 	@Column('boolean')
@@ -16,7 +16,7 @@ export class NinjaNaturetype {
 
 	@Field({ nullable: true })
 	@Column('varchar', { nullable: true })
-	only: String;
+	only: string;
 
 	@ManyToOne(type => Ninja, ninja => ninja.has_nature_type)
 	ninja: Promise<Ninja>;

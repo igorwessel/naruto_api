@@ -7,23 +7,23 @@ import { Field, ObjectType, ID } from 'type-graphql';
 @Entity()
 export class NinjaAttr {
 	@PrimaryGeneratedColumn()
-	id: Number;
+	id: number;
 
 	@Field({ nullable: true })
 	@Column('varchar', { length: 30, nullable: true })
-	age: String;
+	age: string;
 
 	@Field({ nullable: true })
 	@Column('varchar', { length: 30, nullable: true })
-	height: String;
+	height: string;
 
 	@Field({ nullable: true })
 	@Column('varchar', { length: 30, nullable: true })
-	weight: String;
+	weight: string;
 
 	@Field({ nullable: true })
 	@Column('varchar', { length: 30, nullable: true })
-	ninja_rank: String;
+	ninja_rank: string;
 
 	@ManyToOne(type => Ninja, ninja => ninja.ninja_has_attributes)
 	ninja: Promise<Ninja>;

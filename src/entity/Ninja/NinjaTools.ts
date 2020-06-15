@@ -5,10 +5,16 @@ import { Tools } from '../Tools';
 @Entity()
 export class NinjaTools {
 	@PrimaryGeneratedColumn()
-	id: Number;
+	id: number;
 
 	@Column({ nullable: true })
-	only: String;
+	only: string;
+
+	@Column({ nullable: true })
+	ninjaId: number;
+
+	@Column({ nullable: true })
+	toolsId: number;
 
 	@ManyToOne(type => Ninja, ninja => ninja.tools)
 	ninja: Promise<Ninja>;

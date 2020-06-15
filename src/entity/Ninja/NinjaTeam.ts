@@ -5,7 +5,7 @@ import { Team } from '../Team';
 @Entity()
 export class NinjaTeam {
 	@PrimaryGeneratedColumn()
-	id: Number;
+	id: number;
 
 	@Column('boolean')
 	leader: Boolean;
