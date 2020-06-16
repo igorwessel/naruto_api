@@ -17,6 +17,7 @@ export class PaginationArgs {
 	}
 
 	get endIndex(): number {
-		return this.skip + this.take;
+		// return this.skip + this.take;
+		return this.take;
 	}
 }
