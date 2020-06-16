@@ -43,13 +43,13 @@ export class TeamResolver {
 		return leaders;
 	}
 
-	@FieldResolver(() => Affiliation)
-	async affiliation(@Root() team_parent: Team): Promise<Affiliation[] | undefined> {
-		const team: Team | undefined = await this.teamRepo.findOne({
-			relations: ['affiliation'],
-			where: { id: team_parent.id }
-		});
+	@FieldResolver({ nullable: true })
+	async affiliation(
+		@Root() team_parent: Team,
+		@Ctx() { loaders: { teamAffiliationLoader } }: IGraphQLContext
+	): Promise<Affiliation[]> {
+		const affiliations = await teamAffiliationLoader.load(team_parent.id);
 
-		return team?.affiliation;
+		return affiliations;
 	}
 }

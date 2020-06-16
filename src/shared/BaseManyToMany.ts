@@ -7,7 +7,7 @@ export abstract class BaseManyToMany {
 	@PrimaryGeneratedColumn()
 	id: number;
 
-	@Field()
+	@Field({ nullable: true })
 	@Column()
 	name: string;
 }

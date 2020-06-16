@@ -6,6 +6,7 @@ import { ninjaTeamLoader } from '../loaders/NinjaTeamLoader';
 import { ninjaFamilyLoader } from '../loaders/NinjaFamilyLoader';
 import { teamMembersLoader } from '../loaders/TeamMembersLoader';
 import { teamLeadersLoader } from '../loaders/TeamLeadersLoaders';
+import { teamAffiliationLoader } from '../loaders/TeamAffiliationLoader';
 
 export interface IGraphQLContext {
 	loaders: {
@@ -17,5 +18,6 @@ export interface IGraphQLContext {
 		ninjaFamilyLoader: ReturnType<typeof ninjaFamilyLoader>;
 		teamMembersLoader: ReturnType<typeof teamMembersLoader>;
 		teamLeadersLoader: ReturnType<typeof teamLeadersLoader>;
+		teamAffiliationLoader: ReturnType<typeof teamAffiliationLoader>;
 	};
 }

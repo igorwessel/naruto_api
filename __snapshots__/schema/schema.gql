@@ -5,7 +5,7 @@
 
 type Affiliation {
   id: Int!
-  name: String!
+  name: String
 }
 
 type Clan {
@@ -15,17 +15,17 @@ type Clan {
 
 type Class {
   id: Int!
-  name: String!
+  name: String
 }
 
 type Classification {
   id: Int!
-  name: String!
+  name: String
 }
 
 type ClassificationJutsu {
   id: Int!
-  name: String!
+  name: String
 }
 
 type Family {
@@ -55,7 +55,7 @@ type NatureType {
   id: Int!
   kekkei_genkai: Boolean!
   kekkei_tota: Boolean!
-  name: String!
+  name: String
 }
 
 type Ninja {
@@ -117,7 +117,7 @@ type Team {
   leader: Boolean!
   leaders: [Ninja!]
   members: [Ninja!]
-  name: String!
+  name: String
 }
 
 type Tools {

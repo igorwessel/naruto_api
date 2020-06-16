@@ -20,6 +20,7 @@ import { ninjaTeamLoader } from './loaders/NinjaTeamLoader';
 import { ninjaFamilyLoader } from './loaders/NinjaFamilyLoader';
 import { teamMembersLoader } from './loaders/TeamMembersLoader';
 import { teamLeadersLoader } from './loaders/TeamLeadersLoaders';
+import { teamAffiliationLoader } from './loaders/TeamAffiliationLoader';
 
 async function startServer(Container: any): Promise<express.Application> {
 	const app: express.Application = express();
@@ -43,7 +44,8 @@ async function startServer(Container: any): Promise<express.Application> {
 				ninjaTeamLoader: ninjaTeamLoader(),
 				ninjaFamilyLoader: ninjaFamilyLoader(),
 				teamMembersLoader: teamMembersLoader(),
-				teamLeadersLoader: teamLeadersLoader()
+				teamLeadersLoader: teamLeadersLoader(),
+				teamAffiliationLoader: teamAffiliationLoader()
 			}
 		})
 	});
