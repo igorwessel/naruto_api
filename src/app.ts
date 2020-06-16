@@ -17,6 +17,7 @@ import { ninjaNatureTypeLoader } from './loaders/NinjaNatureTypeLoader';
 import { ninjaAttrLoader } from './loaders/NinjaAttrLoader';
 import { ninjaJutsuLoader } from './loaders/NinjaJutsuLoader';
 import { ninjaTeamLoader } from './loaders/NinjaTeamLoader';
+import { ninjaFamilyLoader } from './loaders/NinjaFamilyLoader';
 
 async function startServer(Container: any): Promise<express.Application> {
 	const app: express.Application = express();
@@ -37,7 +38,8 @@ async function startServer(Container: any): Promise<express.Application> {
 				ninjaNatureTypeLoader: ninjaNatureTypeLoader(),
 				ninjaAttrLoader: ninjaAttrLoader(),
 				ninjaJutsuLoader: ninjaJutsuLoader(),
-				ninjaTeamLoader: ninjaTeamLoader()
+				ninjaTeamLoader: ninjaTeamLoader(),
+				ninjaFamilyLoader: ninjaFamilyLoader()
 			}
 		})
 	});

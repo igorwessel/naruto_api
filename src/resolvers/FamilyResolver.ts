@@ -10,7 +10,7 @@ export class FamilyResolver {
 	private readonly familyRepo: FamilyRepo;
 
 	@FieldResolver(() => Ninja, { nullable: true })
-	async details(@Root() family: Family): Promise<Ninja> {
+	details(@Root() family: Family): Ninja {
 		return family.parent_to;
 	}
 }

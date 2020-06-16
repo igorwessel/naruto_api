@@ -47,13 +47,8 @@ export class NinjaResolver {
 	}
 
 	@FieldResolver(() => Family)
-	async family(@Root() ninja: Ninja): Promise<Family[]> {
-		const family: Family[] = await this.familyRepo
-			.createQueryBuilder('family')
-			.innerJoinAndSelect('family.parent_to', 'parent_to')
-			.where('parent_from = :id', { id: ninja.id })
-			.getMany();
-
+	async family(@Root() ninja: Ninja, @Ctx() { loaders: { ninjaFamilyLoader } }: IGraphQLContext): Promise<Family[]> {
+		const family: Family[] = await ninjaFamilyLoader.load(ninja.id);
 		return family;
 	}
 

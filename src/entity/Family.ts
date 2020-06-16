@@ -9,17 +9,23 @@ export class Family {
 	id: Number;
 
 	@Field({ nullable: true })
-	@Column('varchar', { length: 25 })
+	@Column('varchar', { length: 100 })
 	relationship: String;
 
 	@Field(() => Ninja, { name: 'details', nullable: true })
 	details: Ninja;
 
+	@Column({ nullable: true })
+	parentFromId: number;
+
+	@Column({ nullable: true })
+	parentToId: number;
+
 	@ManyToOne(type => Ninja, ninja => ninja.family)
-	@JoinColumn({ name: 'parent_from' })
+	@JoinColumn()
 	parent_from: Ninja;
 
 	@ManyToOne(type => Ninja, ninja => ninja.id)
-	@JoinColumn({ name: 'parent_to' })
+	@JoinColumn()
 	parent_to: Ninja;
 }
