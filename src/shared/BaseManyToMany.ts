@@ -5,9 +5,9 @@ import { Field, ObjectType, Int } from 'type-graphql';
 export abstract class BaseManyToMany {
 	@Field(() => Int)
 	@PrimaryGeneratedColumn()
-	id: Number;
+	id: number;
 
 	@Field()
 	@Column()
-	name: String;
+	name: string;
 }

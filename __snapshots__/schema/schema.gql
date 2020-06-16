@@ -115,6 +115,8 @@ type Team {
   id: Int!
   jutsu: [Jutsu!]
   leader: Boolean!
+  leaders: [Ninja!]
+  members: [Ninja!]
   name: String!
 }
 

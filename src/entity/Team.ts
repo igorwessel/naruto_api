@@ -1,7 +1,7 @@
 import { BaseManyToMany } from '../shared/BaseManyToMany';
 import { Column, Entity, OneToMany, ManyToMany, JoinTable } from 'typeorm';
 import { ObjectType, Field } from 'type-graphql';
-import { NinjaTeam } from './Ninja';
+import { NinjaTeam, Ninja } from './Ninja';
 import { Affiliation } from './Affiliation';
 import { Jutsu } from './Jutsu';
 
@@ -14,6 +14,12 @@ export class Team extends BaseManyToMany {
 
 	@Field(() => Boolean)
 	leader: Boolean;
+
+	@Field(() => Ninja, { nullable: true })
+	members: Ninja[];
+
+	@Field(() => Ninja, { nullable: true })
+	leaders: Ninja[];
 
 	@Field(() => Affiliation, { nullable: true })
 	@ManyToMany(type => Affiliation)

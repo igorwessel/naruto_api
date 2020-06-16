@@ -1,9 +1,11 @@
-import { Resolver, FieldResolver, Root, Query, Args } from 'type-graphql';
+import { Resolver, FieldResolver, Root, Query, Args, Ctx } from 'type-graphql';
 import { Team } from '../entity/Team';
 import { Affiliation } from '../entity/Affiliation';
 import { InjectRepository } from 'typeorm-typedi-extensions';
 import { TeamRepo } from '../repos/TeamRepo';
 import { PaginationArgs } from '../shared/PaginationArgs';
+import { IGraphQLContext } from '../types/graphql';
+import { Ninja } from '../entity/Ninja';
 
 @Resolver(Team)
 export class TeamResolver {
@@ -22,11 +24,23 @@ export class TeamResolver {
 	}
 
 	@FieldResolver()
-	async leader(@Root() team_parent: Team): Promise<Boolean> {
-		//TODO: maybe change this resolver for return the list of all leaders in this team.
-		const { leader }: { leader: Boolean } = team_parent.has_team[0];
+	async members(
+		@Root() team_parent: Team,
+		@Ctx() { loaders: { teamMembersLoader } }: IGraphQLContext
+	): Promise<Ninja[]> {
+		const members = await teamMembersLoader.load(team_parent.id);
 
-		return leader;
+		return members;
+	}
+
+	@FieldResolver()
+	async leaders(
+		@Root() team_parent: Team,
+		@Ctx() { loaders: { teamLeadersLoader } }: IGraphQLContext
+	): Promise<Ninja[]> {
+		const leaders = await teamLeadersLoader.load(team_parent.id);
+
+		return leaders;
 	}
 
 	@FieldResolver(() => Affiliation)
