@@ -1,4 +1,4 @@
-import { Resolver, FieldResolver, Root, Query, Args } from 'type-graphql';
+import { Resolver, FieldResolver, Root, Query, Args, Ctx } from 'type-graphql';
 import { Jutsu } from '../entity/Jutsu';
 import { InjectRepository } from 'typeorm-typedi-extensions';
 import { JutsuRepo } from '../repos/JutsuRepo';
@@ -7,6 +7,7 @@ import { ClassificationJutsu } from '../entity/ClassificationJutsu';
 import { NatureType } from '../entity/NatureType';
 import { Class } from '../entity/Class';
 import { PaginationArgs } from '../shared/PaginationArgs';
+import { IGraphQLContext } from '../types/graphql';
 
 @Resolver(Jutsu)
 export class JutsuResolver {
@@ -27,25 +28,24 @@ export class JutsuResolver {
 		return jutsus;
 	}
 
-	// @FieldResolver()
-	// async nature(@Root() jutsu: Jutsu): Promise<NatureType | undefined> {
-	// 	const nature_type: NatureType | undefined = await this.natureTypeRepo
-	// 		.createQueryBuilder()
-	// 		.innerJoinAndSelect('jutsu', 'jutsu')
-	// 		.where('jutsu.id = :id', { id: jutsu.id })
-	// 		.getOne();
+	@FieldResolver()
+	async nature(
+		@Root() jutsu: Jutsu,
+		@Ctx() { loaders: { jutsuNatureTypeLoader } }: IGraphQLContext
+	): Promise<NatureType | undefined> {
+		const nature_type = await jutsuNatureTypeLoader.load(jutsu.id);
 
-	// 	return nature_type;
-	// }
+		return nature_type;
+	}
 
-	// @FieldResolver()
-	// async class(@Root() jutsu_parent: Jutsu): Promise<Class[] | undefined> {
-	// 	const jutsu: Jutsu | undefined = await this.jutsuRepo.findOne(jutsu_parent.id, {
-	// 		relations: ['class']
-	// 	});
-
-	// 	return jutsu?.class;
-	// }
+	@FieldResolver()
+	async class(
+		@Root() jutsu_parent: Jutsu,
+		@Ctx() { loaders: { jutsuClassLoader } }: IGraphQLContext
+	): Promise<Class[]> {
+		const jutsu_class = await jutsuClassLoader.load(jutsu_parent.id);
+		return jutsu_class;
+	}
 
 	// @FieldResolver()
 	// async related_jutsu(@Root() jutsu_parent: Jutsu): Promise<Jutsu | undefined> {

@@ -24,6 +24,9 @@ export class Jutsu extends BaseContent {
 	@Field(() => NatureType, { nullable: true })
 	nature: NatureType;
 
+	@Column({ nullable: true })
+	natureTypeId: number;
+
 	@ManyToOne(type => NatureType, nature_type => nature_type.jutsu)
 	@JoinColumn()
 	nature_type: NatureType;

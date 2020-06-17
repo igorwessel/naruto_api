@@ -21,6 +21,8 @@ import { ninjaFamilyLoader } from './loaders/NinjaFamilyLoader';
 import { teamMembersLoader } from './loaders/TeamMembersLoader';
 import { teamLeadersLoader } from './loaders/TeamLeadersLoaders';
 import { teamAffiliationLoader } from './loaders/TeamAffiliationLoader';
+import { jutsuNatureTypeLoader } from './loaders/JutsuNatureTypeLoader';
+import { jutsuClassLoader } from './loaders/JutsuClassLoader';
 
 async function startServer(Container: any): Promise<express.Application> {
 	const app: express.Application = express();
@@ -45,7 +47,9 @@ async function startServer(Container: any): Promise<express.Application> {
 				ninjaFamilyLoader: ninjaFamilyLoader(),
 				teamMembersLoader: teamMembersLoader(),
 				teamLeadersLoader: teamLeadersLoader(),
-				teamAffiliationLoader: teamAffiliationLoader()
+				teamAffiliationLoader: teamAffiliationLoader(),
+				jutsuNatureTypeLoader: jutsuNatureTypeLoader(),
+				jutsuClassLoader: jutsuClassLoader()
 			}
 		})
 	});
