@@ -24,6 +24,8 @@ import { teamAffiliationLoader } from './loaders/TeamAffiliationLoader';
 import { jutsuNatureTypeLoader } from './loaders/JutsuNatureTypeLoader';
 import { jutsuClassLoader } from './loaders/JutsuClassLoader';
 import { jutsuRelatedLoader } from './loaders/JutsuRelatedLoader';
+import { jutsuDerivedLoader } from './loaders/JutsuDerivedLoader';
+import { jutsuParentLoader } from './loaders/JutsuParentLoader';
 
 async function startServer(Container: any): Promise<express.Application> {
 	const app: express.Application = express();
@@ -51,7 +53,9 @@ async function startServer(Container: any): Promise<express.Application> {
 				teamAffiliationLoader: teamAffiliationLoader(),
 				jutsuNatureTypeLoader: jutsuNatureTypeLoader(),
 				jutsuClassLoader: jutsuClassLoader(),
-				jutsuRelatedLoader: jutsuRelatedLoader()
+				jutsuRelatedLoader: jutsuRelatedLoader(),
+				jutsuDerivedLoader: jutsuDerivedLoader(),
+				jutsuParentLoader: jutsuParentLoader()
 			}
 		})
 	});

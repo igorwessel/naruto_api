@@ -2,11 +2,10 @@ import DataLoader from 'dataloader';
 import { getCustomRepository, In } from 'typeorm';
 import { Jutsu } from '../entity/Jutsu';
 import { JutsuRepo } from '../repos/JutsuRepo';
-import { Class } from '../entity/Class';
 
-type BatchJutsuClass = (ids: readonly number[]) => Promise<Class[][]>;
+type BatchJutsuParent = (ids: readonly number[]) => Promise<Jutsu[][]>;
 
-const batchJutsuClass: BatchJutsuClass = async (ids: readonly number[]) => {
+const batchJutsuParent: BatchJutsuParent = async (ids: readonly number[]) => {
 	const jutsuRepo = getCustomRepository(JutsuRepo);
 
 	const jutsus: Jutsu[] = await jutsuRepo.find({
@@ -14,22 +13,22 @@ const batchJutsuClass: BatchJutsuClass = async (ids: readonly number[]) => {
 		join: {
 			alias: 'jutsu',
 			innerJoinAndSelect: {
-				class: 'jutsu.class'
+				parent_jutsu: 'jutsu.parent_jutsu'
 			}
 		}
 	});
 
-	const jutsuMap: { [key: number]: Class[] } = {};
+	const jutsuMap: { [key: number]: Jutsu[] } = {};
 
 	jutsus.forEach(jutsu => {
 		if (!jutsuMap[jutsu.id]) {
-			jutsuMap[jutsu.id] = [...(jutsu as any).class];
+			jutsuMap[jutsu.id] = [...(jutsu as any).parent_jutsu];
 		} else {
-			jutsuMap[jutsu.id].push((jutsu as any).class);
+			jutsuMap[jutsu.id].push((jutsu as any).parent_jutsu);
 		}
 	});
 
 	return ids.map(id => jutsuMap[id]);
 };
 
-export const jutsuClassLoader = () => new DataLoader<number, Class[]>(batchJutsuClass);
+export const jutsuParentLoader = () => new DataLoader<number, Jutsu[]>(batchJutsuParent);
