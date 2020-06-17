@@ -9,6 +9,7 @@ import { teamLeadersLoader } from '../loaders/TeamLeadersLoaders';
 import { teamAffiliationLoader } from '../loaders/TeamAffiliationLoader';
 import { jutsuNatureTypeLoader } from '../loaders/JutsuNatureTypeLoader';
 import { jutsuClassLoader } from '../loaders/JutsuClassLoader';
+import { jutsuRelatedLoader } from '../loaders/JutsuRelatedLoader';
 
 export interface IGraphQLContext {
 	loaders: {
@@ -23,5 +24,6 @@ export interface IGraphQLContext {
 		teamAffiliationLoader: ReturnType<typeof teamAffiliationLoader>;
 		jutsuNatureTypeLoader: ReturnType<typeof jutsuNatureTypeLoader>;
 		jutsuClassLoader: ReturnType<typeof jutsuClassLoader>;
+		jutsuRelatedLoader: ReturnType<typeof jutsuRelatedLoader>;
 	};
 }

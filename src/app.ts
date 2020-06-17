@@ -23,6 +23,7 @@ import { teamLeadersLoader } from './loaders/TeamLeadersLoaders';
 import { teamAffiliationLoader } from './loaders/TeamAffiliationLoader';
 import { jutsuNatureTypeLoader } from './loaders/JutsuNatureTypeLoader';
 import { jutsuClassLoader } from './loaders/JutsuClassLoader';
+import { jutsuRelatedLoader } from './loaders/JutsuRelatedLoader';
 
 async function startServer(Container: any): Promise<express.Application> {
 	const app: express.Application = express();
@@ -49,7 +50,8 @@ async function startServer(Container: any): Promise<express.Application> {
 				teamLeadersLoader: teamLeadersLoader(),
 				teamAffiliationLoader: teamAffiliationLoader(),
 				jutsuNatureTypeLoader: jutsuNatureTypeLoader(),
-				jutsuClassLoader: jutsuClassLoader()
+				jutsuClassLoader: jutsuClassLoader(),
+				jutsuRelatedLoader: jutsuRelatedLoader()
 			}
 		})
 	});

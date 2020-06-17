@@ -14,9 +14,6 @@ export class JutsuResolver {
 	@InjectRepository(JutsuRepo)
 	private readonly jutsuRepo: JutsuRepo;
 
-	@InjectRepository(NatureTypeRepo)
-	private readonly natureTypeRepo: NatureTypeRepo;
-
 	@Query(() => [Jutsu])
 	async jutsus(@Args() { startIndex, endIndex }: PaginationArgs): Promise<Jutsu[]> {
 		const jutsus: Jutsu[] = await this.jutsuRepo.find({
@@ -33,7 +30,7 @@ export class JutsuResolver {
 		@Root() jutsu: Jutsu,
 		@Ctx() { loaders: { jutsuNatureTypeLoader } }: IGraphQLContext
 	): Promise<NatureType | undefined> {
-		const nature_type = await jutsuNatureTypeLoader.load(jutsu.id);
+		const nature_type: NatureType = await jutsuNatureTypeLoader.load(jutsu.id);
 
 		return nature_type;
 	}
@@ -43,18 +40,18 @@ export class JutsuResolver {
 		@Root() jutsu_parent: Jutsu,
 		@Ctx() { loaders: { jutsuClassLoader } }: IGraphQLContext
 	): Promise<Class[]> {
-		const jutsu_class = await jutsuClassLoader.load(jutsu_parent.id);
+		const jutsu_class: Class[] = await jutsuClassLoader.load(jutsu_parent.id);
 		return jutsu_class;
 	}
 
-	// @FieldResolver()
-	// async related_jutsu(@Root() jutsu_parent: Jutsu): Promise<Jutsu | undefined> {
-	// 	const jutsu: Jutsu | undefined = await this.jutsuRepo.findOne(jutsu_parent.id, {
-	// 		relations: ['related_jutsu']
-	// 	});
-
-	// 	return jutsu?.related_jutsu;
-	// }
+	@FieldResolver()
+	async related_jutsu(
+		@Root() jutsu_parent: Jutsu,
+		@Ctx() { loaders: { jutsuRelatedLoader } }: IGraphQLContext
+	): Promise<Jutsu | undefined> {
+		const jutsu: Jutsu = await jutsuRelatedLoader.load(jutsu_parent.id);
+		return jutsu;
+	}
 
 	// @FieldResolver()
 	// async derived_jutsu(@Root() jutsu_parent: Jutsu): Promise<Jutsu[] | undefined> {

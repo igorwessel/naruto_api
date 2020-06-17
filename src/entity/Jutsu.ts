@@ -50,6 +50,9 @@ export class Jutsu extends BaseContent {
 	@ManyToOne(type => Jutsu, jutsu => jutsu.related_jutsu_children)
 	related_jutsu: Jutsu;
 
+	@Column({ nullable: true })
+	relatedJutsuId: number;
+
 	@Field(type => Jutsu, { nullable: true })
 	@ManyToMany(type => Jutsu)
 	@JoinTable({ name: 'jutsu_derived' })
