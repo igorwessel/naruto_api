@@ -49,8 +49,8 @@ export class JutsuResolver {
 		@Root() jutsu_parent: Jutsu,
 		@Ctx() { loaders: { jutsuRelatedLoader } }: IGraphQLContext
 	): Promise<Jutsu | undefined> {
-		const jutsu: Jutsu = await jutsuRelatedLoader.load(jutsu_parent.id);
-		return jutsu;
+		const related_jutsu: Jutsu = await jutsuRelatedLoader.load(jutsu_parent.id);
+		return related_jutsu;
 	}
 
 	@FieldResolver()
@@ -58,9 +58,9 @@ export class JutsuResolver {
 		@Root() jutsu_parent: Jutsu,
 		@Ctx() { loaders: { jutsuDerivedLoader } }: IGraphQLContext
 	): Promise<Jutsu[] | undefined> {
-		const jutsus: Jutsu[] = await jutsuDerivedLoader.load(jutsu_parent.id);
+		const derived_jutsus: Jutsu[] = await jutsuDerivedLoader.load(jutsu_parent.id);
 
-		return jutsus;
+		return derived_jutsus;
 	}
 
 	@FieldResolver()
@@ -68,20 +68,18 @@ export class JutsuResolver {
 		@Root() jutsu_parent: Jutsu,
 		@Ctx() { loaders: { jutsuParentLoader } }: IGraphQLContext
 	): Promise<Jutsu[] | undefined> {
-		const jutsus: Jutsu[] = await jutsuParentLoader.load(jutsu_parent.id);
+		const parent_jutsus: Jutsu[] = await jutsuParentLoader.load(jutsu_parent.id);
 
-		return jutsus;
+		return parent_jutsus;
 	}
 
-	// @FieldResolver()
-	// async classification(@Root() jutsu: Jutsu): Promise<ClassificationJutsu[] | undefined> {
-	// 	const classification: ClassificationJutsu[] | undefined = (
-	// 		await this.jutsuRepo.findOne({
-	// 			relations: ['classification'],
-	// 			where: { id: jutsu.id }
-	// 		})
-	// 	)?.classification;
+	@FieldResolver()
+	async classification(
+		@Root() jutsu: Jutsu,
+		@Ctx() { loaders: { jutsuClassificationLoader } }: IGraphQLContext
+	): Promise<ClassificationJutsu[]> {
+		const classification: ClassificationJutsu[] = await jutsuClassificationLoader.load(jutsu.id);
 
-	// 	return classification;
-	// }
+		return classification;
+	}
 }

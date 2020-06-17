@@ -26,6 +26,7 @@ import { jutsuClassLoader } from './loaders/JutsuClassLoader';
 import { jutsuRelatedLoader } from './loaders/JutsuRelatedLoader';
 import { jutsuDerivedLoader } from './loaders/JutsuDerivedLoader';
 import { jutsuParentLoader } from './loaders/JutsuParentLoader';
+import { jutsuClassificationLoader } from './loaders/JutsuClassificationLoader';
 
 async function startServer(Container: any): Promise<express.Application> {
 	const app: express.Application = express();
@@ -55,7 +56,8 @@ async function startServer(Container: any): Promise<express.Application> {
 				jutsuClassLoader: jutsuClassLoader(),
 				jutsuRelatedLoader: jutsuRelatedLoader(),
 				jutsuDerivedLoader: jutsuDerivedLoader(),
-				jutsuParentLoader: jutsuParentLoader()
+				jutsuParentLoader: jutsuParentLoader(),
+				jutsuClassificationLoader: jutsuClassificationLoader()
 			}
 		})
 	});

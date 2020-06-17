@@ -12,6 +12,7 @@ import { jutsuClassLoader } from '../loaders/JutsuClassLoader';
 import { jutsuRelatedLoader } from '../loaders/JutsuRelatedLoader';
 import { jutsuParentLoader } from '../loaders/JutsuParentLoader';
 import { jutsuDerivedLoader } from '../loaders/JutsuDerivedLoader';
+import { jutsuClassificationLoader } from '../loaders/JutsuClassificationLoader';
 
 export interface IGraphQLContext {
 	loaders: {
@@ -29,5 +30,6 @@ export interface IGraphQLContext {
 		jutsuRelatedLoader: ReturnType<typeof jutsuRelatedLoader>;
 		jutsuParentLoader: ReturnType<typeof jutsuParentLoader>;
 		jutsuDerivedLoader: ReturnType<typeof jutsuDerivedLoader>;
+		jutsuClassificationLoader: ReturnType<typeof jutsuClassificationLoader>;
 	};
 }
