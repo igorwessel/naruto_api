@@ -36,15 +36,15 @@ export class Jutsu extends BaseContent {
 	@JoinTable({ name: 'jutsu_classification' })
 	classification: ClassificationJutsu[];
 
-	@OneToOne(type => Jutsu, jutsu => jutsu.related_jutsu, {
+	@OneToMany(type => Jutsu, jutsu => jutsu.related_jutsu, {
 		cascade: true,
 		onDelete: 'CASCADE'
 	})
 	@JoinColumn({ name: 'relatedJutsuId' })
-	related_jutsu_children: Jutsu;
+	related_jutsu_children: Jutsu[];
 
 	@Field(type => Jutsu, { nullable: true })
-	@OneToOne(type => Jutsu, jutsu => jutsu.related_jutsu_children)
+	@ManyToOne(type => Jutsu, jutsu => jutsu.related_jutsu_children)
 	related_jutsu: Jutsu;
 
 	@Field(type => Jutsu, { nullable: true })
