@@ -20,9 +20,6 @@ export class NinjaResolver {
 	@InjectRepository(NinjaRepo)
 	private readonly ninjaRepo: NinjaRepo;
 
-	@InjectRepository(FamilyRepo)
-	private readonly familyRepo: FamilyRepo;
-
 	@Query(() => Ninja)
 	async ninja(@Arg('filter') filter: NinjaFilterInput) {
 		const ninja = this.ninjaRepo.searchOne(filter);

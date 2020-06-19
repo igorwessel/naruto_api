@@ -5,19 +5,19 @@ import { Min, Max } from 'class-validator';
 export class PaginationArgs {
 	@Field(type => Int, { defaultValue: 0 })
 	@Min(0)
-	skip: number;
+	offset: number;
 
 	@Field(type => Int)
 	@Min(1)
 	@Max(30)
-	take: number = 15;
+	limit: number = 15;
 
 	get startIndex(): number {
-		return this.skip;
+		return this.offset;
 	}
 
 	get endIndex(): number {
 		// return this.skip + this.take;
-		return this.take;
+		return this.limit;
 	}
 }

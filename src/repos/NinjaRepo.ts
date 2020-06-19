@@ -48,7 +48,7 @@ export class NinjaRepo extends Repository<Ninja> {
 	 * @param skip : Receive a number indicating how many to skip
 	 * @param take : Limit the search result
 	 */
-	async searchMany(args: any, skip: number, take: number): Promise<Ninja[]> {
+	async searchMany(args: any, offset: number, limit: number): Promise<Ninja[]> {
 		const queryBuilder: SelectQueryBuilder<Ninja> = this.createQueryBuilder('ninja');
 
 		if (!args) {
@@ -77,8 +77,8 @@ export class NinjaRepo extends Repository<Ninja> {
 		queryBuilder.leftJoinAndSelect('ninja.affiliation', 'affiliation');
 		queryBuilder.leftJoinAndSelect('ninja.classification', 'classification');
 		queryBuilder.leftJoinAndSelect('ninja.clan', 'clan');
-		queryBuilder.skip(skip);
-		queryBuilder.take(take);
+		queryBuilder.skip(offset);
+		queryBuilder.take(limit);
 
 		const ninjas = await queryBuilder.getMany();
 

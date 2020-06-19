@@ -3,7 +3,7 @@ import express from 'express';
 import path from 'path';
 import { ApolloServer } from 'apollo-server-express';
 import { buildSchema } from 'type-graphql';
-import responseCachePlugin from 'apollo-server-plugin-response-cache';
+import { ContainerInterface } from 'typeorm';
 
 import { NinjaResolver } from './resolvers/NinjaResolver';
 import { FamilyResolver } from './resolvers/FamilyResolver';
@@ -28,7 +28,7 @@ import { jutsuDerivedLoader } from './loaders/JutsuDerivedLoader';
 import { jutsuParentLoader } from './loaders/JutsuParentLoader';
 import { jutsuClassificationLoader } from './loaders/JutsuClassificationLoader';
 
-async function startServer(Container: any): Promise<express.Application> {
+async function startServer(Container: ContainerInterface): Promise<express.Application> {
 	const app: express.Application = express();
 	const server = new ApolloServer({
 		schema: await buildSchema({
@@ -40,7 +40,6 @@ async function startServer(Container: any): Promise<express.Application> {
 			defaultMaxAge: 86400
 		},
 		tracing: true,
-		plugins: [responseCachePlugin()],
 		context: () => ({
 			loaders: {
 				ninjaToolLoader: ninjaToolLoader(),
