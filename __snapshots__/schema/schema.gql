@@ -92,9 +92,11 @@ type NinjaAttr {
 
 input NinjaFilterInput {
   blood_type: String
+  clan: String
   id: Int
   name: String
   sex: String
+  tools: String
 }
 
 type Occupation {
@@ -103,10 +105,10 @@ type Occupation {
 }
 
 type Query {
-  jutsus(skip: Int = 0, take: Int = 15): [Jutsu!]!
+  jutsus(limit: Int = 15, offset: Int = 0): [Jutsu!]!
   ninja(filter: NinjaFilterInput!): Ninja!
-  ninjas(filter: NinjaFilterInput, skip: Int = 0, take: Int = 15): [Ninja!]!
-  teams(skip: Int = 0, take: Int = 15): [Team!]!
+  ninjas(filter: NinjaFilterInput, limit: Int = 15, offset: Int = 0): [Ninja!]!
+  teams(limit: Int = 15, offset: Int = 0): [Team!]!
 }
 
 type Team {

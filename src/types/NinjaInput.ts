@@ -10,6 +10,9 @@ export class NinjaFilterInput extends BaseFilterInput {
 	@Field(() => String, { nullable: true })
 	blood_type: String;
 
-	// @Field(() => String, { nullable: true })
-	// tool: String;
+	@Field(() => String, { nullable: true })
+	tools: String;
+
+	@Field(() => String, { nullable: true })
+	clan: String;
 }
