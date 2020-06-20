@@ -1,5 +1,7 @@
-import { Repository, EntityRepository, Like, SelectQueryBuilder } from 'typeorm';
-import { Ninja } from '../entity/Ninja';
+import { Repository, EntityRepository, Like, SelectQueryBuilder, getCustomRepository, Brackets } from 'typeorm';
+import { Ninja, NinjaTools } from '../entity/Ninja';
+import { NinjaToolsRepo } from './NinjaToolsRepo';
+import { manyLoader } from '../loaders/ManyLoader';
 
 @EntityRepository(Ninja)
 export class NinjaRepo extends Repository<Ninja> {
@@ -75,8 +77,15 @@ export class NinjaRepo extends Repository<Ninja> {
 	 * @param skip : Receive a number indicating how many to skip
 	 * @param take : Limit the search result
 	 */
-	async searchMany(args: any, offset: number, limit: number): Promise<Ninja[]> {
+	async searchMany(args: any, offset: number, limit: number): Promise<any> {
 		const queryBuilder: SelectQueryBuilder<Ninja> = this.createQueryBuilder('ninja');
+		const joinColumns: string[] = ['occupation', 'affiliation', 'classification', 'clan'];
+
+		const joinColumnsWithSubQuery: string[] = ['tools'];
+		const argsJoinColumnsSubQuery: [string, string | number][] = [];
+		const objectTest: { [key: string]: any } = {
+			tools: NinjaTools
+		};
 
 		if (!args) {
 			return await this.find({
@@ -88,14 +97,34 @@ export class NinjaRepo extends Repository<Ninja> {
 
 		args = Object.entries(args).filter(arg => arg[1] !== undefined);
 
-		args.forEach((arg: [string, number | string], index: number): void => {
+		joinColumns.forEach(joinColumn => {
+			queryBuilder.innerJoinAndSelect(`ninja.${joinColumn}`, joinColumn);
+		});
+
+		args.forEach((arg: [string, string | number], index: number): void => {
 			const column = arg[0];
 			const parameter = arg[1];
+
+			const isJoinColumn = joinColumns.some(joinColumn => column === joinColumn);
+			const isJoinColumnSubQuery = joinColumnsWithSubQuery.some(joinColumn => column === joinColumn);
 			const haveLikeOperator = typeof parameter === 'string' && parameter.includes('%');
 
-			if (index === 0) {
+			if (isJoinColumnSubQuery) {
+				argsJoinColumnsSubQuery.push(arg);
+				return;
+			}
+
+			if (index === 0 && !isJoinColumn) {
 				queryBuilder.where(`ninja.${column} ${haveLikeOperator ? 'like' : '='} :${column}`, {
 					[column]: parameter
+				});
+			} else if (isJoinColumn && index === 0) {
+				queryBuilder.where(`${column}.name ${haveLikeOperator ? 'like' : '='} :${column}_name`, {
+					[`${column}_name`]: parameter
+				});
+			} else if (isJoinColumn) {
+				queryBuilder.andWhere(`${column}.name ${haveLikeOperator ? 'like' : '='} :${column}_name`, {
+					[`${column}_name`]: parameter
 				});
 			} else {
 				queryBuilder.andWhere(`ninja.${column} ${haveLikeOperator ? 'like' : '='} :${column}`, {
@@ -104,14 +133,18 @@ export class NinjaRepo extends Repository<Ninja> {
 			}
 		});
 
-		queryBuilder.leftJoinAndSelect('ninja.occupation', 'occupation');
-		queryBuilder.leftJoinAndSelect('ninja.affiliation', 'affiliation');
-		queryBuilder.leftJoinAndSelect('ninja.classification', 'classification');
-		queryBuilder.leftJoinAndSelect('ninja.clan', 'clan');
+		argsJoinColumnsSubQuery.forEach((arg: [string, string | number], index: number): void => {
+			const column = arg[0];
+			const parameter = arg[1];
+
+			const haveLikeOperator = typeof parameter === 'string' && parameter.includes('%');
+		});
+
 		queryBuilder.skip(offset);
 		queryBuilder.take(limit);
-
 		const ninjas = await queryBuilder.getMany();
+
+		console.log(ninjas);
 
 		return ninjas;
 	}

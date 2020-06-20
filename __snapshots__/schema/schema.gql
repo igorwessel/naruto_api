@@ -96,7 +96,6 @@ input NinjaFilterInput {
   id: Int
   name: String
   sex: String
-  tools: String
 }
 
 type Occupation {
@@ -109,7 +108,7 @@ type Query {
   ninja(filter: NinjaFilterInput!): Ninja!
   ninjas(filter: NinjaFilterInput, limit: Int = 15, offset: Int = 0): [Ninja!]!
   teams(limit: Int = 15, offset: Int = 0): [Team!]!
-  tools(limit: Int = 15, offset: Int = 0): [Tools!]!
+  tools(filter: ToolsInput, limit: Int = 15, offset: Int = 0): [Tools!]!
 }
 
 type Team {
@@ -128,5 +127,10 @@ type Tools {
   english_anime_name: String
   id: Int!
   literal_english_name: String
+  name: String
+}
+
+input ToolsInput {
+  id: Int
   name: String
 }

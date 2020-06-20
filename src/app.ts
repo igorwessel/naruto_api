@@ -49,7 +49,8 @@ async function startServer(Container: ContainerInterface): Promise<express.Appli
 			defaultMaxAge: 86400
 		},
 		tracing: true,
-		context: () => ({
+		context: req => ({
+			req,
 			loaders: {
 				ninjaToolLoader: ninjaToolLoader(),
 				ninjaNatureTypeLoader: ninjaNatureTypeLoader(),

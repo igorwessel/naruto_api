@@ -13,8 +13,10 @@ import { jutsuRelatedLoader } from '../loaders/JutsuRelatedLoader';
 import { jutsuParentLoader } from '../loaders/JutsuParentLoader';
 import { jutsuDerivedLoader } from '../loaders/JutsuDerivedLoader';
 import { jutsuClassificationLoader } from '../loaders/JutsuClassificationLoader';
+import { ExpressContext } from 'apollo-server-express/dist/ApolloServer';
 
 export interface IGraphQLContext {
+	req: ExpressContext;
 	loaders: {
 		ninjaToolLoader: ReturnType<typeof ninjaToolLoader>;
 		ninjaNatureTypeLoader: ReturnType<typeof ninjaNatureTypeLoader>;

@@ -14,6 +14,7 @@ import { Jutsu } from '../entity/Jutsu';
 import { NinjaFilterInput } from '../types/NinjaInput';
 import { IGraphQLContext } from '../types/graphql';
 import { PaginationArgs } from '../shared/PaginationArgs';
+import { ToolsInput } from '../types/ToolsInput';
 
 @Resolver(Ninja)
 export class NinjaResolver {
@@ -30,7 +31,7 @@ export class NinjaResolver {
 	async ninjas(
 		@Arg('filter', { nullable: true }) filter: NinjaFilterInput,
 		@Args() { startIndex, endIndex }: PaginationArgs
-	): Promise<Ninja[]> {
+	): Promise<Ninja[] | undefined> {
 		const ninjas = await this.ninjaRepo.searchMany(filter, startIndex, endIndex);
 
 		return ninjas;
