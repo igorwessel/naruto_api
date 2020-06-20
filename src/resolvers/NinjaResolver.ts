@@ -31,8 +31,12 @@ export class NinjaResolver {
 	async ninjas(
 		@Arg('filter', { nullable: true }) filter: NinjaFilterInput,
 		@Args() { startIndex, endIndex }: PaginationArgs
-	): Promise<Ninja[] | undefined> {
-		const ninjas = await this.ninjaRepo.searchMany(filter, startIndex, endIndex);
+	): Promise<Ninja[]> {
+		const ninjas: Ninja[] = await this.ninjaRepo.searchMany(filter, startIndex, endIndex);
+
+		ninjas.forEach(ninja => {
+			console.log(ninja.tools);
+		});
 
 		return ninjas;
 	}

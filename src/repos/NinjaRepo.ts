@@ -14,53 +14,36 @@ export class NinjaRepo extends Repository<Ninja> {
 	async searchOne(args: any): Promise<Ninja | undefined> {
 		const queryBuilder: SelectQueryBuilder<Ninja> = this.createQueryBuilder('ninja');
 		const joinColumns: string[] = ['occupation', 'affiliation', 'classification', 'clan'];
-		const filterJoinColumn: any[] = [];
 
 		args = Object.entries(args).filter(arg => arg[1] !== undefined);
 
-		args.forEach((arg: [string, number | string], index: number): void => {
+		joinColumns.forEach(joinColumn => {
+			queryBuilder.innerJoinAndSelect(`ninja.${joinColumn}`, joinColumn);
+		});
+
+		args.forEach((arg: [string, string | number], index: number): void => {
 			const column = arg[0];
 			const parameter = arg[1];
+
 			const isJoinColumn = joinColumns.some(joinColumn => column === joinColumn);
-
-			// If the column filter is JoinColumn without Subquery, push to array for create relation with where
-			if (isJoinColumn) {
-				filterJoinColumn.push(arg);
-				return;
-			}
-
 			const haveLikeOperator = typeof parameter === 'string' && parameter.includes('%');
 
-			if (index === 0) {
+			if (index === 0 && !isJoinColumn) {
 				queryBuilder.where(`ninja.${column} ${haveLikeOperator ? 'like' : '='} :${column}`, {
 					[column]: parameter
+				});
+			} else if (index === 0 && isJoinColumn) {
+				queryBuilder.where(`${column}.name ${haveLikeOperator ? 'like' : '='} :${column}_name`, {
+					[`${column}_name`]: parameter
+				});
+			} else if (isJoinColumn) {
+				queryBuilder.andWhere(`${column}.name ${haveLikeOperator ? 'like' : '='} :${column}_name`, {
+					[`${column}_name`]: parameter
 				});
 			} else {
 				queryBuilder.andWhere(`ninja.${column} ${haveLikeOperator ? 'like' : '='} :${column}`, {
 					[column]: parameter
 				});
-			}
-		});
-
-		joinColumns.forEach((column: string): void => {
-			const needConditionInRelation = filterJoinColumn.filter(
-				(joinColumn: [string, number | string]) => column === joinColumn[0]
-			)[0];
-			const parameter = needConditionInRelation ? needConditionInRelation[1] : null;
-
-			const haveLikeOperator = typeof parameter === 'string' && parameter.includes('%');
-
-			if (needConditionInRelation) {
-				queryBuilder.innerJoinAndSelect(
-					`ninja.${column}`,
-					column,
-					`${column}.name ${haveLikeOperator ? 'like' : '='} :name`,
-					{
-						name: parameter
-					}
-				);
-			} else {
-				queryBuilder.leftJoinAndSelect(`ninja.${column}`, column);
 			}
 		});
 
@@ -81,12 +64,6 @@ export class NinjaRepo extends Repository<Ninja> {
 		const queryBuilder: SelectQueryBuilder<Ninja> = this.createQueryBuilder('ninja');
 		const joinColumns: string[] = ['occupation', 'affiliation', 'classification', 'clan'];
 
-		const joinColumnsWithSubQuery: string[] = ['tools'];
-		const argsJoinColumnsSubQuery: [string, string | number][] = [];
-		const objectTest: { [key: string]: any } = {
-			tools: NinjaTools
-		};
-
 		if (!args) {
 			return await this.find({
 				relations: ['occupation', 'affiliation', 'classification', 'clan'],
@@ -106,19 +83,13 @@ export class NinjaRepo extends Repository<Ninja> {
 			const parameter = arg[1];
 
 			const isJoinColumn = joinColumns.some(joinColumn => column === joinColumn);
-			const isJoinColumnSubQuery = joinColumnsWithSubQuery.some(joinColumn => column === joinColumn);
 			const haveLikeOperator = typeof parameter === 'string' && parameter.includes('%');
-
-			if (isJoinColumnSubQuery) {
-				argsJoinColumnsSubQuery.push(arg);
-				return;
-			}
 
 			if (index === 0 && !isJoinColumn) {
 				queryBuilder.where(`ninja.${column} ${haveLikeOperator ? 'like' : '='} :${column}`, {
 					[column]: parameter
 				});
-			} else if (isJoinColumn && index === 0) {
+			} else if (index === 0 && isJoinColumn) {
 				queryBuilder.where(`${column}.name ${haveLikeOperator ? 'like' : '='} :${column}_name`, {
 					[`${column}_name`]: parameter
 				});
@@ -133,19 +104,9 @@ export class NinjaRepo extends Repository<Ninja> {
 			}
 		});
 
-		argsJoinColumnsSubQuery.forEach((arg: [string, string | number], index: number): void => {
-			const column = arg[0];
-			const parameter = arg[1];
-
-			const haveLikeOperator = typeof parameter === 'string' && parameter.includes('%');
-		});
-
 		queryBuilder.skip(offset);
 		queryBuilder.take(limit);
 		const ninjas = await queryBuilder.getMany();
-
-		console.log(ninjas);
-
 		return ninjas;
 	}
 }
