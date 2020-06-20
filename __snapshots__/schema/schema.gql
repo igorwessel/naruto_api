@@ -109,6 +109,7 @@ type Query {
   ninja(filter: NinjaFilterInput!): Ninja!
   ninjas(filter: NinjaFilterInput, limit: Int = 15, offset: Int = 0): [Ninja!]!
   teams(limit: Int = 15, offset: Int = 0): [Team!]!
+  tools(limit: Int = 15, offset: Int = 0): [Tools!]!
 }
 
 type Team {

@@ -11,6 +11,7 @@ import { NatureTypeResolver } from './resolvers/NatureTypeResolver';
 import { TeamResolver } from './resolvers/TeamResolver';
 import { NinjaAttrResolver } from './resolvers/NinjaAttrResolver';
 import { JutsuResolver } from './resolvers/JutsuResolver';
+import { ToolsResolver } from './resolvers/ToolsResolver';
 
 import { ninjaToolLoader } from './loaders/NinjaToolLoader';
 import { ninjaNatureTypeLoader } from './loaders/NinjaNatureTypeLoader';
@@ -32,7 +33,15 @@ async function startServer(Container: ContainerInterface): Promise<express.Appli
 	const app: express.Application = express();
 	const server = new ApolloServer({
 		schema: await buildSchema({
-			resolvers: [NinjaResolver, FamilyResolver, NatureTypeResolver, TeamResolver, NinjaAttrResolver, JutsuResolver],
+			resolvers: [
+				NinjaResolver,
+				FamilyResolver,
+				NatureTypeResolver,
+				TeamResolver,
+				NinjaAttrResolver,
+				JutsuResolver,
+				ToolsResolver
+			],
 			container: Container,
 			emitSchemaFile: path.resolve(__dirname, '../__snapshots__/schema/schema.gql')
 		}),
