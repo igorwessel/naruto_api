@@ -1,8 +1,9 @@
-import { createConnection, useContainer } from 'typeorm';
-import { Container } from 'typedi';
+import { createConnection } from 'typeorm';
 
 export async function connect(): Promise<void> {
-	useContainer(Container);
+	/**
+	 * Create a connection with database
+	 */
 	await createConnection();
 	console.log('Database connected.');
 }
