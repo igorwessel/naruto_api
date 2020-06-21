@@ -10,8 +10,8 @@ async function main(): Promise<void> {
 	connect();
 	const app: express.Application = await startServer(Container);
 
-	app.listen(4000);
-	console.log('Server start on', 4000);
+	app.listen(8000);
+	console.log(`Server start on `, 8000);
 }
 
 main();

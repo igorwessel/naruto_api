@@ -85,22 +85,24 @@ export class NinjaRepo extends Repository<Ninja> {
 			const isJoinColumn = joinColumns.some(joinColumn => column === joinColumn);
 			const haveLikeOperator = typeof parameter === 'string' && parameter.includes('%');
 
-			if (index === 0 && !isJoinColumn) {
-				queryBuilder.where(`ninja.${column} ${haveLikeOperator ? 'like' : '='} :${column}`, {
-					[column]: parameter
-				});
-			} else if (index === 0 && isJoinColumn) {
-				queryBuilder.where(`${column}.name ${haveLikeOperator ? 'like' : '='} :${column}_name`, {
-					[`${column}_name`]: parameter
-				});
-			} else if (isJoinColumn) {
-				queryBuilder.andWhere(`${column}.name ${haveLikeOperator ? 'like' : '='} :${column}_name`, {
-					[`${column}_name`]: parameter
-				});
+			if (index === 0) {
+				queryBuilder.where(
+					`${isJoinColumn ? column + '.name' : 'ninja.' + column} ${haveLikeOperator ? 'like' : '='} :${
+						isJoinColumn ? column + '_name' : column
+					}`,
+					{
+						[`${isJoinColumn ? column + '_name' : column}`]: parameter
+					}
+				);
 			} else {
-				queryBuilder.andWhere(`ninja.${column} ${haveLikeOperator ? 'like' : '='} :${column}`, {
-					[column]: parameter
-				});
+				queryBuilder.where(
+					`${isJoinColumn ? column + '.name' : 'ninja.' + column} ${haveLikeOperator ? 'like' : '='} :${
+						isJoinColumn ? column + '_name' : column
+					}`,
+					{
+						[`${isJoinColumn ? column + '_name' : column}`]: parameter
+					}
+				);
 			}
 		});
 
