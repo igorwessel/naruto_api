@@ -64,11 +64,7 @@ export class NinjaRepo extends Repository<Ninja> {
 		const queryBuilder: SelectQueryBuilder<Ninja> = this.createQueryBuilder('ninja');
 		const joinColumns: string[] = ['occupation', 'affiliation', 'classification', 'clan'];
 
-		if (
-			!args ||
-			Object.keys(args).length === 0 ||
-			Object.keys(args).every(arg => arg === 'offset' || arg === 'limit')
-		) {
+		if (!args || Object.keys(args).length === 0) {
 			return await this.find({
 				relations: ['occupation', 'affiliation', 'classification', 'clan'],
 				skip: offset,
@@ -77,8 +73,6 @@ export class NinjaRepo extends Repository<Ninja> {
 		}
 
 		args = Object.entries(args).filter(arg => arg[1] !== undefined);
-		args = args.filter((arg: [string, string | number]) => arg[0] !== 'offset');
-		args = args.filter((arg: [string, string | number]) => arg[0] !== 'limit');
 
 		joinColumns.forEach(joinColumn => {
 			queryBuilder.leftJoinAndSelect(`ninja.${joinColumn}`, joinColumn);
