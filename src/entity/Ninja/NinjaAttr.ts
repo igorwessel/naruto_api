@@ -36,5 +36,5 @@ export class NinjaAttr {
 	// TODO: line below that, return the Type Season which he have ID,NAME of Season. is commented because i dont have sure if user want to know the id of season.
 	// @Field(() => Season, { nullable: true })
 	@ManyToOne(type => Season, season => season.ninja_has_attributes)
-	season: Promise<Season>;
+	season: Season;
 }
