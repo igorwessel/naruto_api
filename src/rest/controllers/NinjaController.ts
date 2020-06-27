@@ -1,16 +1,4 @@
-import {
-	JsonController,
-	Get,
-	QueryParams,
-	Param,
-	UseBefore,
-	OnUndefined,
-	Req,
-	Params,
-	Res,
-	UseAfter,
-	NotFoundError
-} from 'routing-controllers';
+import { JsonController, Get, QueryParams, Param, OnUndefined, NotFoundError } from 'routing-controllers';
 import { InjectRepository } from 'typeorm-typedi-extensions';
 
 import { NinjaQueryParams } from '../types/NinjaQueryParams';
@@ -84,6 +72,8 @@ export class NinjaController {
 	async getFamily(@Param('id') id: number) {
 		const family = await this.familyRepo.getByNinjaID(id);
 
+		if (family.length === 0) throw new NotFoundError("This ninja don't have family.");
+
 		return family;
 	}
 
@@ -91,12 +81,16 @@ export class NinjaController {
 	async getTools(@Param('id') id: number) {
 		const tools = await this.ninjaToolsRepo.getByNinjaID(id);
 
+		if (tools.length === 0) throw new NotFoundError("This ninja don't have tools.");
+
 		return tools;
 	}
 
 	@Get('/ninjas/:id([0-9]+)/teams')
 	async getTeams(@Param('id') id: number) {
 		const teams = await this.ninjaTeamRepo.getByNinjaID(id);
+
+		if (teams.length === 0) throw new NotFoundError("This ninja don't have teams.");
 
 		return teams;
 	}
