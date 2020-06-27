@@ -3,9 +3,10 @@ import { NinjaJutsu } from '../entity/Ninja';
 
 @EntityRepository(NinjaJutsu)
 export class NinjaJutsuRepo extends Repository<NinjaJutsu> {
-	async getByNinjaID(id: number) {
+	async getByNinjaIDOrName(id?: number, name?: string) {
 		const ninja_jutsus = await this.createQueryBuilder('ninja_jutsu')
 			.leftJoin('ninja_jutsu.jutsu', 'jutsu')
+			.leftJoin('ninja_jutsu.ninja', 'ninja')
 			.leftJoin('jutsu.nature_type', 'nature_type')
 			.leftJoin('jutsu.related_jutsu', 'related_jutsu')
 			.leftJoin('jutsu.parent_jutsu', 'parent_jutsu')
@@ -25,7 +26,7 @@ export class NinjaJutsuRepo extends Repository<NinjaJutsu> {
 			.addSelect('derived_jutsu.name')
 			.addSelect('ninja_jutsu.only ')
 			.addSelect('nature_type.name ')
-			.where('ninja_jutsu.ninjaId = :id', { id })
+			.where(`${id ? 'ninja_jutsu.ninjaId = :parameter' : 'ninja.name = :parameter'}`, { parameter: id ? id : name })
 			.getMany();
 
 		return ninja_jutsus.map(({ jutsu }) => jutsu);

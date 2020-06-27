@@ -3,10 +3,11 @@ import { NinjaNaturetype } from '../entity/Ninja';
 
 @EntityRepository(NinjaNaturetype)
 export class NinjaNatureTypeRepo extends Repository<NinjaNaturetype> {
-	async getByNinjaID(id: number) {
+	async getByNinjaIDOrName(id?: number, name?: string) {
 		const nature_types = await this.createQueryBuilder('ninja_naturetype')
 			.innerJoin('ninja_naturetype.nature_type', 'nature_type')
-			.where('ninjaId = :id', { id })
+			.innerJoin('ninja_naturetype.ninja', 'ninja')
+			.where(`${id ? 'ninjaId = :parameter' : 'ninja.name = :parameter'}`, { parameter: id ? id : name })
 			.select([
 				'nature_type.id as "id"',
 				'nature_type.name as "name"',

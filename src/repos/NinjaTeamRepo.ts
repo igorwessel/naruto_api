@@ -3,10 +3,11 @@ import { NinjaTeam } from '../entity/Ninja';
 
 @EntityRepository(NinjaTeam)
 export class NinjaTeamRepo extends Repository<NinjaTeam> {
-	async getByNinjaID(id: number) {
+	async getByNinjaIDOrName(id?: number, name?: string) {
 		const teams = await this.createQueryBuilder('ninja_team')
-			.innerJoinAndSelect('ninja_team.team', 'team')
-			.where('ninjaId = :id', { id })
+			.innerJoin('ninja_team.team', 'team')
+			.innerJoin('ninja_team.ninja', 'ninja')
+			.where(`${id ? 'ninjaId = :parameter' : 'ninja.name = :parameter'}`, { parameter: id ? id : name })
 			.select(['team.id as "id"', 'team.name as "name"'])
 			.getRawMany();
 

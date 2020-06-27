@@ -76,7 +76,7 @@ export class NinjaController {
 
 	@Get('/ninjas/:id([0-9]+)/jutsus')
 	async getJutsus(@Param('id') id: number) {
-		const jutsus = await this.ninjaJutsuRepo.getByNinjaID(id);
+		const jutsus = await this.ninjaJutsuRepo.getByNinjaIDOrName(id);
 
 		if (jutsus.length === 0) throw new NotFoundError("This ninja don't have jutsus.");
 
@@ -94,7 +94,7 @@ export class NinjaController {
 
 	@Get('/ninjas/:id([0-9]+)/tools')
 	async getTools(@Param('id') id: number) {
-		const tools = await this.ninjaToolsRepo.getByNinjaID(id);
+		const tools = await this.ninjaToolsRepo.getByNinjaIDOrName(id);
 
 		if (tools.length === 0) throw new NotFoundError("This ninja don't have tools.");
 
@@ -103,7 +103,7 @@ export class NinjaController {
 
 	@Get('/ninjas/:id([0-9]+)/teams')
 	async getTeams(@Param('id') id: number) {
-		const teams = await this.ninjaTeamRepo.getByNinjaID(id);
+		const teams = await this.ninjaTeamRepo.getByNinjaIDOrName(id);
 
 		if (teams.length === 0) throw new NotFoundError("This ninja don't have teams.");
 
@@ -112,7 +112,7 @@ export class NinjaController {
 
 	@Get('/ninjas/:id([0-9]+)/nature_types')
 	async getNatureType(@Param('id') id: number) {
-		const nature_type = await this.ninjaNatureTypeRepo.getByNinjaID(id);
+		const nature_type = await this.ninjaNatureTypeRepo.getByNinjaIDOrName(id);
 
 		if (nature_type.length === 0) throw new NotFoundError("This ninja don't have nature type.");
 
@@ -131,11 +131,51 @@ export class NinjaController {
 		});
 	}
 
+	@Get('/ninjas/:name([A-z_]+)/jutsus')
+	@UseBefore(treatmentName)
+	async getJutsusByNinjaName(@Param('name') name: string) {
+		const jutsus = await this.ninjaJutsuRepo.getByNinjaIDOrName(null, name);
+
+		if (jutsus.length === 0) throw new NotFoundError("This ninja don't have jutsus.");
+
+		return jutsus;
+	}
+
 	@Get('/ninjas/:name([A-z_]+)/family')
 	@UseBefore(treatmentName)
 	async getFamilyByNinjaName(@Param('name') name: string) {
 		const family = this.familyRepo.getByNinjaIDOrName(null, name);
 
 		return family;
+	}
+
+	@Get('/ninjas/:name([A-z_]+)/tools')
+	@UseBefore(treatmentName)
+	async getToolsByName(@Param('name') name: string) {
+		const tools = await this.ninjaToolsRepo.getByNinjaIDOrName(null, name);
+
+		if (tools.length === 0) throw new NotFoundError("This ninja don't have tools.");
+
+		return tools;
+	}
+
+	@Get('/ninjas/:name([A-z_]+)/teams')
+	@UseBefore(treatmentName)
+	async getTeamsByName(@Param('name') name: string) {
+		const teams = await this.ninjaTeamRepo.getByNinjaIDOrName(null, name);
+
+		if (teams.length === 0) throw new NotFoundError("This ninja don't have teams.");
+
+		return teams;
+	}
+
+	@Get('/ninjas/:name([A-z_]+)/nature_types')
+	@UseBefore(treatmentName)
+	async getNatureTypeByName(@Param('name') name: string) {
+		const nature_type = await this.ninjaNatureTypeRepo.getByNinjaIDOrName(null, name);
+
+		if (nature_type.length === 0) throw new NotFoundError("This ninja don't have nature type.");
+
+		return nature_type;
 	}
 }

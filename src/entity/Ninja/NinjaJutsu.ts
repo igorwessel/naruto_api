@@ -20,5 +20,5 @@ export class NinjaJutsu {
 	jutsu: Jutsu;
 
 	@ManyToOne(type => Ninja, ninja => ninja.has_jutsu)
-	ninja: Promise<Ninja>;
+	ninja: Ninja;
 }
