@@ -1,4 +1,4 @@
-import { JsonController, Get, QueryParams, Param, OnUndefined, NotFoundError } from 'routing-controllers';
+import { JsonController, Get, QueryParams, Param, OnUndefined, NotFoundError, Params } from 'routing-controllers';
 import { InjectRepository } from 'typeorm-typedi-extensions';
 
 import { NinjaQueryParams } from '../types/NinjaQueryParams';
@@ -48,7 +48,7 @@ export class NinjaController {
 
 	@Get('/ninjas/:id([0-9]+)')
 	@OnUndefined(NinjaNotFoundError)
-	getOneByIdOrName(@Param('id') id: number) {
+	getNinjaByID(@Param('id') id: number) {
 		return this.ninjaRepo.findOne({
 			relations: ['occupation', 'affiliation', 'classification', 'clan'],
 			where: {
@@ -106,5 +106,18 @@ export class NinjaController {
 		if (nature_type.length === 0) throw new NotFoundError("This ninja don't have nature type.");
 
 		return nature_type;
+	}
+
+	@Get('/ninjas/:name([A-z_]+)')
+	@OnUndefined(NinjaNotFoundError)
+	async getNinjaByName(@Param('name') name: string) {
+		name = name ? name.replace('_', ' ').toUpperCase() : undefined;
+
+		return this.ninjaRepo.findOne({
+			relations: ['occupation', 'affiliation', 'classification', 'clan'],
+			where: {
+				name
+			}
+		});
 	}
 }
