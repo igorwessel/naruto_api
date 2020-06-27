@@ -3,7 +3,7 @@ import { NinjaJutsu } from '../entity/Ninja';
 
 @EntityRepository(NinjaJutsu)
 export class NinjaJutsuRepo extends Repository<NinjaJutsu> {
-	async getByNinjaID(id: string) {
+	async getByNinjaID(id: number) {
 		const ninja_jutsus = await this.createQueryBuilder('ninja_jutsu')
 			.leftJoin('ninja_jutsu.jutsu', 'jutsu')
 			.leftJoin('jutsu.nature_type', 'nature_type')
@@ -22,7 +22,7 @@ export class NinjaJutsuRepo extends Repository<NinjaJutsu> {
 			.addSelect('derived_jutsu.name')
 			.addSelect('ninja_jutsu.only ')
 			.addSelect('nature_type.name ')
-			.where('ninja_jutsu.ninjaId = :id', { id: parseInt(id) })
+			.where('ninja_jutsu.ninjaId = :id', { id })
 			.getMany();
 
 		return ninja_jutsus.map(({ jutsu }) => jutsu);

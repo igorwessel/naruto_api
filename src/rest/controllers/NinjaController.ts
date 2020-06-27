@@ -11,15 +11,19 @@ import {
 	UseAfter,
 	NotFoundError
 } from 'routing-controllers';
-import { Request, Response, NextFunction, response } from 'express';
 import { InjectRepository } from 'typeorm-typedi-extensions';
-import { NinjaRepo } from '../../repos/NinjaRepo';
+
 import { NinjaQueryParams } from '../types/NinjaQueryParams';
+
 import { NinjaNotFoundError } from '../errors/NinjaError';
-import { NinjaAttrRepo } from '../../repos/NinjaAttrRepo';
 import { JutsuNotFound } from '../errors/JutsusError';
 import { AttributeNotFound } from '../errors/AttributesError';
+
+import { NinjaRepo } from '../../repos/NinjaRepo';
+import { NinjaAttrRepo } from '../../repos/NinjaAttrRepo';
 import { NinjaJutsuRepo } from '../../repos/NinjaJutsuRepo';
+import { NinjaToolsRepo } from '../../repos/NinjaToolsRepo';
+import { FamilyRepo } from '../../repos/FamilyRepo';
 
 @JsonController()
 export class NinjaController {
@@ -32,6 +36,12 @@ export class NinjaController {
 	@InjectRepository(NinjaJutsuRepo)
 	private readonly ninjaJutsuRepo: NinjaJutsuRepo;
 
+	@InjectRepository(NinjaToolsRepo)
+	private readonly ninjaToolsRepo: NinjaToolsRepo;
+
+	@InjectRepository(FamilyRepo)
+	private readonly familyRepo: FamilyRepo;
+
 	@Get('/ninjas')
 	@OnUndefined(NinjaNotFoundError)
 	async getAll(@QueryParams({ required: false }) { name, limit, offset, clan, sex }: NinjaQueryParams) {
@@ -40,7 +50,7 @@ export class NinjaController {
 		return ninjas;
 	}
 
-	@Get('/ninjas/:id([0-9]+)?')
+	@Get('/ninjas/:id([0-9]+)')
 	@OnUndefined(NinjaNotFoundError)
 	getOneByIdOrName(@Param('id') id: string) {
 		return this.ninjaRepo.findOne({
@@ -53,16 +63,30 @@ export class NinjaController {
 
 	@Get('/ninjas/:id([0-9]+)/attributes')
 	@OnUndefined(AttributeNotFound)
-	getAttributes(@Param('id') id: string) {
+	getAttributes(@Param('id') id: number) {
 		return this.ninjaAttrRepo.getByNinjaID(id);
 	}
 
 	@Get('/ninjas/:id([0-9]+)/jutsus')
-	async getJutsus(@Param('id') id: string) {
+	async getJutsus(@Param('id') id: number) {
 		const jutsus = await this.ninjaJutsuRepo.getByNinjaID(id);
 
 		if (jutsus.length === 0) throw new NotFoundError("This ninja don't have jutsus.");
 
 		return jutsus;
+	}
+
+	@Get('/ninjas/:id([0-9]+)/family')
+	async getFamily(@Param('id') id: number) {
+		const family = await this.familyRepo.getByNinjaID(id);
+
+		return family;
+	}
+
+	@Get('/ninjas/:id([0-9]+)/tools')
+	async getTools(@Param('id') id: number) {
+		const tools = await this.ninjaToolsRepo.getByNinjaID(id);
+
+		return tools;
 	}
 }
