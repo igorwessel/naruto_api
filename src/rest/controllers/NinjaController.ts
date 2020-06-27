@@ -13,6 +13,7 @@ import { NinjaJutsuRepo } from '../../repos/NinjaJutsuRepo';
 import { NinjaToolsRepo } from '../../repos/NinjaToolsRepo';
 import { FamilyRepo } from '../../repos/FamilyRepo';
 import { NinjaTeamRepo } from '../../repos/NinjaTeamRepo';
+import { NinjaNatureTypeRepo } from '../../repos/NinjaNatureTypeRepo';
 
 @JsonController()
 export class NinjaController {
@@ -30,6 +31,9 @@ export class NinjaController {
 
 	@InjectRepository(NinjaTeamRepo)
 	private readonly ninjaTeamRepo: NinjaTeamRepo;
+
+	@InjectRepository(NinjaNatureTypeRepo)
+	private readonly ninjaNatureTypeRepo: NinjaNatureTypeRepo;
 
 	@InjectRepository(FamilyRepo)
 	private readonly familyRepo: FamilyRepo;
@@ -93,5 +97,14 @@ export class NinjaController {
 		if (teams.length === 0) throw new NotFoundError("This ninja don't have teams.");
 
 		return teams;
+	}
+
+	@Get('/ninjas/:id([0-9]+)/nature_types')
+	async getNatureType(@Param('id') id: number) {
+		const nature_type = await this.ninjaNatureTypeRepo.getByNinjaID(id);
+
+		if (nature_type.length === 0) throw new NotFoundError("This ninja don't have nature type.");
+
+		return nature_type;
 	}
 }
