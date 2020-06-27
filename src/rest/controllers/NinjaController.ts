@@ -24,6 +24,7 @@ import { NinjaAttrRepo } from '../../repos/NinjaAttrRepo';
 import { NinjaJutsuRepo } from '../../repos/NinjaJutsuRepo';
 import { NinjaToolsRepo } from '../../repos/NinjaToolsRepo';
 import { FamilyRepo } from '../../repos/FamilyRepo';
+import { NinjaTeamRepo } from '../../repos/NinjaTeamRepo';
 
 @JsonController()
 export class NinjaController {
@@ -39,6 +40,9 @@ export class NinjaController {
 	@InjectRepository(NinjaToolsRepo)
 	private readonly ninjaToolsRepo: NinjaToolsRepo;
 
+	@InjectRepository(NinjaTeamRepo)
+	private readonly ninjaTeamRepo: NinjaTeamRepo;
+
 	@InjectRepository(FamilyRepo)
 	private readonly familyRepo: FamilyRepo;
 
@@ -52,11 +56,11 @@ export class NinjaController {
 
 	@Get('/ninjas/:id([0-9]+)')
 	@OnUndefined(NinjaNotFoundError)
-	getOneByIdOrName(@Param('id') id: string) {
+	getOneByIdOrName(@Param('id') id: number) {
 		return this.ninjaRepo.findOne({
 			relations: ['occupation', 'affiliation', 'classification', 'clan'],
 			where: {
-				id: parseInt(id)
+				id
 			}
 		});
 	}
@@ -88,5 +92,12 @@ export class NinjaController {
 		const tools = await this.ninjaToolsRepo.getByNinjaID(id);
 
 		return tools;
+	}
+
+	@Get('/ninjas/:id([0-9]+)/teams')
+	async getTeams(@Param('id') id: number) {
+		const teams = await this.ninjaTeamRepo.getByNinjaID(id);
+
+		return teams;
 	}
 }
