@@ -1,4 +1,13 @@
-import { JsonController, Get, QueryParams, Param, OnUndefined, NotFoundError, Params } from 'routing-controllers';
+import {
+	JsonController,
+	Get,
+	QueryParams,
+	Param,
+	OnUndefined,
+	NotFoundError,
+	Params,
+	UseBefore
+} from 'routing-controllers';
 import { InjectRepository } from 'typeorm-typedi-extensions';
 
 import { NinjaQueryParams } from '../types/NinjaQueryParams';
@@ -14,6 +23,8 @@ import { NinjaToolsRepo } from '../../repos/NinjaToolsRepo';
 import { FamilyRepo } from '../../repos/FamilyRepo';
 import { NinjaTeamRepo } from '../../repos/NinjaTeamRepo';
 import { NinjaNatureTypeRepo } from '../../repos/NinjaNatureTypeRepo';
+
+import { treatmentName } from '../middlewares/NinjasMiddlewares';
 
 @JsonController()
 export class NinjaController {
@@ -74,7 +85,7 @@ export class NinjaController {
 
 	@Get('/ninjas/:id([0-9]+)/family')
 	async getFamily(@Param('id') id: number) {
-		const family = await this.familyRepo.getByNinjaID(id);
+		const family = await this.familyRepo.getByNinjaIDOrName(id);
 
 		if (family.length === 0) throw new NotFoundError("This ninja don't have family.");
 
@@ -109,15 +120,22 @@ export class NinjaController {
 	}
 
 	@Get('/ninjas/:name([A-z_]+)')
+	@UseBefore(treatmentName)
 	@OnUndefined(NinjaNotFoundError)
 	async getNinjaByName(@Param('name') name: string) {
-		name = name ? name.replace('_', ' ').toUpperCase() : undefined;
-
 		return this.ninjaRepo.findOne({
 			relations: ['occupation', 'affiliation', 'classification', 'clan'],
 			where: {
 				name
 			}
 		});
+	}
+
+	@Get('/ninjas/:name([A-z_]+)/family')
+	@UseBefore(treatmentName)
+	async getFamilyByNinjaName(@Param('name') name: string) {
+		const family = this.familyRepo.getByNinjaIDOrName(null, name);
+
+		return family;
 	}
 }
