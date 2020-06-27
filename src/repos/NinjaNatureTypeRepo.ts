@@ -19,9 +19,9 @@ export class NinjaNatureTypeRepo extends Repository<NinjaNaturetype> {
 
 		return nature_types.map(nature_type => ({
 			...nature_type,
-			affinity: nature_type.affinity !== 0 ? 'true' : 'false',
-			kekkei_genkai: nature_type.kekkei_genkai !== 0 ? 'true' : 'false',
-			kekkei_tota: nature_type.kekkei_tota !== 0 ? 'true' : 'false'
+			affinity: nature_type.affinity !== 0 ? true : false,
+			kekkei_genkai: nature_type.kekkei_genkai !== 0 ? true : false,
+			kekkei_tota: nature_type.kekkei_tota !== 0 ? true : false
 		}));
 	}
 }
