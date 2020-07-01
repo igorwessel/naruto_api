@@ -22,6 +22,9 @@ defmodule NarutoAPI.MixProject do
   defp deps do
     [
 
+      # Encoders
+      {:poison, "~> 4.0", override: true},
+
       # RESTFul
       {:plug, "~> 1.8"},
       {:cowboy, "~> 2.6"},
