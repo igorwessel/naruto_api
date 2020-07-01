@@ -41,7 +41,8 @@ defmodule NarutoAPI.MixProject do
       {:ecto_sql, "~> 3.1"},
 
       # GraphQL
-      {:absinthe, "~> 1.5"}
+      {:absinthe, "~> 1.5"},
+      {:absinthe_plug, "~> 1.5"},
     ]
   end
 end
