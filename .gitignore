@@ -28,3 +28,4 @@ naruto_api-*.tar
 /data/
 .env
 .env.local
+/node_modules/

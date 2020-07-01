@@ -20,7 +20,7 @@ defmodule NarutoAPI.Application do
     Logger.info("Starting NarutoAPI application")
 
     with {:ok, config} <- Application.fetch_env(:naruto_api, NarutoAPI.Endpoint) do
-      port = Environments.get_env(config[:port])
+      port = System.get_env("PORT") || 4000
       Logger.info("Starting server using port #{port}")
       config
     end
