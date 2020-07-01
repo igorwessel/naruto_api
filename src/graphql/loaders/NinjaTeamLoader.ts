@@ -19,9 +19,9 @@ const batchNinjaTeam: BatchNinjaTeam = async (ids: readonly number[]) => {
 
 	ninjaTeam.forEach(ninjaTeam => {
 		if (!ninjaTeamMap[ninjaTeam.ninjaId]) {
-			ninjaTeamMap[ninjaTeam.ninjaId] = [(ninjaTeam as any).__team__];
+			ninjaTeamMap[ninjaTeam.ninjaId] = [(ninjaTeam as any).team];
 		} else {
-			ninjaTeamMap[ninjaTeam.ninjaId].push((ninjaTeam as any).__team__);
+			ninjaTeamMap[ninjaTeam.ninjaId].push((ninjaTeam as any).team);
 		}
 	});
 

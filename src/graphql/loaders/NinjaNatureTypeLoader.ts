@@ -19,9 +19,9 @@ const batchNinjaNatureType: BatchNinjaNatureType = async (ids: readonly number[]
 
 	ninjaNatureType.forEach(naturetype => {
 		if (!ninjaNatureTypeMap[naturetype.ninjaId]) {
-			ninjaNatureTypeMap[naturetype.ninjaId] = [(naturetype as any).__nature_type__];
+			ninjaNatureTypeMap[naturetype.ninjaId] = [(naturetype as any).nature_type];
 		} else {
-			ninjaNatureTypeMap[naturetype.ninjaId].push((naturetype as any).__nature_type__);
+			ninjaNatureTypeMap[naturetype.ninjaId].push((naturetype as any).nature_type);
 		}
 	});
 

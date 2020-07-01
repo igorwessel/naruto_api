@@ -1,7 +1,6 @@
 import { Resolver, Query, FieldResolver, Root, Args, Arg, Ctx } from 'type-graphql';
 import { InjectRepository } from 'typeorm-typedi-extensions';
 import { NinjaRepo } from '../../repos/NinjaRepo';
-import { FamilyRepo } from '../../repos/FamilyRepo';
 
 import { Ninja } from '../../entity/Ninja';
 import { NinjaAttr } from '../../entity/Ninja';

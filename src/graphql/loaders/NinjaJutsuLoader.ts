@@ -19,9 +19,9 @@ const batchNinjaJutsu: BatchNinjaJutsu = async (ids: readonly number[]) => {
 
 	ninjaJutsu.forEach(ninjajutsu => {
 		if (!ninjaJutsuMap[ninjajutsu.ninjaId]) {
-			ninjaJutsuMap[ninjajutsu.ninjaId] = [(ninjajutsu as any).__jutsu__];
+			ninjaJutsuMap[ninjajutsu.ninjaId] = [(ninjajutsu as any).jutsu];
 		} else {
-			ninjaJutsuMap[ninjajutsu.ninjaId].push((ninjajutsu as any).__jutsu__);
+			ninjaJutsuMap[ninjajutsu.ninjaId].push((ninjajutsu as any).jutsu);
 		}
 	});
 
