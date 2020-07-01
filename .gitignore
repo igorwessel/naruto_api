@@ -26,3 +26,5 @@ naruto_api-*.tar
 .elixir_ls/
 
 /data/
+.env
+.env.local
