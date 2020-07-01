@@ -1,20 +1,25 @@
 defmodule NarutoAPI.MixProject do
   use Mix.Project
 
+
+  @url "https://github.com/igorwessel/naruto_api"
+
   def project do
     [
       app: :naruto_api,
       version: "0.1.0",
       elixir: "~> 1.10",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      name: "NarutoAPI",
+      source_url: @url
     ]
   end
 
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:logger]
+      extra_applications: [:logger, :cowboy]
     ]
   end
 
