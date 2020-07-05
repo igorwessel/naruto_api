@@ -8,3 +8,5 @@
 .env.local
 dump.rdb
 .vscode
+/coverage/
+.nyc_output
