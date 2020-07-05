@@ -1,0 +1,16 @@
+{
+	"compilerOptions": {
+		"target": "es5",
+		"rootDir": "./src",
+		"lib": ["es5", "es6", "ES2017", "dom"],
+		"module": "commonjs",
+		"strict": true,
+		"esModuleInterop": true,
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
+		"strictPropertyInitialization": false,
+		"strictNullChecks": false
+	},
+	"include": ["src/**/*.ts"],
+	"exclude": ["node_modules"]
+}

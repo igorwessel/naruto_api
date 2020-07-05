@@ -1,2 +1,9 @@
 /node_modules/
-/src/data/
+/data/
+/crawler/
+/dist/
+
+#ENV
+.env
+.env.local
+dump.rdb
