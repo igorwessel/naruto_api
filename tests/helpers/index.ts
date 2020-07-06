@@ -70,4 +70,10 @@ const sendRequestGraphQL = async (chai: Chai.ChaiStatic, query: string) => {
 	return res.body.data;
 };
 
-export { fragmentNinja, queryWithFragment, sendRequestGraphQL, ninjaKeysWithoutRelation, queryWithoutFragment, typesSchema };
+const sendRequest = async (chai: Chai.ChaiStatic, path: string, routeParam?: string, queryParam?: string) => {
+    const res = chai.request(await server).get(`/v1/rest/${path}${routeParam ? '/' + routeParam:  ''}${queryParam ? '?' + queryParam : ''}`)
+
+    return res
+}
+
+export { fragmentNinja, queryWithFragment, sendRequestGraphQL, sendRequest, ninjaKeysWithoutRelation, queryWithoutFragment, typesSchema };
