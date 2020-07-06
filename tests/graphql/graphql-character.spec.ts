@@ -27,7 +27,7 @@ const querySingleOne = (filter: string, properties?: string) =>
 
 describe("GraphQL: query ninja (should return one ninja), Ninja Type", () => {
     it('Gets all fields without relation', async () => {
-        const query = queryWithFragment(querySingleOne('id: 91'), fragmentNinja.withoutRelation)
+        const query = queryWithFragment(querySingleOne('id: 812'), fragmentNinja.withoutRelation)
         
         const { ninja } = await sendRequestGraphQL(chai, query)
 
@@ -36,7 +36,7 @@ describe("GraphQL: query ninja (should return one ninja), Ninja Type", () => {
     })
 
     it('Get one ninja by id without relation', async () => {
-        const query = queryWithFragment(querySingleOne('id: 91'), fragmentNinja.withoutRelation)
+        const query = queryWithFragment(querySingleOne('id: 812'), fragmentNinja.withoutRelation)
         
         const { ninja } = await sendRequestGraphQL(chai, query)
 
@@ -44,7 +44,7 @@ describe("GraphQL: query ninja (should return one ninja), Ninja Type", () => {
     })
 
     it('Get one ninja by name without relation, search with exact name', async () => {
-        const query = queryWithFragment(querySingleOne('name: "Boruto Uzumaki"'), fragmentNinja.withoutRelation)
+        const query = queryWithFragment(querySingleOne('name: "Naruto Uzumaki"'), fragmentNinja.withoutRelation)
         
         const { ninja } = await sendRequestGraphQL(chai, query)
         
@@ -52,7 +52,7 @@ describe("GraphQL: query ninja (should return one ninja), Ninja Type", () => {
     })
 
     it('Get one ninja by name without relation, search with partial name', async () => {
-        const query = queryWithFragment(querySingleOne('name: "%Boru%"'), fragmentNinja.withoutRelation)
+        const query = queryWithFragment(querySingleOne('name: "%Naruto Uzumaki%"'), fragmentNinja.withoutRelation)
         
         const { ninja } = await sendRequestGraphQL(chai, query)
         
@@ -62,7 +62,7 @@ describe("GraphQL: query ninja (should return one ninja), Ninja Type", () => {
     it('Get a Occupation type', async () => {
         const type = 'occupation'
 
-        const query = queryWithoutFragment(querySingleOne('id: 91', typesSchema.defaultManyToMany(type)))
+        const query = queryWithoutFragment(querySingleOne('id: 812', typesSchema.defaultManyToMany(type)))
 
         const { ninja } = await sendRequestGraphQL(chai, query)
 
@@ -74,7 +74,7 @@ describe("GraphQL: query ninja (should return one ninja), Ninja Type", () => {
     it('Get a Affiliation type', async () => {
         const type = 'affiliation'
 
-        const query = queryWithoutFragment(querySingleOne('id: 91', typesSchema.defaultManyToMany(type)))
+        const query = queryWithoutFragment(querySingleOne('id: 812', typesSchema.defaultManyToMany(type)))
 
         const { ninja } = await sendRequestGraphQL(chai, query)
 
@@ -86,7 +86,7 @@ describe("GraphQL: query ninja (should return one ninja), Ninja Type", () => {
     it('Get a Classification type', async () => {
         const type = 'classification'
 
-        const query = queryWithoutFragment(querySingleOne('id: 91', typesSchema.defaultManyToMany(type)))
+        const query = queryWithoutFragment(querySingleOne('id: 812', typesSchema.defaultManyToMany(type)))
 
         const { ninja } = await sendRequestGraphQL(chai, query)
 
@@ -99,7 +99,7 @@ describe("GraphQL: query ninja (should return one ninja), Ninja Type", () => {
         const type = 'clan'
 
         const query = queryWithoutFragment(
-            querySingleOne('id: 91', typesSchema.defaultManyToMany(type))
+            querySingleOne('id: 812', typesSchema.defaultManyToMany(type))
         )
 
         const { ninja } = await sendRequestGraphQL(chai, query)
@@ -113,7 +113,7 @@ describe("GraphQL: query ninja (should return one ninja), Ninja Type", () => {
         const type = 'tools'
 
         const query = queryWithoutFragment(
-            querySingleOne('id: 91', typesSchema[type])
+            querySingleOne('id: 812', typesSchema[type])
         )
 
         const { ninja } = await sendRequestGraphQL(chai, query)
@@ -127,7 +127,7 @@ describe("GraphQL: query ninja (should return one ninja), Ninja Type", () => {
         const type = 'team'
 
         const query = queryWithoutFragment(
-            querySingleOne('id: 91', typesSchema[type])
+            querySingleOne('id: 812', typesSchema[type])
         )
 
         const { ninja } = await sendRequestGraphQL(chai, query)
@@ -141,7 +141,7 @@ describe("GraphQL: query ninja (should return one ninja), Ninja Type", () => {
         const type = 'ninja_attributes'
 
         const query = queryWithoutFragment(
-            querySingleOne('id: 91', typesSchema[type])
+            querySingleOne('id: 812', typesSchema[type])
         )
 
         const { ninja } = await sendRequestGraphQL(chai, query)
