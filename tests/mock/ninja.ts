@@ -13,15 +13,15 @@ interface Ninja {
 }       
 
 export const ninja_without_relation: Ninja = { 
-        "id": 91,
-        "name": "Boruto Uzumaki",
-        "birthdate": "March 27",
+        "id": 812,
+        "name": "Naruto Uzumaki",
+        "birthdate": "October 10",
         "specie": "Human",
         "status": null,
         "sex": "Male",
-        "blood_type": null,
-        "ninja_registration": null,
-        "academy_grad_age": null,
+        "blood_type": "B",
+        "ninja_registration": "012607",
+        "academy_grad_age": "12",
         "chunin_prom_age": null,
-        "unique_traits": null,
+        "unique_traits": null
 }
