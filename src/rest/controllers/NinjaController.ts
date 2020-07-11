@@ -70,8 +70,12 @@ export class NinjaController {
 
 	@Get('/ninjas/:id([0-9]+)/attributes')
 	@OnUndefined(AttributeNotFound)
-	getAttributes(@Param('id') id: number) {
-		return this.ninjaAttrRepo.getByNinjaID(id);
+	async getAttributes(@Param('id') id: number) {
+		const attributes = await this.ninjaAttrRepo.getByNinjaID(id);
+
+		if (attributes.length === 0) throw new NotFoundError('This ninja dont have attributes.');
+
+		return attributes;
 	}
 
 	@Get('/ninjas/:id([0-9]+)/jutsus')
