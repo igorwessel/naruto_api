@@ -1,154 +1,146 @@
 import chai, { expect } from 'chai';
 import chaiHttp from 'chai-http';
-import { 
-    fragmentNinja, 
-    queryWithFragment, 
-    ninjaKeysWithoutRelation, 
-    sendRequestGraphQL, 
-    queryWithoutFragment, 
-    typesSchema } from '../helpers';
-import { ninja_without_relation } from '../mock/ninja'
+import {
+	fragmentNinja,
+	queryWithFragment,
+	ninjaKeysWithoutRelation,
+	sendRequestGraphQL,
+	queryWithoutFragment,
+	typesSchema
+} from '../helpers';
+import { ninja_without_relation } from '../mock/ninjas';
 
 chai.use(chaiHttp);
 
-const querySingleOne = (filter: string, properties?: string) => 
-    `
+const querySingleOne = (filter: string, properties?: string) =>
+	`
     { 
         ninja (
             filter: { 
                 ${filter}
             } 
         ) {
-            ${properties ? properties : '...allPropertiesWithoutRelation' } 
+            ${properties ? properties : '...allPropertiesWithoutRelation'} 
         }
     }
-    `
+    `;
 
+describe('GraphQL: query ninja (should return one ninja), Ninja Type', () => {
+	it('Gets all fields without relation', async () => {
+		const query = queryWithFragment(querySingleOne('id: 812'), fragmentNinja.withoutRelation);
 
-describe("GraphQL: query ninja (should return one ninja), Ninja Type", () => {
-    it('Gets all fields without relation', async () => {
-        const query = queryWithFragment(querySingleOne('id: 812'), fragmentNinja.withoutRelation)
-        
-        const { ninja } = await sendRequestGraphQL(chai, query)
+		const { ninja } = await sendRequestGraphQL(chai, query);
 
-        expect(ninja).to.be.an('object')
-        expect(Object.keys(ninja)).to.deep.equal(ninjaKeysWithoutRelation)
-    })
+		expect(ninja).to.be.an('object');
+		expect(Object.keys(ninja)).to.deep.equal(ninjaKeysWithoutRelation);
+	});
 
-    it('Get one ninja by id without relation', async () => {
-        const query = queryWithFragment(querySingleOne('id: 812'), fragmentNinja.withoutRelation)
-        
-        const { ninja } = await sendRequestGraphQL(chai, query)
+	it('Get one ninja by id without relation', async () => {
+		const query = queryWithFragment(querySingleOne('id: 812'), fragmentNinja.withoutRelation);
 
-        expect(ninja).to.deep.equal(ninja_without_relation)
-    })
+		const { ninja } = await sendRequestGraphQL(chai, query);
 
-    it('Get one ninja by name without relation, search with exact name', async () => {
-        const query = queryWithFragment(querySingleOne('name: "Naruto Uzumaki"'), fragmentNinja.withoutRelation)
-        
-        const { ninja } = await sendRequestGraphQL(chai, query)
-        
-        expect(ninja).to.deep.equal(ninja_without_relation)
-    })
+		expect(ninja).to.deep.equal(ninja_without_relation);
+	});
 
-    it('Get one ninja by name without relation, search with partial name', async () => {
-        const query = queryWithFragment(querySingleOne('name: "%Naruto Uzumaki%"'), fragmentNinja.withoutRelation)
-        
-        const { ninja } = await sendRequestGraphQL(chai, query)
-        
-        expect(ninja).to.deep.equal(ninja_without_relation)
-    })
+	it('Get one ninja by name without relation, search with exact name', async () => {
+		const query = queryWithFragment(querySingleOne('name: "Naruto Uzumaki"'), fragmentNinja.withoutRelation);
 
-    it('Get a Occupation type', async () => {
-        const type = 'occupation'
+		const { ninja } = await sendRequestGraphQL(chai, query);
 
-        const query = queryWithoutFragment(querySingleOne('id: 812', typesSchema.defaultManyToMany(type)))
+		expect(ninja).to.deep.equal(ninja_without_relation);
+	});
 
-        const { ninja } = await sendRequestGraphQL(chai, query)
+	it('Get one ninja by name without relation, search with partial name', async () => {
+		const query = queryWithFragment(querySingleOne('name: "%Naruto Uzumaki%"'), fragmentNinja.withoutRelation);
 
-        expect(ninja).to.haveOwnProperty(type)
+		const { ninja } = await sendRequestGraphQL(chai, query);
 
-        expect(ninja[type]).to.be.an('array')
-    })
+		expect(ninja).to.deep.equal(ninja_without_relation);
+	});
 
-    it('Get a Affiliation type', async () => {
-        const type = 'affiliation'
+	it('Get a Occupation type', async () => {
+		const type = 'occupation';
 
-        const query = queryWithoutFragment(querySingleOne('id: 812', typesSchema.defaultManyToMany(type)))
+		const query = queryWithoutFragment(querySingleOne('id: 812', typesSchema.defaultManyToMany(type)));
 
-        const { ninja } = await sendRequestGraphQL(chai, query)
+		const { ninja } = await sendRequestGraphQL(chai, query);
 
-        expect(ninja).to.haveOwnProperty(type)
-        
-        expect(ninja[type]).to.be.an('array')
-    })
+		expect(ninja).to.haveOwnProperty(type);
 
-    it('Get a Classification type', async () => {
-        const type = 'classification'
+		expect(ninja[type]).to.be.an('array');
+	});
 
-        const query = queryWithoutFragment(querySingleOne('id: 812', typesSchema.defaultManyToMany(type)))
+	it('Get a Affiliation type', async () => {
+		const type = 'affiliation';
 
-        const { ninja } = await sendRequestGraphQL(chai, query)
+		const query = queryWithoutFragment(querySingleOne('id: 812', typesSchema.defaultManyToMany(type)));
 
-        expect(ninja).to.haveOwnProperty(type)
-        
-        expect(ninja[type]).to.be.an('array')
-    })
+		const { ninja } = await sendRequestGraphQL(chai, query);
 
-    it('Get a Clan type', async () => {
-        const type = 'clan'
+		expect(ninja).to.haveOwnProperty(type);
 
-        const query = queryWithoutFragment(
-            querySingleOne('id: 812', typesSchema.defaultManyToMany(type))
-        )
+		expect(ninja[type]).to.be.an('array');
+	});
 
-        const { ninja } = await sendRequestGraphQL(chai, query)
+	it('Get a Classification type', async () => {
+		const type = 'classification';
 
-        expect(ninja).to.haveOwnProperty(type)
-        
-        expect(ninja[type]).to.be.an('array')
-    })
+		const query = queryWithoutFragment(querySingleOne('id: 812', typesSchema.defaultManyToMany(type)));
 
-    it('Get a Tool type', async () => {
-        const type = 'tools'
+		const { ninja } = await sendRequestGraphQL(chai, query);
 
-        const query = queryWithoutFragment(
-            querySingleOne('id: 812', typesSchema[type])
-        )
+		expect(ninja).to.haveOwnProperty(type);
 
-        const { ninja } = await sendRequestGraphQL(chai, query)
+		expect(ninja[type]).to.be.an('array');
+	});
 
-        expect(ninja).to.haveOwnProperty(type)
+	it('Get a Clan type', async () => {
+		const type = 'clan';
 
-        expect(ninja[type]).to.be.an('array')
-    })
+		const query = queryWithoutFragment(querySingleOne('id: 812', typesSchema.defaultManyToMany(type)));
 
-    it('Get a Team type', async () => {
-        const type = 'team'
+		const { ninja } = await sendRequestGraphQL(chai, query);
 
-        const query = queryWithoutFragment(
-            querySingleOne('id: 812', typesSchema[type])
-        )
+		expect(ninja).to.haveOwnProperty(type);
 
-        const { ninja } = await sendRequestGraphQL(chai, query)
+		expect(ninja[type]).to.be.an('array');
+	});
 
-        expect(ninja).to.haveOwnProperty(type)
-        
-        expect(ninja[type]).to.be.an('array')
-    })
+	it('Get a Tool type', async () => {
+		const type = 'tools';
 
-    it('Get a Ninja Attributes type', async () => {
-        const type = 'ninja_attributes'
+		const query = queryWithoutFragment(querySingleOne('id: 812', typesSchema[type]));
 
-        const query = queryWithoutFragment(
-            querySingleOne('id: 812', typesSchema[type])
-        )
+		const { ninja } = await sendRequestGraphQL(chai, query);
 
-        const { ninja } = await sendRequestGraphQL(chai, query)
+		expect(ninja).to.haveOwnProperty(type);
 
-        expect(ninja).to.haveOwnProperty(type)
+		expect(ninja[type]).to.be.an('array');
+	});
 
-        expect(ninja[type]).to.be.an('array')
-    })
+	it('Get a Team type', async () => {
+		const type = 'team';
 
-})
+		const query = queryWithoutFragment(querySingleOne('id: 812', typesSchema[type]));
+
+		const { ninja } = await sendRequestGraphQL(chai, query);
+
+		expect(ninja).to.haveOwnProperty(type);
+
+		expect(ninja[type]).to.be.an('array');
+	});
+
+	it('Get a Ninja Attributes type', async () => {
+		const type = 'ninja_attributes';
+
+		const query = queryWithoutFragment(querySingleOne('id: 812', typesSchema[type]));
+
+		const { ninja } = await sendRequestGraphQL(chai, query);
+
+		expect(ninja).to.haveOwnProperty(type);
+		expect(ninja[type]).to.have.keys();
+
+		expect(ninja[type]).to.be.an('array');
+	});
+});
