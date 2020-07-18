@@ -12,6 +12,8 @@ async function main(): Promise<void> {
 
 	app.listen(8000);
 	console.log(`Server start on `, 8000);
+	console.log(`REST -> http://localhost:8000/v1/rest`);
+	console.log(`GRAPHQL -> http://localhost:8000/v1/graphql`);
 }
 
 main();

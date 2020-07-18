@@ -1,14 +1,14 @@
 module.exports = {
 	type: 'mysql', //
-	host: 'db', //HOST
-	port: '3306', //PORT FOR YOU DB
-	username: 'naruto', //USERNAME
-	password: 'sasuke', //PASSWORD
+	host: 'localhost', //HOST
 	database: 'naruto_api_development', //NAME OF YOUR SCHEMA
-	entities: ['src/entity/**/**.ts'],
-	syncronize: process.env.NODE_ENV === 'development' ? true : false,
+	port: 3306, //PORT FOR YOU DB
+	username: process.env.DB_USER || 'root', //USERNAME
+	password: process.env.DB_PASSWORD || '', //PASSWORD
+	entities: ['./src/entity/**/*.ts'],
+	synchronize: process.env.NODE_ENV === 'development' ? true : false,
 	logging: process.env.NODE_ENV === 'development' ? true : false,
-	migrations: ['src/migrations/**/**.ts'],
+	migrations: ['./src/migrations/**/**.ts'],
 	cli: {
 		migrationsDir: ['src/migrations/']
 	}

@@ -7,3 +7,6 @@
 .env
 .env.local
 dump.rdb
+
+# VSCODE
+/.vscode/
