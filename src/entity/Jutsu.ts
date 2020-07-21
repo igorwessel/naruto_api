@@ -11,6 +11,30 @@ import { Class } from './Class';
 export class Jutsu extends BaseContent {
 	@Field({ nullable: true })
 	@Column({ nullable: true })
+	kanji: string;
+
+	@Field({ nullable: true })
+	@Column({ nullable: true })
+	romaji: string;
+
+	@Field({ nullable: true })
+	@Column({ nullable: true })
+	portugues: string;
+
+	@Field({ nullable: true })
+	@Column({ nullable: true })
+	games: string;
+
+	@Field({ nullable: true })
+	@Column({ nullable: true })
+	manga_panini: string;
+
+	@Field({ nullable: true })
+	@Column({ nullable: true })
+	tv_brasileira: string;
+
+	@Field({ nullable: true })
+	@Column({ nullable: true })
 	range: String;
 
 	@Field({ nullable: true })
