@@ -38,16 +38,20 @@ type Jutsu {
   classification: [ClassificationJutsu!]
   derived_jutsu: [Jutsu!]
   description: String
-  english_anime_name: String
+  games: String
   hand_seals: String
   id: Int!
-  literal_english_name: String
+  kanji: String
+  manga_panini: String
   name: String
   nature: NatureType
   parent_jutsu: [Jutsu!]
+  portugues: String
   range: String
   rank: String
   related_jutsu: Jutsu
+  romaji: String
+  tv_brasileira: String
 }
 
 type NatureType {
@@ -79,7 +83,6 @@ type Ninja {
   status: String
   team: [Team!]
   tools: [Tools!]
-  unique_traits: String
 }
 
 type NinjaAttr {
@@ -124,9 +127,7 @@ type Team {
 
 type Tools {
   description: String
-  english_anime_name: String
   id: Int!
-  literal_english_name: String
   name: String
 }
 
