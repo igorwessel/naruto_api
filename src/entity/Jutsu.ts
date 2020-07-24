@@ -60,29 +60,29 @@ export class Jutsu extends BaseContent {
 	@JoinTable({ name: 'jutsu_classification' })
 	classification: ClassificationJutsu[];
 
-	@OneToMany(type => Jutsu, jutsu => jutsu.related_jutsu, {
-		cascade: true,
-		onDelete: 'CASCADE'
-	})
-	@JoinColumn({ name: 'relatedJutsuId' })
-	related_jutsu_children: Jutsu[];
+	// @OneToMany(type => Jutsu, jutsu => jutsu.related_jutsu, {
+	// 	cascade: true,
+	// 	onDelete: 'CASCADE'
+	// })
+	// @JoinColumn({ name: 'relatedJutsuId' })
+	// related_jutsu_children: Jutsu[];
 
-	@Field(type => Jutsu, { nullable: true })
-	@ManyToOne(type => Jutsu, jutsu => jutsu.related_jutsu_children)
-	related_jutsu: Jutsu;
+	// @Field(type => Jutsu, { nullable: true })
+	// @ManyToOne(type => Jutsu, jutsu => jutsu.related_jutsu_children)
+	// related_jutsu: Jutsu;
 
-	@Column({ nullable: true })
-	relatedJutsuId: number;
+	// @Column({ nullable: true })
+	// relatedJutsuId: number;
 
-	@Field(type => Jutsu, { nullable: true })
-	@ManyToMany(type => Jutsu)
-	@JoinTable({ name: 'jutsu_derived' })
-	derived_jutsu: Jutsu[];
+	// @Field(type => Jutsu, { nullable: true })
+	// @ManyToMany(type => Jutsu)
+	// @JoinTable({ name: 'jutsu_derived' })
+	// derived_jutsu: Jutsu[];
 
-	@Field(type => Jutsu, { nullable: true })
-	@ManyToMany(type => Jutsu)
-	@JoinTable({ name: 'jutsu_parent' })
-	parent_jutsu: Jutsu[];
+	// @Field(type => Jutsu, { nullable: true })
+	// @ManyToMany(type => Jutsu)
+	// @JoinTable({ name: 'jutsu_parent' })
+	// parent_jutsu: Jutsu[];
 
 	@Field(type => Class, { nullable: true })
 	@ManyToMany(type => Class)

@@ -43,34 +43,34 @@ export class JutsuResolver {
 		return jutsu_class;
 	}
 
-	@FieldResolver()
-	async related_jutsu(
-		@Root() jutsu_parent: Jutsu,
-		@Ctx() { loaders: { jutsuRelatedLoader } }: IGraphQLContext
-	): Promise<Jutsu | undefined> {
-		const related_jutsu: Jutsu = await jutsuRelatedLoader.load(jutsu_parent.id);
-		return related_jutsu;
-	}
+	// @FieldResolver()
+	// async related_jutsu(
+	// 	@Root() jutsu_parent: Jutsu,
+	// 	@Ctx() { loaders: { jutsuRelatedLoader } }: IGraphQLContext
+	// ): Promise<Jutsu | undefined> {
+	// 	const related_jutsu: Jutsu = await jutsuRelatedLoader.load(jutsu_parent.id);
+	// 	return related_jutsu;
+	// }
 
-	@FieldResolver()
-	async derived_jutsu(
-		@Root() jutsu_parent: Jutsu,
-		@Ctx() { loaders: { jutsuDerivedLoader } }: IGraphQLContext
-	): Promise<Jutsu[] | undefined> {
-		const derived_jutsus: Jutsu[] = await jutsuDerivedLoader.load(jutsu_parent.id);
+	// @FieldResolver()
+	// async derived_jutsu(
+	// 	@Root() jutsu_parent: Jutsu,
+	// 	@Ctx() { loaders: { jutsuDerivedLoader } }: IGraphQLContext
+	// ): Promise<Jutsu[] | undefined> {
+	// 	const derived_jutsus: Jutsu[] = await jutsuDerivedLoader.load(jutsu_parent.id);
 
-		return derived_jutsus;
-	}
+	// 	return derived_jutsus;
+	// }
 
-	@FieldResolver()
-	async parent_jutsu(
-		@Root() jutsu_parent: Jutsu,
-		@Ctx() { loaders: { jutsuParentLoader } }: IGraphQLContext
-	): Promise<Jutsu[] | undefined> {
-		const parent_jutsus: Jutsu[] = await jutsuParentLoader.load(jutsu_parent.id);
+	// @FieldResolver()
+	// async parent_jutsu(
+	// 	@Root() jutsu_parent: Jutsu,
+	// 	@Ctx() { loaders: { jutsuParentLoader } }: IGraphQLContext
+	// ): Promise<Jutsu[] | undefined> {
+	// 	const parent_jutsus: Jutsu[] = await jutsuParentLoader.load(jutsu_parent.id);
 
-		return parent_jutsus;
-	}
+	// 	return parent_jutsus;
+	// }
 
 	@FieldResolver()
 	async classification(
