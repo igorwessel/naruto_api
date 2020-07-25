@@ -36,7 +36,6 @@ type Family {
 type Jutsu {
   class: [Class!]
   classification: [ClassificationJutsu!]
-  derived_jutsu: [Jutsu!]
   description: String
   games: String
   hand_seals: String
@@ -45,11 +44,9 @@ type Jutsu {
   manga_panini: String
   name: String
   nature: NatureType
-  parent_jutsu: [Jutsu!]
   portugues: String
   range: String
   rank: String
-  related_jutsu: Jutsu
   romaji: String
   tv_brasileira: String
 }
@@ -127,8 +124,14 @@ type Team {
 
 type Tools {
   description: String
+  games: String!
   id: Int!
+  kanji: String!
+  manga_panini: String!
   name: String
+  portugues: String!
+  romaji: String!
+  tv_brasileira: String!
 }
 
 input ToolsInput {
