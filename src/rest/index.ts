@@ -14,7 +14,7 @@ const applyServerREST = (app: express.Application): void => {
 		// register created express server in routing-controllers
 		controllers: [__dirname + '/controllers/**/*.ts'],
 		middlewares: [CustomErrorHandler],
-		routePrefix: '/v1/rest',
+		routePrefix: '/v1/api/rest',
 		cors: true,
 		defaultErrorHandler: false
 	});

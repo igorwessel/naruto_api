@@ -1,3 +1,4 @@
+require('dotenv').config();
 import { startServer } from './app';
 import { connect } from './config/typeorm';
 
@@ -10,12 +11,12 @@ async function main(): Promise<express.Application> {
 	connect();
 	const app: express.Application = await startServer();
 
-	app.listen(8000, () =>
+	app.listen(process.env.PORT || 8000, () =>
 		console.log(
 			'\x1b[34m%s\x1b[0m',
 			`
-		REST      → http://localhost:8000/v1/rest/
-		GraphQL   → http://localhost:8000/v1/graphql
+		REST      → http://localhost:8000/v1/api/rest/
+		GraphQL   → http://localhost:8000/v1/api/graphql
 	`
 		)
 	);

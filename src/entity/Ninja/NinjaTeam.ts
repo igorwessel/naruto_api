@@ -7,7 +7,7 @@ export class NinjaTeam {
 	@PrimaryGeneratedColumn()
 	id: number;
 
-	@Column('boolean')
+	@Column('boolean', { nullable: true })
 	leader: Boolean;
 
 	@Column({ nullable: true })
