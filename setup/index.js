@@ -3,47 +3,48 @@ const fs = require('fs/promises');
 const { getData, startConnection } = require('./helpers');
 
 async function startServer() {
-    const server = spawn('yarn', ['dev']);
-    const mysql = await startConnection();
-    const query = await new Promise((resolve, reject) => mysql.query('SELECT table_name FROM information_schema.tables WHERE TABLE_SCHEMA="naruto_api_development";', (err, results) => {
-        if(err){
-            console.error(err)
-            reject(err)
-        } 
-        if(results.length > 0) {
-            resolve(true)
-        } else {
-            resolve(false)
+    return new Promise((resolve, reject) => {
+        const server = spawn('yarn', ['dev']);
+        const mysql = await startConnection();
+        const haveTables = await new Promise((resolve, reject) => mysql.query('SELECT table_name FROM information_schema.tables WHERE TABLE_SCHEMA="naruto_api_development";', (err, results) => {
+            if(err){
+                console.error(err)
+                reject(err)
+            } 
+            if(results.length > 0) {
+                resolve(true)
+            } else {
+                resolve(false)
+            }
+        }))
+    
+        if(haveTables) {
+            console.log('[1/4] Não precisou criar as tabelas');
+            server.kill()
+            resolve()
         }
-    }))
+        
+        console.log('[1/4] Iniciando o servidor para criação das tabelas');
+        
+        server.on('error', error => {
+            reject(error)
+            console.error(error);
+        });
+        
+        server.stderr.on('data', data => {
+            data = data.toString();
+            console.error(data)
+        })
 
-    if(query) {
-        console.log('[1/4] Não precisou criar as tabelas');
-        server.kill()
-        return Promise.resolve()
-    }
-    
-    console.log('[1/4] Iniciando o servidor para criação das tabelas');
-    
-	server.on('error', error => {
-		console.error(error);
-    });
-    
-    server.stderr.on('data', data => {
-        data = data.toString();
-        console.error(data)
-    })
+        server.stdout.on('data', data => {
+            data = data.toString();
 
-	return new Promise((resolve, reject) =>
-		server.stdout.on('data', data => {
-			data = data.toString();
-
-			if (data.includes('query: COMMIT')) {
+            if (data.includes('query: COMMIT')) {
                 server.kill()
                 resolve(server);
-			}
-		})
-	);
+            }
+        })
+    })
 }
 
 async function insertData() {
@@ -71,7 +72,9 @@ async function insertData() {
         console.log('[4/4] Finalizou a inserção dos dados');
 		mysql.end();
 		return Promise.resolve(process.exit(1));
-	} catch (e) {}
+	} catch (e) {
+        console.error(e)
+    }
 }
 
 async function init() {
