@@ -94,4 +94,4 @@ async function init() {
 	await insertData();
 }
 
-(() => console.log(process.env))();
+(() => init())();
