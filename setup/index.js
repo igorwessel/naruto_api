@@ -17,6 +17,8 @@ async function startServer() {
                 resolve(false)
             }
         }))
+        
+        mysql.end()
     
         if(haveTables) {
             console.log('[1/4] Não precisou criar as tabelas');
@@ -27,8 +29,8 @@ async function startServer() {
         console.log('[1/4] Iniciando o servidor para criação das tabelas');
         
         server.on('error', error => {
-            reject(error)
             console.error(error);
+            reject(error)
         });
         
         server.stderr.on('data', data => {
