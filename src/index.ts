@@ -15,8 +15,8 @@ async function main(): Promise<express.Application> {
 		console.log(
 			'\x1b[34m%s\x1b[0m',
 			`
-		REST      → http://localhost:8000/v1/api/rest/
-		GraphQL   → http://localhost:8000/v1/api/graphql
+		REST      → http://localhost:8000/api/v1/rest/
+		GraphQL   → http://localhost:8000/api/v1/graphql
 	`
 		)
 	);
