@@ -11,3 +11,4 @@ dump.rdb
 /.vscode/
 /coverage/
 .nyc_output
+/build/
