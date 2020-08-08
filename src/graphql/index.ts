@@ -73,7 +73,7 @@ const applyServerGRAPHQL = async (app: express.Application): Promise<void> => {
 		})
 	});
 
-	server.applyMiddleware({ app, path: '/v1/api/graphql' });
+	server.applyMiddleware({ app, path: '/api/v1/graphql' });
 };
 
 export { applyServerGRAPHQL };
