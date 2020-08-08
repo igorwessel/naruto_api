@@ -8,5 +8,7 @@
 .env.local
 dump.rdb
 
-# VSCODE
 /.vscode/
+/coverage/
+.nyc_output
+/build/

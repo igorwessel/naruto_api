@@ -1,5 +1,6 @@
 export enum Sex {
-	Male = 'Male',
-	Female = 'Female',
-	Various = 'Various'
+	Masculino = 'Masculino',
+	Feminino = 'Feminino',
+	Hermafrodita = 'Hermafrodita',
+	Desconhecido = 'Desconhecido'
 }

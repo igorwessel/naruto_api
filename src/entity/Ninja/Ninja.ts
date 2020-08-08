@@ -39,7 +39,7 @@ export class Ninja {
 	ninja_attributes: NinjaAttr[];
 
 	@Field({ nullable: true })
-	@Column('varchar', { length: 20, nullable: true })
+	@Column('varchar', { length: 40, nullable: true })
 	status: String;
 
 	@Field({ nullable: true })
@@ -62,9 +62,9 @@ export class Ninja {
 	@Column('varchar', { length: 10, nullable: true })
 	chunin_prom_age: String;
 
-	@Field({ nullable: true })
-	@Column('text', { nullable: true })
-	unique_traits: String;
+	// @Field({ nullable: true })
+	// @Column('text', { nullable: true })
+	// unique_traits: String;
 
 	@Field(() => Family, { nullable: true })
 	@OneToMany(type => Family, family => family.parent_from)

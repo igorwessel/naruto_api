@@ -2,6 +2,7 @@ import 'reflect-metadata';
 import express from 'express';
 import { useExpressServer, useContainer } from 'routing-controllers';
 import Container from 'typedi';
+import { CustomErrorHandler } from './middlewares/CustomErrorHandler';
 
 const applyServerREST = (app: express.Application): void => {
 	/**
@@ -12,8 +13,10 @@ const applyServerREST = (app: express.Application): void => {
 	useExpressServer(app, {
 		// register created express server in routing-controllers
 		controllers: [__dirname + '/controllers/**/*.ts'],
-		routePrefix: '/v1/rest',
-		cors: true
+		middlewares: [CustomErrorHandler],
+		routePrefix: '/v1/api/rest',
+		cors: true,
+		defaultErrorHandler: false
 	});
 };
 

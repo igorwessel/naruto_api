@@ -10,11 +10,9 @@ export class NinjaNaturetype {
 	@PrimaryGeneratedColumn()
 	id: number;
 
-	@Field()
-	@Column('boolean')
+	@Column('boolean', { nullable: true })
 	affinity: Boolean;
 
-	@Field({ nullable: true })
 	@Column('varchar', { nullable: true })
 	only: string;
 
