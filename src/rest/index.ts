@@ -12,7 +12,7 @@ const applyServerREST = (app: express.Application): void => {
 	useContainer(Container);
 	useExpressServer(app, {
 		// register created express server in routing-controllers
-		controllers: [__dirname + '/controllers/**/*.ts'],
+		controllers: [__dirname + '/controllers/**/*.{ts,js}'],
 		middlewares: [CustomErrorHandler],
 		routePrefix: '/api/v1/rest',
 		cors: true,
