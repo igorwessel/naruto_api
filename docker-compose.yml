@@ -7,7 +7,7 @@ services:
     environment:
       MYSQL_USER: 'naruto'
       MYSQL_PASSWORD: 'sasuke'
-      MYSQL_DATABASE: 'naruto_api_development'
+      MYSQL_DATABASE: 'naruto_api'
       MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
     volumes:
       - naruto_data:/var/lib/mysql
