@@ -1,6 +1,6 @@
 module.exports = {
 	type: 'mysql', //
-	host: 'localhost', //HOST
+	host: process.env.DB_HOST || 'localhost', //HOST
 	database: 'naruto_api', //NAME OF YOUR SCHEMA
 	port: process.env.DB_PORT || 3306, //PORT FOR YOU DB
 	username: process.env.DB_USER || 'root', //USERNAME
