@@ -1,6 +1,6 @@
 require('dotenv').config();
 const { spawn } = require('child_process');
-const fs = require('fs/promises');
+const fs = require('fs').promises;
 const { getData, startConnection } = require('./helpers');
 
 async function startServer() {
