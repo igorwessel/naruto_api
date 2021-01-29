@@ -5,10 +5,9 @@ services:
     command: --default-authentication-plugin=mysql_native_password
     restart: always
     environment:
-      MYSQL_USER: 'naruto'
-      MYSQL_PASSWORD: 'sasuke'
-      MYSQL_DATABASE: 'naruto_api'
-      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: ${DB}
     volumes:
       - naruto_data:/var/lib/mysql
   app:
