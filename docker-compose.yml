@@ -1,0 +1,26 @@
+version: '3.8'
+services:
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_USER: 'naruto'
+      MYSQL_PASSWORD: 'sasuke'
+      MYSQL_DATABASE: 'naruto_api'
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+    volumes:
+      - naruto_data:/var/lib/mysql
+  app:
+    build: .
+    command: yarn start
+    volumes:
+      - .:/naruto_api
+    ports:
+      - 8000:8000
+    links:
+      - db
+    depends_on:
+      - db
+volumes:
+  naruto_data:
