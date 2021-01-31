@@ -5,8 +5,10 @@ README.md
 
 *media/*
 *static/*
-*build/*
 *.DS_STORE
 db.*
 venv*
-node_modules
+build/
+node_modules/
+__snapshots__/
+init/

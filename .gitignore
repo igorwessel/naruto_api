@@ -2,7 +2,7 @@
 /data/
 /crawler/
 /dist/
-
+/init/
 #ENV
 .env
 .env.local

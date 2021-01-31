@@ -1,7 +1,8 @@
 const fs = require('fs').promises;
 const mysql = require('mysql');
-const connection = mysql.createConnection({
-	host: process.env.DB_HOST || 'localhost',
+const pool = mysql.createPool({
+	connectionLimit: 10,
+	host: 'db',
 	user: process.env.DB_USER || 'root',
 	password: process.env.DB_PASSWORD || '',
 	database: process.env.DB || 'naruto_api_development'
@@ -9,12 +10,12 @@ const connection = mysql.createConnection({
 
 async function startConnection() {
 	return new Promise((resolve, reject) => {
-		connection.connect(err => {
+		pool.getConnection((err, connection) => {
 			if (err) {
 				reject(err);
 			}
+			resolve(connection);
 		});
-		resolve(connection);
 	});
 }
 

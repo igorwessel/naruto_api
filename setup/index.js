@@ -22,11 +22,10 @@ async function startServer() {
 					} else {
 						resolve(false);
 					}
+					mysql.release();
 				}
 			)
 		);
-
-		mysql.end();
 
 		if (haveTables) {
 			console.log('[1/4] Não precisou criar as tabelas');
@@ -81,7 +80,7 @@ async function insertData() {
 		}
 
 		console.log('[4/4] Finalizou a inserção dos dados');
-		mysql.end();
+		mysql.destroy();
 		return Promise.resolve(process.exit(1));
 	} catch (e) {
 		console.error(e);
@@ -89,8 +88,8 @@ async function insertData() {
 }
 
 async function init() {
-	const server = await startServer();
-	if (server && !server.killed) process.kill(server.pid);
+	// const server = await startServer();
+	// if (server && !server.killed) process.kill(server.pid);
 	await insertData();
 }
 

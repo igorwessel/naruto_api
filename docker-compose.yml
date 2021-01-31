@@ -2,21 +2,25 @@ version: '3.8'
 services:
   db:
     image: mysql
-    command: --default-authentication-plugin=mysql_native_password
     restart: always
+    env_file: .env
     environment:
       MYSQL_USER: ${DB_USER}
       MYSQL_PASSWORD: ${DB_PASSWORD}
       MYSQL_DATABASE: ${DB}
+      MYSQL_ROOT_PASSWORD: ${ROOT_PASSWORD}
     volumes:
       - naruto_data:/var/lib/mysql
+    ports:
+      - '3306:3306'
   app:
     build: .
-    command: yarn start
-    volumes:
-      - .:/naruto_api
+    env_file: .env
+    restart: always
+    environment:
+      - NODE_ENV=production
     ports:
-      - 8000:8000
+      - '3000:3000'
     links:
       - db
     depends_on:

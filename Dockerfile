@@ -1,18 +1,16 @@
 FROM node:lts-stretch-slim
 
-# Create APP Folder
-RUN mkdir /naruto_api
-
 # Working Directory
 WORKDIR /naruto_api
 
 # Add PACKAGE.JSON and YARN.LOCK
-ADD package.json /naruto_api/
-ADD yarn.lock /naruto_api/
+COPY ["yarn.lock", "package.json", "./"]
 
 # Install dependencies for project
-RUN yarn
+RUN yarn install
 
-ADD . /naruto_api/
+EXPOSE 3000
 
-EXPOSE 8000
+ADD . ./
+
+CMD ["yarn", "start"]
