@@ -2,11 +2,27 @@ const fs = require('fs').promises;
 const mysql = require('mysql');
 const pool = mysql.createPool({
 	connectionLimit: 10,
-	host: 'db',
+	host: process.env.DB_HOST || 'db',
 	user: process.env.DB_USER || 'root',
 	password: process.env.DB_PASSWORD || '',
 	database: process.env.DB || 'naruto_api_development'
 });
+
+function logging() {
+	let counter = 0;
+	function changeCounter(value) {
+		counter += value;
+	}
+	function message(message = '', cursor = 0, maxCounter = 0) {
+		changeCounter(1);
+		console.log(`${message} [${counter}/${maxCounter}]`);
+	}
+
+	return {
+		counter,
+		message
+	};
+}
 
 async function startConnection() {
 	return new Promise((resolve, reject) => {
@@ -39,4 +55,4 @@ async function getData(directory) {
 		console.error(e);
 	}
 }
-module.exports = { startConnection, getData };
+module.exports = { startConnection, getData, logging };

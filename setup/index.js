@@ -1,52 +1,61 @@
 require('dotenv').config();
 const { spawn } = require('child_process');
 const fs = require('fs').promises;
-const { getData, startConnection } = require('./helpers');
+const { getData, startConnection, logging } = require('./helpers');
+const logger = logging();
 
 async function startServer() {
 	return new Promise(async (resolve, reject) => {
-		const server = spawn('yarn', ['dev']);
 		const mysql = await startConnection();
 		const haveTables = await new Promise((resolve, reject) =>
 			mysql.query(
-				`SELECT table_name FROM information_schema.tables WHERE TABLE_SCHEMA="${
-					process.env.NODE_ENV === 'development' ? 'naruto_api_development' : 'naruto_api'
-				}";`,
+				`SELECT table_name FROM information_schema.tables WHERE TABLE_SCHEMA="${process.env.DB}";`,
 				(err, results) => {
 					if (err) {
 						console.error(err);
 						reject(err);
 					}
+					mysql.release();
 					if (results.length > 0) {
 						resolve(true);
 					} else {
 						resolve(false);
 					}
-					mysql.release();
 				}
 			)
 		);
 
 		if (haveTables) {
-			console.log('[1/4] Não precisou criar as tabelas');
-			server.kill();
-			resolve();
+			console.log('[/] Não precisou criar as tabelas');
+			resolve(null);
+			return;
 		}
 
 		console.log('[1/4] Iniciando o servidor para criação das tabelas');
+		const server = spawn('yarn', ['dev']);
 
-		server.on('error', error => {
-			console.error(error);
-			reject(error);
-		});
-
-		server.stderr.on('data', data => {
-			data = data.toString();
-			console.error(data);
-		});
+		let maxCounterCreateTable = 28;
+		let maxCounterAlterTable = 30;
+		const createTable = logging();
+		const createAlterTable = logging();
 
 		server.stdout.on('data', data => {
 			data = data.toString();
+			const table = data.match(/(ALTER TABLE `|CREATE TABLE `)\w+`/g);
+
+			if (table && table[0].includes('CREATE TABLE')) {
+				createTable.message(
+					`[2/4] Criando a tabela: ${table[0].replace('CREATE TABLE ', '')}`,
+					0,
+					maxCounterCreateTable
+				);
+			} else if (table && table[0].includes('ALTER TABLE')) {
+				createAlterTable.message(
+					`[3/4] Alterando a tabela: ${table[0].replace('ALTER TABLE ', '')}`,
+					0,
+					maxCounterAlterTable
+				);
+			}
 
 			if (data.includes('query: COMMIT')) {
 				server.kill();
@@ -56,41 +65,57 @@ async function startServer() {
 	});
 }
 
-async function insertData() {
+async function insertData(server) {
 	try {
-		const dir = await fs.readdir('./setup/sql');
-		const sqls = await getData(dir);
+		const files = await fs.readdir(`${__dirname}/init`);
+		files.sort((a, b) => {
+			const number = parseFloat(a.replace('.sql', ''));
+			const numberTwo = parseFloat(b.replace('.sql', ''));
+
+			if (number < numberTwo) {
+				return -1;
+			} else if (number > numberTwo) {
+				return 1;
+			}
+			return 0;
+		});
+
 		const mysql = await startConnection();
 
-		console.log('[2/4] Se conectou ao MYSQL');
-		console.log('[3/4] Iniciando a inserção dos dados');
+		console.log(`${server ? '[4/4]' : '[1/2]'} Iniciando a inserção dos dados`);
 
-		for (let folder of dir) {
-			for (let sql of sqls[folder]) {
-				await new Promise((resolve, reject) =>
-					mysql.query(sql, (error, result) => {
-						if (error) {
-							console.error(error);
-						}
+		for (file of files) {
+			const sql = await fs.readFile(`${__dirname}/init/${file}`, { encoding: 'utf-8' });
 
-						resolve(result);
-					})
-				);
-			}
+			await new Promise((resolve, reject) => {
+				mysql.query(sql, (error, result) => {
+					if (error) {
+						reject(error);
+						console.error(error);
+						process.exit(1);
+					}
+					const table = sql.match(/(?<=INSERT INTO `)\w+/g);
+
+					console.log(`${server ? '[4/4]' : '[2/2]'} Inserindo ${sql.match(table[0])}`);
+
+					resolve(result);
+				});
+			});
 		}
 
-		console.log('[4/4] Finalizou a inserção dos dados');
+		console.log(`${server ? '[4/4]' : '[2/2]'} Finalizou a inserção dos dados`);
+
 		mysql.destroy();
-		return Promise.resolve(process.exit(1));
+		return Promise.resolve(process.exit(0));
 	} catch (e) {
 		console.error(e);
 	}
 }
 
 async function init() {
-	// const server = await startServer();
-	// if (server && !server.killed) process.kill(server.pid);
-	await insertData();
+	const server = await startServer();
+	if (server && !server.killed) process.kill(server.pid);
+	await insertData(server);
 }
 
 (() => init())();
