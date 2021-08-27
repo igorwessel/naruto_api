@@ -145,6 +145,16 @@ export class NinjaController {
 		return jutsus;
 	}
 
+	@Get('/ninjas/:name([A-z_]+)/attributes')
+	@UseBefore(treatmentName)
+	async getAttributesByName(@Param('name') name: String) {
+		const attributes = await this.ninjaAttrRepo.getByNinjaName(name);
+
+		if (attributes.length === 0) throw new NotFoundError('This ninja dont have attributes.');
+
+		return attributes;
+	}
+
 	@Get('/ninjas/:name([A-z_]+)/family')
 	@UseBefore(treatmentName)
 	async getFamilyByNinjaName(@Param('name') name: string) {

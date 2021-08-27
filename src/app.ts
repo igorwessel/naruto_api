@@ -1,5 +1,6 @@
 import 'reflect-metadata';
 import express from 'express';
+import bodyParser from 'body-parser';
 import { applyServerGRAPHQL } from './graphql';
 import { applyServerREST } from './rest';
 
@@ -9,6 +10,8 @@ async function startServer(): Promise<express.Application> {
 	 */
 
 	const app: express.Application = express();
+
+	app.use(bodyParser.json());
 
 	applyServerGRAPHQL(app);
 

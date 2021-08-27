@@ -17,4 +17,20 @@ export class NinjaAttrRepo extends Repository<NinjaAttr> {
 
 		return attributes;
 	}
+
+	async getByNinjaName(name: String) {
+		const attributes = await this.createQueryBuilder('ninja_attributes')
+			.select('ninja_attributes.id', 'id')
+			.leftJoin('ninja_attributes.season', 'season')
+			.leftJoin('ninja_attributes.ninja', 'ninja')
+			.addSelect('season.name', 'season')
+			.addSelect('ninja_attributes.age', 'age')
+			.addSelect('ninja_attributes.height', 'height')
+			.addSelect('ninja_attributes.weight', 'weight')
+			.addSelect('ninja_attributes.ninja_rank', 'ninja_rank')
+			.where('ninja.name = :name', { name })
+			.getRawMany();
+
+		return attributes;
+	}
 }
