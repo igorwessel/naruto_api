@@ -34,8 +34,8 @@ type Family {
 }
 
 type Jutsu {
-  class: Class
-  classification: ClassificationJutsu
+  class: [Class!]
+  classification: [ClassificationJutsu!]
   description: String
   games: String
   hand_seals: String
@@ -61,25 +61,25 @@ type NatureType {
 
 type Ninja {
   academy_grad_age: String
-  affiliation: Affiliation
+  affiliation: [Affiliation!]
   birthdate: String
   blood_type: String
   chunin_prom_age: String
-  clan: Clan
-  classification: Classification
-  family: Family
+  clan: [Clan!]
+  classification: [Classification!]
+  family: [Family!]
   id: Int!
-  jutsus: Jutsu
+  jutsus: [Jutsu!]
   name: String
-  nature_type: NatureType
-  ninja_attributes: NinjaAttr
+  nature_type: [NatureType!]
+  ninja_attributes: [NinjaAttr!]
   ninja_registration: String
-  occupation: Occupation
+  occupation: [Occupation!]
   sex: String
   specie: String
   status: String
-  team: Team
-  tools: Tools
+  team: [Team!]
+  tools: [Tools!]
 }
 
 type NinjaAttr {
@@ -112,13 +112,13 @@ type Query {
 }
 
 type Team {
-  affiliation: Affiliation
+  affiliation: [Affiliation!]
   description: String
   id: Int!
-  jutsu: Jutsu
+  jutsu: [Jutsu!]
   leader: Boolean!
-  leaders: Ninja
-  members: Ninja
+  leaders: [Ninja!]
+  members: [Ninja!]
   name: String
 }
 
