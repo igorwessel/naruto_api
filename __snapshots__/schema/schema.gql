@@ -8,6 +8,11 @@ type Affiliation {
   name: String
 }
 
+input BaseFilterInput {
+  id: Int
+  name: String
+}
+
 type Clan {
   id: Float!
   name: String!
@@ -104,10 +109,8 @@ type Occupation {
 }
 
 type Query {
-  jutsus(limit: Int = 15, offset: Int = 0): [Jutsu!]!
-  ninja(filter: NinjaFilterInput!): Ninja!
+  ninja(filter: BaseFilterInput!): Ninja
   ninjas(filter: NinjaFilterInput, limit: Int = 15, offset: Int = 0): [Ninja!]!
-  teams(limit: Int = 15, offset: Int = 0): [Team!]!
   tools(filter: ToolsInput, limit: Int = 15, offset: Int = 0): [Tools!]!
 }
 
@@ -124,17 +127,17 @@ type Team {
 
 type Tools {
   description: String
-  games: String!
+  games: String
   id: Int!
-  kanji: String!
-  manga_panini: String!
+  kanji: String
+  manga_panini: String
   name: String
-  portugues: String!
-  romaji: String!
-  tv_brasileira: String!
+  ninjas: [Ninja!]
+  portugues: String
+  romaji: String
+  tv_brasileira: String
 }
 
 input ToolsInput {
-  id: Int
   name: String
 }

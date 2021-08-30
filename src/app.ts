@@ -15,7 +15,7 @@ async function startServer(): Promise<express.Application> {
 
 	applyServerGRAPHQL(app);
 
-	applyServerREST(app);
+	// applyServerREST(app);
 
 	return app;
 }

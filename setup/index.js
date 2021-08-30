@@ -91,7 +91,7 @@ async function insertData(server) {
 				mysql.query(sql, (error, result) => {
 					if (error) {
 						reject(error);
-						console.error(error);
+						console.error(error.message.substr(0, 150));
 						process.exit(1);
 					}
 					const table = sql.match(/(?<=INSERT INTO `)\w+/g);
