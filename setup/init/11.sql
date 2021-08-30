@@ -1,4 +1,4 @@
-INSERT INTO `team` (`id`, `name`, `description`) VALUES
+INSERT INTO `Team` (`id`, `name`, `description`) VALUES
 (1, '11 de Konoha', 'Os 11 de Konoha (木ノ葉の11人, Konoha no Jūichinin, TV Brasileira: 11 da Folha) é o apelido coletivo de quatro times de Genin de Konoha, liderados por Kakashi Hatake, Asuma Sarutobi, Kurenai Yūhi e Might Guy respectivamente, com exceção de Sasuke Uchiha.'),
 (2, 'Akatsuki', 'Técnica de Selamento: Nove Dragões de Espectro dos Selos Consumidores'),
 (3, 'Aliança Armamentista Ryūha', 'A Aliança Armamentista Ryūha (龍波武装同盟, Ryūha Busō Dōmei) é uma organização formada no País das Ondas após a Quarta Guerra Mundial Ninja. Seguindo o exemplo estabelecido por Madara Uchiha, a Aliança Armamentista visa libertar o mundo da influência corruptora do dinheiro. O grupo é formado por nukenin de alto nível.'),

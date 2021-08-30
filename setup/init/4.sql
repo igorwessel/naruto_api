@@ -1,4 +1,4 @@
-INSERT INTO `classification` (`id`, `name`) VALUES
+INSERT INTO `Classification` (`id`, `name`) VALUES
 (1, 'Kage'),
 (2, 'Invocacao'),
 (3, 'Ninken'),

@@ -1,5 +1,5 @@
 
-INSERT INTO `jutsu` (`id`, `name`, `description`, `kanji`, `romaji`, `portugues`, `games`, `manga_panini`, `tv_brasileira`, `range`, `rank`, `hand_seals`) VALUES
+INSERT INTO `Jutsu` (`id`, `name`, `description`, `kanji`, `romaji`, `portugues`, `games`, `mangaPanini`, `tvBrasileira`, `range`, `rank`, `handSeals`) VALUES
 (618, 'Esfera Espiral do Medo', 'Menma cria um Rasengan de chakra negativo e o rodeia com um anel em forma de disco adicional de chakra, que orbita a esfera principal, fazendo-a se assemelhar a um pequeno anel planetário. Ele corresponde ao Rasenshuriken de Naruto no Modo Sábio.', '螺旋輪虞らせんりんぐ', 'Rasenringu', 'Esfera Espiral do Medo', NULL, NULL, NULL, 'Curto alcance', NULL, NULL),
 (619, 'Esfera Gigante', 'O usuário forma uma grande esfera de energia da cor de seu chakra a partir de alguma de suas extremidades para atirar em seu inimigo. Um único golpe forçou Gamabunta a recuar e a explosão resultante é maior do que o próprio Hōzukijō.', NULL, NULL, NULL, NULL, NULL, NULL, 'Todos os alcances', NULL, NULL),
 (620, 'Esfera Protetora de Luz', 'Esta é uma técnica em que o Sino de Segurança Místico de Shion ilumina e nega qualquer ocorrência negativa. Ela era poderoso o suficiente para proteger Shion da escuridão do Mōryō.', NULL, NULL, NULL, NULL, NULL, NULL, 'Curto alcance', NULL, NULL),

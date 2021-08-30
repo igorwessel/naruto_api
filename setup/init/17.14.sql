@@ -1,5 +1,5 @@
 
-INSERT INTO `jutsu` (`id`, `name`, `description`, `kanji`, `romaji`, `portugues`, `games`, `manga_panini`, `tv_brasileira`, `range`, `rank`, `hand_seals`) VALUES
+INSERT INTO `Jutsu` (`id`, `name`, `description`, `kanji`, `romaji`, `portugues`, `games`, `mangaPanini`, `tvBrasileira`, `range`, `rank`, `handSeals`) VALUES
 (1628, 'Mordida de Bicho', 'Enquanto em seu estado transformado, Fū ataca o inimigo com um poderoso golpe cintilante, aparentemente mordendo-o no processo.', '蟲食い', 'Mushikui', 'Mordida de Inseto', NULL, 'Devorador de Insetos', NULL, 'Curto alcance', NULL, NULL),
 (1629, 'Motim Barulhento: Desenho de Imitação da Super Besta da Imagem do Pergaminho', 'Naruto e Sai executam uma série de ataques físicos em seu oponente. Naruto executa um chute, e Sai finaliza usando três leões de tinta.', '喧乱・超獣戯画絵巻', 'Kenran: Chōjū Giga Emaki', 'Motim Barulhento: Desenho de Imitação da Super Besta da Imagem do Pergaminho', 'Batalha Deslumbrante: Réplica do Pergaminho da Besta', NULL, NULL, 'Curto alcance', NULL, NULL),
 (1630, 'Motim Encantador do Carro da Folha', 'Anko chuta seu oponente para o ar, em seguida chuta novamente mais alto e salta sobre seus ombros, girando-os até o chão.', '木ノ葉甘乱車', 'Konoha Kanransha', 'Motim Encantador do Carro da Folha de Árvore', 'Roda-gigante da Folha', NULL, NULL, 'Curto alcance', NULL, NULL),

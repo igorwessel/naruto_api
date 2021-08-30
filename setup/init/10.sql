@@ -1,4 +1,4 @@
-INSERT INTO `nature_type` (`id`, `name`, `kekkei_genkai`, `kekkei_tota`) VALUES
+INSERT INTO `NatureType` (`id`, `name`, `kekkeiGenkai`, `kekkeiTota`) VALUES
 (1, 'Liberação de Água', 0, 0),
 (2, 'Liberação de Relâmpago', 0, 0),
 (3, 'Liberação de Terra', 0, 0),

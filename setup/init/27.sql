@@ -1,4 +1,4 @@
-INSERT INTO `ninja_occupation` (`ninjaId`, `occupationId`) VALUES
+INSERT INTO `_NinjaToOccupation` (`A`, `B`) VALUES
 (1, 1),
 (2, 1),
 (2, 2),

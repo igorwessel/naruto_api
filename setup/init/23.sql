@@ -1,4 +1,4 @@
-INSERT INTO `ninja_clan` (`ninjaId`, `clanId`) VALUES
+INSERT INTO `_ClanToNinja` (`B`, `A`) VALUES
 (9, 1),
 (17, 2),
 (20, 3),

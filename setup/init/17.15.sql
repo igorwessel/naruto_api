@@ -1,5 +1,5 @@
 
-INSERT INTO `jutsu` (`id`, `name`, `description`, `kanji`, `romaji`, `portugues`, `games`, `manga_panini`, `tv_brasileira`, `range`, `rank`, `hand_seals`) VALUES
+INSERT INTO `Jutsu` (`id`, `name`, `description`, `kanji`, `romaji`, `portugues`, `games`, `mangaPanini`, `tvBrasileira`, `range`, `rank`, `handSeals`) VALUES
 (1748, 'Papéis da Resma Explosiva', 'O usuário anexa um papel explosivo em uma kunai e lança como um projétil contra o oponente, fazendo com que o selo exploda no alvo.', '連爆札れんばくふだ', 'Renbaku Fuda', 'Papéis da Resma Explosiva', 'Jutsu da Kunai Bomba', NULL, NULL, NULL, NULL, NULL),
 (1749, 'Par de Donzelas', 'Kankurō invoca a Formiga Negra e faz este esgueirar-se por trás do oponente, imobilizando seus braços. Kankurō depois usa Corvo que solta uma bomba de sua boca e, em seguida, corre em direção ao oponente fazendo com que a bomba exploda.', '一対の処女', 'Ittsui no Shojo', 'Par de Donzelas', NULL, NULL, NULL, 'Curto alcance', NULL, NULL),
 (1750, 'Parafusos de Flor', 'Sasuke corta o oponente com sua espada, depois disso, ele e Sakura desferem socos ao oponente no ar e, em seguida, chuta-o para o chão.', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),

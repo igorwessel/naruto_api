@@ -1,4 +1,4 @@
-INSERT INTO `clan` (`id`, `name`) VALUES
+INSERT INTO `Clan` (`id`, `name`) VALUES
 (1, 'Cla Kedoin'),
 (2, 'Cla Inuzuka'),
 (3, 'Cla Ryu'),

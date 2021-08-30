@@ -1,4 +1,4 @@
-INSERT INTO `ninja_affiliation` (`ninjaId`, `affiliationId`) VALUES
+INSERT INTO `_AffiliationToNinja` (`B`, `A`) VALUES
 (1, 1),
 (2, 1),
 (2, 2),

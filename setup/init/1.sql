@@ -1,4 +1,4 @@
-INSERT INTO `affiliation` (`id`, `name`) VALUES
+INSERT INTO `Affiliation` (`id`, `name`) VALUES
 (1, 'Kumogakure'),
 (2, 'Forcas Aliadas Shinobi'),
 (3, 'Cla Kamizuru'),

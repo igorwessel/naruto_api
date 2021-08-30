@@ -1,4 +1,4 @@
-INSERT INTO `occupation` (`id`, `name`) VALUES
+INSERT INTO `Occupation` (`id`, `name`) VALUES
 (1, 'Raikage'),
 (2, 'Lider Supremo das Forcas Aliadas Shinobi'),
 (3, 'Chefe do Cla Kedoin'),

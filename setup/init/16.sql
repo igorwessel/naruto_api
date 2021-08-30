@@ -1,4 +1,4 @@
-INSERT INTO `family` (`id`, `relationship`, `parentFromId`, `parentToId`) VALUES
+INSERT INTO `Family` (`id`, `relationship`, `parentFromId`, `parentToId`) VALUES
 (1, 'Pai', 2, 4),
 (2, 'Irmão Adotivo', 2, 560),
 (3, 'Primo', 2, 84),

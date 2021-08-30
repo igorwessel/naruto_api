@@ -1,4 +1,4 @@
-INSERT INTO `ninja` (`id`, `name`, `birthdate`, `specie`, `status`, `sex`, `blood_type`, `ninja_registration`, `academy_grad_age`, `chunin_prom_age`) VALUES
+INSERT INTO `Ninja` (`id`, `name`, `birthdate`, `specie`, `status`, `sex`, `bloodType`, `ninjaRegistration`, `academyGradAge`, `chuninPromAge`) VALUES
 (1, 'A (Primeiro Raikage)', '1 de Dezembro', 'Humano', 'Morto', 'Masculino', 'O', NULL, NULL, NULL),
 (2, 'A (Quarto Raikage)', '1 de Junho', 'Humano', NULL, 'Masculino', 'A', 'CL2211', NULL, NULL),
 (3, 'A (Segundo Raikage)', '1 de Marco', 'Humano', NULL, 'Masculino', 'O', NULL, NULL, NULL),

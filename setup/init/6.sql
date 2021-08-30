@@ -1,4 +1,4 @@
-INSERT INTO `season` (`id`, `name`) VALUES
+INSERT INTO `Season` (`id`, `name`) VALUES
 (1, 'Parte I'),
 (2, 'Parte II'),
 (3, 'Gaiden'),

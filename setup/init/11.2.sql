@@ -1,4 +1,4 @@
-INSERT INTO `team` (`id`, `name`, `description`) VALUES
+INSERT INTO `Team` (`id`, `name`, `description`) VALUES
 (145, 'Time de Escolta dos Comerciantes', 'O Time de Escolta dos Comerciantes (行商人護衛チーム, Gyōshō Jin Goei Chīmu) foi um time genin, designado para escoltar um grupo de comerciantes do País dos Vegetais.'),
 (146, 'Time de Genin de Kabuto', 'Esta equipe, disfarçados como shinobi de nível genin de Konohagakure, eram espiões de Otogakure que participaram do Exame Chūnin para observar Sasuke Uchiha para Orochimaru. Kabuto se mostrou mais bem-sucedido neste objetivo, mas retirou-se de exame antes das rodadas preliminares. Para testar o fervor de Sasuke ele foi deixado para enfrentar Yoroi Akadō, que foi derrotado por Sasuke na primeira partida preliminar. Misumi Tsurugi mais tarde foi derrotado por seu adversário também.'),
 (147, 'Time de Guarda da Estrela', 'O Time de Guarda da Estrela (星護衛チーム, Hoshi Goei Chīmu) foi um time genin, designado para proteger a preciosa estrela emissora de chakra (que era na verdade um meteorito), localizada em Hoshigakure, contra ladrões.'),

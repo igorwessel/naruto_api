@@ -1,4 +1,4 @@
-INSERT INTO `jutsu_class` (`jutsuId`, `classId`) VALUES
+INSERT INTO `JutsuClass` (`jutsuId`, `classId`) VALUES
 (1, 1),
 (1, 2),
 (2, 1),

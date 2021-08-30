@@ -1,5 +1,5 @@
 
-INSERT INTO `jutsu` (`id`, `name`, `description`, `kanji`, `romaji`, `portugues`, `games`, `manga_panini`, `tv_brasileira`, `range`, `rank`, `hand_seals`) VALUES
+INSERT INTO `Jutsu` (`id`, `name`, `description`, `kanji`, `romaji`, `portugues`, `games`, `mangaPanini`, `tvBrasileira`, `range`, `rank`, `handSeals`) VALUES
 (2112, 'Tanque da Bala Humana', 'O Tanque da Bala Humana é uma técnica destrutiva utilizada pelo clã Akimichi.', '肉弾戦車にくだんせんしゃ', 'Nikudan Sensha', 'Tanque da Bala Humana', NULL, 'Carro de Combate, Tanque de Carne', 'Jutsu Massa Humana', 'Curto a Médio alcance', 'Rank C', NULL),
 (2113, 'Tapa Ardente da Juventude', 'Após concentrar chakra em sua mão direita, Guy empurra o oponente à uma grande distância.', '青春の熱き張り手せいしゅんのあつきはりて', 'Seishun no Atsuki Harite', 'Tapa Ardente da Juventude', NULL, NULL, NULL, 'Curto alcance', NULL, NULL),
 (2114, 'Tarja da Barreira de Selamento', 'Um Kekkaijutsu que envolve o uso de várias etiquetas de selamento escondidas sob a superfície. Quando alguém pisa na área, ele fica contido por muitos segmentos da fórmula. A força é forte o suficiente para aniquilar completamente uma pessoa reencarnada.', NULL, NULL, NULL, NULL, NULL, NULL, 'Curto Alcance', NULL, NULL),

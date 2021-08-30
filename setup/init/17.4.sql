@@ -1,4 +1,4 @@
-INSERT INTO `jutsu` (`id`, `name`, `description`, `kanji`, `romaji`, `portugues`, `games`, `manga_panini`, `tv_brasileira`, `range`, `rank`, `hand_seals`) VALUES
+INSERT INTO `Jutsu` (`id`, `name`, `description`, `kanji`, `romaji`, `portugues`, `games`, `mangaPanini`, `tvBrasileira`, `range`, `rank`, `handSeals`) VALUES
 (490, 'Círculo de Areia', 'Gaara ataca seu oponente com uma pequena formação de areia semelhante a um braço, vindo de baixo. Em seguida, ele usa sua areia embaixo dos pés do oponente para levantá-lo. Então, ele atira vários projéteis de areia, e finaliza criando dois pilares de areia em volta do oponente, que giram simultaneamente, antes de explodirem jogando-o para trás.', NULL, NULL, NULL, 'Círculo de Areia', NULL, NULL, 'Médio alcance', NULL, NULL),
 (491, 'Círculo do Grande Atropelamento', 'Quando transformado em Kokuō, Han vira-se, erguendo as patas dianteiras, e vem de volta por baixo esmagando seu oponente gravemente.', '大踏円', 'Daitōen', 'Círculo do Grande Atropelamento', 'Grande Círculo Vibrador', NULL, NULL, 'Curto alcance', NULL, NULL),
 (492, 'Dōjutsu', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),

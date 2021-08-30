@@ -1,4 +1,4 @@
-INSERT INTO `ninja_attr` (`id`, `age`, `height`, `weight`, `ninja_rank`, `ninjaId`, `seasonId`) VALUES
+INSERT INTO `NinjaAttr` (`id`, `age`, `height`, `weight`, `ninjaRank`, `ninjaId`, `seasonId`) VALUES
 (1, NULL, '97.2 kg', '210.1 cm', NULL, 1, 1),
 (2, NULL, '97.2 kg', '210.1 cm', NULL, 1, 2),
 (3, '47 anos', '101.1 kg', '198.2 cm', NULL, 2, 2),
