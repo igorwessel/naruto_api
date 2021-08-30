@@ -8,8 +8,8 @@ export class NinjaFilterInput extends BaseFilterInput {
 	sex: Sex;
 
 	@Field(() => String, { nullable: true })
-	blood_type: String;
+	blood_type: string;
 
 	@Field(() => String, { nullable: true })
-	clan: String;
+	clan: string;
 }
