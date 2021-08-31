@@ -1,23 +1,84 @@
 import 'reflect-metadata';
 import express from 'express';
-import bodyParser from 'body-parser';
-import { applyServerGRAPHQL } from './graphql';
-import { applyServerREST } from './rest';
+import path from 'path';
 
-async function startServer(): Promise<express.Application> {
-	/**
-	 * Create application express, create graphql Route with Schema and Apollo Server and create rest route
-	 */
+/** REST STUFF */
+import { useExpressServer } from 'routing-controllers';
+import { CustomErrorHandler } from './rest/middlewares/CustomErrorHandler';
 
-	const app: express.Application = express();
+/** GRAPHQL STUFF */
+import { buildSchema } from 'type-graphql';
+import { ApolloServer } from 'apollo-server-express';
+import { PrismaClient } from '.prisma/client';
+import { prisma } from './prisma';
 
-	app.use(bodyParser.json());
+import { NinjaResolver } from './graphql/resolvers/NinjaResolver';
+import { FamilyResolver } from './graphql/resolvers/FamilyResolver';
+import { TeamResolver } from './graphql/resolvers/TeamResolver';
+import { NinjaAttrResolver } from './graphql/resolvers/NinjaAttrResolver';
+import { JutsuResolver } from './graphql/resolvers/JutsuResolver';
+import { ToolsResolver } from './graphql/resolvers/ToolsResolver';
 
-	applyServerGRAPHQL(app);
-
-	// applyServerREST(app);
-
-	return app;
+export interface ServerInterface {
+	start: () => Promise<express.Application>;
 }
+class Server implements ServerInterface {
+	private _app: express.Application;
+	private _prisma: PrismaClient;
 
-export { startServer };
+	constructor() {}
+
+	start(): Promise<express.Application> {
+		return new Promise(async (resolve, reject) => {
+			try {
+				this._prisma = prisma;
+				this._app = express();
+				this._app.use(express.json());
+				this._app.use(express.urlencoded({ extended: true }));
+				await this.applyServerGRAPHQL();
+				await this.applyServerREST();
+				resolve(this._app);
+			} catch (e) {
+				reject(e);
+			}
+		});
+	}
+
+	private async applyServerGRAPHQL(): Promise<void> {
+		/**
+		 * Create ApolloServer and Apply to APP Express
+		 */
+		const apolloServer = new ApolloServer({
+			schema: await buildSchema({
+				resolvers: [NinjaResolver, FamilyResolver, TeamResolver, NinjaAttrResolver, JutsuResolver, ToolsResolver],
+				emitSchemaFile: path.resolve(__dirname, '../../__snapshots__/schema/schema.gql')
+			}),
+			cacheControl: {
+				defaultMaxAge: 86400
+			},
+			tracing: true,
+			context: req => ({
+				req,
+				prisma: this._prisma
+			})
+		});
+
+		apolloServer.applyMiddleware({ app: this._app, path: '/api/v1/graphql' });
+	}
+
+	private async applyServerREST(): Promise<void> {
+		/**
+		 * Add REST Route to Express
+		 */
+
+		useExpressServer(this._app, {
+			controllers: [__dirname + '/controllers/**/*.{ts,js}'],
+			middlewares: [CustomErrorHandler],
+			routePrefix: '/api/v1/rest',
+			cors: true,
+			defaultErrorHandler: false
+		});
+	}
+}
+export default Server;
+export { Server };
