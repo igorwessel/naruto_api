@@ -5,6 +5,8 @@ import { NinjaQueryParams } from '../types/NinjaQueryParams';
 import { NinjaNotFoundError } from '../errors/NinjaError';
 import { AttributeNotFound } from '../errors/AttributesError';
 
+import { NinjaWithAllRelations } from '../../shared/Ninja';
+
 import { treatmentName } from '../middlewares/NinjasMiddlewares';
 
 import { prisma } from '../../prisma';
@@ -17,9 +19,41 @@ export class NinjaController {
 		const ninjas = await prisma.ninja.findMany({
 			skip: offset,
 			take: limit,
-			include: { occupation: true, affiliation: true, clan: true, classification: true }
+			include: {
+				occupation: true,
+				affiliation: true,
+				clan: true,
+				classification: true,
+				ninjaAttr: {
+					select: {
+						id: true,
+						age: true,
+						height: true,
+						weight: true,
+						ninjaRank: true,
+						season: { select: { name: true } }
+					}
+				},
+				jutsus: {
+					include: { nature_type: true }
+				},
+				familyParentToIdToNinja: {
+					select: {
+						id: true,
+						relationship: true,
+						parentFrom: { select: { name: true } }
+					}
+				},
+				tools: true,
+				team: true
+			}
 		});
-		return ninjas;
+
+		return ninjas.map(({ familyParentToIdToNinja, ninjaAttr, ...ninja }: NinjaWithAllRelations) => ({
+			...ninja,
+			family: familyParentToIdToNinja,
+			attributes: ninjaAttr
+		}));
 	}
 
 	@Get('/ninjas/:id([0-9]+)')
