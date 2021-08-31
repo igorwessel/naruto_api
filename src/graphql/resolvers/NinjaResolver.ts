@@ -25,16 +25,6 @@ export class NinjaResolver {
 			where: {
 				...(filter.id && { id: filter.id }),
 				...(filter.name && { name: { contains: filter.name } })
-			},
-			include: {
-				clan: true,
-				occupation: true,
-				affiliation: true,
-				team: true,
-				tools: true,
-				classification: true,
-				nature_type: true,
-				jutsus: true
 			}
 		});
 		if (!ninja) {

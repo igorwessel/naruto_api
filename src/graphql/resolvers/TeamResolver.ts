@@ -11,11 +11,7 @@ export class TeamResolver {
 	async teams(@Args() { startIndex, endIndex }: PaginationArgs, @Ctx() { prisma }: IGraphQLContext) {
 		const teams = await prisma.team.findMany({
 			skip: startIndex,
-			take: endIndex,
-			include: {
-				affiliation: true,
-				ninja: true
-			}
+			take: endIndex
 		});
 
 		return teams;

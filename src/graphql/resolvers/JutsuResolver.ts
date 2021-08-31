@@ -13,13 +13,7 @@ export class JutsuResolver {
 	async jutsus(@Args() { startIndex, endIndex }: PaginationArgs, @Ctx() { prisma }: IGraphQLContext) {
 		const jutsus = await prisma.jutsu.findMany({
 			skip: startIndex,
-			take: endIndex,
-			include: {
-				ninja: true,
-				classification: true,
-				class: true,
-				nature_type: true
-			}
+			take: endIndex
 		});
 
 		return jutsus;
