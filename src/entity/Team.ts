@@ -23,4 +23,6 @@ export class Team extends BaseManyToMany {
 
 	@Field(() => Jutsu, { nullable: true })
 	jutsu: Jutsu[];
+
+	ninja: Ninja[];
 }

@@ -33,23 +33,11 @@ export class Jutsu extends BaseContent {
 	@Field({ nullable: true })
 	hand_seals: String;
 
-	@Field(() => NatureType, { nullable: true })
-	nature: NatureType;
+	@Field(() => NatureType, { nullable: true, name: 'nature' })
+	nature_type: NatureType[];
 
 	@Field(() => ClassificationJutsu, { nullable: true })
 	classification: ClassificationJutsu[];
-
-	// @Field(() => Jutsu, { nullable: true })
-	// related_jutsu: Jutsu;
-
-	//
-	// relatedJutsuId: number;
-
-	// @Field(() => Jutsu, { nullable: true })
-	// derived_jutsu: Jutsu[];
-
-	// @Field(() => Jutsu, { nullable: true })
-	// parent_jutsu: Jutsu[];
 
 	@Field(() => Class, { nullable: true })
 	class: Class[];

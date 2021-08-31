@@ -24,7 +24,7 @@ model Clan {
 model RenamedClass {
   id          Int           @id @default(autoincrement())
   name        String        @db.VarChar(255)
-  jutsuClass JutsuClass[] @relation("classTojutsu_class")
+  jutsu Jutsu[]
 
   @@map("Class")
 }
@@ -69,18 +69,7 @@ model Jutsu {
   classification ClassificationJutsu[]
   ninja Ninja[]
   nature_type NatureType[]
-  jutsuClass          JutsuClass[]
-}
-
-model JutsuClass {
-  jutsuId Int
-  classId Int
-  class   RenamedClass @relation("classTojutsu_class", fields: [classId], references: [id])
-  jutsu   Jutsu        @relation(fields: [jutsuId], references: [id])
-
-  @@id([jutsuId, classId])
-  @@index([jutsuId], name: "IDX_af9d3ee9a7766571ceff552bbc")
-  @@index([classId], name: "IDX_e532ad50875ebc16032d17d1e9")
+  class RenamedClass[]
 }
 
 

@@ -4,7 +4,7 @@
 # -----------------------------------------------
 
 type Affiliation {
-  id: Int!
+  id: Int
   name: String
 }
 
@@ -19,17 +19,17 @@ type Clan {
 }
 
 type Class {
-  id: Int!
+  id: Int
   name: String
 }
 
 type Classification {
-  id: Int!
+  id: Int
   name: String
 }
 
 type ClassificationJutsu {
-  id: Int!
+  id: Int
   name: String
 }
 
@@ -48,7 +48,7 @@ type Jutsu {
   kanji: String
   manga_panini: String
   name: String
-  nature: NatureType
+  nature: [NatureType!]
   portugues: String
   range: String
   rank: String
@@ -58,7 +58,7 @@ type Jutsu {
 
 type NatureType {
   affinity: Boolean!
-  id: Int!
+  id: Int
   kekkei_genkai: Boolean!
   kekkei_tota: Boolean!
   name: String
@@ -109,15 +109,17 @@ type Occupation {
 }
 
 type Query {
+  jutsus(limit: Int = 15, offset: Int = 0): [Jutsu!]!
   ninja(filter: BaseFilterInput!): Ninja
   ninjas(filter: NinjaFilterInput, limit: Int = 15, offset: Int = 0): [Ninja!]!
+  teams(limit: Int = 15, offset: Int = 0): [Team!]!
   tools(filter: ToolsInput, limit: Int = 15, offset: Int = 0): [Tools!]!
 }
 
 type Team {
   affiliation: [Affiliation!]
   description: String
-  id: Int!
+  id: Int
   jutsu: [Jutsu!]
   leader: Boolean!
   leaders: [Ninja!]
