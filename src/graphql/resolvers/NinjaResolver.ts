@@ -5,7 +5,6 @@ import { NinjaAttr } from '../../entity/NinjaAttr';
 import { Tools } from '../../entity/Tools';
 import { Family } from '../../entity/Family';
 import { NatureType } from '../../entity/NatureType';
-import { Team } from '../../entity/Team';
 import { Jutsu } from '../../entity/Jutsu';
 import { Clan } from '../../entity/Clan';
 import { Occupation } from '../../entity/Occupation';
@@ -14,7 +13,6 @@ import { Classification } from '../../entity/Classification';
 import { NinjaFilterInput } from '../types/NinjaInput';
 import { IGraphQLContext } from '../types/Context';
 import { PaginationArgs } from '../types/PaginationArgs';
-import { ToolsInput } from '../types/ToolsInput';
 import { BaseFilterInput } from '../types/BaseFilterInput';
 
 import { NinjaNotFoundError } from '../../rest/errors/NinjaError';
@@ -76,43 +74,51 @@ export class NinjaResolver {
 	}
 
 	@FieldResolver(() => Clan)
-	clan(@Root() ninja: Ninja) {
-		return ninja.clan;
+	async clan(@Root() ninja: Ninja, @Ctx() { prisma }: IGraphQLContext) {
+		const clan = await prisma.ninja.findUnique({ where: { id: ninja.id || undefined } }).clan();
+		return clan;
 	}
 
 	@FieldResolver(() => Occupation)
-	occupation(@Root() ninja: Ninja) {
-		return ninja.occupation;
+	async occupation(@Root() ninja: Ninja, @Ctx() { prisma }: IGraphQLContext) {
+		const occupation = await prisma.ninja.findUnique({ where: { id: ninja.id || undefined } }).occupation();
+		return occupation;
 	}
 
 	@FieldResolver(() => Occupation)
-	affiliation(@Root() ninja: Ninja) {
-		return ninja.affiliation;
+	async affiliation(@Root() ninja: Ninja, @Ctx() { prisma }: IGraphQLContext) {
+		const affiliation = await prisma.ninja.findUnique({ where: { id: ninja.id || undefined } }).affiliation();
+		return affiliation;
 	}
 
 	@FieldResolver(() => Occupation)
-	team(@Root() ninja: Ninja) {
-		return ninja.team;
+	async team(@Root() ninja: Ninja, @Ctx() { prisma }: IGraphQLContext) {
+		const team = await prisma.ninja.findUnique({ where: { id: ninja.id || undefined } }).team();
+		return team;
 	}
 
 	@FieldResolver(() => Tools)
-	tools(@Root() ninja: Ninja) {
-		return ninja.tools;
+	async tools(@Root() ninja: Ninja, @Ctx() { prisma }: IGraphQLContext) {
+		const tools = await prisma.ninja.findUnique({ where: { id: ninja.id || undefined } }).tools();
+		return tools;
 	}
 
 	@FieldResolver(() => Classification)
-	classification(@Root() ninja: Ninja) {
-		return ninja.classification;
+	async classification(@Root() ninja: Ninja, @Ctx() { prisma }: IGraphQLContext) {
+		const classification = await prisma.ninja.findUnique({ where: { id: ninja.id || undefined } }).classification();
+		return classification;
 	}
 
 	@FieldResolver(() => [Jutsu])
-	jutsus(@Root() ninja: Ninja) {
-		return ninja.jutsus;
+	async jutsus(@Root() ninja: Ninja, @Ctx() { prisma }: IGraphQLContext) {
+		const jutsu = await prisma.ninja.findUnique({ where: { id: ninja.id || undefined } }).jutsus();
+		return jutsu;
 	}
 
 	@FieldResolver(() => NatureType)
-	nature_type(@Root() ninja: Ninja) {
-		return ninja.nature_type;
+	async nature_type(@Root() ninja: Ninja, @Ctx() { prisma }: IGraphQLContext) {
+		const nature_type = await prisma.ninja.findUnique({ where: { id: ninja.id || undefined } }).nature_type();
+		return nature_type;
 	}
 
 	@FieldResolver(() => Family)

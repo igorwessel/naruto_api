@@ -18,14 +18,7 @@ const applyServerGRAPHQL = async (app: express.Application): Promise<void> => {
 	 */
 	const server = new ApolloServer({
 		schema: await buildSchema({
-			resolvers: [
-				NinjaResolver,
-				FamilyResolver,
-				// TeamResolver,
-				NinjaAttrResolver,
-				// JutsuResolver,
-				ToolsResolver
-			],
+			resolvers: [NinjaResolver, FamilyResolver, TeamResolver, NinjaAttrResolver, JutsuResolver, ToolsResolver],
 			emitSchemaFile: path.resolve(__dirname, '../../__snapshots__/schema/schema.gql')
 		}),
 		cacheControl: {
