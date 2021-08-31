@@ -2,6 +2,9 @@ import 'reflect-metadata';
 import express from 'express';
 import path from 'path';
 
+/** ORM */
+import { prisma } from './prisma';
+
 /** REST STUFF */
 import { useExpressServer } from 'routing-controllers';
 import { CustomErrorHandler } from './rest/middlewares/CustomErrorHandler';
@@ -23,7 +26,7 @@ export interface ServerInterface {
 }
 class Server implements ServerInterface {
 	private _app: express.Application;
-	private _prisma: PrismaClient = new PrismaClient();
+	private _prisma: PrismaClient = prisma;
 
 	constructor() {}
 
@@ -70,7 +73,7 @@ class Server implements ServerInterface {
 		 */
 
 		useExpressServer(this._app, {
-			controllers: [__dirname + '/controllers/**/*.{ts,js}'],
+			controllers: [__dirname + '/rest/controllers/**/*.{ts,js}'],
 			middlewares: [CustomErrorHandler],
 			routePrefix: '/api/v1/rest',
 			cors: true,
