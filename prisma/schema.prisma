@@ -82,8 +82,8 @@ model KekkeiGenkai {
 model NatureType {
   id               Int                @id @default(autoincrement())
   name             String             @db.VarChar(255)
-  kekkeiGenkai    Int                @db.TinyInt
-  kekkeiTota      Int                @db.TinyInt
+  kekkeiGenkai    Boolean                
+  kekkeiTota      Boolean                
   ninja Ninja[]
   jutsu Jutsu[]
 }
