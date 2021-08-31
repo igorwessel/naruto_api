@@ -10,7 +10,6 @@ import { CustomErrorHandler } from './rest/middlewares/CustomErrorHandler';
 import { buildSchema } from 'type-graphql';
 import { ApolloServer } from 'apollo-server-express';
 import { PrismaClient } from '.prisma/client';
-import { prisma } from './prisma';
 
 import { NinjaResolver } from './graphql/resolvers/NinjaResolver';
 import { FamilyResolver } from './graphql/resolvers/FamilyResolver';
@@ -24,14 +23,13 @@ export interface ServerInterface {
 }
 class Server implements ServerInterface {
 	private _app: express.Application;
-	private _prisma: PrismaClient;
+	private _prisma: PrismaClient = new PrismaClient();
 
 	constructor() {}
 
 	start(): Promise<express.Application> {
 		return new Promise(async (resolve, reject) => {
 			try {
-				this._prisma = prisma;
 				this._app = express();
 				this._app.use(express.json());
 				this._app.use(express.urlencoded({ extended: true }));
