@@ -20,7 +20,20 @@ export class WelcomeController {
 				tools: {
 					getAll: '/tools',
 					getOneToolById: '/tools/:id',
-					getOneToolByName: '/tools/:name(kebab-case)'
+					getOneToolByName: '/tools/:name(kebab-case)',
+					ninjas: '/tools/:id||:name/ninjas'
+				},
+				teams: {
+					getAll: '/teams',
+					getOneTeamById: '/teams/:id',
+					getOneTeamByName: '/teams/:name(kebab-case)',
+					ninjas: '/teams/:id||:name/ninjas'
+				},
+				jutsus: {
+					getAll: '/jutsus',
+					getOneJutsuById: '/jutsus/:id',
+					getOneJutsuByName: '/jutsus/:name(kebab-case)',
+					ninjas: '/jutsus/:id||:name/ninjas'
 				}
 			}
 		};

@@ -50,7 +50,7 @@ export class ToolsController {
 
 	@Get('/:name([0-9a-z-]+)/ninjas')
 	@UseBefore(treatmentName)
-	async getOneJutsuByNameNinjas(@Param('name') name: string) {
+	async getOneTeamByNameNinjas(@Param('name') name: string) {
 		const ninjas = await prisma.team.findFirst({ where: { name: { contains: name } } }).ninja();
 
 		if (!ninjas || ninjas.length === 0) throw new NotFoundError("This jutsu don't have ninjas");
