@@ -10,7 +10,7 @@ export class WelcomeController {
 				ninjas: {
 					getAll: '/ninjas',
 					getOneNinjaById: '/ninjas/:id',
-					getOneNinjaByName: '/ninjas/:name(snake_case)',
+					getOneNinjaByName: '/ninjas/:name(kebab-case)',
 					tools: '/ninjas/:id||:name/tools',
 					attributes: '/ninjas/:id||:name/attributes',
 					jutsus: '/ninjas/:id||:name/jutsus',
@@ -20,7 +20,7 @@ export class WelcomeController {
 				tools: {
 					getAll: '/tools',
 					getOneToolById: '/tools/:id',
-					getOneToolByName: '/tools/:name(snake_case)'
+					getOneToolByName: '/tools/:name(kebab-case)'
 				}
 			}
 		};
