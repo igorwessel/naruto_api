@@ -117,7 +117,7 @@ export class NinjaController {
 		return teams;
 	}
 
-	@Get('/:name([a-z]+(?:-[a-z]+))')
+	@Get('/:name([a-z-]+)')
 	@UseBefore(treatmentName)
 	async getNinjaByName(@Param('name') name: string) {
 		const ninja = await prisma.ninja.findFirst({
@@ -129,7 +129,7 @@ export class NinjaController {
 		return ninja;
 	}
 
-	@Get('/:name([a-z]+(?:-[a-z]+))/jutsus')
+	@Get('/:name([a-z-]+)/jutsus')
 	@UseBefore(treatmentName)
 	async getJutsusByNinjaName(@Param('name') name: string) {
 		const jutsus = await prisma.ninja
@@ -143,7 +143,7 @@ export class NinjaController {
 		return jutsus;
 	}
 
-	@Get('/:name([a-z]+(?:-[a-z]+))/attributes')
+	@Get('/:name([a-z-]+)/attributes')
 	@UseBefore(treatmentName)
 	async getAttributesByName(@Param('name') name: string) {
 		const attributes = await prisma.ninja
@@ -159,7 +159,7 @@ export class NinjaController {
 		return attributes;
 	}
 
-	@Get('/:name([a-z]+(?:-[a-z]+))/family')
+	@Get('/:name([a-z-]+)/family')
 	@UseBefore(treatmentName)
 	async getFamilyByNinjaName(@Param('name') name: string) {
 		const family = await prisma.ninja
@@ -169,7 +169,7 @@ export class NinjaController {
 		return family;
 	}
 
-	@Get('/:name([a-z]+(?:-[a-z]+))/tools')
+	@Get('/:name([a-z-]+)/tools')
 	@UseBefore(treatmentName)
 	async getToolsByName(@Param('name') name: string) {
 		const tools = await prisma.ninja.findFirst({ where: { name: { contains: name } } }).tools();
@@ -179,7 +179,7 @@ export class NinjaController {
 		return tools;
 	}
 
-	@Get('/:name([a-z]+(?:-[a-z]+))/teams')
+	@Get('/:name([a-z-]+)/teams')
 	@UseBefore(treatmentName)
 	async getTeamsByName(@Param('name') name: string) {
 		const teams = await prisma.ninja.findFirst({ where: { name: { contains: name } } }).team();

@@ -39,13 +39,25 @@ export class ToolsController {
 		return ninjas;
 	}
 
-	@Get('/:name([a-z]+(?:-[a-z]+))')
+	@Get('/:name([a-z-]+)')
 	@UseBefore(treatmentName)
 	async getOneToolByName(@Param('name') name: string) {
 		const tool = await prisma.tools.findFirst({
 			where: { name: { contains: name } }
 		});
-		if (!tool) throw new NotFoundError('This tool don`t exist');
+
+		if (!tool) throw new NotFoundError('Tool not found!');
+
 		return tool;
+	}
+
+	@Get('/:name([a-z-]+)/ninjas')
+	@UseBefore(treatmentName)
+	async getOneToolByNameNinjas(@Param('name') name: string) {
+		const ninjas = await prisma.tools.findFirst({ where: { name: { contains: name } } }).ninjas();
+
+		if (!ninjas || ninjas.length === 0) throw new NotFoundError("This tool don't have ninjas");
+
+		return ninjas;
 	}
 }
