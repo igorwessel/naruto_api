@@ -1,4 +1,13 @@
-import { JsonController, Get, QueryParams, Param, OnUndefined, NotFoundError, UseBefore } from 'routing-controllers';
+import {
+	JsonController,
+	Get,
+	QueryParams,
+	Param,
+	OnUndefined,
+	NotFoundError,
+	UseBefore,
+	BadRequestError
+} from 'routing-controllers';
 import { prisma } from '../../prisma';
 
 import { treatmentName } from '../middlewares/HelpersMiddlewares';
@@ -28,5 +37,15 @@ export class ToolsController {
 		const ninjas = await prisma.tools.findUnique({ where: { id } }).ninjas();
 		if (ninjas.length === 0) throw new NotFoundError("This tool don't have ninjas");
 		return ninjas;
+	}
+
+	@Get('/:name([a-z]+(?:-[a-z]+))')
+	@UseBefore(treatmentName)
+	async getOneToolByName(@Param('name') name: string) {
+		const tool = await prisma.tools.findFirst({
+			where: { name: { contains: name } }
+		});
+		if (!tool) throw new NotFoundError('This tool don`t exist');
+		return tool;
 	}
 }
