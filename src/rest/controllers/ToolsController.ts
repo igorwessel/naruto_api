@@ -1,21 +1,7 @@
-import {
-	JsonController,
-	Get,
-	QueryParams,
-	Param,
-	OnUndefined,
-	NotFoundError,
-	UseBefore,
-	BadRequestError
-} from 'routing-controllers';
+import { JsonController, Get, QueryParams, Param, NotFoundError, UseBefore } from 'routing-controllers';
 import { prisma } from '../../prisma';
 
 import { treatmentName } from '../middlewares/HelpersMiddlewares';
-
-import { NinjaNotFoundError } from '../errors/NinjaError';
-import { AttributeNotFound } from '../errors/AttributesError';
-
-import { NinjaWithAllRelations } from '../../shared/Ninja';
 import { BaseQueryParams } from '../shared/BaseQueryParams';
 
 @JsonController('/tools')
