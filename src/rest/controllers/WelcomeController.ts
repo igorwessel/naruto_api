@@ -16,6 +16,11 @@ export class WelcomeController {
 					jutsus: '/ninjas/:id||:name/jutsus',
 					family: '/ninjas/:id||:name/family',
 					teams: '/ninjas/:id||:name/teams'
+				},
+				tools: {
+					getAll: '/tools',
+					getOneToolById: '/tools/:id',
+					getOneToolByName: '/tools/:name(snake_case)'
 				}
 			}
 		};
