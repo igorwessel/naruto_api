@@ -7,6 +7,6 @@ export const treatmentName = (
 ): void => {
 	const { name } = request.params;
 
-	request.params.name = name.replace('_', ' ').toUpperCase();
+	request.params.name = name.replace('-', ' ');
 	next();
 };
