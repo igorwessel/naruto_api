@@ -14,6 +14,7 @@ import { RateLimiter } from './rest/middlewares/RateLimiterMiddleware';
 import { buildSchema } from 'type-graphql';
 import { ApolloServer } from 'apollo-server-express';
 import { PrismaClient } from '.prisma/client';
+import { getComplexity, simpleEstimator, fieldExtensionsEstimator } from 'graphql-query-complexity';
 
 import { NinjaResolver } from './graphql/resolvers/NinjaResolver';
 import { FamilyResolver } from './graphql/resolvers/FamilyResolver';
@@ -50,11 +51,51 @@ class Server implements ServerInterface {
 		/**
 		 * Create ApolloServer and Apply to APP Express
 		 */
+
+		const schema = await buildSchema({
+			resolvers: [NinjaResolver, FamilyResolver, TeamResolver, NinjaAttrResolver, JutsuResolver, ToolsResolver],
+			emitSchemaFile: path.resolve(__dirname, '../../__snapshots__/schema/schema.gql')
+		});
+
 		const apolloServer = new ApolloServer({
-			schema: await buildSchema({
-				resolvers: [NinjaResolver, FamilyResolver, TeamResolver, NinjaAttrResolver, JutsuResolver, ToolsResolver],
-				emitSchemaFile: path.resolve(__dirname, '../../__snapshots__/schema/schema.gql')
-			}),
+			schema,
+			plugins: [
+				{
+					requestDidStart: () => ({
+						didResolveOperation({ request, document }) {
+							const complexity = getComplexity({
+								// Our built schema
+								schema,
+								// To calculate query complexity properly,
+								// we have to check only the requested operation
+								// not the whole document that may contains multiple operations
+								operationName: request.operationName,
+								// The GraphQL query document
+								query: document,
+								// The variables for our GraphQL query
+								variables: request.variables,
+								// Add any number of estimators. The estimators are invoked in order, the first
+								// numeric value that is being returned by an estimator is used as the field complexity.
+								// If no estimator returns a value, an exception is raised.
+								estimators: [
+									// Using fieldExtensionsEstimator is mandatory to make it work with type-graphql.
+									fieldExtensionsEstimator(),
+									// Add more estimators here...
+									// This will assign each field a complexity of 1
+									// if no other estimator returned a value.
+									simpleEstimator({ defaultComplexity: 0 })
+								]
+							});
+							const maxComplexity = 500;
+							if (complexity > maxComplexity) {
+								throw new Error(
+									`Sorry, too complicated query! ${complexity} is over ${maxComplexity} that is the max allowed complexity. Try remove `
+								);
+							}
+						}
+					})
+				}
+			],
 			cacheControl: {
 				defaultMaxAge: 86400
 			},

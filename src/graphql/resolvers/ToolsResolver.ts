@@ -22,7 +22,7 @@ export class ToolsResolver {
 		return tools;
 	}
 
-	@FieldResolver(() => [Ninja])
+	@FieldResolver(() => [Ninja], { complexity: 1 })
 	async ninjas(@Root() tools: Tools, @Ctx() { prisma }: IGraphQLContext) {
 		const ninjas = await prisma.tools.findUnique({ where: { id: tools.id || undefined } }).ninjas();
 		return ninjas;
