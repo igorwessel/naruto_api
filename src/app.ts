@@ -8,6 +8,7 @@ import { prisma } from './prisma';
 /** REST STUFF */
 import { useExpressServer } from 'routing-controllers';
 import { CustomErrorHandler } from './rest/middlewares/CustomErrorHandler';
+import { RateLimiter } from './rest/middlewares/RateLimiterMiddleware';
 
 /** GRAPHQL STUFF */
 import { buildSchema } from 'type-graphql';
@@ -74,7 +75,7 @@ class Server implements ServerInterface {
 
 		useExpressServer(this._app, {
 			controllers: [__dirname + '/rest/controllers/**/*.{ts,js}'],
-			middlewares: [CustomErrorHandler],
+			middlewares: [CustomErrorHandler, RateLimiter],
 			routePrefix: '/api/v1/rest',
 			cors: true,
 			defaultErrorHandler: false
