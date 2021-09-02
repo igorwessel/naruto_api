@@ -3372,6 +3372,13 @@ graphql-query-complexity@^0.5.0:
   dependencies:
     lodash.get "^4.4.2"
 
+graphql-query-complexity@^0.9.0:
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/graphql-query-complexity/-/graphql-query-complexity-0.9.0.tgz#11bff1b369b5f6bffe757201d696994fda422f6d"
+  integrity sha512-jLRM4K4seKdz+TFQpmYsvFj4ZwlLnVEH0KbxE5vzw0oDCc6y0KRiALJiIzr8J6gSJ+LiAjUmCiJqtw1HJd3Udg==
+  dependencies:
+    lodash.get "^4.4.2"
+
 graphql-subscriptions@^1.0.0, graphql-subscriptions@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/graphql-subscriptions/-/graphql-subscriptions-1.1.0.tgz#5f2fa4233eda44cf7570526adfcf3c16937aef11"

@@ -22,6 +22,7 @@
 		"cross-env": "7.0.2",
 		"express": "4.17.1",
 		"graphql": "15.0.0",
+		"graphql-query-complexity": "0.9.0",
 		"graphql-tools": "6.0.9",
 		"mysql": "2.18.1",
 		"rate-limiter-flexible": "2.2.4",
