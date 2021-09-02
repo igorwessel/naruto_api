@@ -24,6 +24,7 @@
 		"graphql": "15.0.0",
 		"graphql-tools": "6.0.9",
 		"mysql": "2.18.1",
+		"rate-limiter-flexible": "2.2.4",
 		"reflect-metadata": "0.1.13",
 		"routing-controllers": "0.9.0",
 		"type-graphql": "1.0.0-rc.2"
