@@ -64,25 +64,13 @@ class Server implements ServerInterface {
 					requestDidStart: () => ({
 						didResolveOperation({ request, document }) {
 							const complexity = getComplexity({
-								// Our built schema
 								schema,
-								// To calculate query complexity properly,
-								// we have to check only the requested operation
-								// not the whole document that may contains multiple operations
 								operationName: request.operationName,
-								// The GraphQL query document
 								query: document,
-								// The variables for our GraphQL query
 								variables: request.variables,
-								// Add any number of estimators. The estimators are invoked in order, the first
-								// numeric value that is being returned by an estimator is used as the field complexity.
-								// If no estimator returns a value, an exception is raised.
 								estimators: [
-									// Using fieldExtensionsEstimator is mandatory to make it work with type-graphql.
+									//FieldExtensionEstimator is mandatory because type-graphql
 									fieldExtensionsEstimator(),
-									// Add more estimators here...
-									// This will assign each field a complexity of 1
-									// if no other estimator returned a value.
 									simpleEstimator({ defaultComplexity: 0 })
 								]
 							});
