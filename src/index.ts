@@ -12,5 +12,5 @@ import { Server } from './app';
 			? `REST      → http://localhost:${process.env.PORT}/api/v1/rest/\nGraphQL   → http://localhost:${process.env.PORT}/api/v1/graphql`
 			: `REST      → http://www.narutoapi.com.br/api/v1/rest/\nGraphQL   → http://www.narutoapi.com.br/api/v1/graphql`;
 
-	app.listen(process.env.PORT || 8000, () => console.log('\x1b[34m%s\x1b[0m', message));
+	app.listen(process.env.PORT || 3000, () => console.log('\x1b[34m%s\x1b[0m', message));
 })();
