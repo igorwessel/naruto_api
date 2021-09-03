@@ -7,8 +7,8 @@ services:
     environment:
       MYSQL_USER: ${DB_USER}
       MYSQL_PASSWORD: ${DB_PASSWORD}
-      MYSQL_DATABASE: ${DB}
-      MYSQL_ROOT_PASSWORD: ${ROOT_PASSWORD}
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_ROOT_PASSWORD: ${DOCKER_ROOT_PASSWORD}
     volumes:
       - naruto_data:/var/lib/mysql
     ports:
