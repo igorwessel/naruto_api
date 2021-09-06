@@ -9,7 +9,6 @@
 	"main": "index.js",
 	"scripts": {
 		"dev": "cross-env NODE_ENV=development nodemon -w src --ext ts --exec ts-node src/index.ts",
-		"typeorm": "node --require ts-node/register ./node_modules/typeorm/cli.js",
 		"test": "cross-env NODE_ENV=test mocha -r ts-node/register tests/**/*.spec.ts",
 		"build": "cross-env NODE_ENV=production tsc -p ./",
 		"seed": "npx prisma db seed --preview-feature",
