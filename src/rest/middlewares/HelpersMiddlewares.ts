@@ -3,7 +3,7 @@ import * as express from 'express';
 export const treatmentName = (
 	request: express.Request,
 	response: express.Response,
-	next?: (err?: any) => any
+	next: express.NextFunction
 ): void => {
 	const { name } = request.params;
 
