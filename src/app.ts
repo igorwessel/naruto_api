@@ -87,7 +87,7 @@ class Server implements ServerInterface {
 			cacheControl: {
 				defaultMaxAge: 86400
 			},
-			tracing: true,
+			tracing: process.env.NODE_ENV === 'development' ? true : false,
 			context: req => ({
 				req,
 				prisma: this._prisma
