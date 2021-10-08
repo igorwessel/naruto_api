@@ -4,7 +4,12 @@
 # -----------------------------------------------
 
 type Affiliation {
-  id: Int!
+  id: Int
+  name: String
+}
+
+input BaseFilterInput {
+  id: Int
   name: String
 }
 
@@ -14,17 +19,17 @@ type Clan {
 }
 
 type Class {
-  id: Int!
+  id: Int
   name: String
 }
 
 type Classification {
-  id: Int!
+  id: Int
   name: String
 }
 
 type ClassificationJutsu {
-  id: Int!
+  id: Int
   name: String
 }
 
@@ -34,8 +39,8 @@ type Family {
 }
 
 type Jutsu {
-  class: Class
-  classification: ClassificationJutsu
+  class: [Class!]
+  classification: [ClassificationJutsu!]
   description: String
   games: String
   hand_seals: String
@@ -43,7 +48,7 @@ type Jutsu {
   kanji: String
   manga_panini: String
   name: String
-  nature: NatureType
+  nature: [NatureType!]
   portugues: String
   range: String
   rank: String
@@ -53,7 +58,7 @@ type Jutsu {
 
 type NatureType {
   affinity: Boolean!
-  id: Int!
+  id: Int
   kekkei_genkai: Boolean!
   kekkei_tota: Boolean!
   name: String
@@ -61,25 +66,25 @@ type NatureType {
 
 type Ninja {
   academy_grad_age: String
-  affiliation: Affiliation
+  affiliation: [Affiliation!]
   birthdate: String
   blood_type: String
   chunin_prom_age: String
-  clan: Clan
-  classification: Classification
-  family: Family
+  clan: [Clan!]
+  classification: [Classification!]
+  family: [Family!]
   id: Int!
-  jutsus: Jutsu
+  jutsus: [Jutsu!]
   name: String
-  nature_type: NatureType
-  ninja_attributes: NinjaAttr
+  nature_type: [NatureType!]
+  ninja_attributes: [NinjaAttr!]
   ninja_registration: String
-  occupation: Occupation
+  occupation: [Occupation!]
   sex: String
   specie: String
   status: String
-  team: Team
-  tools: Tools
+  team: [Team!]
+  tools: [Tools!]
 }
 
 type NinjaAttr {
@@ -105,36 +110,36 @@ type Occupation {
 
 type Query {
   jutsus(limit: Int = 15, offset: Int = 0): [Jutsu!]!
-  ninja(filter: NinjaFilterInput!): Ninja!
+  ninja(filter: BaseFilterInput!): Ninja
   ninjas(filter: NinjaFilterInput, limit: Int = 15, offset: Int = 0): [Ninja!]!
   teams(limit: Int = 15, offset: Int = 0): [Team!]!
   tools(filter: ToolsInput, limit: Int = 15, offset: Int = 0): [Tools!]!
 }
 
 type Team {
-  affiliation: Affiliation
+  affiliation: [Affiliation!]
   description: String
-  id: Int!
-  jutsu: Jutsu
+  id: Int
+  jutsu: [Jutsu!]
   leader: Boolean!
-  leaders: Ninja
-  members: Ninja
+  leaders: [Ninja!]
+  members: [Ninja!]
   name: String
 }
 
 type Tools {
   description: String
-  games: String!
+  games: String
   id: Int!
-  kanji: String!
-  manga_panini: String!
+  kanji: String
+  manga_panini: String
   name: String
-  portugues: String!
-  romaji: String!
-  tv_brasileira: String!
+  ninjas: [Ninja!]
+  portugues: String
+  romaji: String
+  tv_brasileira: String
 }
 
 input ToolsInput {
-  id: Int
   name: String
 }

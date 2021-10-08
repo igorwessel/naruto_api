@@ -4,65 +4,71 @@ Criei essa API para exercitar o meu conhecimento referente ao backend e tambem p
 
 # Todo List
 
-- [] Criar Versão PT-BR
-- [] Adicionar para o ninja, jutsu, tool, team, qual foi a primeira aparição.
-- [] Implementar testes para os resolvers.
-- [] Ter uma versão RESTFUL em outro ENDPOINT.
-- [] Implementar query para jutsus
-- [] Implementar query para tools
-- [] Implementar query para team
-- [] Implementar query com filtros para o ninja
-- [] Colocar mais opções para o filtro do Ninja <- em especifico filtros que fazem sub-queries para a tabela que está se relacionando.
+- [] Adicionar Testes
 
-## Examples
+# Como iniciar o projeto
 
-A query ninja (no singular), é como ela mesma já diz ela vai buscar somente 1 Ninja e ela retorna o **Type Ninja** abaixo que tu pode escolher que atributo pegar, caso queira saber mais sobre os outros tipos, acesse a pasta **docs**.
+## 1. Instale o redis caso não possua (Ubuntu PPA)
 
-```graphql
-type Ninja {
-	academy_grad_age: String
-	affiliation: [Affiliation!]
-	birthdate: String
-	blood_type: String
-	chunin_prom_age: String
-	clan: [Clan!]
-	classification: [Classification!]
-	family: [Family!]
-	id: Float!
-	jutsus: [Jutsu!]
-	name: String
-	nature_type: [NatureType!]
-	ninja_attributes: [NinjaAttr!]
-	ninja_registration: String
-	occupation: [Occupation!]
-	sex: String
-	status: String
-	team: [Team!]
-	tools: [Tools!]
-	unique_traits: String
-}
+```sh
+$ sudo add-apt-repository ppa:redislabs/redis
+$ sudo apt-get update
+$ sudo apt-get install redis
 ```
 
-Query:
+## 2. Instale as depedências
 
-```graphql
-{
-	ninja {
-		id
-		name
-	}
-}
+```dosini
+$ yarn install
+# or yarn
 ```
 
-Retorno esperado:
+## 3. Crie um arquivo .env ou renomeie .env.example e coloque os valores nas variaveis
 
+```dosini
+# Application is listening in this port
+PORT=
+
+# Redis Settings because Rate Limiter
+REDIS_PORT=
+REDIS_HOST=
+REDIS_DB=
+
+# DB Settings for Prisma and Docker
+DB_USER=
+DB_PASSWORD=
+DB_HOST=
+DB_PORT=
+DB_NAME=
+
+# Prisma Connection
+DATABASE_URL="mysql://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}?schema=public"
 ```
-    {
-        data: {
-            ninja: {
-                id: 1
-                name: "Naruto Uzumaki"
-            }
-        }
-    }
+
+## 4. Rode o comando para criar o banco de dados
+
+```dosini
+$ npx prisma migrate dev
+```
+
+## 5. Depois rode o comando para o seed no banco
+
+```dosini
+$ yarn seed
+# Or npx prism db seed --preview-feature
+```
+
+## 6. Rode o servidor
+
+```dosini
+$ yarn dev
+```
+
+## Para buildar o projeto
+
+```dosini
+# Mude as variaveis de ambiente novamente, caso precise mudar o banco de dados
+$ npx prisma migrate deploy
+$ yarn seed # or npx prisma db seed --preview-feature
+$ yarn start # builda o projeto e starta o servidor
 ```

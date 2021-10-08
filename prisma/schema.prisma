@@ -1,0 +1,174 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Affiliation {
+  id                Int                 @id @default(autoincrement())
+  name              String              @db.VarChar(255)
+  ninja Ninja[]
+  team Team[]
+}
+
+model Clan {
+  id         Int          @id @default(autoincrement())
+  name       String       @db.VarChar(255)
+  ninja Ninja[]
+}
+
+/// This model has been renamed to 'Renamedclass' during introspection, because the original name 'class' is reserved.
+model RenamedClass {
+  id          Int           @id @default(autoincrement())
+  name        String        @db.VarChar(255)
+  jutsu Jutsu[]
+
+  @@map("Class")
+}
+
+model Classification {
+  id                   Int                    @id @default(autoincrement())
+  name                 String                 @db.VarChar(255)
+  ninja Ninja[]
+}
+
+model ClassificationJutsu {
+  id                   Int                    @id @default(autoincrement())
+  name                 String                 @db.VarChar(255)
+  jutsu Jutsu[]
+}
+
+model Family {
+  id                               Int    @id @default(autoincrement())
+  relationship                     String @db.VarChar(100)
+  parentFromId                     Int?
+  parentToId                       Int?
+  parentFrom Ninja? @relation("family_parentFromIdToninja", fields: [parentFromId], references: [id])
+  parentTo   Ninja? @relation("family_parentToIdToninja", fields: [parentToId], references: [id])
+
+  @@index([parentToId], name: "FK_4a5e036ebfc008c8d985e5eda73")
+  @@index([parentFromId], name: "FK_951991781739cbcff0876268b88")
+}
+
+model Jutsu {
+  id                   Int                    @id @default(autoincrement())
+  name                 String?                @db.VarChar(255)
+  description          String?                @db.Text
+  kanji                String?                @db.VarChar(255)
+  romaji               String?                @db.VarChar(255)
+  portugues            String?                @db.VarChar(255)
+  games                String?                @db.VarChar(255)
+  mangaPanini         String?                @db.VarChar(255)
+  tvBrasileira        String?                @db.VarChar(255)
+  range                String?                @db.VarChar(255)
+  rank                 String?                @db.VarChar(255)
+  handSeals           String?                @db.LongText
+  classification ClassificationJutsu[]
+  ninja Ninja[]
+  nature_type NatureType[]
+  class RenamedClass[]
+}
+
+
+model KekkeiGenkai {
+  id          Int     @id @default(autoincrement())
+  name        String  @db.VarChar(255)
+  description String? @db.VarChar(255)
+}
+
+model NatureType {
+  id               Int                @id @default(autoincrement())
+  name             String             @db.VarChar(255)
+  kekkeiGenkai    Boolean                
+  kekkeiTota      Boolean                
+  ninja Ninja[]
+  jutsu Jutsu[]
+}
+
+model Ninja {
+  id                                Int                    @id @default(autoincrement())
+  name                              String                 @db.VarChar(128)
+  birthdate                         String?                @db.VarChar(50)
+  specie                            String?                @db.VarChar(255)
+  status                            String?                @db.VarChar(40)
+  sex                               ninja_sex?
+  bloodType                        String?                @db.VarChar(10)
+  ninjaRegistration                String?                @db.VarChar(30)
+  academyGradAge                  String?                @db.VarChar(10)
+  chuninPromAge                   String?                @db.VarChar(10)
+  familyParentFromIdToNinja Family[]               @relation("family_parentFromIdToninja")
+  familyParentToIdToNinja   Family[]               @relation("family_parentToIdToninja")
+  clan Clan[]
+  occupation Occupation[]
+  affiliation Affiliation[]
+  team Team[]
+  tools Tools[]
+  classification Classification[]
+  jutsus Jutsu[]
+  nature_type NatureType[]
+  ninjaAttr NinjaAttr[]
+}
+
+model NinjaAttr {
+  id         Int     @id @default(autoincrement())
+  age        String? @db.VarChar(30)
+  height     String? @db.VarChar(30)
+  weight     String? @db.VarChar(30)
+  ninjaRank String? @db.VarChar(30)
+  ninjaId    Int
+  seasonId   Int
+  ninja      Ninja?  @relation(fields: [ninjaId], references: [id])
+  season     Season? @relation(fields: [seasonId], references: [id])
+
+  @@index([seasonId], name: "FK_852bfd4e14bf21c2b73c37dc32e")
+  @@index([ninjaId], name: "FK_8a1d40f5833ad577f58ebcbe6de")
+}
+
+
+
+
+
+model Occupation {
+  id               Int                @id @default(autoincrement())
+  name             String             @db.VarChar(255)
+  ninja Ninja[]
+}
+
+model Season {
+  id         Int          @id @default(autoincrement())
+  name       String       @db.VarChar(40)
+  ninjaAttr NinjaAttr[]
+}
+
+model Team {
+  id               Int                @id @default(autoincrement())
+  name             String             @db.VarChar(255)
+  description      String?            @db.Text
+  ninja Ninja[]
+  affiliation Affiliation[]
+}
+
+
+
+model Tools {
+  id            Int           @id @default(autoincrement())
+  name          String?       @db.VarChar(255)
+  description   String?       @db.Text
+  kanji         String?       @db.VarChar(255)
+  romaji        String?       @db.VarChar(255)
+  portugues     String?       @db.VarChar(255)
+  games         String?       @db.VarChar(255)
+  mangaPanini  String?       @db.VarChar(255)
+  tvBrasileira String?       @db.VarChar(255)
+  ninjas Ninja[]
+}
+
+enum ninja_sex {
+  Masculino
+  Feminino
+  Hermafrodita
+  Desconhecido
+}
