@@ -51,10 +51,9 @@ class Server implements ServerInterface {
 		/**
 		 * Create ApolloServer and Apply to APP Express
 		 */
-
 		const schema = await buildSchema({
 			resolvers: [NinjaResolver, FamilyResolver, TeamResolver, NinjaAttrResolver, JutsuResolver, ToolsResolver],
-			emitSchemaFile: path.resolve(__dirname, '../../__snapshots__/schema/schema.gql')
+			emitSchemaFile: true
 		});
 
 		const apolloServer = new ApolloServer({
