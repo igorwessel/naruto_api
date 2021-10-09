@@ -1,9 +1,9 @@
-import { PrismaClient } from '@prisma/client';
-import fs from 'fs/promises';
+const { PrismaClient } = require('@prisma/client');
+const fs = require('fs/promises');
 const prisma = new PrismaClient();
 
-async function main(): Promise<void> {
-	const files: string[] = await fs.readdir(`${__dirname}/init`);
+async function main() {
+	const files = await fs.readdir(`${__dirname}/init`);
 	files.sort((a, b) => {
 		const number = parseFloat(a.replace('.sql', ''));
 		const numberTwo = parseFloat(b.replace('.sql', ''));
@@ -19,7 +19,7 @@ async function main(): Promise<void> {
 	for (let file of files) {
 		const sql = await fs.readFile(`${__dirname}/init/${file}`, { encoding: 'utf-8' });
 		const table = sql.match(/(?<=INSERT INTO ")\w+/g);
-		await prisma.$executeRaw(sql);
+		await prisma.$executeRawUnsafe(sql);
 		console.log(`Seeding in: ${table}`);
 	}
 }
