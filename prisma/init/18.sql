@@ -1,4 +1,4 @@
-INSERT INTO `_JutsuToRenamedClass` (`A`, `B`) VALUES
+INSERT INTO "_JutsuToRenamedClass" ("A", "B") VALUES
 (1, 1),
 (1, 2),
 (2, 1),

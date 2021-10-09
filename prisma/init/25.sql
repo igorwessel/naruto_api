@@ -1,4 +1,4 @@
-INSERT INTO `_JutsuToNinja` ( `A`, `B`) VALUES
+INSERT INTO "_JutsuToNinja" ( "A", "B") VALUES
 ( 2385, 1),
 ( 262, 2),
 ( 2325, 2),

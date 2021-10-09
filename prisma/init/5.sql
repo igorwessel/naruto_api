@@ -1,4 +1,4 @@
-INSERT INTO `ClassificationJutsu` (`id`, `name`) VALUES
+INSERT INTO "ClassificationJutsu" ("id", "name") VALUES
 (1, 'Kekkei Genkai'),
 (2, 'Senjutsu'),
 (3, 'Ninjutsu'),

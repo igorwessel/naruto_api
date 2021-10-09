@@ -1,4 +1,4 @@
-INSERT INTO `_NinjaToTools` ( `A`, `B`) VALUES
+INSERT INTO "_NinjaToTools" ( "A", "B") VALUES
 (  2, 28),
 (  2, 41),
 (  4, 121),

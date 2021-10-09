@@ -1,4 +1,4 @@
-INSERT INTO `_ClassificationToNinja` (`B`, `A`) VALUES
+INSERT INTO "_ClassificationToNinja" ("B", "A") VALUES
 (1, 1),
 (5, 2),
 (22, 3),

@@ -1,4 +1,4 @@
-INSERT INTO `_AffiliationToTeam` (`B`, `A`) VALUES
+INSERT INTO "_AffiliationToTeam" ("B", "A") VALUES
 (1, 9),
 (4, 9),
 (6, 4),

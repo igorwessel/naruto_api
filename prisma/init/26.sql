@@ -1,4 +1,4 @@
-INSERT INTO `_NatureTypeToNinja` ( `B`, `A`) VALUES
+INSERT INTO "_NatureTypeToNinja" ( "B", "A") VALUES
 (   2, 1),
 (   2, 2),
 (   2, 3),

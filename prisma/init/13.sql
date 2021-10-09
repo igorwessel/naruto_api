@@ -1,4 +1,4 @@
-INSERT INTO `_NinjaToTeam` (`A`, `B`) VALUES
+INSERT INTO "_NinjaToTeam" ("A", "B") VALUES
 (2, 143),
 (2, 8),
 (4, 143),

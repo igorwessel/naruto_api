@@ -1,4 +1,4 @@
-INSERT INTO `_JutsuToNatureType` (`A`, `B`) VALUES
+INSERT INTO "_JutsuToNatureType" ("A", "B") VALUES
 (2, 1),
 (2, 4),
 (2, 8),
