@@ -77,7 +77,7 @@ class Server implements ServerInterface {
 							const maxComplexity = 500;
 							if (complexity > maxComplexity) {
 								throw new Error(
-									`Sorry, too complicated query! ${complexity} is over ${maxComplexity} that is the max allowed complexity. Try remove `
+									`Sorry, too complicated query! ${complexity} is over ${maxComplexity} that is the max allowed complexity. Try remove some fields`
 								);
 							}
 						}
