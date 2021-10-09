@@ -42,7 +42,7 @@ DB_PORT=
 DB_NAME=
 
 # Prisma Connection
-DATABASE_URL="mysql://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}?schema=public"
+DATABASE_URL="postgresql://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}?schema=public"
 ```
 
 ## 4. Rode o comando para criar o banco de dados
@@ -55,7 +55,7 @@ $ npx prisma migrate dev
 
 ```dosini
 $ yarn seed
-# Or npx prism db seed --preview-feature
+# Or npx prisma db seed --preview-feature
 ```
 
 ## 6. Rode o servidor
