@@ -1,9 +1,9 @@
 {
 	"compilerOptions": {
-		"target": "es6",
+		"target": "ES2016",
 		"rootDir": "src",
 		"outDir": "build",
-		"lib": ["es5", "es6", "ES2017", "dom"],
+		"lib": ["es5", "es6", "ES2017", "dom", "ES2016", "ESNext.AsyncIterable"],
 		"module": "CommonJS",
 		"strict": true,
 		"esModuleInterop": true,

@@ -1,35 +1,27 @@
-import { Entity, OneToMany, Column } from 'typeorm';
-import { NinjaTools } from './Ninja';
 import { ObjectType, Field } from 'type-graphql';
+import { Ninja } from './Ninja';
 import { BaseContent } from '../shared/BaseContent';
 
 @ObjectType()
-@Entity()
 export class Tools extends BaseContent {
-	@Field()
-	@Column({ nullable: true })
+	@Field({ nullable: true })
 	kanji: string;
 
-	@Field()
-	@Column({ nullable: true })
+	@Field({ nullable: true })
 	romaji: string;
 
-	@Field()
-	@Column({ nullable: true })
+	@Field({ nullable: true })
 	portugues: string;
 
-	@Field()
-	@Column({ nullable: true })
+	@Field({ nullable: true })
 	games: string;
 
-	@Field()
-	@Column({ nullable: true })
+	@Field({ nullable: true })
 	manga_panini: string;
 
-	@Field()
-	@Column({ nullable: true })
+	@Field({ nullable: true })
 	tv_brasileira: string;
 
-	@OneToMany(type => NinjaTools, ninja_tools => ninja_tools.tools)
-	ninja_tools: NinjaTools[];
+	@Field(() => Ninja, { nullable: true })
+	ninjas: Ninja[];
 }

@@ -1,195 +1,191 @@
-import {
-	JsonController,
-	Get,
-	QueryParams,
-	Param,
-	OnUndefined,
-	NotFoundError,
-	Params,
-	UseBefore
-} from 'routing-controllers';
-import { InjectRepository } from 'typeorm-typedi-extensions';
+import { JsonController, Get, QueryParams, Param, OnUndefined, NotFoundError, UseBefore } from 'routing-controllers';
 
 import { NinjaQueryParams } from '../types/NinjaQueryParams';
 
 import { NinjaNotFoundError } from '../errors/NinjaError';
-import { JutsuNotFound } from '../errors/JutsusError';
 import { AttributeNotFound } from '../errors/AttributesError';
 
-import { NinjaRepo } from '../../repos/NinjaRepo';
-import { NinjaAttrRepo } from '../../repos/NinjaAttrRepo';
-import { NinjaJutsuRepo } from '../../repos/NinjaJutsuRepo';
-import { NinjaToolsRepo } from '../../repos/NinjaToolsRepo';
-import { FamilyRepo } from '../../repos/FamilyRepo';
-import { NinjaTeamRepo } from '../../repos/NinjaTeamRepo';
-import { NinjaNatureTypeRepo } from '../../repos/NinjaNatureTypeRepo';
+import { NinjaWithAllRelations } from '../../shared/Ninja';
 
-import { treatmentName } from '../middlewares/NinjasMiddlewares';
+import { treatmentName } from '../middlewares/HelpersMiddlewares';
 
-@JsonController()
+import { prisma } from '../../prisma';
+
+@JsonController('/ninjas')
 export class NinjaController {
-	@InjectRepository(NinjaRepo)
-	private readonly ninjaRepo: NinjaRepo;
-
-	@InjectRepository(NinjaAttrRepo)
-	private readonly ninjaAttrRepo: NinjaAttrRepo;
-
-	@InjectRepository(NinjaJutsuRepo)
-	private readonly ninjaJutsuRepo: NinjaJutsuRepo;
-
-	@InjectRepository(NinjaToolsRepo)
-	private readonly ninjaToolsRepo: NinjaToolsRepo;
-
-	@InjectRepository(NinjaTeamRepo)
-	private readonly ninjaTeamRepo: NinjaTeamRepo;
-
-	@InjectRepository(NinjaNatureTypeRepo)
-	private readonly ninjaNatureTypeRepo: NinjaNatureTypeRepo;
-
-	@InjectRepository(FamilyRepo)
-	private readonly familyRepo: FamilyRepo;
-
-	@Get('/ninjas')
+	@Get('/')
 	@OnUndefined(NinjaNotFoundError)
 	async getAll(@QueryParams({ required: false }) { name, limit, offset, clan, sex }: NinjaQueryParams) {
-		const ninjas = await this.ninjaRepo.searchMany({ name, clan, sex }, offset, limit);
+		const ninjas = await prisma.ninja.findMany({
+			skip: offset,
+			take: limit,
+			include: {
+				occupation: true,
+				affiliation: true,
+				clan: true,
+				classification: true,
+				ninjaAttr: {
+					select: {
+						id: true,
+						age: true,
+						height: true,
+						weight: true,
+						ninjaRank: true,
+						season: { select: { name: true } }
+					}
+				},
+				jutsus: {
+					include: { nature_type: true }
+				},
+				familyParentToIdToNinja: {
+					select: {
+						id: true,
+						relationship: true,
+						parentFrom: { select: { name: true } }
+					}
+				},
+				tools: true,
+				team: true
+			}
+		});
 
-		return ninjas;
+		return ninjas.map(({ familyParentToIdToNinja, ninjaAttr, ...ninja }: NinjaWithAllRelations) => ({
+			...ninja,
+			family: familyParentToIdToNinja,
+			attributes: ninjaAttr
+		}));
 	}
 
-	@Get('/ninjas/:id([0-9]+)')
+	@Get('/:id([0-9]+)')
 	@OnUndefined(NinjaNotFoundError)
 	getNinjaByID(@Param('id') id: number) {
-		return this.ninjaRepo.findOne({
-			relations: ['occupation', 'affiliation', 'classification', 'clan'],
-			where: {
-				id
-			}
+		return prisma.ninja.findUnique({
+			where: { id },
+			include: { occupation: true, affiliation: true, clan: true, classification: true, nature_type: true }
 		});
 	}
 
-	@Get('/ninjas/:id([0-9]+)/attributes')
+	@Get('/:id([0-9]+)/attributes')
 	@OnUndefined(AttributeNotFound)
 	async getAttributes(@Param('id') id: number) {
-		const attributes = await this.ninjaAttrRepo.getByNinjaID(id);
+		const attributes = await prisma.ninja.findUnique({ where: { id } }).ninjaAttr({
+			select: { id: true, age: true, height: true, weight: true, ninjaRank: true, season: { select: { name: true } } }
+		});
 
 		if (attributes.length === 0) throw new NotFoundError('This ninja dont have attributes.');
 
 		return attributes;
 	}
 
-	@Get('/ninjas/:id([0-9]+)/jutsus')
+	@Get('/:id([0-9]+)/jutsus')
 	async getJutsus(@Param('id') id: number) {
-		const jutsus = await this.ninjaJutsuRepo.getByNinjaIDOrName(id);
+		const jutsus = await prisma.ninja.findUnique({ where: { id } }).jutsus({
+			include: { nature_type: true }
+		});
 
 		if (jutsus.length === 0) throw new NotFoundError("This ninja don't have jutsus.");
 
 		return jutsus;
 	}
 
-	@Get('/ninjas/:id([0-9]+)/family')
+	@Get('/:id([0-9]+)/family')
 	async getFamily(@Param('id') id: number) {
-		const family = await this.familyRepo.getByNinjaIDOrName(id);
+		const family = await prisma.ninja
+			.findUnique({ where: { id } })
+			.familyParentToIdToNinja({ select: { id: true, relationship: true, parentFrom: { select: { name: true } } } });
 
 		if (family.length === 0) throw new NotFoundError("This ninja don't have family.");
 
 		return family;
 	}
 
-	@Get('/ninjas/:id([0-9]+)/tools')
+	@Get('/:id([0-9]+)/tools')
 	async getTools(@Param('id') id: number) {
-		const tools = await this.ninjaToolsRepo.getByNinjaIDOrName(id);
+		const tools = await prisma.ninja.findUnique({ where: { id } }).tools();
 
 		if (tools.length === 0) throw new NotFoundError("This ninja don't have tools.");
 
 		return tools;
 	}
 
-	@Get('/ninjas/:id([0-9]+)/teams')
+	@Get('/:id([0-9]+)/teams')
 	async getTeams(@Param('id') id: number) {
-		const teams = await this.ninjaTeamRepo.getByNinjaIDOrName(id);
+		const teams = await prisma.ninja.findUnique({ where: { id } }).team();
 
 		if (teams.length === 0) throw new NotFoundError("This ninja don't have teams.");
 
 		return teams;
 	}
 
-	@Get('/ninjas/:id([0-9]+)/nature_types')
-	async getNatureType(@Param('id') id: number) {
-		const nature_type = await this.ninjaNatureTypeRepo.getByNinjaIDOrName(id);
-
-		if (nature_type.length === 0) throw new NotFoundError("This ninja don't have nature type.");
-
-		return nature_type;
-	}
-
-	@Get('/ninjas/:name([A-z_]+)')
+	@Get('/:name([a-z-]+)')
 	@UseBefore(treatmentName)
-	@OnUndefined(NinjaNotFoundError)
 	async getNinjaByName(@Param('name') name: string) {
-		return this.ninjaRepo.findOne({
-			relations: ['occupation', 'affiliation', 'classification', 'clan'],
-			where: {
-				name
-			}
+		const ninja = await prisma.ninja.findFirst({
+			where: { name: { contains: name } },
+			include: { occupation: true, affiliation: true, clan: true, classification: true }
 		});
+		if (!ninja) throw new NinjaNotFoundError();
+
+		return ninja;
 	}
 
-	@Get('/ninjas/:name([A-z_]+)/jutsus')
+	@Get('/:name([a-z-]+)/jutsus')
 	@UseBefore(treatmentName)
 	async getJutsusByNinjaName(@Param('name') name: string) {
-		const jutsus = await this.ninjaJutsuRepo.getByNinjaIDOrName(null, name);
+		const jutsus = await prisma.ninja
+			.findFirst({
+				where: { name: { contains: name } }
+			})
+			.jutsus();
 
 		if (jutsus.length === 0) throw new NotFoundError("This ninja don't have jutsus.");
 
 		return jutsus;
 	}
 
-	@Get('/ninjas/:name([A-z_]+)/attributes')
+	@Get('/:name([a-z-]+)/attributes')
 	@UseBefore(treatmentName)
-	async getAttributesByName(@Param('name') name: String) {
-		const attributes = await this.ninjaAttrRepo.getByNinjaName(name);
+	async getAttributesByName(@Param('name') name: string) {
+		const attributes = await prisma.ninja
+			.findFirst({
+				where: { name: { contains: name } }
+			})
+			.ninjaAttr({
+				select: { id: true, age: true, height: true, weight: true, ninjaRank: true, season: { select: { name: true } } }
+			});
 
 		if (attributes.length === 0) throw new NotFoundError('This ninja dont have attributes.');
 
 		return attributes;
 	}
 
-	@Get('/ninjas/:name([A-z_]+)/family')
+	@Get('/:name([a-z-]+)/family')
 	@UseBefore(treatmentName)
 	async getFamilyByNinjaName(@Param('name') name: string) {
-		const family = this.familyRepo.getByNinjaIDOrName(null, name);
+		const family = await prisma.ninja
+			.findFirst({ where: { name: { contains: name } } })
+			.familyParentToIdToNinja({ select: { id: true, relationship: true, parentFrom: { select: { name: true } } } });
 
 		return family;
 	}
 
-	@Get('/ninjas/:name([A-z_]+)/tools')
+	@Get('/:name([a-z-]+)/tools')
 	@UseBefore(treatmentName)
 	async getToolsByName(@Param('name') name: string) {
-		const tools = await this.ninjaToolsRepo.getByNinjaIDOrName(null, name);
+		const tools = await prisma.ninja.findFirst({ where: { name: { contains: name } } }).tools();
 
 		if (tools.length === 0) throw new NotFoundError("This ninja don't have tools.");
 
 		return tools;
 	}
 
-	@Get('/ninjas/:name([A-z_]+)/teams')
+	@Get('/:name([a-z-]+)/teams')
 	@UseBefore(treatmentName)
 	async getTeamsByName(@Param('name') name: string) {
-		const teams = await this.ninjaTeamRepo.getByNinjaIDOrName(null, name);
+		const teams = await prisma.ninja.findFirst({ where: { name: { contains: name } } }).team();
 
 		if (teams.length === 0) throw new NotFoundError("This ninja don't have teams.");
 
 		return teams;
-	}
-
-	@Get('/ninjas/:name([A-z_]+)/nature_types')
-	@UseBefore(treatmentName)
-	async getNatureTypeByName(@Param('name') name: string) {
-		const nature_type = await this.ninjaNatureTypeRepo.getByNinjaIDOrName(null, name);
-
-		if (nature_type.length === 0) throw new NotFoundError("This ninja don't have nature type.");
-
-		return nature_type;
 	}
 }
