@@ -11,11 +11,11 @@
 		"dev": "cross-env NODE_ENV=development nodemon -w src --ext ts --exec ts-node src/index.ts",
 		"test": "cross-env NODE_ENV=test mocha -r ts-node/register tests/**/*.spec.ts",
 		"build": "cross-env NODE_ENV=production tsc -p ./",
-		"seed": "npx prisma db seed --preview-feature",
+		"seed": "node prisma/seed.js",
 		"start": "node ./build"
 	},
 	"dependencies": {
-		"@prisma/client": "2.30.0",
+		"@prisma/client": "^3.2.1",
 		"apollo-server-express": "2.14.2",
 		"cors": "2.8.5",
 		"cross-env": "7.0.2",
