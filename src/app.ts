@@ -13,7 +13,7 @@ import { RateLimiter } from './rest/middlewares/RateLimiterMiddleware';
 /** GRAPHQL STUFF */
 import { buildSchema } from 'type-graphql';
 import { ApolloServer } from 'apollo-server-express';
-import { PrismaClient } from '.prisma/client';
+import { PrismaClient } from '@prisma/client';
 import { getComplexity, simpleEstimator, fieldExtensionsEstimator } from 'graphql-query-complexity';
 
 import { NinjaResolver } from './graphql/resolvers/NinjaResolver';
