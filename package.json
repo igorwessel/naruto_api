@@ -19,16 +19,17 @@
 		"apollo-server-express": "2.14.2",
 		"cors": "2.8.5",
 		"cross-env": "7.0.2",
+		"dotenv": "8.2.0",
 		"express": "4.17.1",
 		"graphql": "15.0.0",
 		"graphql-query-complexity": "0.9.0",
 		"graphql-tools": "6.0.9",
+		"ioredis": "^4.27.10",
 		"mysql": "2.18.1",
 		"rate-limiter-flexible": "2.2.4",
 		"reflect-metadata": "0.1.13",
 		"routing-controllers": "0.9.0",
-		"type-graphql": "1.0.0-rc.2",
-		"dotenv": "8.2.0"
+		"type-graphql": "1.0.0-rc.2"
 	},
 	"devDependencies": {
 		"@types/chai": "4.2.11",
