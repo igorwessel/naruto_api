@@ -12,7 +12,7 @@
 		"test": "cross-env NODE_ENV=test mocha -r ts-node/register tests/**/*.spec.ts",
 		"build": "cross-env NODE_ENV=production tsc -p ./",
 		"seed": "npx prisma db seed --preview-feature",
-		"start": "node build",
+		"start": "node ./build",
 		"postinstall": "yarn build"
 	},
 	"dependencies": {
