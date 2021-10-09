@@ -18,7 +18,7 @@ async function main(): Promise<void> {
 
 	for (let file of files) {
 		const sql = await fs.readFile(`${__dirname}/init/${file}`, { encoding: 'utf-8' });
-		const table = sql.match(/(?<=INSERT INTO `)\w+/g);
+		const table = sql.match(/(?<=INSERT INTO ")\w+/g);
 		await prisma.$executeRaw(sql);
 		console.log(`Seeding in: ${table}`);
 	}
