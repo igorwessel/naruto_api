@@ -3,7 +3,7 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
@@ -65,7 +65,7 @@ model Jutsu {
   tvBrasileira        String?                @db.VarChar(255)
   range                String?                @db.VarChar(255)
   rank                 String?                @db.VarChar(255)
-  handSeals           String?                @db.LongText
+  handSeals           String?                @db.Text
   classification ClassificationJutsu[]
   ninja Ninja[]
   nature_type NatureType[]
