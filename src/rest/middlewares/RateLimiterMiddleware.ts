@@ -5,12 +5,14 @@ import Redis from 'ioredis';
 
 @Middleware({ type: 'before' })
 export class RateLimiter implements ExpressMiddlewareInterface {
-	private _redisClient = new Redis({
+	private _options = {
 		port: parseInt(process.env.REDIS_PORT) || 6379,
 		db: parseInt(process.env.REDIS_DB) || 0,
 		host: process.env.REDIS_HOST || '127.0.0.1',
 		enableOfflineQueue: false
-	});
+	};
+
+	private _redisClient = process.env.REDIS_URL ? new Redis(process.env.REDIS_URL) : new Redis(this._options);
 
 	private _rateLimiterOptions = {
 		storeClient: this._redisClient,

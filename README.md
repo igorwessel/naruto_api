@@ -34,6 +34,11 @@ REDIS_PORT=
 REDIS_HOST=
 REDIS_DB=
 
+# Username can also be passed via URI.
+# It's worth to noticing that for compatibility reasons `allowUsernameInURI`
+# need to be provided, otherwise the username part will be ignored.
+REDIS_URL="redis://username:authpassword@127.0.0.1:6380/4?allowUsernameInURI=true"
+
 # DB Settings for Prisma and Docker
 DB_USER=
 DB_PASSWORD=
