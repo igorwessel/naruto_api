@@ -121,7 +121,7 @@ export class NinjaController {
 	@UseBefore(treatmentName)
 	async getNinjaByName(@Param('name') name: string) {
 		const ninja = await prisma.ninja.findFirst({
-			where: { name: { contains: name } },
+			where: { name: { contains: name, mode: 'insensitive' } },
 			include: { occupation: true, affiliation: true, clan: true, classification: true }
 		});
 		if (!ninja) throw new NinjaNotFoundError();
@@ -134,7 +134,7 @@ export class NinjaController {
 	async getJutsusByNinjaName(@Param('name') name: string) {
 		const jutsus = await prisma.ninja
 			.findFirst({
-				where: { name: { contains: name } }
+				where: { name: { contains: name, mode: 'insensitive' } }
 			})
 			.jutsus();
 
@@ -148,7 +148,7 @@ export class NinjaController {
 	async getAttributesByName(@Param('name') name: string) {
 		const attributes = await prisma.ninja
 			.findFirst({
-				where: { name: { contains: name } }
+				where: { name: { contains: name, mode: 'insensitive' } }
 			})
 			.ninjaAttr({
 				select: { id: true, age: true, height: true, weight: true, ninjaRank: true, season: { select: { name: true } } }
@@ -163,7 +163,9 @@ export class NinjaController {
 	@UseBefore(treatmentName)
 	async getFamilyByNinjaName(@Param('name') name: string) {
 		const family = await prisma.ninja
-			.findFirst({ where: { name: { contains: name } } })
+			.findFirst({
+				where: { name: { contains: name, mode: 'insensitive' } }
+			})
 			.familyParentToIdToNinja({ select: { id: true, relationship: true, parentFrom: { select: { name: true } } } });
 
 		return family;
@@ -172,7 +174,11 @@ export class NinjaController {
 	@Get('/:name([a-z-]+)/tools')
 	@UseBefore(treatmentName)
 	async getToolsByName(@Param('name') name: string) {
-		const tools = await prisma.ninja.findFirst({ where: { name: { contains: name } } }).tools();
+		const tools = await prisma.ninja
+			.findFirst({
+				where: { name: { contains: name, mode: 'insensitive' } }
+			})
+			.tools();
 
 		if (tools.length === 0) throw new NotFoundError("This ninja don't have tools.");
 
@@ -182,7 +188,11 @@ export class NinjaController {
 	@Get('/:name([a-z-]+)/teams')
 	@UseBefore(treatmentName)
 	async getTeamsByName(@Param('name') name: string) {
-		const teams = await prisma.ninja.findFirst({ where: { name: { contains: name } } }).team();
+		const teams = await prisma.ninja
+			.findFirst({
+				where: { name: { contains: name, mode: 'insensitive' } }
+			})
+			.team();
 
 		if (teams.length === 0) throw new NotFoundError("This ninja don't have teams.");
 
