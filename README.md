@@ -1,10 +1,15 @@
 # NarutoAPI
 
-Criei essa API para exercitar o meu conhecimento referente ao backend e tambem para aprendizado do GraphQL junto com Typescript. A ideia de criar essa API surgiu do meu irmão mais novo que é fascinado no Naruto já assistiu o clássico/shippuden e atualmente está lendo o manga. Achei que seria interessante criar uma API pública para que todo mundo possa desfrutar/usar para seus projetos pessoais e afins.
+Criei essa API para exercitar o meu conhecimento referente ao backend e tambem para aprendizado do GraphQL junto com Typescript. A ideia de criar essa API surgiu do meu irmão mais novo que é fascinado no Naruto já assistiu o clássico/shippuden e atualmente está lendo o manga. Achei que seria interessante criar uma API pública para que todo mundo possa desfrutar/usar para seus projetos pessoais e afins. [NarutoAPI](http://www.narutoapi.com.br/api/v1/rest)
 
-# Todo List
+# Endpoints
 
-- [] Adicionar Testes
+- Rest (v1/rest) 
+  ```
+  List all routes for REST endpoint.
+  ```
+- GraphQL (v1/graphql)
+
 
 # Como iniciar o projeto
 
@@ -77,3 +82,8 @@ $ npx prisma migrate deploy
 $ yarn seed # or npx prisma db seed --preview-feature
 $ yarn start # builda o projeto e starta o servidor
 ```
+
+
+# Todo List
+
+- [] Adicionar Testes
