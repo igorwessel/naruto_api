@@ -1,10 +1,14 @@
 import { pipe } from 'fp-ts/function'
 import { validatorCompiler } from './request_validator'
-import { ParamsType, paramsType } from '~/types/params'
+import * as t from 'io-ts'
 
-const makeValidationData = pipe(validatorCompiler<ParamsType>(), inject =>
+const schema = t.type({
+  ninja: t.string,
+})
+
+const makeValidationData = pipe(validatorCompiler<t.TypeOf<typeof schema>>(), inject =>
   inject({
-    schema: paramsType,
+    schema,
     httpPart: 'params',
     method: 'GET',
     url: 'a/:ninja',
@@ -16,7 +20,5 @@ it.each([[{ ninja: '1' }], [{ ninja: 'naruto-uzumaki' }]])('should validate prop
 })
 
 it('should return error when not pass in validation of schema', () => {
-  return pipe(makeValidationData({ ninja: 'pascalCase' }), error =>
-    expect(error).toStrictEqual({ error: expect.anything() })
-  )
+  return pipe(makeValidationData({ ninja: 1 }), error => expect(error).toStrictEqual({ error: expect.anything() }))
 })
