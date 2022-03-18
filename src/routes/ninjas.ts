@@ -4,7 +4,7 @@ import * as t from 'io-ts'
 import * as TE from 'fp-ts/TaskEither'
 import { pipe } from 'fp-ts/function'
 
-import { getNinjaFamily, getNinjas, getNinjaTools, getUniqueNinja } from '~/handlers/ninjas'
+import { getNinjaAttributes, getNinjaFamily, getNinjas, getNinjaTools, getUniqueNinja } from '~/handlers/ninjas'
 
 import { validatorCompiler } from '~/services/request_validator'
 import { ParamsType, paramsType } from '~/types/params'
@@ -23,7 +23,7 @@ export const routes = (app: FastifyInstance): FastifyInstance =>
       unknown,
       t.Type<PaginationType>
     >(
-      '/ninjas',
+      '/',
       {
         schema: {
           querystring: paginationCodec,
@@ -48,7 +48,7 @@ export const routes = (app: FastifyInstance): FastifyInstance =>
       unknown,
       t.Type<ParamsType>
     >(
-      '/ninjas/:ninja',
+      '/:ninja',
       {
         schema: {
           params: paramsType,
@@ -70,7 +70,7 @@ export const routes = (app: FastifyInstance): FastifyInstance =>
       unknown,
       t.Type<ParamsType>
     >(
-      '/ninjas/:ninja/tools',
+      '/:ninja/tools',
       {
         schema: {
           params: paramsType,
@@ -92,7 +92,7 @@ export const routes = (app: FastifyInstance): FastifyInstance =>
       unknown,
       t.Type<ParamsType>
     >(
-      '/ninjas/:ninja/family',
+      '/:ninja/family',
       {
         schema: {
           params: paramsType,
@@ -102,6 +102,28 @@ export const routes = (app: FastifyInstance): FastifyInstance =>
       (req, reply) => {
         pipe(
           getNinjaFamily(reply, req.params.ninja),
+          TE.map(family => reply.send(family)),
+          TE.mapLeft(err => reply.code(err.statusCode).send(err))
+        )()
+      }
+    )
+    .get<
+      {
+        Params: NinjaParam
+      },
+      unknown,
+      t.Type<ParamsType>
+    >(
+      '/:ninja/attributes',
+      {
+        schema: {
+          params: paramsType,
+        },
+        validatorCompiler: validatorCompiler(),
+      },
+      (req, reply) => {
+        pipe(
+          getNinjaAttributes(reply, req.params.ninja),
           TE.map(family => reply.send(family)),
           TE.mapLeft(err => reply.code(err.statusCode).send(err))
         )()

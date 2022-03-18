@@ -6,7 +6,7 @@ import { pipe } from 'fp-ts/function'
 import * as TE from 'fp-ts/TaskEither'
 
 import { Context, createMockContext, MockContext } from '~/__mocks__/prisma'
-import { getUniqueNinja, getNinjas, getNinjaFamily, getNinjaTools } from './ninjas'
+import { getUniqueNinja, getNinjas, getNinjaFamily, getNinjaTools, getNinjaAttributes } from './ninjas'
 
 type NinjaWithRelations = Ninja & {
   occupation: Occupation[]
@@ -216,41 +216,7 @@ describe('getNinjas', () => {
   })
 })
 
-describe('Relations', () => {
-  it('should return 404 error when family not found', () => {
-    const familyParentToIdToNinja = jest.fn().mockResolvedValue([])
-
-    mockCtx.prisma.ninja.findFirst.mockReturnValue({
-      familyParentToIdToNinja,
-    } as never)
-
-    const family = getNinjaFamily(reply, '1')
-
-    return pipe(
-      family,
-      TE.mapLeft(err => expect(err).toMatchObject({ statusCode: 404 }))
-    )()
-  })
-
-  it('should get family from a ninja', () => {
-    const familyParentToIdToNinja = jest
-      .fn()
-      .mockResolvedValue([{ id: 1, relationship: 'Pai', parentFrom: { name: 'A (Quarto Raikage)' } }])
-
-    mockCtx.prisma.ninja.findFirst.mockReturnValue({
-      familyParentToIdToNinja,
-    } as never)
-
-    const family = getNinjaFamily(reply, '1')
-
-    return pipe(
-      family,
-      TE.map(family =>
-        expect(family).toStrictEqual([{ id: 1, relationship: 'Pai', parentFrom: { name: 'A (Quarto Raikage)' } }])
-      )
-    )()
-  })
-
+describe('getNinjaTools', () => {
   it('should return 404 error when tools not found', () => {
     const tools = jest.fn().mockResolvedValue([])
 
@@ -306,6 +272,75 @@ describe('Relations', () => {
           },
         ])
       )
+    )()
+  })
+})
+
+describe('getNinjaFamily', () => {
+  it('should return 404 error when family not found', () => {
+    const familyParentToIdToNinja = jest.fn().mockResolvedValue([])
+
+    mockCtx.prisma.ninja.findFirst.mockReturnValue({
+      familyParentToIdToNinja,
+    } as never)
+
+    const family = getNinjaFamily(reply, '1')
+
+    return pipe(
+      family,
+      TE.mapLeft(err => expect(err).toMatchObject({ statusCode: 404 }))
+    )()
+  })
+
+  it('should get family from a ninja', () => {
+    const familyParentToIdToNinja = jest
+      .fn()
+      .mockResolvedValue([{ id: 1, relationship: 'Pai', parentFrom: { name: 'A (Quarto Raikage)' } }])
+
+    mockCtx.prisma.ninja.findFirst.mockReturnValue({
+      familyParentToIdToNinja,
+    } as never)
+
+    const family = getNinjaFamily(reply, '1')
+
+    return pipe(
+      family,
+      TE.map(family =>
+        expect(family).toStrictEqual([{ id: 1, relationship: 'Pai', parentFrom: { name: 'A (Quarto Raikage)' } }])
+      )
+    )()
+  })
+})
+
+describe('getNinjaAttributes', () => {
+  it('should get attributes from a ninja', () => {
+    const attributes = [
+      { id: 3, age: '47 anos', height: '101.1 kg', weight: '198.2 cm', ninjaRank: null, season: { name: 'Parte II' } },
+      { id: 4, age: '62-63 anos', height: null, weight: null, ninjaRank: null, season: { name: 'Periodo em Branco' } },
+    ]
+
+    const ninjaAttr = jest.fn().mockResolvedValue(attributes)
+
+    mockCtx.prisma.ninja.findFirst.mockReturnValue({ ninjaAttr } as never)
+
+    const attributesResponse = getNinjaAttributes(reply, '1')
+
+    return pipe(
+      attributesResponse,
+      TE.map(attributesResponse => expect(attributesResponse).toStrictEqual(attributes))
+    )()
+  })
+
+  it('should return 404 error when attributes not found', () => {
+    const ninjaAttr = jest.fn().mockResolvedValue([])
+
+    mockCtx.prisma.ninja.findFirst.mockReturnValue({ ninjaAttr } as never)
+
+    const attributesResponse = getNinjaAttributes(reply, '1')
+
+    return pipe(
+      attributesResponse,
+      TE.mapLeft(e => expect(e).toMatchObject({ statusCode: 404 }))
     )()
   })
 })

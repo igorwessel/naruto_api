@@ -116,3 +116,24 @@ export const getNinjaFamily = (reply: FastifyReply, param: string) =>
     ),
     validateIsEmpty(`Ninja ${param} don't have family.`)
   )
+
+export const getNinjaAttributes = (reply: FastifyReply, param: string) =>
+  pipe(
+    param,
+    makeWhereNinja,
+    TE.tryCatchK(
+      where =>
+        reply.server.prisma.ninja.findFirst({ where }).ninjaAttr({
+          select: {
+            id: true,
+            age: true,
+            height: true,
+            weight: true,
+            ninjaRank: true,
+            season: { select: { name: true } },
+          },
+        }),
+      makeErrorOutput
+    ),
+    validateIsEmpty(`Ninja ${param} don't have attributes.`)
+  )
