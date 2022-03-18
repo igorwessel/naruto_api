@@ -6,7 +6,7 @@ import { pipe } from 'fp-ts/function'
 import * as TE from 'fp-ts/TaskEither'
 
 import { Context, createMockContext, MockContext } from '~/__mocks__/prisma'
-import { getUniqueNinja, getNinjas } from './ninjas'
+import { getUniqueNinja, getNinjas, getNinjaFamily, getNinjaTools } from './ninjas'
 
 type NinjaWithRelations = Ninja & {
   occupation: Occupation[]
@@ -58,10 +58,10 @@ beforeEach(() => {
 })
 
 describe('getUniqueNinja', () => {
-  it('should get a ninja by id', async () => {
+  it('should get a ninja by id', () => {
     mockCtx.prisma.ninja.findFirst.mockResolvedValue(ninjaMock)
 
-    const ninja = await getUniqueNinja(reply, idParam)
+    const ninja = getUniqueNinja(reply, idParam)
 
     return pipe(
       ninja,
@@ -69,10 +69,10 @@ describe('getUniqueNinja', () => {
     )()
   })
 
-  it('should get a ninja by name', async () => {
+  it('should get a ninja by name', () => {
     mockCtx.prisma.ninja.findFirst.mockResolvedValue(ninjaMock)
 
-    const ninja = await getUniqueNinja(reply, nameParam)
+    const ninja = getUniqueNinja(reply, nameParam)
 
     return pipe(
       ninja,
@@ -80,22 +80,22 @@ describe('getUniqueNinja', () => {
     )()
   })
 
-  it('should return a 404 error when not found', async () => {
-    mockCtx.prisma.ninja.findFirst.mockRejectedValue(null)
+  it('should return a 404 error when not found', () => {
+    mockCtx.prisma.ninja.findFirst.mockRejectedValue(new Error('s'))
 
-    const ninja = await getUniqueNinja(reply, '1')
+    const ninja = getUniqueNinja(reply, '1')
 
     return pipe(
       ninja,
       TE.mapLeft(error =>
-        expect(error).toStrictEqual({ statusCode: 404, error: expect.any(String), message: expect.any(String) })
+        expect(error).toMatchObject({ statusCode: 404, error: expect.any(String), message: expect.any(String) })
       )
     )()
   })
 })
 
 describe('getNinjas', () => {
-  it('should get array of ninjas', async () => {
+  it('should get array of ninjas', () => {
     const ninjasMock: NinjaWithRelations & {
       familyParentToIdToNinja: { id: number; relationship: string; parentFrom: { name: string } }[]
       ninjaAttr: {
@@ -207,11 +207,105 @@ describe('getNinjas', () => {
 
     mockCtx.prisma.ninja.findMany.mockResolvedValue([ninjasMock])
 
-    const ninjas = await getNinjas(reply, { limit: 15, offset: 0 })
+    const ninjas = getNinjas(reply, { limit: 15, offset: 0 })
 
     return pipe(
       ninjas,
       TE.map(ninjas => expect(ninjas).toStrictEqual([response]))
+    )()
+  })
+})
+
+describe('Relations', () => {
+  it('should return 404 error when family not found', () => {
+    const familyParentToIdToNinja = jest.fn().mockResolvedValue([])
+
+    mockCtx.prisma.ninja.findFirst.mockReturnValue({
+      familyParentToIdToNinja,
+    } as never)
+
+    const family = getNinjaFamily(reply, '1')
+
+    return pipe(
+      family,
+      TE.mapLeft(err => expect(err).toMatchObject({ statusCode: 404 }))
+    )()
+  })
+
+  it('should get family from a ninja', () => {
+    const familyParentToIdToNinja = jest
+      .fn()
+      .mockResolvedValue([{ id: 1, relationship: 'Pai', parentFrom: { name: 'A (Quarto Raikage)' } }])
+
+    mockCtx.prisma.ninja.findFirst.mockReturnValue({
+      familyParentToIdToNinja,
+    } as never)
+
+    const family = getNinjaFamily(reply, '1')
+
+    return pipe(
+      family,
+      TE.map(family =>
+        expect(family).toStrictEqual([{ id: 1, relationship: 'Pai', parentFrom: { name: 'A (Quarto Raikage)' } }])
+      )
+    )()
+  })
+
+  it('should return 404 error when tools not found', () => {
+    const tools = jest.fn().mockResolvedValue([])
+
+    mockCtx.prisma.ninja.findFirst.mockReturnValue({
+      tools,
+    } as never)
+
+    const toolsResult = getNinjaTools(reply, '1')
+
+    return pipe(
+      toolsResult,
+      TE.mapLeft(err => expect(err).toMatchObject({ statusCode: 404 }))
+    )()
+  })
+
+  it('should get tools from a ninja', () => {
+    const tools = jest.fn().mockResolvedValue([
+      {
+        id: 41,
+        name: 'Canhão de Chakra',
+        description:
+          'Canhões de Chakra foram um conjunto de armas de longo alcance especializadas que disparavam feixes de chakra. Essa arma é carregada com chakra de grupos de shinobi. Estes equipamentos foram utilizados para destruir a Lua, a qual estava caindo em direção à Terra por causa de Toneri Ōtsutsuki. Essa foi uma arma ocultada pelo Quarto Raikage, após a Quarta Guerra Mundial Ninja. Por questões de disparo, o equipamento consistia de três bocais (canos).',
+        kanji: null,
+        romaji: null,
+        portugues: null,
+        games: null,
+        mangaPanini: null,
+        tvBrasileira: null,
+      },
+    ])
+
+    mockCtx.prisma.ninja.findFirst.mockReturnValue({
+      tools,
+    } as never)
+
+    const toolsResult = getNinjaTools(reply, '1')
+
+    return pipe(
+      toolsResult,
+      TE.map(family =>
+        expect(family).toStrictEqual([
+          {
+            id: 41,
+            name: 'Canhão de Chakra',
+            description:
+              'Canhões de Chakra foram um conjunto de armas de longo alcance especializadas que disparavam feixes de chakra. Essa arma é carregada com chakra de grupos de shinobi. Estes equipamentos foram utilizados para destruir a Lua, a qual estava caindo em direção à Terra por causa de Toneri Ōtsutsuki. Essa foi uma arma ocultada pelo Quarto Raikage, após a Quarta Guerra Mundial Ninja. Por questões de disparo, o equipamento consistia de três bocais (canos).',
+            kanji: null,
+            romaji: null,
+            portugues: null,
+            games: null,
+            mangaPanini: null,
+            tvBrasileira: null,
+          },
+        ])
+      )
     )()
   })
 })

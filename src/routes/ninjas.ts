@@ -4,7 +4,7 @@ import * as t from 'io-ts'
 import * as TE from 'fp-ts/TaskEither'
 import { pipe } from 'fp-ts/function'
 
-import { getNinjaRelation, getNinjas, getUniqueNinja } from '~/handlers/ninjas'
+import { getNinjaFamily, getNinjas, getNinjaTools, getUniqueNinja } from '~/handlers/ninjas'
 
 import { validatorCompiler } from '~/services/request_validator'
 import { ParamsType, paramsType } from '~/types/params'
@@ -14,7 +14,7 @@ type NinjaParam = {
   ninja: string
 }
 
-export const routes = async (app: FastifyInstance): Promise<FastifyInstance> =>
+export const routes = (app: FastifyInstance): FastifyInstance =>
   app
     .get<
       {
@@ -28,16 +28,14 @@ export const routes = async (app: FastifyInstance): Promise<FastifyInstance> =>
         schema: {
           querystring: paginationCodec,
         },
-        validatorCompiler: validatorCompiler<PaginationType>(),
+        validatorCompiler: validatorCompiler(),
       },
-      async (req, reply) => {
-        const ninjas = await getNinjas(reply, {
-          limit: parseInt(req.query.limit ?? '15'),
-          offset: parseInt(req.query.offset ?? '0'),
-        })
-
-        return pipe(
-          ninjas,
+      (req, reply) => {
+        pipe(
+          getNinjas(reply, {
+            limit: parseInt(req.query.limit ?? '15'),
+            offset: parseInt(req.query.offset ?? '0'),
+          }),
           TE.map(ninjas => reply.send(ninjas)),
           TE.mapLeft(e => reply.send(e))
         )()
@@ -55,26 +53,57 @@ export const routes = async (app: FastifyInstance): Promise<FastifyInstance> =>
         schema: {
           params: paramsType,
         },
-        validatorCompiler: validatorCompiler<ParamsType>(),
+        validatorCompiler: validatorCompiler(),
       },
-      async (req, reply) => {
-        const ninja = await getUniqueNinja(reply, req.params.ninja)
-
-        return pipe(
-          ninja,
+      (req, reply) => {
+        pipe(
+          getUniqueNinja(reply, req.params.ninja),
           TE.map(ninja => reply.send(ninja)),
           TE.mapLeft(e => reply.code(e.statusCode).send(e))
         )()
       }
     )
-    .get<{
-      Params: NinjaParam
-    }>('/ninjas/:ninja/tools', async (req, reply) => {
-      const tools = await getNinjaRelation(reply, req.params.ninja)
-
-      return pipe(
-        tools,
-        TE.map(tools => reply.send(tools)),
-        TE.mapLeft(e => reply.code(e.statusCode).send(e))
-      )()
-    })
+    .get<
+      {
+        Params: NinjaParam
+      },
+      unknown,
+      t.Type<ParamsType>
+    >(
+      '/ninjas/:ninja/tools',
+      {
+        schema: {
+          params: paramsType,
+        },
+        validatorCompiler: validatorCompiler(),
+      },
+      (req, reply) => {
+        pipe(
+          getNinjaTools(reply, req.params.ninja),
+          TE.map(tools => reply.send(tools)),
+          TE.mapLeft(err => reply.code(err.statusCode).send(err))
+        )()
+      }
+    )
+    .get<
+      {
+        Params: NinjaParam
+      },
+      unknown,
+      t.Type<ParamsType>
+    >(
+      '/ninjas/:ninja/family',
+      {
+        schema: {
+          params: paramsType,
+        },
+        validatorCompiler: validatorCompiler(),
+      },
+      (req, reply) => {
+        pipe(
+          getNinjaFamily(reply, req.params.ninja),
+          TE.map(family => reply.send(family)),
+          TE.mapLeft(err => reply.code(err.statusCode).send(err))
+        )()
+      }
+    )

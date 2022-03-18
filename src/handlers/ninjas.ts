@@ -1,28 +1,30 @@
 import { FastifyReply } from 'fastify'
 import { Prisma } from '@prisma/client'
 
-import * as E from 'fp-ts/Either'
 import * as TE from 'fp-ts/TaskEither'
-
 import { flow, pipe } from 'fp-ts/function'
 
 import { isID as validateID } from '~/services/regex'
-import { notFoundError } from '~/services/errors'
+import { makeErrorOutput, notFoundError } from '~/services/errors'
 import { sanitize } from '~/services/string'
 
-const makeWhereNinja = (param: string) =>
-  flow(
-    validateID,
-    (isId): Prisma.NinjaWhereInput =>
-      isId
-        ? {
-            id: { equals: parseInt(param) },
-          }
-        : { name: { contains: sanitize(param), mode: 'insensitive' } }
-  )
+const makeWhereNinja = flow(
+  (param: string): [boolean, string] => [validateID(param), param],
+  ([isID, param]): Prisma.NinjaWhereInput =>
+    isID
+      ? {
+          id: { equals: parseInt(param) },
+        }
+      : { name: { contains: sanitize(param), mode: 'insensitive' } }
+)
 
-export const getNinjas = async (reply: FastifyReply, pagination: { limit: number; offset: number }) => {
-  return pipe(
+const isEmpty = (message: string) => <A = unknown>(arr: A[]) =>
+  arr.length === 0 ? TE.left(notFoundError(message)) : TE.right(arr)
+
+const validateIsEmpty = flow(isEmpty, TE.chain)
+
+export const getNinjas = (reply: FastifyReply, pagination: { limit: number; offset: number }) =>
+  pipe(
     pagination,
     TE.tryCatchK(
       pagination =>
@@ -58,7 +60,7 @@ export const getNinjas = async (reply: FastifyReply, pagination: { limit: number
             team: true,
           },
         }),
-      E.toError
+      makeErrorOutput
     ),
     TE.map(ninjas =>
       ninjas.map(({ familyParentToIdToNinja, ninjaAttr, ...ninja }) => ({
@@ -68,12 +70,11 @@ export const getNinjas = async (reply: FastifyReply, pagination: { limit: number
       }))
     )
   )
-}
 
-export const getUniqueNinja = async (reply: FastifyReply, param: string) => {
-  return pipe(
+export const getUniqueNinja = (reply: FastifyReply, param: string) =>
+  pipe(
     param,
-    makeWhereNinja(param),
+    makeWhereNinja,
     TE.tryCatchK(
       where =>
         reply.server.prisma.ninja.findFirst({
@@ -81,26 +82,37 @@ export const getUniqueNinja = async (reply: FastifyReply, param: string) => {
           include: { occupation: true, affiliation: true, clan: true, classification: true },
           rejectOnNotFound: true,
         }),
-      E.toError
+      makeErrorOutput
     ),
     TE.mapLeft(() => notFoundError(`Ninja ${param} not found.`))
   )
-}
 
-export const getNinjaRelation = async (reply: FastifyReply, param: string) => {
-  return pipe(
+export const getNinjaTools = (reply: FastifyReply, param: string) =>
+  pipe(
     param,
-    makeWhereNinja(param),
+    makeWhereNinja,
     TE.tryCatchK(
       where =>
         reply.server.prisma.ninja
           .findFirst({
             where,
-            rejectOnNotFound: true,
           })
           .tools(),
-      E.toError
+      makeErrorOutput
     ),
-    TE.mapLeft(() => notFoundError(`Ninja not have tools.`))
+    validateIsEmpty(`Ninja ${param} don't have tools.`)
   )
-}
+
+export const getNinjaFamily = (reply: FastifyReply, param: string) =>
+  pipe(
+    param,
+    makeWhereNinja,
+    TE.tryCatchK(
+      where =>
+        reply.server.prisma.ninja.findFirst({ where }).familyParentToIdToNinja({
+          select: { id: true, relationship: true, parentFrom: { select: { name: true } } },
+        }),
+      makeErrorOutput
+    ),
+    validateIsEmpty(`Ninja ${param} don't have family.`)
+  )
