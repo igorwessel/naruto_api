@@ -137,3 +137,17 @@ export const getNinjaAttributes = (reply: FastifyReply, param: string) =>
     ),
     validateIsEmpty(`Ninja ${param} don't have attributes.`)
   )
+
+export const getNinjaJutsus = (reply: FastifyReply, param: string) =>
+  pipe(
+    param,
+    makeWhereNinja,
+    TE.tryCatchK(
+      where =>
+        reply.server.prisma.ninja.findFirst({ where }).jutsus({
+          include: { nature_type: true },
+        }),
+      makeErrorOutput
+    ),
+    validateIsEmpty(`Ninja ${param} don't have jutsus.`)
+  )

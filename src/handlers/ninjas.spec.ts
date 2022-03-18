@@ -6,7 +6,7 @@ import { pipe } from 'fp-ts/function'
 import * as TE from 'fp-ts/TaskEither'
 
 import { Context, createMockContext, MockContext } from '~/__mocks__/prisma'
-import { getUniqueNinja, getNinjas, getNinjaFamily, getNinjaTools, getNinjaAttributes } from './ninjas'
+import { getUniqueNinja, getNinjas, getNinjaFamily, getNinjaTools, getNinjaAttributes, getNinjaJutsus } from './ninjas'
 
 type NinjaWithRelations = Ninja & {
   occupation: Occupation[]
@@ -340,6 +340,53 @@ describe('getNinjaAttributes', () => {
 
     return pipe(
       attributesResponse,
+      TE.mapLeft(e => expect(e).toMatchObject({ statusCode: 404 }))
+    )()
+  })
+})
+
+describe('getNinjaJutsus', () => {
+  it('should get jutsus from a ninja', () => {
+    const jutsusMock = [
+      {
+        id: 2385,
+        name: 'Técnica de Invocação',
+        description:
+          'A Técnica de Invocação é um ninjutsu de espaço-tempo que permite que o invocador transporte animais ou pessoas através de longas distâncias instantaneamente através do sangue do usuário.',
+        kanji: '口寄せの術',
+        romaji: 'Kuchiyose no Jutsu',
+        portugues: 'Técnica de Invocação',
+        games: null,
+        mangaPanini: null,
+        tvBrasileira: 'Jutsu de Invocação',
+        range: null,
+        rank: 'Rank C',
+        handSeals: 'Javali → Cao → Passaro → Macaco → Carneiro[3]',
+        nature_type: [],
+      },
+    ]
+
+    const jutsus = jest.fn().mockResolvedValue(jutsusMock)
+
+    mockCtx.prisma.ninja.findFirst.mockReturnValue({ jutsus } as never)
+
+    const jutsusResponse = getNinjaJutsus(reply, '1')
+
+    return pipe(
+      jutsusResponse,
+      TE.map(jutsusResponse => expect(jutsusResponse).toStrictEqual(jutsusMock))
+    )()
+  })
+
+  it('should return 404 error when attributes not found', () => {
+    const jutsus = jest.fn().mockResolvedValue([])
+
+    mockCtx.prisma.ninja.findFirst.mockReturnValue({ jutsus } as never)
+
+    const jutsusResponse = getNinjaJutsus(reply, '1')
+
+    return pipe(
+      jutsusResponse,
       TE.mapLeft(e => expect(e).toMatchObject({ statusCode: 404 }))
     )()
   })

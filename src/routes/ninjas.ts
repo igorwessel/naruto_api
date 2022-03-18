@@ -4,7 +4,14 @@ import * as t from 'io-ts'
 import * as TE from 'fp-ts/TaskEither'
 import { pipe } from 'fp-ts/function'
 
-import { getNinjaAttributes, getNinjaFamily, getNinjas, getNinjaTools, getUniqueNinja } from '~/handlers/ninjas'
+import {
+  getNinjaAttributes,
+  getNinjaFamily,
+  getNinjaJutsus,
+  getNinjas,
+  getNinjaTools,
+  getUniqueNinja,
+} from '~/handlers/ninjas'
 
 import { validatorCompiler } from '~/services/request_validator'
 import { ParamsType, paramsType } from '~/types/params'
@@ -124,7 +131,29 @@ export const routes = (app: FastifyInstance): FastifyInstance =>
       (req, reply) => {
         pipe(
           getNinjaAttributes(reply, req.params.ninja),
-          TE.map(family => reply.send(family)),
+          TE.map(attributes => reply.send(attributes)),
+          TE.mapLeft(err => reply.code(err.statusCode).send(err))
+        )()
+      }
+    )
+    .get<
+      {
+        Params: NinjaParam
+      },
+      unknown,
+      t.Type<ParamsType>
+    >(
+      '/:ninja/jutsus',
+      {
+        schema: {
+          params: paramsType,
+        },
+        validatorCompiler: validatorCompiler(),
+      },
+      (req, reply) => {
+        pipe(
+          getNinjaJutsus(reply, req.params.ninja),
+          TE.map(jutsus => reply.send(jutsus)),
           TE.mapLeft(err => reply.code(err.statusCode).send(err))
         )()
       }
