@@ -8,7 +8,7 @@ export const app = fastify({ logger: true })
 app.register(fastifyCors, { origin: true })
 app.register(prismaPlugin)
 
-app.register(ninjasRoutes, { prefix: '/api/v1' })
+app.register(ninjasRoutes, { prefix: '/api/v1/ninjas' })
 
 app.listen(process.env.PORT ?? 3000, '0.0.0.0').catch(err => {
   app.log.error(err)
