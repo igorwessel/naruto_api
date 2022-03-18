@@ -4,7 +4,7 @@ import * as E from 'fp-ts/Either'
 import * as t from 'io-ts'
 import { failure } from 'io-ts/PathReporter'
 
-export const validatorCompiler = <T, B = T>(): FastifySchemaCompiler<t.Type<T, B>> => ({ schema }) => (
+export const validatorCompiler = <A>(): FastifySchemaCompiler<t.Decoder<unknown, A>> => ({ schema }) => (
   data: unknown
 ) => {
   return pipe(
