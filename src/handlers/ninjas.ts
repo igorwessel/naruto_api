@@ -151,3 +151,11 @@ export const getNinjaJutsus = (reply: FastifyReply, param: string) =>
     ),
     validateIsEmpty(`Ninja ${param} don't have jutsus.`)
   )
+
+export const getNinjaTeams = (reply: FastifyReply, param: string) =>
+  pipe(
+    param,
+    makeWhereNinja,
+    TE.tryCatchK(where => reply.server.prisma.ninja.findFirst({ where }).team(), makeErrorOutput),
+    validateIsEmpty(`Ninja ${param} don't have teams.`)
+  )

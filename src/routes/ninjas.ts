@@ -9,6 +9,7 @@ import {
   getNinjaFamily,
   getNinjaJutsus,
   getNinjas,
+  getNinjaTeams,
   getNinjaTools,
   getUniqueNinja,
 } from '~/handlers/ninjas'
@@ -153,6 +154,28 @@ export const routes = (app: FastifyInstance): FastifyInstance =>
       (req, reply) => {
         pipe(
           getNinjaJutsus(reply, req.params.ninja),
+          TE.map(jutsus => reply.send(jutsus)),
+          TE.mapLeft(err => reply.code(err.statusCode).send(err))
+        )()
+      }
+    )
+    .get<
+      {
+        Params: NinjaParam
+      },
+      unknown,
+      t.Type<ParamsType>
+    >(
+      '/:ninja/teams',
+      {
+        schema: {
+          params: paramsType,
+        },
+        validatorCompiler: validatorCompiler(),
+      },
+      (req, reply) => {
+        pipe(
+          getNinjaTeams(reply, req.params.ninja),
           TE.map(jutsus => reply.send(jutsus)),
           TE.mapLeft(err => reply.code(err.statusCode).send(err))
         )()

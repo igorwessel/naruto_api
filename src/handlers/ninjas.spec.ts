@@ -6,7 +6,16 @@ import { pipe } from 'fp-ts/function'
 import * as TE from 'fp-ts/TaskEither'
 
 import { Context, createMockContext, MockContext } from '~/__mocks__/prisma'
-import { getUniqueNinja, getNinjas, getNinjaFamily, getNinjaTools, getNinjaAttributes, getNinjaJutsus } from './ninjas'
+
+import {
+  getUniqueNinja,
+  getNinjas,
+  getNinjaFamily,
+  getNinjaTools,
+  getNinjaAttributes,
+  getNinjaJutsus,
+  getNinjaTeams,
+} from './ninjas'
 
 type NinjaWithRelations = Ninja & {
   occupation: Occupation[]
@@ -378,7 +387,7 @@ describe('getNinjaJutsus', () => {
     )()
   })
 
-  it('should return 404 error when attributes not found', () => {
+  it('should return 404 error when jutsus not found', () => {
     const jutsus = jest.fn().mockResolvedValue([])
 
     mockCtx.prisma.ninja.findFirst.mockReturnValue({ jutsus } as never)
@@ -387,6 +396,43 @@ describe('getNinjaJutsus', () => {
 
     return pipe(
       jutsusResponse,
+      TE.mapLeft(e => expect(e).toMatchObject({ statusCode: 404 }))
+    )()
+  })
+})
+
+describe('getNinjaTeams', () => {
+  it('should get teams from a ninja', () => {
+    const teams = [
+      {
+        id: 1,
+        name: '11 de Konoha',
+        description:
+          'Os 11 de Konoha (木ノ葉の11人, Konoha no Jūichinin, TV Brasileira: 11 da Folha) é o apelido coletivo de quatro times de Genin de Konoha, liderados por Kakashi Hatake, Asuma Sarutobi, Kurenai Yūhi e Might Guy respectivamente, com exceção de Sasuke Uchiha.',
+      },
+    ]
+
+    const team = jest.fn().mockResolvedValue(teams)
+
+    mockCtx.prisma.ninja.findFirst.mockReturnValue({ team } as never)
+
+    const teamsResponse = getNinjaTeams(reply, '1')
+
+    return pipe(
+      teamsResponse,
+      TE.map(teamsResponse => expect(teamsResponse).toStrictEqual(teams))
+    )()
+  })
+
+  it('should return 404 error when teams not found', () => {
+    const team = jest.fn().mockResolvedValue([])
+
+    mockCtx.prisma.ninja.findFirst.mockReturnValue({ team } as never)
+
+    const teamsResponse = getNinjaTeams(reply, '1')
+
+    return pipe(
+      teamsResponse,
       TE.mapLeft(e => expect(e).toMatchObject({ statusCode: 404 }))
     )()
   })
