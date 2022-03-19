@@ -70,7 +70,7 @@ export const routes = async (app: FastifyInstance): Promise<FastifyInstance> =>
       },
       (req, reply) => {
         pipe(
-          getNinja(reply, (req.params as { tool: string }).tool),
+          getNinja(reply, req.params.tool),
           TE.map(ninjas => reply.send(ninjas)),
           TE.mapLeft(err => reply.send(err))
         )()
