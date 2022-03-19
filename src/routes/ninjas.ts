@@ -15,14 +15,20 @@ import {
 } from '~/handlers/ninjas'
 
 import { validatorCompiler } from '~/services/request_validator'
-import { ParamsType, paramsType } from '~/types/params'
+import { idCodec, kebabCaseCodec } from '~/types/params'
 import { paginationCodec, PaginationType } from '~/types/pagination'
 
 type NinjaParam = {
   ninja: string
 }
 
-export const routes = (app: FastifyInstance): FastifyInstance =>
+const paramsType = t.type({
+  ninja: t.union([idCodec, kebabCaseCodec]),
+})
+
+type ParamsType = t.TypeOf<typeof paramsType>
+
+export const routes = async (app: FastifyInstance): Promise<FastifyInstance> =>
   app
     .get<
       {
