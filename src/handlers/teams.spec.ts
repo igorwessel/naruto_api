@@ -44,7 +44,7 @@ describe('getTeams', () => {
 })
 
 describe('getTeam', () => {
-  it('should return a error when not found tool', () => {
+  it('should return a error when not found team', () => {
     mockCtx.prisma.team.findFirst.mockRejectedValue(new Error('null'))
 
     return pipe(
@@ -64,7 +64,7 @@ describe('getTeam', () => {
 })
 
 describe('getNinja', () => {
-  it('should get ninjas from a tool', () => {
+  it('should get ninjas from a team', () => {
     mockCtx.prisma.team.findFirst.mockReturnValue({
       ninja: jest.fn().mockResolvedValue([{ a: 1 }]),
     } as never)
