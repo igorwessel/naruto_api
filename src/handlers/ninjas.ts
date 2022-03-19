@@ -1,27 +1,10 @@
 import { FastifyReply } from 'fastify'
-import { Prisma } from '@prisma/client'
 
 import * as TE from 'fp-ts/TaskEither'
-import { flow, pipe } from 'fp-ts/function'
+import { pipe } from 'fp-ts/function'
 
-import { isID as validateID } from '~/services/regex'
 import { makeErrorOutput, notFoundError } from '~/services/errors'
-import { sanitize } from '~/services/string'
-
-const makeWhereNinja = flow(
-  (param: string): [boolean, string] => [validateID(param), param],
-  ([isID, param]): Prisma.NinjaWhereInput =>
-    isID
-      ? {
-          id: { equals: parseInt(param) },
-        }
-      : { name: { contains: sanitize(param), mode: 'insensitive' } }
-)
-
-const isEmpty = (message: string) => <A = unknown>(arr: A[]) =>
-  arr.length === 0 ? TE.left(notFoundError(message)) : TE.right(arr)
-
-const validateIsEmpty = flow(isEmpty, TE.chain)
+import { makeWhere, validateIsEmpty } from '~/services/database'
 
 export const getNinjas = (reply: FastifyReply, pagination: { limit: number; offset: number }) =>
   pipe(
@@ -74,7 +57,7 @@ export const getNinjas = (reply: FastifyReply, pagination: { limit: number; offs
 export const getUniqueNinja = (reply: FastifyReply, param: string) =>
   pipe(
     param,
-    makeWhereNinja,
+    makeWhere,
     TE.tryCatchK(
       where =>
         reply.server.prisma.ninja.findFirst({
@@ -90,7 +73,7 @@ export const getUniqueNinja = (reply: FastifyReply, param: string) =>
 export const getNinjaTools = (reply: FastifyReply, param: string) =>
   pipe(
     param,
-    makeWhereNinja,
+    makeWhere,
     TE.tryCatchK(
       where =>
         reply.server.prisma.ninja
@@ -106,7 +89,7 @@ export const getNinjaTools = (reply: FastifyReply, param: string) =>
 export const getNinjaFamily = (reply: FastifyReply, param: string) =>
   pipe(
     param,
-    makeWhereNinja,
+    makeWhere,
     TE.tryCatchK(
       where =>
         reply.server.prisma.ninja.findFirst({ where }).familyParentToIdToNinja({
@@ -120,7 +103,7 @@ export const getNinjaFamily = (reply: FastifyReply, param: string) =>
 export const getNinjaAttributes = (reply: FastifyReply, param: string) =>
   pipe(
     param,
-    makeWhereNinja,
+    makeWhere,
     TE.tryCatchK(
       where =>
         reply.server.prisma.ninja.findFirst({ where }).ninjaAttr({
@@ -141,7 +124,7 @@ export const getNinjaAttributes = (reply: FastifyReply, param: string) =>
 export const getNinjaJutsus = (reply: FastifyReply, param: string) =>
   pipe(
     param,
-    makeWhereNinja,
+    makeWhere,
     TE.tryCatchK(
       where =>
         reply.server.prisma.ninja.findFirst({ where }).jutsus({
@@ -155,7 +138,7 @@ export const getNinjaJutsus = (reply: FastifyReply, param: string) =>
 export const getNinjaTeams = (reply: FastifyReply, param: string) =>
   pipe(
     param,
-    makeWhereNinja,
+    makeWhere,
     TE.tryCatchK(where => reply.server.prisma.ninja.findFirst({ where }).team(), makeErrorOutput),
     validateIsEmpty(`Ninja ${param} don't have teams.`)
   )
