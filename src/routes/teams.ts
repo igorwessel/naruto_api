@@ -56,7 +56,7 @@ export const routes = async (app: FastifyInstance): Promise<FastifyInstance> =>
         pipe(
           getTeam(reply, req.params.team),
           TE.map(team => reply.send(team)),
-          TE.mapLeft(err => reply.send(err))
+          TE.mapLeft(err => reply.code(err.statusCode).send(err))
         )()
       }
     )
@@ -72,7 +72,7 @@ export const routes = async (app: FastifyInstance): Promise<FastifyInstance> =>
         pipe(
           getNinja(reply, req.params.team),
           TE.map(ninjas => reply.send(ninjas)),
-          TE.mapLeft(err => reply.send(err))
+          TE.mapLeft(err => reply.code(err.statusCode).send(err))
         )()
       }
     )

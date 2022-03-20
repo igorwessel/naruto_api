@@ -1,4 +1,4 @@
-import fastify from 'fastify'
+import fastify, { FastifyServerOptions } from 'fastify'
 import fastifyCors from 'fastify-cors'
 
 import { routes as ninjasRoutes } from '~/routes/ninjas'
@@ -8,17 +8,18 @@ import { routes as jutsusRoutes } from '~/routes/jutsus'
 
 import prismaPlugin from '~/plugins/prisma'
 
-export const app = fastify({ logger: true })
+const app = (opts: FastifyServerOptions = { logger: true }) => {
+  const _app = fastify(opts)
 
-app.register(fastifyCors, { origin: true })
-app.register(prismaPlugin)
+  _app.register(fastifyCors, { origin: true })
+  _app.register(prismaPlugin)
 
-app.register(toolsRoutes, { prefix: '/api/v1/tools' })
-app.register(teamsRoutes, { prefix: '/api/v1/teams' })
-app.register(jutsusRoutes, { prefix: '/api/v1/jutsus' })
-app.register(ninjasRoutes, { prefix: '/api/v1/ninjas' })
+  _app.register(toolsRoutes, { prefix: '/api/v1/tools' })
+  _app.register(teamsRoutes, { prefix: '/api/v1/teams' })
+  _app.register(jutsusRoutes, { prefix: '/api/v1/jutsus' })
+  _app.register(ninjasRoutes, { prefix: '/api/v1/ninjas' })
 
-app.listen(process.env.PORT ?? 3000, '0.0.0.0').catch(err => {
-  app.log.error(err)
-  process.exit(1)
-})
+  return _app
+}
+
+export default app

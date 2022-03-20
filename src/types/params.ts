@@ -23,9 +23,3 @@ export const idCodec = withMessage(
 )
 
 export type ID = t.TypeOf<typeof idCodec>
-
-export const paramsType = t.type({
-  ninja: t.union([idCodec, kebabCaseCodec]),
-})
-
-export type ParamsType = t.TypeOf<typeof paramsType>
