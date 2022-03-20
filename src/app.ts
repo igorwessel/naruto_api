@@ -11,6 +11,8 @@ import { routes as toolsRoutes } from '~/routes/tools'
 import { routes as teamsRoutes } from '~/routes/teams'
 import { routes as jutsusRoutes } from '~/routes/jutsus'
 
+import * as types from '~/schema'
+
 import prismaPlugin from '~/plugins/prisma'
 
 const app = (opts: FastifyServerOptions = { logger: true }) => {
@@ -20,7 +22,7 @@ const app = (opts: FastifyServerOptions = { logger: true }) => {
   _app.register(prismaPlugin)
 
   const schema = makeSchema({
-    types: [],
+    types,
     outputs: {
       typegen: path.join(__dirname, '..', 'nexus-typegen.ts'), // 2
       schema: path.join(__dirname, '..', 'schema.graphql'), // 3
@@ -29,6 +31,7 @@ const app = (opts: FastifyServerOptions = { logger: true }) => {
 
   _app.register(mercurius, {
     schema,
+    context: (_, { server: { prisma } }) => ({ prisma }),
     path: '/graphql',
     graphiql: false,
     ide: false,
