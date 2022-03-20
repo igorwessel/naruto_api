@@ -1,5 +1,10 @@
+import path from 'path'
 import fastify, { FastifyServerOptions } from 'fastify'
 import fastifyCors from 'fastify-cors'
+import altairFastify from 'altair-fastify-plugin'
+
+import mercurius from 'mercurius'
+import { makeSchema } from 'nexus'
 
 import { routes as ninjasRoutes } from '~/routes/ninjas'
 import { routes as toolsRoutes } from '~/routes/tools'
@@ -13,6 +18,27 @@ const app = (opts: FastifyServerOptions = { logger: true }) => {
 
   _app.register(fastifyCors, { origin: true })
   _app.register(prismaPlugin)
+
+  const schema = makeSchema({
+    types: [],
+    outputs: {
+      typegen: path.join(__dirname, '..', 'nexus-typegen.ts'), // 2
+      schema: path.join(__dirname, '..', 'schema.graphql'), // 3
+    },
+  })
+
+  _app.register(mercurius, {
+    schema,
+    path: '/graphql',
+    graphiql: false,
+    ide: false,
+  })
+
+  _app.register(altairFastify, {
+    path: '/api/v1/graphql',
+    baseURL: '/api/v1/graphql/',
+    endpointURL: '/graphql',
+  })
 
   _app.register(toolsRoutes, { prefix: '/api/v1/tools' })
   _app.register(teamsRoutes, { prefix: '/api/v1/teams' })
