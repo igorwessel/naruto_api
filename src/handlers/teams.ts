@@ -23,7 +23,7 @@ export const getTeam = (reply: FastifyReply, param: string) =>
   pipe(
     param,
     makeWhere,
-    TE.tryCatchK(where => reply.server.prisma.team.findFirst({ where }), makeErrorOutput),
+    TE.tryCatchK(where => reply.server.prisma.team.findFirst({ where, rejectOnNotFound: true }), makeErrorOutput),
     TE.mapLeft(() => notFoundError(`Team ${param} not found.`))
   )
 
@@ -31,6 +31,9 @@ export const getNinja = (reply: FastifyReply, param: string) =>
   pipe(
     param,
     makeWhere,
-    TE.tryCatchK(where => reply.server.prisma.team.findFirst({ where }).ninja(), makeErrorOutput),
+    TE.tryCatchK(
+      where => reply.server.prisma.team.findFirst({ where, rejectOnNotFound: true }).ninja(),
+      makeErrorOutput
+    ),
     validateIsEmpty(`Team ${param} don't have ninjas.`)
   )

@@ -79,6 +79,7 @@ export const getNinjaTools = (reply: FastifyReply, param: string) =>
         reply.server.prisma.ninja
           .findFirst({
             where,
+            rejectOnNotFound: true,
           })
           .tools(),
       makeErrorOutput
@@ -92,7 +93,7 @@ export const getNinjaFamily = (reply: FastifyReply, param: string) =>
     makeWhere,
     TE.tryCatchK(
       where =>
-        reply.server.prisma.ninja.findFirst({ where }).familyParentToIdToNinja({
+        reply.server.prisma.ninja.findFirst({ where, rejectOnNotFound: true }).familyParentToIdToNinja({
           select: { id: true, relationship: true, parentFrom: { select: { name: true } } },
         }),
       makeErrorOutput
@@ -106,7 +107,7 @@ export const getNinjaAttributes = (reply: FastifyReply, param: string) =>
     makeWhere,
     TE.tryCatchK(
       where =>
-        reply.server.prisma.ninja.findFirst({ where }).ninjaAttr({
+        reply.server.prisma.ninja.findFirst({ where, rejectOnNotFound: true }).ninjaAttr({
           select: {
             id: true,
             age: true,
@@ -127,7 +128,7 @@ export const getNinjaJutsus = (reply: FastifyReply, param: string) =>
     makeWhere,
     TE.tryCatchK(
       where =>
-        reply.server.prisma.ninja.findFirst({ where }).jutsus({
+        reply.server.prisma.ninja.findFirst({ where, rejectOnNotFound: true }).jutsus({
           include: { nature_type: true },
         }),
       makeErrorOutput
@@ -139,6 +140,9 @@ export const getNinjaTeams = (reply: FastifyReply, param: string) =>
   pipe(
     param,
     makeWhere,
-    TE.tryCatchK(where => reply.server.prisma.ninja.findFirst({ where }).team(), makeErrorOutput),
+    TE.tryCatchK(
+      where => reply.server.prisma.ninja.findFirst({ where, rejectOnNotFound: true }).team(),
+      makeErrorOutput
+    ),
     validateIsEmpty(`Ninja ${param} don't have teams.`)
   )

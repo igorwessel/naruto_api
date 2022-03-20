@@ -28,6 +28,7 @@ export const getJutsu = (reply: FastifyReply, param: string) =>
         reply.server.prisma.jutsu.findFirst({
           where,
           include: { class: true, classification: true, nature_type: true },
+          rejectOnNotFound: true,
         }),
       makeErrorOutput
     ),
@@ -38,6 +39,9 @@ export const getNinja = (reply: FastifyReply, param: string) =>
   pipe(
     param,
     makeWhere,
-    TE.tryCatchK(where => reply.server.prisma.jutsu.findFirst({ where }).ninja(), makeErrorOutput),
+    TE.tryCatchK(
+      where => reply.server.prisma.jutsu.findFirst({ where, rejectOnNotFound: true }).ninja(),
+      makeErrorOutput
+    ),
     validateIsEmpty(`Jutsu ${param} don't have ninjas.`)
   )

@@ -23,7 +23,7 @@ export const getTool = (reply: FastifyReply, param: string) =>
   pipe(
     param,
     makeWhere,
-    TE.tryCatchK(where => reply.server.prisma.tools.findFirst({ where }), makeErrorOutput),
+    TE.tryCatchK(where => reply.server.prisma.tools.findFirst({ where, rejectOnNotFound: true }), makeErrorOutput),
     TE.mapLeft(() => notFoundError(`Tool ${param} not found.`))
   )
 
@@ -31,6 +31,9 @@ export const getNinja = (reply: FastifyReply, param: string) =>
   pipe(
     param,
     makeWhere,
-    TE.tryCatchK(where => reply.server.prisma.tools.findFirst({ where }).ninjas(), makeErrorOutput),
+    TE.tryCatchK(
+      where => reply.server.prisma.tools.findFirst({ where, rejectOnNotFound: true }).ninjas(),
+      makeErrorOutput
+    ),
     validateIsEmpty(`Tool ${param} don't have ninjas.`)
   )
