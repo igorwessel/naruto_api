@@ -1,6 +1,7 @@
 import path from 'path'
 import fastify, { FastifyServerOptions } from 'fastify'
 import fastifyCors from 'fastify-cors'
+import { validatePlugin } from 'nexus-validate'
 import altairFastify from 'altair-fastify-plugin'
 
 import mercurius from 'mercurius'
@@ -23,10 +24,28 @@ const app = (opts: FastifyServerOptions = { logger: true }) => {
 
   const schema = makeSchema({
     types,
-    outputs: {
-      typegen: path.join(__dirname, '..', 'nexus-typegen.ts'), // 2
-      schema: path.join(__dirname, '..', 'schema.graphql'), // 3
+    sourceTypes: {
+      modules: [
+        {
+          module: require.resolve('.prisma/client/index.d.ts'),
+          alias: 'prisma',
+        },
+      ],
     },
+    contextType: {
+      module: path.join(__dirname, 'types/context.ts'),
+      export: 'Context',
+    },
+    features: {
+      abstractTypeStrategies: {
+        resolveType: false,
+      },
+    },
+    outputs: {
+      typegen: path.join(__dirname, '..', 'node_modules/@types/nexus-typegen/index.d.ts'),
+      schema: path.join(__dirname, '..', 'naruto_api.graphql'),
+    },
+    plugins: [validatePlugin()],
   })
 
   _app.register(mercurius, {
