@@ -98,6 +98,7 @@ export const getNinjaFamily = (reply: FastifyReply, param: string) =>
         }),
       makeErrorOutput
     ),
+    TE.map(families => families.map(({ parentFrom, ...family }) => ({ ...family, details: parentFrom }))),
     validateIsEmpty(`Ninja ${param} don't have family.`)
   )
 
