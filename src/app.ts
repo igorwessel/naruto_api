@@ -5,7 +5,11 @@ import { validatePlugin } from 'nexus-validate'
 import altairFastify from 'altair-fastify-plugin'
 
 import mercurius from 'mercurius'
-import { makeSchema } from 'nexus'
+
+import { makeSchema, queryComplexityPlugin } from 'nexus'
+
+import createComplexityRule, { fieldExtensionsEstimator, simpleEstimator } from 'graphql-query-complexity'
+import depthLimit from 'graphql-depth-limit'
 
 import { routes as ninjasRoutes } from '~/routes/ninjas'
 import { routes as toolsRoutes } from '~/routes/tools'
@@ -45,21 +49,59 @@ const app = (opts: FastifyServerOptions = { logger: true }) => {
       typegen: path.join(__dirname, '..', 'node_modules/@types/nexus-typegen/index.d.ts'),
       schema: path.join(__dirname, '..', 'naruto_api.graphql'),
     },
-    plugins: [validatePlugin()],
+    plugins: [validatePlugin(), queryComplexityPlugin()],
   })
 
-  _app.register(mercurius, {
-    schema,
-    context: (_, { server: { prisma } }) => ({ prisma }),
-    path: '/graphql',
-    graphiql: false,
-    ide: false,
-  })
+  _app
+    .register(mercurius, {
+      schema,
+      context: (_, { server: { prisma } }) => ({ prisma }),
+      path: '/graphql',
+      graphiql: false,
+      ide: false,
+      cache: false,
+      validationRules: ({ operationName, variables }) => [
+        depthLimit(10),
+        createComplexityRule({
+          operationName,
+          maximumComplexity: 1000,
+          estimators: [fieldExtensionsEstimator(), simpleEstimator({ defaultComplexity: 0 })],
+          variables,
+          onComplete: complexity => {
+            console.log(complexity)
+          },
+        }),
+      ],
+    })
+    .addHook('preHandler', (_, reply, done) => {
+      reply.header('X-GraphQL-Event-Stream', '/graphql/stream')
+      done()
+    })
 
   _app.register(altairFastify, {
     path: '/api/v1/graphql',
     baseURL: '/api/v1/graphql/',
     endpointURL: '/graphql',
+  })
+
+  _app.get('/graphql/stream', (req, reply) => {
+    req.socket.setTimeout(0)
+    req.socket.setNoDelay(true)
+    req.socket.setKeepAlive(true)
+
+    const headers = {
+      'Content-Type': 'text/event-stream',
+      'Cache-Control': 'no-cache',
+      Connection: 'keep-alive',
+    }
+
+    reply.raw.writeHead(200, headers)
+
+    reply.raw.write('Event: Open\n\n')
+
+    req.raw.on('close', () => reply.raw.end())
+    req.raw.on('finish', () => reply.raw.end())
+    req.raw.on('error', () => reply.raw.end())
   })
 
   _app.register(toolsRoutes, { prefix: '/api/v1/tools' })

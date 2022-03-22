@@ -1,4 +1,4 @@
-import { args } from '~/schema/args'
+import { paginationArgs } from '~/schema/args'
 import { extendType, objectType } from 'nexus'
 
 export const Team = objectType({
@@ -9,10 +9,12 @@ export const Team = objectType({
     t.string('description')
     t.nonNull.list.field('members', {
       type: 'Ninja',
+      complexity: 1,
       resolve: (_root, _, ctx) => ctx.prisma.team.findUnique({ where: { id: _root.id ?? undefined } }).ninja(),
     })
     t.nonNull.list.field('affiliation', {
       type: 'Affiliation',
+      complexity: 1,
       resolve: (_root, _, ctx) => ctx.prisma.team.findUnique({ where: { id: _root.id || undefined } }).affiliation(),
     })
   },
@@ -23,7 +25,8 @@ export const TeamQuery = extendType({
   definition(t) {
     t.nonNull.list.field('teams', {
       type: 'Team',
-      args,
+      args: paginationArgs,
+      complexity: ({ args, childComplexity }) => childComplexity * args.limit,
       resolve: (_root, _args, ctx) =>
         ctx.prisma.team.findMany({
           skip: _args.offset,

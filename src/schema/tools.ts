@@ -1,4 +1,4 @@
-import { args } from '~/schema/args'
+import { paginationArgs } from '~/schema/args'
 import { extendType, objectType } from 'nexus'
 
 export const Tools = objectType({
@@ -15,6 +15,7 @@ export const Tools = objectType({
     t.string('tv_brasileira')
     t.nonNull.list.field('ninjas', {
       type: 'Ninja',
+      complexity: 1,
       resolve: (_root, _, ctx) => ctx.prisma.tools.findUnique({ where: { id: _root.id || undefined } }).ninjas(),
     })
   },
@@ -25,7 +26,8 @@ export const ToolQuery = extendType({
   definition(t) {
     t.nonNull.list.field('tools', {
       type: 'Tools',
-      args,
+      args: paginationArgs,
+      complexity: ({ args, childComplexity }) => childComplexity * args.limit,
       resolve: (_root, _args, ctx) =>
         ctx.prisma.tools.findMany({
           skip: _args.offset,

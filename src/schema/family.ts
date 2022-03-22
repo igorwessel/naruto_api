@@ -6,6 +6,7 @@ export const Family = objectType({
     t.string('relationship')
     t.field('details', {
       type: 'Ninja',
+      complexity: 1,
       resolve: (_root, _, ctx) => ctx.prisma.family.findUnique({ where: { id: _root.id || undefined } }).parentFrom(),
     })
   },
