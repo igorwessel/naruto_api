@@ -5,7 +5,7 @@ import { pipe } from 'fp-ts/function'
 import build from '~/app'
 
 const app = build({ logger: false })
-const BASE_ROUTE = '/api/v1/teams'
+const BASE_ROUTE = '/teams'
 
 afterAll(() => {
   app.close()

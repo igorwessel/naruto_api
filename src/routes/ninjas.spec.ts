@@ -5,7 +5,7 @@ import { pipe } from 'fp-ts/function'
 import build from '~/app'
 
 const app = build({ logger: false })
-const BASE_ROUTE = '/api/v1/ninjas'
+const BASE_ROUTE = '/ninjas'
 const NARUTO_UZUMAKI_ROUTE = `${BASE_ROUTE}/802`
 
 afterAll(() => {

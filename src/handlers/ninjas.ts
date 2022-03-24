@@ -48,7 +48,7 @@ export const getNinjas = (reply: FastifyReply, pagination: { limit: number; offs
     TE.map(ninjas =>
       ninjas.map(({ familyParentToIdToNinja, ninjaAttr, ...ninja }) => ({
         ...ninja,
-        family: familyParentToIdToNinja,
+        family: familyParentToIdToNinja.map(({ parentFrom, ...family }) => ({ ...family, details: parentFrom })),
         attributes: ninjaAttr,
       }))
     )

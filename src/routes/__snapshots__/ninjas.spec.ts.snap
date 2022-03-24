@@ -38,73 +38,73 @@ Array [
 exports[`should get family from a ninja 1`] = `
 Array [
   Object {
-    "id": 52,
-    "parentFrom": Object {
+    "details": Object {
       "name": "Boruto Uzumaki",
     },
+    "id": 52,
     "relationship": "Pai",
   },
   Object {
-    "id": 96,
-    "parentFrom": Object {
+    "details": Object {
       "name": "Clone do Nove-Caudas",
     },
+    "id": 96,
     "relationship": "Doador genético",
   },
   Object {
-    "id": 188,
-    "parentFrom": Object {
+    "details": Object {
       "name": "Hanabi Hyūga",
     },
+    "id": 188,
     "relationship": "Cunhado",
   },
   Object {
-    "id": 206,
-    "parentFrom": Object {
+    "details": Object {
       "name": "Hiashi Hyūga",
     },
+    "id": 206,
     "relationship": "Genro",
   },
   Object {
-    "id": 213,
-    "parentFrom": Object {
+    "details": Object {
       "name": "Himawari Uzumaki",
     },
+    "id": 213,
     "relationship": "Pai",
   },
   Object {
-    "id": 228,
-    "parentFrom": Object {
+    "details": Object {
       "name": "Hinata Hyūga",
     },
+    "id": 228,
     "relationship": "Marido",
   },
   Object {
-    "id": 322,
-    "parentFrom": Object {
+    "details": Object {
       "name": "Jiraiya",
     },
+    "id": 322,
     "relationship": "Afilhado",
   },
   Object {
-    "id": 442,
-    "parentFrom": Object {
+    "details": Object {
       "name": "Kushina Uzumaki",
     },
+    "id": 442,
     "relationship": "Filho",
   },
   Object {
-    "id": 492,
-    "parentFrom": Object {
+    "details": Object {
       "name": "Minato Namikaze",
     },
+    "id": 492,
     "relationship": "Filho",
   },
   Object {
-    "id": 528,
-    "parentFrom": Object {
+    "details": Object {
       "name": "Mãe de Hinata e Hanabi",
     },
+    "id": 528,
     "relationship": "Genro",
   },
 ]
@@ -1742,24 +1742,24 @@ Array [
     "classification": Array [],
     "family": Array [
       Object {
-        "id": 4,
-        "parentFrom": Object {
+        "details": Object {
           "name": "A (Terceiro Raikage)",
         },
+        "id": 4,
         "relationship": "Filho",
       },
       Object {
-        "id": 49,
-        "parentFrom": Object {
+        "details": Object {
           "name": "Blue B",
         },
+        "id": 49,
         "relationship": "Primo",
       },
       Object {
-        "id": 389,
-        "parentFrom": Object {
+        "details": Object {
           "name": "Killer B",
         },
+        "id": 389,
         "relationship": "Irmão Adotivo",
       },
     ],
@@ -2165,24 +2165,24 @@ Array [
     "classification": Array [],
     "family": Array [
       Object {
-        "id": 1,
-        "parentFrom": Object {
+        "details": Object {
           "name": "A (Quarto Raikage)",
         },
+        "id": 1,
         "relationship": "Pai",
       },
       Object {
-        "id": 48,
-        "parentFrom": Object {
+        "details": Object {
           "name": "Blue B",
         },
+        "id": 48,
         "relationship": "Tio",
       },
       Object {
-        "id": 388,
-        "parentFrom": Object {
+        "details": Object {
           "name": "Killer B",
         },
+        "id": 388,
         "relationship": "Pai Adotivo",
       },
     ],
@@ -2457,10 +2457,10 @@ Array [
     "classification": Array [],
     "family": Array [
       Object {
-        "id": 154,
-        "parentFrom": Object {
+        "details": Object {
           "name": "Giichi",
         },
+        "id": 154,
         "relationship": "Esposa",
       },
     ],
@@ -2554,24 +2554,24 @@ Array [
     "classification": Array [],
     "family": Array [
       Object {
-        "id": 150,
-        "parentFrom": Object {
+        "details": Object {
           "name": "Genshō Ryūdōin",
         },
+        "id": 150,
         "relationship": "Pai",
       },
       Object {
-        "id": 313,
-        "parentFrom": Object {
+        "details": Object {
           "name": "Jakō Ryūdōin",
         },
+        "id": 313,
         "relationship": "Pai",
       },
       Object {
-        "id": 611,
-        "parentFrom": Object {
+        "details": Object {
           "name": "Rokkaku Ryūdōin",
         },
+        "id": 611,
         "relationship": "Pai",
       },
     ],
@@ -2977,24 +2977,24 @@ Array [
     "classification": Array [],
     "family": Array [
       Object {
-        "id": 4,
-        "parentFrom": Object {
+        "details": Object {
           "name": "A (Terceiro Raikage)",
         },
+        "id": 4,
         "relationship": "Filho",
       },
       Object {
-        "id": 49,
-        "parentFrom": Object {
+        "details": Object {
           "name": "Blue B",
         },
+        "id": 49,
         "relationship": "Primo",
       },
       Object {
-        "id": 389,
-        "parentFrom": Object {
+        "details": Object {
           "name": "Killer B",
         },
+        "id": 389,
         "relationship": "Irmão Adotivo",
       },
     ],
@@ -3400,24 +3400,24 @@ Array [
     "classification": Array [],
     "family": Array [
       Object {
-        "id": 1,
-        "parentFrom": Object {
+        "details": Object {
           "name": "A (Quarto Raikage)",
         },
+        "id": 1,
         "relationship": "Pai",
       },
       Object {
-        "id": 48,
-        "parentFrom": Object {
+        "details": Object {
           "name": "Blue B",
         },
+        "id": 48,
         "relationship": "Tio",
       },
       Object {
-        "id": 388,
-        "parentFrom": Object {
+        "details": Object {
           "name": "Killer B",
         },
+        "id": 388,
         "relationship": "Pai Adotivo",
       },
     ],
@@ -3692,10 +3692,10 @@ Array [
     "classification": Array [],
     "family": Array [
       Object {
-        "id": 154,
-        "parentFrom": Object {
+        "details": Object {
           "name": "Giichi",
         },
+        "id": 154,
         "relationship": "Esposa",
       },
     ],
@@ -3789,24 +3789,24 @@ Array [
     "classification": Array [],
     "family": Array [
       Object {
-        "id": 150,
-        "parentFrom": Object {
+        "details": Object {
           "name": "Genshō Ryūdōin",
         },
+        "id": 150,
         "relationship": "Pai",
       },
       Object {
-        "id": 313,
-        "parentFrom": Object {
+        "details": Object {
           "name": "Jakō Ryūdōin",
         },
+        "id": 313,
         "relationship": "Pai",
       },
       Object {
-        "id": 611,
-        "parentFrom": Object {
+        "details": Object {
           "name": "Rokkaku Ryūdōin",
         },
+        "id": 611,
         "relationship": "Pai",
       },
     ],

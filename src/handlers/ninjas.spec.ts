@@ -194,7 +194,7 @@ describe('getNinjas', () => {
       family: [
         {
           id: 52,
-          parentFrom: {
+          details: {
             name: 'Boruto Uzumaki',
           },
           relationship: 'Pai',
@@ -315,7 +315,7 @@ describe('getNinjaFamily', () => {
     return pipe(
       family,
       TE.map(family =>
-        expect(family).toStrictEqual([{ id: 1, relationship: 'Pai', parentFrom: { name: 'A (Quarto Raikage)' } }])
+        expect(family).toStrictEqual([{ id: 1, relationship: 'Pai', details: { name: 'A (Quarto Raikage)' } }])
       )
     )()
   })
