@@ -1,5 +1,6 @@
 import path from 'path'
 import fastify, { FastifyServerOptions } from 'fastify'
+import fastifyRateLimit from 'fastify-rate-limit'
 import fastifyCors from 'fastify-cors'
 import { validatePlugin } from 'nexus-validate'
 import altairFastify from 'altair-fastify-plugin'
@@ -101,10 +102,14 @@ const app = (opts: FastifyServerOptions = { logger: true }) => {
     req.raw.on('error', () => reply.raw.end())
   })
 
-  _app.register(toolsRoutes, { prefix: '/tools' })
-  _app.register(teamsRoutes, { prefix: '/teams' })
-  _app.register(jutsusRoutes, { prefix: '/jutsus' })
-  _app.register(ninjasRoutes, { prefix: '/ninjas' })
+  _app.register((app, _, done) => {
+    app.register(fastifyRateLimit, { max: 100, timeWindow: '5 minute' })
+    app.register(toolsRoutes, { prefix: '/tools' })
+    app.register(teamsRoutes, { prefix: '/teams' })
+    app.register(jutsusRoutes, { prefix: '/jutsus' })
+    app.register(ninjasRoutes, { prefix: '/ninjas' })
+    done()
+  })
 
   return _app
 }
