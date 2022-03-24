@@ -67,9 +67,6 @@ const app = (opts: FastifyServerOptions = { logger: true }) => {
           maximumComplexity: 1000,
           estimators: [fieldExtensionsEstimator(), simpleEstimator({ defaultComplexity: 0 })],
           variables,
-          onComplete: complexity => {
-            console.log(complexity)
-          },
         }),
       ],
     })
@@ -79,8 +76,8 @@ const app = (opts: FastifyServerOptions = { logger: true }) => {
     })
 
   _app.register(altairFastify, {
-    path: '/api/v1/graphql',
-    baseURL: '/api/v1/graphql/',
+    path: '/altair',
+    baseURL: '/altair/',
     endpointURL: '/graphql',
   })
 
@@ -104,10 +101,10 @@ const app = (opts: FastifyServerOptions = { logger: true }) => {
     req.raw.on('error', () => reply.raw.end())
   })
 
-  _app.register(toolsRoutes, { prefix: '/api/v1/tools' })
-  _app.register(teamsRoutes, { prefix: '/api/v1/teams' })
-  _app.register(jutsusRoutes, { prefix: '/api/v1/jutsus' })
-  _app.register(ninjasRoutes, { prefix: '/api/v1/ninjas' })
+  _app.register(toolsRoutes, { prefix: '/tools' })
+  _app.register(teamsRoutes, { prefix: '/teams' })
+  _app.register(jutsusRoutes, { prefix: '/jutsus' })
+  _app.register(ninjasRoutes, { prefix: '/ninjas' })
 
   return _app
 }
