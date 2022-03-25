@@ -16,7 +16,7 @@ export const Tools = objectType({
     t.nonNull.list.field('ninjas', {
       type: 'Ninja',
       complexity: 1,
-      resolve: (_root, _, ctx) => ctx.prisma.tools.findUnique({ where: { id: _root.id || undefined } }).ninjas(),
+      resolve: (_root, _, ctx) => ctx.prisma.tools.findUnique({ where: { id: _root.id } }).ninjas(),
     })
   },
 })

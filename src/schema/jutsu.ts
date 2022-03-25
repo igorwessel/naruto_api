@@ -19,18 +19,17 @@ export const Jutsu = objectType({
     t.nonNull.list.field('nature', {
       type: 'NatureType',
       complexity: 1,
-      resolve: (_root, _, ctx) => ctx.prisma.jutsu.findUnique({ where: { id: _root.id || undefined } }).nature_type(),
+      resolve: (_root, _, ctx) => ctx.prisma.jutsu.findUnique({ where: { id: _root.id } }).nature_type(),
     })
     t.nonNull.list.field('classification', {
       type: 'Classification',
       complexity: 1,
-      resolve: (_root, _, ctx) =>
-        ctx.prisma.jutsu.findUnique({ where: { id: _root.id || undefined } }).classification(),
+      resolve: (_root, _, ctx) => ctx.prisma.jutsu.findUnique({ where: { id: _root.id } }).classification(),
     })
     t.nonNull.list.field('class', {
       type: 'Class',
       complexity: 1,
-      resolve: (_root, _, ctx) => ctx.prisma.jutsu.findUnique({ where: { id: _root.id || undefined } }).class(),
+      resolve: (_root, _, ctx) => ctx.prisma.jutsu.findUnique({ where: { id: _root.id } }).class(),
     })
   },
 })

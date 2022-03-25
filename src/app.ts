@@ -21,7 +21,7 @@ import * as types from '~/schema'
 
 import prismaPlugin from '~/plugins/prisma'
 
-const app = (opts: FastifyServerOptions = { logger: true }) => {
+const app = (opts: FastifyServerOptions) => {
   const _app = fastify(opts)
 
   _app.register(fastifyCors, { origin: true })
@@ -53,53 +53,28 @@ const app = (opts: FastifyServerOptions = { logger: true }) => {
     plugins: [validatePlugin(), queryComplexityPlugin()],
   })
 
-  _app
-    .register(mercurius, {
-      schema,
-      context: (_, { server: { prisma } }) => ({ prisma }),
-      path: '/graphql',
-      graphiql: false,
-      ide: false,
-      cache: false,
-      validationRules: ({ operationName, variables }) => [
-        depthLimit(10),
-        createComplexityRule({
-          operationName,
-          maximumComplexity: 1000,
-          estimators: [fieldExtensionsEstimator(), simpleEstimator({ defaultComplexity: 0 })],
-          variables,
-        }),
-      ],
-    })
-    .addHook('preHandler', (_, reply, done) => {
-      reply.header('X-GraphQL-Event-Stream', '/graphql/stream')
-      done()
-    })
+  _app.register(mercurius, {
+    schema,
+    context: (_, { server: { prisma } }) => ({ prisma }),
+    path: '/graphql',
+    graphiql: false,
+    ide: false,
+    cache: false,
+    validationRules: ({ operationName, variables }) => [
+      depthLimit(10),
+      createComplexityRule({
+        operationName,
+        maximumComplexity: 1000,
+        estimators: [fieldExtensionsEstimator(), simpleEstimator({ defaultComplexity: 0 })],
+        variables,
+      }),
+    ],
+  })
 
   _app.register(altairFastify, {
     path: '/altair',
     baseURL: '/altair/',
     endpointURL: '/graphql',
-  })
-
-  _app.get('/graphql/stream', (req, reply) => {
-    req.socket.setTimeout(0)
-    req.socket.setNoDelay(true)
-    req.socket.setKeepAlive(true)
-
-    const headers = {
-      'Content-Type': 'text/event-stream',
-      'Cache-Control': 'no-cache',
-      Connection: 'keep-alive',
-    }
-
-    reply.raw.writeHead(200, headers)
-
-    reply.raw.write('Event: Open\n\n')
-
-    req.raw.on('close', () => reply.raw.end())
-    req.raw.on('finish', () => reply.raw.end())
-    req.raw.on('error', () => reply.raw.end())
   })
 
   _app.register((app, _, done) => {

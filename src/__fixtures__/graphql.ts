@@ -21,7 +21,10 @@ query($limit: Int!, $offset: Int!) {
                 age
                 height
                 ninja_rank
-                season
+                season {
+                  id
+                  name
+                }
                 weight
             }
             occupation {

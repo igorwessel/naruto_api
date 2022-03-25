@@ -6,7 +6,9 @@ export const NinjaAttributes = objectType({
     t.string('age')
     t.string('height')
     t.string('ninja_rank')
-    t.string('season')
+    t.field('season', {
+      type: 'Season',
+    })
     t.string('weight')
   },
 })

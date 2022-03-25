@@ -10,12 +10,12 @@ export const Team = objectType({
     t.nonNull.list.field('members', {
       type: 'Ninja',
       complexity: 1,
-      resolve: (_root, _, ctx) => ctx.prisma.team.findUnique({ where: { id: _root.id ?? undefined } }).ninja(),
+      resolve: (_root, _, ctx) => ctx.prisma.team.findUnique({ where: { id: _root.id } }).ninja(),
     })
     t.nonNull.list.field('affiliation', {
       type: 'Affiliation',
       complexity: 1,
-      resolve: (_root, _, ctx) => ctx.prisma.team.findUnique({ where: { id: _root.id || undefined } }).affiliation(),
+      resolve: (_root, _, ctx) => ctx.prisma.team.findUnique({ where: { id: _root.id } }).affiliation(),
     })
   },
 })
