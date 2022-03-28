@@ -37,10 +37,12 @@ const app = (opts: FastifyServerOptions) => {
         },
       ],
     },
-    contextType: {
-      module: path.join(__dirname, 'types/context.ts'),
-      export: 'Context',
-    },
+    ...(process.env.NODE_ENV === 'development' && {
+      contextType: {
+        module: path.join(__dirname, 'types/context.ts'),
+        export: 'Context',
+      },
+    }),
     features: {
       abstractTypeStrategies: {
         resolveType: false,
