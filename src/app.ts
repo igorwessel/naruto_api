@@ -52,6 +52,7 @@ const app = (opts: FastifyServerOptions) => {
       typegen: path.join(__dirname, '..', 'node_modules/@types/nexus-typegen/index.d.ts'),
       schema: path.join(__dirname, '..', 'naruto_api.graphql'),
     },
+    shouldExitAfterGenerateArtifacts: Boolean(process.env.NEXUS_SHOULD_EXIT_AFTER_REFLECTION),
     plugins: [validatePlugin(), queryComplexityPlugin()],
   })
 

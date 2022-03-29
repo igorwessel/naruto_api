@@ -11,6 +11,7 @@
     "start": "cross-env NODE_ENV=production node dist/src/index.js",
     "dev": "yarn server",
     "server": "cross-env NODE_ENV=development nodemon --exec sucrase-node src/index.ts",
+    "nexus:reflect": "cross-env NEXUS_SHOULD_EXIT_AFTER_REFLECTION=true sucrase-node src/index.ts",
     "test": "cross-env NODE_ENV=test yarn test:unit && yarn test:integration",
     "test:unit": "jest",
     "test:watch": "jest --watch",
