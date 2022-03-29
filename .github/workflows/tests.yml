@@ -34,8 +34,19 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: yarn install --frozen-lockfile
-    - run: yarn nexus:reflect
-    - run: npx prisma migrate deploy
-    - run: npx prisma db seed --preview-feature
-    - run: yarn ci
+    - name: Install Dependencies
+      run: yarn install --frozen-lockfile
+    - name: Generate Nexus Type and GraphQL Schema
+      run: yarn nexus:reflect
+    - name: Create Database and Run Migrations
+      run: npx prisma migrate deploy
+    - name: Seed Database
+      run: npx prisma db seed --preview-feature
+    - name: Lint
+      run: yarn lint
+    - name: TypeCheck
+      run: yarn typecheck
+    - name: Unit Test
+      run: yarn test:unit --ci
+    - name: Integration Test
+      run: yarn test:integration --ci
