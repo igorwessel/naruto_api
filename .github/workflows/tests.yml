@@ -40,4 +40,5 @@ jobs:
     - run: yarn install --frozen-lockfile
     - run: yarn nexus:reflect
     - run: npx prisma migrate deploy
+    - run: npx prisma db seed
     - run: yarn ci
