@@ -1,13 +1,21 @@
 module.exports = {
-	parser: '@typescript-eslint/parser',
-	parserOptions: {
-		ecmaVersion: 2020,
-		sourceType: 'module'
-	},
-	extends: [
-		'plugin:react/recommended',
-		'plugin:@typescript-eslint/recommended',
-		'prettier/@typescript-eslint',
-		'plugin:prettier/recommended'
-	]
-};
+  env: {
+    es2021: true,
+    node: true,
+  },
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaVersion: 12,
+    sourceType: 'module',
+  },
+  extends: ['plugin:@typescript-eslint/recommended', 'prettier'],
+  rules: {
+    '@typescript-eslint/no-use-before-define': 'warn',
+    '@typescript-eslint/no-unused-vars': [
+      'error',
+      {
+        ignoreRestSiblings: true,
+      },
+    ],
+  },
+}

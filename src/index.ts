@@ -1,16 +1,11 @@
-require('dotenv').config();
-import * as express from 'express';
-import { Server } from './app';
+import './config/dotenv'
+import './config/module-alias'
 
-(async () => {
-	const server: Server = new Server();
+import build from './app'
 
-	const app: express.Application = await server.start();
+const app = build({ logger: true })
 
-	const message: String =
-		process.env.NODE_ENV !== 'production'
-			? `REST      → http://localhost:${process.env.PORT}/api/v1/rest/\nGraphQL   → http://localhost:${process.env.PORT}/api/v1/graphql`
-			: `REST      → http://www.narutoapi.com.br/api/v1/rest/\nGraphQL   → http://www.narutoapi.com.br/api/v1/graphql`;
-
-	app.listen(process.env.PORT || 3000, () => console.log('\x1b[34m%s\x1b[0m', message));
-})();
+app.listen(process.env.PORT ?? 3000, '0.0.0.0').catch(err => {
+  app.log.error(err)
+  process.exit(1)
+})
