@@ -226,7 +226,20 @@ it('should get tools from a ninja', () => {
     ),
     TE.map(response => {
       expect(response.statusCode).toBe(200)
-      expect(response.json()).toMatchSnapshot()
+      const tools = response.json()
+      expect(tools[0]).toMatchInlineSnapshot(`
+        Object {
+          "description": null,
+          "games": null,
+          "id": 17,
+          "kanji": "六道の棒りくどうのぼう",
+          "mangaPanini": null,
+          "name": "Bastão do Seis Caminhos",
+          "portugues": "Bastão do Seis Caminhos",
+          "romaji": "Rikudō no Bō",
+          "tvBrasileira": null,
+        }
+      `)
     })
   )()
 })
