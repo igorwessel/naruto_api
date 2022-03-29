@@ -45,7 +45,7 @@ jobs:
     - name: Lint
       run: yarn lint
     - name: TypeCheck
-      run: yarn typecheck
+      run: yarn type-check
     - name: Unit Test
       run: yarn test:unit --ci
     - name: Integration Test
