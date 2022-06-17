@@ -3,8 +3,8 @@
  * Do not make changes to this file directly
  */
 
-import type * as prisma from '.prisma/client'
-import type { Context } from '../src/types/context'
+import type * as prisma from './../node_modules/.prisma/client/index'
+import type { Context } from './../src/types/context'
 import type { ValidateResolver } from 'nexus-validate'
 import type { QueryComplexity } from 'nexus/dist/plugins/queryComplexityPlugin'
 
