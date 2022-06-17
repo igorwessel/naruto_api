@@ -16,6 +16,6 @@
       "~/*": ["./src/*"]
     }
   },
-  "include": ["src/**/*.ts"],
+  "include": ["src/**/*.ts", "generated/naruto_api_nexus.d.ts"],
   "exclude": ["node_modules"]
 }

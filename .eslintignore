@@ -1,2 +1,2 @@
 *.js
-nexus-typegen.ts
+generated/*.ts
