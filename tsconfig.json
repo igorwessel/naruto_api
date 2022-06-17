@@ -3,7 +3,7 @@
     "baseUrl": ".",
     "target": "es2017",
     "rootDir": "src",
-    "outDir": "build",
+    "outDir": "dist",
     "lib": ["es5", "es6", "ES2017", "dom", "ES2016", "ESNext.AsyncIterable"],
     "module": "CommonJS",
     "strict": true,
