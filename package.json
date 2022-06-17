@@ -22,7 +22,7 @@
     "format": "prettier -w .",
     "type-check": "tsc --project tsconfig.json --pretty --noEmit",
     "prepare": "husky install",
-    "build": "tsc --project tsconfig.build.json",
+    "build": "yarn nexus:reflect && tsc --project tsconfig.build.json",
     "ci": "yarn lint && yarn type-check && yarn test"
   },
   "prisma": {
