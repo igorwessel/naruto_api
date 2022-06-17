@@ -22,8 +22,9 @@
     "format": "prettier -w .",
     "type-check": "tsc --project tsconfig.json --pretty --noEmit",
     "prepare": "husky install",
-    "build": "yarn nexus:reflect && tsc --project tsconfig.build.json",
-    "ci": "yarn lint && yarn type-check && yarn test"
+    "build": "tsc --project tsconfig.build.json",
+    "ci": "yarn lint && yarn type-check && yarn test",
+    "heroku-postbuild": "yarn nexus:reflect"
   },
   "prisma": {
     "seed": "node prisma/seed.js"
