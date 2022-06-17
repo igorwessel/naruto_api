@@ -6,7 +6,6 @@ import { pipe } from 'fp-ts/function'
 
 import { getJutsu, getJutsus, getNinja } from '~/handlers/jutsus'
 
-import { validatorCompiler } from '~/services/request_validator'
 import { paginationCodec, PaginationType } from '~/types/pagination'
 import { idCodec, kebabCaseCodec } from '~/types/params'
 
@@ -18,23 +17,16 @@ const paramsType = t.type({
   jutsu: t.union([idCodec, kebabCaseCodec]),
 })
 
-type ParamsType = t.TypeOf<typeof paramsType>
-
-export const routes = async (app: FastifyInstance): Promise<FastifyInstance> =>
+export const routes = (app: FastifyInstance): FastifyInstance =>
   app
-    .get<
-      {
-        Querystring: PaginationType
-      },
-      unknown,
-      t.Type<PaginationType>
-    >(
+    .get<{
+      Querystring: PaginationType
+    }>(
       '/',
       {
         schema: {
           querystring: paginationCodec,
         },
-        validatorCompiler: validatorCompiler(),
       },
       (req, reply) => {
         pipe(
@@ -44,13 +36,12 @@ export const routes = async (app: FastifyInstance): Promise<FastifyInstance> =>
         )()
       }
     )
-    .get<{ Params: JutsuParam }, unknown, t.Type<ParamsType>>(
+    .get<{ Params: JutsuParam }>(
       '/:jutsu',
       {
         schema: {
           params: paramsType,
         },
-        validatorCompiler: validatorCompiler(),
       },
       (req, reply) => {
         pipe(
@@ -60,13 +51,12 @@ export const routes = async (app: FastifyInstance): Promise<FastifyInstance> =>
         )()
       }
     )
-    .get<{ Params: JutsuParam }, unknown, t.Type<ParamsType>>(
+    .get<{ Params: JutsuParam }>(
       '/:jutsu/ninjas',
       {
         schema: {
           params: paramsType,
         },
-        validatorCompiler: validatorCompiler(),
       },
       (req, reply) => {
         pipe(

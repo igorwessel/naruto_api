@@ -1,7 +1,5 @@
 import path from 'path'
 import fastify, { FastifyServerOptions } from 'fastify'
-import fastifyRateLimit from 'fastify-rate-limit'
-import fastifyCors from 'fastify-cors'
 import { validatePlugin } from 'nexus-validate'
 import altairFastify from 'altair-fastify-plugin'
 
@@ -9,7 +7,7 @@ import mercurius from 'mercurius'
 
 import { makeSchema, queryComplexityPlugin } from 'nexus'
 
-import createComplexityRule, { fieldExtensionsEstimator, simpleEstimator } from 'graphql-query-complexity'
+import { createComplexityRule, fieldExtensionsEstimator, simpleEstimator } from 'graphql-query-complexity'
 import depthLimit from 'graphql-depth-limit'
 
 import { routes as ninjasRoutes } from '~/routes/ninjas'
@@ -18,13 +16,14 @@ import { routes as teamsRoutes } from '~/routes/teams'
 import { routes as jutsusRoutes } from '~/routes/jutsus'
 
 import * as types from '~/schema'
+import { createValidatorCompiler } from '~/services/request_validator'
 
 import prismaPlugin from '~/plugins/prisma'
 
 const app = (opts: FastifyServerOptions) => {
   const _app = fastify(opts)
 
-  _app.register(fastifyCors, { origin: true })
+  _app.register(import('@fastify/cors'), { origin: true })
   _app.register(prismaPlugin)
 
   const schema = makeSchema({
@@ -81,7 +80,10 @@ const app = (opts: FastifyServerOptions) => {
   })
 
   _app.register((app, _, done) => {
-    app.register(fastifyRateLimit, { max: 100, timeWindow: '5 minute' })
+    app.register(import('@fastify/rate-limit'), { max: 100, timeWindow: '5 minute' })
+
+    app.setValidatorCompiler(createValidatorCompiler())
+
     app.register(toolsRoutes, { prefix: '/tools' })
     app.register(teamsRoutes, { prefix: '/teams' })
     app.register(jutsusRoutes, { prefix: '/jutsus' })

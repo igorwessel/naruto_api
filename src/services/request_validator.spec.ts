@@ -1,12 +1,12 @@
 import { pipe } from 'fp-ts/function'
-import { validatorCompiler } from './request_validator'
+import { createValidatorCompiler } from './request_validator'
 import * as t from 'io-ts'
 
 const schema = t.type({
   ninja: t.string,
 })
 
-const makeValidationData = pipe(validatorCompiler<t.TypeOf<typeof schema>>(), inject =>
+const makeValidationData = pipe(createValidatorCompiler<t.TypeOf<typeof schema>>(), inject =>
   inject({
     schema,
     httpPart: 'params',

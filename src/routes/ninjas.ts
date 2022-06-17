@@ -14,7 +14,6 @@ import {
   getUniqueNinja,
 } from '~/handlers/ninjas'
 
-import { validatorCompiler } from '~/services/request_validator'
 import { idCodec, kebabCaseCodec } from '~/types/params'
 import { paginationCodec, PaginationType } from '~/types/pagination'
 
@@ -26,23 +25,16 @@ const paramsType = t.type({
   ninja: t.union([idCodec, kebabCaseCodec]),
 })
 
-type ParamsType = t.TypeOf<typeof paramsType>
-
 export const routes = async (app: FastifyInstance): Promise<FastifyInstance> =>
   app
-    .get<
-      {
-        Querystring: PaginationType
-      },
-      unknown,
-      t.Type<PaginationType>
-    >(
+    .get<{
+      Querystring: PaginationType
+    }>(
       '/',
       {
         schema: {
           querystring: paginationCodec,
         },
-        validatorCompiler: validatorCompiler(),
       },
       (req, reply) => {
         pipe(
@@ -55,19 +47,14 @@ export const routes = async (app: FastifyInstance): Promise<FastifyInstance> =>
         )()
       }
     )
-    .get<
-      {
-        Params: NinjaParam
-      },
-      unknown,
-      t.Type<ParamsType>
-    >(
+    .get<{
+      Params: NinjaParam
+    }>(
       '/:ninja',
       {
         schema: {
           params: paramsType,
         },
-        validatorCompiler: validatorCompiler(),
       },
       (req, reply) => {
         pipe(
@@ -77,19 +64,14 @@ export const routes = async (app: FastifyInstance): Promise<FastifyInstance> =>
         )()
       }
     )
-    .get<
-      {
-        Params: NinjaParam
-      },
-      unknown,
-      t.Type<ParamsType>
-    >(
+    .get<{
+      Params: NinjaParam
+    }>(
       '/:ninja/tools',
       {
         schema: {
           params: paramsType,
         },
-        validatorCompiler: validatorCompiler(),
       },
       (req, reply) => {
         pipe(
@@ -99,19 +81,14 @@ export const routes = async (app: FastifyInstance): Promise<FastifyInstance> =>
         )()
       }
     )
-    .get<
-      {
-        Params: NinjaParam
-      },
-      unknown,
-      t.Type<ParamsType>
-    >(
+    .get<{
+      Params: NinjaParam
+    }>(
       '/:ninja/family',
       {
         schema: {
           params: paramsType,
         },
-        validatorCompiler: validatorCompiler(),
       },
       (req, reply) => {
         pipe(
@@ -121,19 +98,14 @@ export const routes = async (app: FastifyInstance): Promise<FastifyInstance> =>
         )()
       }
     )
-    .get<
-      {
-        Params: NinjaParam
-      },
-      unknown,
-      t.Type<ParamsType>
-    >(
+    .get<{
+      Params: NinjaParam
+    }>(
       '/:ninja/attributes',
       {
         schema: {
           params: paramsType,
         },
-        validatorCompiler: validatorCompiler(),
       },
       (req, reply) => {
         pipe(
@@ -143,19 +115,14 @@ export const routes = async (app: FastifyInstance): Promise<FastifyInstance> =>
         )()
       }
     )
-    .get<
-      {
-        Params: NinjaParam
-      },
-      unknown,
-      t.Type<ParamsType>
-    >(
+    .get<{
+      Params: NinjaParam
+    }>(
       '/:ninja/jutsus',
       {
         schema: {
           params: paramsType,
         },
-        validatorCompiler: validatorCompiler(),
       },
       (req, reply) => {
         pipe(
@@ -165,19 +132,14 @@ export const routes = async (app: FastifyInstance): Promise<FastifyInstance> =>
         )()
       }
     )
-    .get<
-      {
-        Params: NinjaParam
-      },
-      unknown,
-      t.Type<ParamsType>
-    >(
+    .get<{
+      Params: NinjaParam
+    }>(
       '/:ninja/teams',
       {
         schema: {
           params: paramsType,
         },
-        validatorCompiler: validatorCompiler(),
       },
       (req, reply) => {
         pipe(
