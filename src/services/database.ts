@@ -17,6 +17,8 @@ export const makeWhere = flow(
 )
 
 export const validateIsEmpty = flow(
-  (message: string) => <A>(arr: A[]) => (arr.length === 0 ? TE.left(notFoundError(message)) : TE.right(arr)),
+  (message: string) =>
+    <A>(arr: A[]) =>
+      arr.length === 0 ? TE.left(notFoundError(message)) : TE.right(arr),
   TE.chain
 )

@@ -41,7 +41,7 @@ const tools: Tools[] = [
 
 beforeEach(() => {
   mockCtx = createMockContext()
-  ctx = (mockCtx as unknown) as Context
+  ctx = mockCtx as unknown as Context
   reply = mock<FastifyReply>({
     server: {
       prisma: ctx.prisma,
