@@ -1,0 +1,21 @@
+_id: req_wrk_16f39049fa8d4c43b731c50affa90f216d02caec
+type: Request
+parentId: fld_wrk_16f39049fa8d4c43b731c50affa90f21e48b5405
+modified: 1655642843828
+created: 1655553881989
+url: "{{ base_url }}/ninjas/{{ 'naruto-uzumaki' }}/tools"
+name: Get the tools of a Ninja
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1655553881989
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

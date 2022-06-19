@@ -1,0 +1,21 @@
+_id: req_wrk_16f39049fa8d4c43b731c50affa90f218a3d8bd1
+type: Request
+parentId: fld_wrk_16f39049fa8d4c43b731c50affa90f21e48b5405
+modified: 1655642828292
+created: 1655553881985
+url: "{{ base_url }}/ninjas/{{ 'naruto-uzumaki' }}/jutsus"
+name: Get jutsus of a Ninja
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1655553881985
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,21 @@
+_id: req_wrk_16f39049fa8d4c43b731c50affa90f21bd8737c0
+type: Request
+parentId: fld_wrk_16f39049fa8d4c43b731c50affa90f210284c6ac
+modified: 1655642883243
+created: 1655642582803
+url: "{{ base_url }}/tools/{{ 2 }}/ninjas"
+name: Get ninjas which uses this tool
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1655642582803
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

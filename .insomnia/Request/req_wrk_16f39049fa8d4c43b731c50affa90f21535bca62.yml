@@ -1,0 +1,21 @@
+_id: req_wrk_16f39049fa8d4c43b731c50affa90f21535bca62
+type: Request
+parentId: fld_wrk_16f39049fa8d4c43b731c50affa90f21e48b5405
+modified: 1655642854541
+created: 1655551387404
+url: "{{ base_url }}/ninjas/{{ 'naruto-uzumaki' }}"
+name: Get a single Ninja
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1655551387404
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

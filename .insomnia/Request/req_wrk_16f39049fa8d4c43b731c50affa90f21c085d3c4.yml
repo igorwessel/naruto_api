@@ -1,0 +1,21 @@
+_id: req_wrk_16f39049fa8d4c43b731c50affa90f21c085d3c4
+type: Request
+parentId: fld_wrk_16f39049fa8d4c43b731c50affa90f21e48b5405
+modified: 1655642795621
+created: 1655552871483
+url: "{{ base_url }}/ninjas/{{ 'naruto-uzumaki' }}/family"
+name: Get the family of a Ninja
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1655552871483
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,27 @@
+_id: req_wrk_16f39049fa8d4c43b731c50affa90f21c88c116b
+type: Request
+parentId: fld_wrk_16f39049fa8d4c43b731c50affa90f2146293836
+modified: 1655642582793
+created: 1655642582793
+url: "{{ base_url }}/teams"
+name: Get teams
+description: ""
+method: GET
+body: {}
+parameters:
+  - name: offset
+    disabled: true
+    value: "0"
+  - name: limit
+    disabled: true
+    value: "15"
+headers: []
+authentication: {}
+metaSortKey: -1655642582793
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

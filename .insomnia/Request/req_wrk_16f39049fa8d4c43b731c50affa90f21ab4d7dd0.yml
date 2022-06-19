@@ -1,0 +1,27 @@
+_id: req_wrk_16f39049fa8d4c43b731c50affa90f21ab4d7dd0
+type: Request
+parentId: fld_wrk_16f39049fa8d4c43b731c50affa90f210284c6ac
+modified: 1655642582808
+created: 1655642582808
+url: "{{ base_url }}/tools"
+name: Get tools
+description: ""
+method: GET
+body: {}
+parameters:
+  - name: offset
+    disabled: true
+    value: "0"
+  - name: limit
+    disabled: true
+    value: "15"
+headers: []
+authentication: {}
+metaSortKey: -1655642582808
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

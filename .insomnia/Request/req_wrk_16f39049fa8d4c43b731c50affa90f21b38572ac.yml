@@ -1,0 +1,21 @@
+_id: req_wrk_16f39049fa8d4c43b731c50affa90f21b38572ac
+type: Request
+parentId: fld_wrk_16f39049fa8d4c43b731c50affa90f2146293836
+modified: 1655642906842
+created: 1655642582791
+url: "{{ base_url }}/teams/{{ 2 }}"
+name: Get a team
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1655642582791
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

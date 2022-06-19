@@ -1,0 +1,21 @@
+_id: req_wrk_16f39049fa8d4c43b731c50affa90f21a66f1ded
+type: Request
+parentId: fld_wrk_16f39049fa8d4c43b731c50affa90f214b9d32e9
+modified: 1655642926684
+created: 1655642582799
+url: "{{ base_url }}/jutsus/{{ 1 }}"
+name: Get a jutsu
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1655642582799
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

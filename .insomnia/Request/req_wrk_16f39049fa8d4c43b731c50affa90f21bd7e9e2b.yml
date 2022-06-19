@@ -1,0 +1,21 @@
+_id: req_wrk_16f39049fa8d4c43b731c50affa90f21bd7e9e2b
+type: Request
+parentId: fld_wrk_16f39049fa8d4c43b731c50affa90f21e48b5405
+modified: 1655642816659
+created: 1655553881982
+url: "{{ base_url }}/ninjas/{{ 'naruto-uzumaki' }}/teams"
+name: Get teams of a Ninja
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1655553881982
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

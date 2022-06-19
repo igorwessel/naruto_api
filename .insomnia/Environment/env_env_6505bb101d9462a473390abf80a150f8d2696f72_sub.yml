@@ -1,0 +1,18 @@
+_id: env_env_6505bb101d9462a473390abf80a150f8d2696f72_sub
+type: Environment
+parentId: env_6505bb101d9462a473390abf80a150f8d2696f72
+modified: 1655551774494
+created: 1655551387413
+name: OpenAPI env
+data:
+  scheme: http
+  base_path: ""
+  host: narutoapi.com.br
+dataPropertyOrder:
+  "&":
+    - scheme
+    - base_path
+    - host
+color: null
+isPrivate: false
+metaSortKey: 1655551387413

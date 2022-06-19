@@ -1,0 +1,16 @@
+_id: env_6505bb101d9462a473390abf80a150f8d2696f72
+type: Environment
+parentId: wrk_16f39049fa8d4c43b731c50affa90f21
+modified: 1655551786124
+created: 1655546261491
+name: Base Environment
+data:
+  base_url: "{{ scheme }}://{{ host }}{{ base_path }}"
+  id: naruto-uzumaki
+dataPropertyOrder:
+  "&":
+    - base_url
+    - id
+color: null
+isPrivate: false
+metaSortKey: 1655546261491

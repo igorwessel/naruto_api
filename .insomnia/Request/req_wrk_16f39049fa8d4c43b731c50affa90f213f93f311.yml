@@ -1,0 +1,21 @@
+_id: req_wrk_16f39049fa8d4c43b731c50affa90f213f93f311
+type: Request
+parentId: fld_wrk_16f39049fa8d4c43b731c50affa90f2146293836
+modified: 1655642917190
+created: 1655642582787
+url: "{{ base_url }}/teams/{{ 3 }}/ninjas"
+name: Get ninjas which participate this team
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1655642582787
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

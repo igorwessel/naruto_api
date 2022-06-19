@@ -1,0 +1,29 @@
+_id: req_wrk_16f39049fa8d4c43b731c50affa90f21a24c4b34
+type: Request
+parentId: fld_wrk_16f39049fa8d4c43b731c50affa90f21e48b5405
+modified: 1655551556078
+created: 1655551387406
+url: "{{ base_url }}/ninjas"
+name: Get Ninjas
+description: ""
+method: GET
+body: {}
+parameters:
+  - name: offset
+    disabled: true
+    value: "0"
+    id: pair_f215f3e828c34aed87baddd51dd4cf74
+  - name: limit
+    disabled: true
+    value: "15"
+    id: pair_cd5e6fbd427b40b4b5f4e3ea9eb38544
+headers: []
+authentication: {}
+metaSortKey: -1655551387406
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

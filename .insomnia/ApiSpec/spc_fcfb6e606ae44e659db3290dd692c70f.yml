@@ -1,0 +1,536 @@
+_id: spc_fcfb6e606ae44e659db3290dd692c70f
+type: ApiSpec
+parentId: wrk_16f39049fa8d4c43b731c50affa90f21
+modified: 1655643153141
+created: 1655546261486
+fileName: NarutoAPI
+contents: >-
+  openapi: 3.0.0
+
+  info:
+    description: "Criei essa API para exercitar o meu conhecimento referente ao backend e tambem para aprendizado do GraphQL junto com Typescript. A ideia de criar essa API surgiu do meu irmão mais novo que é fascinado no Naruto já assistiu o clássico/shippuden e atualmente está lendo o manga. Achei que seria interessante criar uma API pública para que todo mundo possa desfrutar/usar para seus projetos pessoais e afins."
+    version: 1.0.0
+    title: NarutoAPI
+  tags:
+    - name: ninjas
+      description: Everything about ninjas
+    - name: tools
+      description: Everything about tools
+    - name: teams
+      description: Everything about teams
+    - name: jutsus
+      description: Everything about jutsus
+  paths:
+    /ninjas:
+      get:
+        tags:
+          - ninjas
+        summary: Get Ninjas
+        parameters:
+          - $ref: "#/components/parameters/Offset"
+          - $ref: "#/components/parameters/Limit"
+        responses:
+          "200":
+            description: "Ninjas"
+            content:
+              application/json:
+                schema:
+                  type: array
+                  items:
+                    $ref: "#/components/schemas/Ninjas"
+    /ninjas/{id}:
+      get:
+        tags:
+          - ninjas
+        summary: Get a single Ninja
+        parameters:
+          - in: path
+            name: id
+            example: "naruto-uzumaki or 1"
+            description: "Allow to pass a name in kebab-case or ID."
+            required: true
+            schema:
+              oneOf:
+                - type: string
+                - type: integer
+        responses:
+          "200":
+            description: "Ninja"
+            content:
+               application/json:
+                schema:
+                  $ref: "#/components/schemas/Ninja"
+          "404":
+             description: "Ninja not found"
+             content:
+               application/json:
+                 schema:
+                   $ref: "#/components/schemas/ApiResponse"
+    /ninjas/{id}/family:
+      get:
+        tags:
+          - ninjas
+        summary: Get the family of a Ninja
+        parameters:
+            - $ref: "#/components/parameters/Path"
+        responses:
+          "200":
+            description: "Family"
+            content:
+               application/json:
+                schema:
+                  $ref: "#/components/schemas/Family"
+          "404":
+             description: "Not have a family :("
+             content:
+               application/json:
+                 schema:
+                   $ref: "#/components/schemas/ApiResponse"
+    /ninjas/{id}/tools:
+      get:
+        tags:
+          - ninjas
+        summary: Get the tools of a Ninja
+        parameters:
+          - $ref: "#/components/parameters/Path"
+        responses:
+          "200":
+            description: "Tool"
+            content:
+              application/json:
+                schema:
+                  type: array
+                  items:
+                    $ref: "#/components/schemas/Tool"
+    /ninjas/{id}/attributes:
+      get:
+        tags:
+          - ninjas
+        summary: Get attributes of a Ninja
+        parameters:
+          - $ref: "#/components/parameters/Path"
+        responses:
+          "200":
+            description: "Attributes"
+            content:
+              application/json:
+                schema:
+                  type: array
+                  items:
+                    $ref: "#/components/schemas/Attributes"
+    /ninjas/{id}/jutsus:
+      get:
+        tags:
+          - ninjas
+        summary: Get jutsus of a Ninja
+        parameters:
+          - $ref: "#/components/parameters/Path"
+        responses:
+          "200":
+            description: "Jutsu"
+            content:
+              application/json:
+                schema:
+                  type: array
+                  items:
+                     $ref: "#/components/schemas/Jutsu"
+    /ninjas/{id}/teams:
+      get:
+        tags:
+          - ninjas
+        summary: Get teams of a Ninja
+        parameters:
+          - $ref: "#/components/parameters/Path"
+        responses:
+          "200":
+            description: "Team"
+            content:
+              application/json:
+                schema:
+                  type: array
+                  items:
+                    $ref: "#/components/schemas/Team"
+    /tools:
+      get:
+        tags:
+          - tools
+        summary: Get tools
+        parameters:
+          - $ref: "#/components/parameters/Offset"
+          - $ref: "#/components/parameters/Limit"
+        responses:
+           "200":
+             description: "Tools"
+             content:
+               application/json:
+                 schema:
+                   type: array
+                   items:
+                     $ref: "#/components/schemas/Tool"
+    /tools/{id}:
+      get:
+        tags:
+          - tools
+        summary: Get a tool
+        parameters:
+          - $ref: "#/components/parameters/Path"
+        responses:
+          "200":
+            description: "Tool"
+            content:
+              application/json:
+                schema:
+                  $ref: "#/components/schemas/Tool"
+    /tools/{id}/ninjas:
+      get:
+        tags:
+          - tools
+        summary: Get ninjas which uses this tool
+        parameters:
+          - $ref: "#/components/parameters/Path"
+        responses:
+          "200":
+            description: "Ninjas"
+            content:
+              application/json:
+                schema:
+                  type: array
+                  items:
+                    $ref: "#/components/schemas/Ninjas"
+    /jutsus:
+      get:
+        tags:
+          - jutsus
+        summary: Get jutsus
+        parameters:
+          - $ref: "#/components/parameters/Offset"
+          - $ref: "#/components/parameters/Limit"
+        responses:
+           "200":
+             description: "Jutsus"
+             content:
+               application/json:
+                 schema:
+                   type: array
+                   items:
+                     $ref: "#/components/schemas/Jutsu"
+    /jutsus/{id}:
+      get:
+        tags:
+          - jutsus
+        summary: Get a jutsu
+        parameters:
+          - $ref: "#/components/parameters/Path"
+        responses:
+          "200":
+            description: "Jutsu"
+            content:
+              application/json:
+                schema:
+                  $ref: "#/components/schemas/Jutsu"
+    /jutsus/{id}/ninjas:
+      get:
+        tags:
+          - jutsus
+        summary: Get ninjas which uses this jutsu
+        parameters:
+          - $ref: "#/components/parameters/Path"
+        responses:
+          "200":
+            description: "Ninjas"
+            content:
+              application/json:
+                schema:
+                  type: array
+                  items:
+                    $ref: "#/components/schemas/Ninjas"
+    /teams:
+      get:
+        tags:
+          - teams
+        summary: Get teams
+        parameters:
+          - $ref: "#/components/parameters/Offset"
+          - $ref: "#/components/parameters/Limit"
+        responses:
+           "200":
+             description: "Teams"
+             content:
+               application/json:
+                 schema:
+                   type: array
+                   items:
+                     $ref: "#/components/schemas/Team"
+    /teams/{id}:
+      get:
+        tags:
+          - teams
+        summary: Get a team
+        parameters:
+          - $ref: "#/components/parameters/Path"
+        responses:
+          "200":
+            description: "Team"
+            content:
+              application/json:
+                schema:
+                  $ref: "#/components/schemas/Team"
+    /teams/{id}/ninjas:
+      get:
+        tags:
+          - teams
+        summary: Get ninjas which participate this team
+        parameters:
+          - $ref: "#/components/parameters/Path"
+        responses:
+          "200":
+            description: "Ninjas"
+            content:
+              application/json:
+                schema:
+                  type: array
+                  items:
+                    $ref: "#/components/schemas/Ninjas"
+  servers:
+    - url: http://narutoapi.com.br
+  components:
+    parameters:
+       Path:
+         in: path
+         name: id
+         example: "kebab-case-name or 1"
+         description: "Allow to pass a name in kebab-case or ID."
+         required: true
+         schema:
+           oneOf:
+             - type: string
+             - type: integer
+       Offset:
+          in: query
+          name: offset
+          schema:
+            type: integer
+            default: 0
+            description: "The number of items to skip."
+       Limit:
+          in: query
+          name: limit
+          schema:
+            type: integer
+            default: 15
+            minimum: 1
+            maximum: 30
+            description: "The number of items to return. min: 0 and max: 30 "
+    schemas:
+      Ninja:
+        type: object
+        properties:
+          id:
+            type: integer
+          name:
+            type: string
+          birthdate:
+            type: string
+            nullable: true
+          specie:
+            type: string
+            nullable: true
+          status:
+            type: string
+            nullable: true
+          sex:
+            type: string
+            nullable: true
+          bloodType:
+            type: string
+            nullable: true
+          ninjaRegistration:
+            type: string
+            nullable: true
+          academyGradAge:
+            type: string
+            nullable: true
+          chuninPromAge:
+            type: string
+            nullable: true
+          occupation:
+            type: array
+            items:
+              $ref: "#/components/schemas/Common"
+          affiliation:
+            type: array
+            items:
+              $ref: "#/components/schemas/Common"
+          clan:
+            type: array
+            items:
+              $ref: "#/components/schemas/Common"
+          classification:
+            type: array
+            items:
+              $ref: "#/components/schemas/Common"
+      Ninjas:
+        allOf:
+          - $ref: '#/components/schemas/Ninja'
+          - type: object
+            properties:
+              jutsus:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Jutsu"
+              tools:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Tool"
+              teams:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Team"
+              family:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Family"
+              attributes:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Attributes"
+      Attributes:
+        type: object
+        properties:
+           id:
+             type: integer
+           age:
+             type: string
+           height:
+             type: number
+             format: float
+             nullable: true
+           weight:
+              type: number
+              format: float
+              nullable: true
+           ninjaRank:
+              type: string
+              nullable: true
+           season:
+              type: object
+              properties:
+                     name:
+                        type: string
+      Family:
+        type: object
+        properties:
+               id:
+                  type: integer
+               relationship:
+                  type: string
+               details:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+      Team:
+          type: object
+          properties:
+            id:
+              type: integer
+            name:
+              type: string
+            description:
+              type: string
+              nullable: true
+      Tool:
+        type: object
+        properties:
+          id:
+            type: integer
+          name:
+            type: string
+          description:
+            type: string
+            nullable: true
+          kanji:
+            type: string
+            nullable: true
+          romaji:
+            type: string
+            nullable: true
+          portugues:
+            type: string
+            nullable: true
+          games:
+            type: string
+            nullable: true
+          mangaPanini:
+            type: string
+            nullable: true
+          tvBrasileira:
+            type: string
+            nullable: true
+      Jutsu:
+        type: object
+        properties:
+          id:
+            type: integer
+          name:
+            type: string
+          description:
+            type: string
+            nullable: true
+          kanji:
+            type: string
+            nullable: true
+          romaji:
+            type: string
+            nullable: true
+          portugues:
+            type: string
+            nullable: true
+          games:
+            type: string
+            nullable: true
+          mangaPanini:
+            type: string
+            nullable: true
+          tvBrasileira:
+            type: string
+            nullable: true
+          range:
+            type: string
+            nullable: true
+          rank:
+            type: string
+            nullable: true
+          handSeals:
+            type: string
+            nullable: true
+          nature_type:
+            type: array
+            items:
+              type: object
+              properties:
+                id:
+                  type: integer
+                name:
+                  type: string
+                kekkeiGenkai:
+                  type: boolean
+                kekkeiTota:
+                  type: boolean
+      Common:
+        type: object
+        properties:
+          id:
+            type: integer
+          name:
+            type: string
+      ApiResponse:
+        type: object
+        properties:
+          statusCode:
+            type: integer
+          error:
+            type: string
+          message:
+            type: string
+contentType: yaml
